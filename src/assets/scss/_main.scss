@@ -1,0 +1,56 @@
+@use '../../../node_modules/swiper/swiper.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --font-family-menu-en: 'Cormorant Garamond', sans-serif;
+  --font-family-menu-zh: 'Noto Serif TC', serif;
+
+  --font-family-content-zh: '微軟正黑體';
+
+  //45pt
+  --titleSize: 1.7vw;
+  //28pt
+  --paraSize: 1vw;
+  //title font-weight
+  --titleWeight: 500;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+img,
+video,
+canvas,
+iframe {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+#app {
+  width: 100%;
+  height: 100dvh;
+  // background-color: #faf8f0;
+}

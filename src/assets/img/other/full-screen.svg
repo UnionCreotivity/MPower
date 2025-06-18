@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.75 46.14">
+  <g id="_圖層_3" data-name="圖層 3">
+    <g>
+      <g>
+        <line x1="20.8" y1="22.55" x2="36.92" y2="22.55" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+        <line x1="28.86" y1="30.61" x2="28.86" y2="14.48" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+      </g>
+      <g>
+        <path d="M57.25,15.58V3.03c0-1.4-1.97-2.53-4.39-2.53h-12.9" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+        <path d="M.5,15.58v27.54c0,1.4,1.97,2.53,4.39,2.53h13.06" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+        <path d="M57.25,15.58v27.54c0,1.4-1.97,2.53-4.39,2.53h-12.9" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+        <path d="M.5,15.58V3.03C.5,1.63,2.47,.5,4.89,.5h13.06" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+      </g>
+    </g>
+  </g>
+</svg>

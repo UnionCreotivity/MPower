@@ -1,0 +1,15 @@
+.arial-view {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  .img-box {
+    width: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

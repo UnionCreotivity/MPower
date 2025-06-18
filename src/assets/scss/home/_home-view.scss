@@ -1,0 +1,204 @@
+@use '../config' as *;
+
+#home-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url(../../img/home/bg.webp);
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  .video-box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    z-index: 10;
+    width: 100vw;
+    opacity: 0.15;
+    mix-blend-mode: plus-lighter;
+    .bg-video {
+      width: 100vw;
+      object-fit: cover;
+      height: 100svh;
+    }
+  }
+  .home-view-init {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .home-view-init-icon {
+      width: 26vw;
+      position: absolute;
+      top: 43%;
+      left: 49%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      z-index: 40;
+      @media all and (max-width: 1400px) {
+        width: 40vw;
+      }
+    }
+  }
+  .home-view-main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    @mixin mask($bcolor, $x1, $y1) {
+      background: $bcolor;
+      -webkit-mask: url(../../img/home/mask.png);
+      mask: url(../../img/home/mask.png);
+      -webkit-mask-size: $x1 $y1;
+      mask-size: $x1 $y1;
+    }
+    @-webkit-keyframes ani {
+      from {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+      }
+
+      to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+      }
+    }
+
+    @keyframes ani {
+      from {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+      }
+
+      to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+      }
+    }
+
+    @-webkit-keyframes ani2 {
+      from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+      }
+
+      to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+      }
+    }
+
+    @keyframes ani2 {
+      from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+      }
+
+      to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+      }
+    }
+
+    .svg {
+      z-index: 50;
+      width: 560px;
+      position: absolute;
+      top: 43%;
+      left: 49%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      @include mask(#00000000, 7100%, 100%);
+      cursor: pointer;
+      // -webkit-animation: ani2 1s steps(70) forwards;
+      // animation: ani2 1s steps(70) forwards;
+      will-change: mask-position;
+      -webkit-mask-position: 100% 0;
+      mask-position: 100% 0;
+      @media all and (max-width: 1400px) {
+        width: 40vw;
+      }
+    }
+
+    .home-view-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16vw;
+      z-index: 50;
+      @include pad {
+        margin-top: 37vw;
+      }
+
+      .home-view-menu-item {
+        position: relative;
+        padding-left: 2vw;
+        padding-right: 2vw;
+
+        &:after {
+          position: absolute;
+          content: '';
+          background-color: #5e4c3f;
+          height: 55%;
+          top: 0.85vw;
+          width: 1px;
+          right: 0px;
+        }
+
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+        .home-view-menu-item-link {
+          display: flex;
+          flex-direction: column;
+
+          align-items: center;
+
+          p {
+            transition: all 0.5s;
+          }
+          &:hover {
+            p {
+              transform: translateY(-1vw);
+              transition: all 0.5s;
+              color: #cdc1aa;
+            }
+          }
+
+          .menu-zh {
+            font-family: var(--font-family-menu-zh);
+            font-weight: bold;
+            font-size: 1.1vw;
+            letter-spacing: 0.15em;
+            color: #5e4c3f;
+            @media all and (max-width: 1400px) {
+              font-size: 1.8vw;
+              letter-spacing: 0.2em;
+              font-weight: 600;
+            }
+          }
+          .menu-en {
+            font-family: var(--font-family-menu-en);
+            font-size: 0.85vw;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+
+            color: #5e4c3f;
+            @media all and (max-width: 1400px) {
+              font-size: 1.4vw;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}

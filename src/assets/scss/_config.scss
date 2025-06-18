@@ -1,0 +1,10 @@
+@mixin laptop() {
+  @media all and (max-width: 1660px) {
+    @content;
+  }
+}
+@mixin pad() {
+  @media all and (max-width: 1400px) {
+    @content;
+  }
+}
