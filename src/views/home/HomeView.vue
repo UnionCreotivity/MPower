@@ -57,7 +57,7 @@ const menuItems = [
     id: 'master',
     zhName: '建築規劃',
     enName: 'MASTER',
-    link: 'test',
+    link: 'aerialPhoto',
   },
   {
     id: 'mansion',
