@@ -1,62 +1,48 @@
 import type { Plugin } from 'vite'
 import fg from 'fast-glob'
-import path from 'path'
 
 type PreloadImagesOptions = {
-  dir: string | string[]
-  attrs?: {
-    rel?: 'preload' | 'prefetch'
+  dir: string
+  attrs: {
+    rel: 'preload' | 'prefetch'
   }
 }
 
 export const preloadImg = (options: PreloadImagesOptions): Plugin => {
   const { dir, attrs = {} } = options
-  const assetFiles: string[] = []
-
+  const assetsImages: string[] = []
   return {
-    name: 'vite-plugin-asset-preload',
+    name: 'vite-plugin-image-prefetch',
     generateBundle(_, bundle) {
-      const files = fg.sync(dir)
       const values = Object.values(bundle)
-
+      const files = fg.sync(dir)
+      console.log(bundle)
       values.forEach((item) => {
-        const originalName = Reflect.get(item, 'originalFileName')
-        if (files.includes(originalName)) {
-          assetFiles.push(item.fileName)
+        //取得getter數值
+        if (files.includes(Reflect.get(item, 'originalFileName'))) {
+          assetsImages.push(item.fileName)
         }
       })
     },
     transformIndexHtml(html, ctx) {
-      let files: string[] = []
-
+      let images: string[] = []
+      //判斷開發還是生產環境
       if (ctx.server) {
-        const base = ctx.server.config.base || ''
-        files = fg.sync(dir).map((file) => base + file)
+        const files = fg.sync(dir)
+        const base = ctx.server?.config.base || ''
+
+        images = files.map((file) => base + file)
       } else {
-        files = assetFiles
+        images = assetsImages
       }
-
-      return files.map((href) => {
-        const ext = path.extname(href).toLowerCase()
-        let asType = ''
-        let type = ''
-
-        if (/\.(png|jpe?g|webp|svg|gif|avif)$/.test(ext)) {
-          asType = 'image'
-        } else if (/\.(mp4|webm|ogg)$/.test(ext)) {
-          asType = 'video'
-          if (ext === '.mp4') type = 'video/mp4'
-          else if (ext === '.webm') type = 'video/webm'
-       
-        }
-
+      return images.map((href) => {
         return {
           tag: 'link',
           attrs: {
-            rel: attrs.rel || 'preload',
-            href,
-            as: asType,
-            ...(type ? { type } : {}),
+            rel: 'prefetch',
+            href: href,
+            as: 'image',
+            ...attrs,
           },
         }
       })
