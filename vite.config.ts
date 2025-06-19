@@ -7,7 +7,6 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import legacy from '@vitejs/plugin-legacy'
 import { preloadImg } from './src/plugins/preloadimages'
 
-// https://vite.dev/config/
 export default defineConfig({
   base: './',
   build: {
@@ -21,7 +20,10 @@ export default defineConfig({
       additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
     }),
     preloadImg({
-      dir: 'src/assets/img/**/*.{jpg,png,svg,webp}',
+      dir: [
+        'src/assets/img/**/*.{jpg,jpeg,png,svg,webp,avif}',
+        'src/assets/video/**/*.{mp4,webm,ogg}',
+      ],
       attrs: {
         rel: 'preload',
       },
