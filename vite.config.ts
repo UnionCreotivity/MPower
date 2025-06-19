@@ -22,7 +22,7 @@ export default defineConfig({
     preloadImg({
       dir: [
         'src/assets/img/**/*.{jpg,jpeg,png,svg,webp,avif}',
-        'src/assets/video/**/*.{mp4,webm,ogg}',
+        'public/video/**/*.{mp4,webm,ogg}',
       ],
       attrs: {
         rel: 'preload',
