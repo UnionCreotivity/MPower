@@ -37,3 +37,6 @@ npm run build
 ```sh
 npm run lint
 ```
+
+<!-- npm install -g serve
+serve dist -->
