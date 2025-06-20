@@ -5,32 +5,35 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-// if ('serviceWorker' in navigator) {
-// //   navigator.serviceWorker.register('service-worker.js') 打包正式用
-//     navigator.serviceWorker.register('/service-worker.js')
-//     .then(() => {
-//       console.log('✅ Service Worker 已註冊成功')
-//     })
-//     .catch((err) => {
-//       console.error('❌ Service Worker 註冊失敗:', err)
-//     })
-// }
 
-// service-worker.js 路徑一定要是網站根目錄，例如 https://你的網域/service-worker.js
+const swUrl = `${import.meta.env.BASE_URL}service-worker.js`
 
-// 若你網站部署在子目錄（例如 https://web-board.tw/MPower/），需要額外設定 scope
 
-// 部署完，記得 F12 → Application → Service Workers 確認是否成功註冊
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => {
-      console.log('✅ Service Worker 已註冊成功')
-    })
-    .catch((err) => {
-      console.error('❌ Service Worker 註冊失敗:', err)
-    })
+  (async () => {
+    try {
+      const registration = await navigator.serviceWorker.register(swUrl)
+      console.log('✅ SW 註冊成功:', registration)
+
+      await navigator.serviceWorker.ready
+      console.log('✅ SW 快取已準備完成')
+
+      await new Promise(resolve => setTimeout(resolve, 300))
+    } catch (err) {
+      console.warn('⚠️ 無法註冊 SW：', err)
+    }
+  })()
 }
+
+  // 移除 loading 畫面
+  const loadingScreen = document.getElementById('loading-screen')
+  if (loadingScreen) {
+    loadingScreen.classList.add('fade-out')
+    setTimeout(() => {
+      loadingScreen.remove()
+    }, 500)
+  }
 const app = createApp(App)
 
 app.use(createPinia())
