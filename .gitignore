@@ -15,9 +15,7 @@ dist-ssr
 coverage
 *.local
 
-*.mp4
 
-/cypress/videos/
 /cypress/screenshots/
 
 # Editor directories and files
