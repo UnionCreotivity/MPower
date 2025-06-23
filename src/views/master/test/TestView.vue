@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import '@/assets/scss/metro/_arial-photo.scss'
-import videoSrc from '@/assets/test.mp4'
+import videoSrc from '@/assets/video/test.mp4'
 </script>
 
 <style scoped></style>
