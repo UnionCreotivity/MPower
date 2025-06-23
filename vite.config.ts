@@ -16,11 +16,12 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
-     generatePrecache(), // 👈 加進來
+    generatePrecache({ assetsDir: 'dist/assets' }),
     legacy({
       targets: ['defaults', 'not IE 11'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
     }),
+
     // preloadImg({
     //   dir: 'src/assets/img/**/*.{jpg,png,svg,webp}',
     //   attrs: {

@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 import screenfull from 'screenfull'
 import FadeIn from '@/components/transition/FadeIn.vue'
@@ -121,6 +121,13 @@ const showClick = () => {
   }
   initGsap()
 }
+
+onMounted(async () => {
+  // 等 Service Worker 準備好
+  if (navigator.serviceWorker?.controller) {
+    console.log('Service Worker 已註冊並控制頁面，快取已在安裝時完成')
+  }
+})
 </script>
 
 <style scoped></style>
