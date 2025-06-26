@@ -62,20 +62,25 @@ const waitForVideoLoad = (): Promise<void> => {
   return new Promise((resolve) => {
     const video = document.createElement('video')
     video.src = homeVideoSrc
-    video.preload = 'auto'
+    video.preload = 'metadata' // 只先載頭資訊
     video.muted = true
     video.playsInline = true
-    video.addEventListener('canplaythrough', () => {
+
+    const onReady = () => {
       progress.value = 100
       animateProgress()
       resolve()
-    })
-    video.addEventListener('error', () => {
-      console.warn('影片載入失敗，但繼續')
-      progress.value = 100
-      animateProgress()
-      resolve()
-    })
+    }
+
+    video.addEventListener('canplay', onReady, { once: true })
+    video.addEventListener(
+      'error',
+      () => {
+        console.warn('影片載入失敗，但繼續')
+        resolve()
+      },
+      { once: true },
+    )
   })
 }
 
@@ -108,29 +113,45 @@ waitForAssets()
 
 // 登入檢查邏輯
 onMounted(() => {
-  axios
-    .post(
-      'https://web-board.tw/sys/login_axios.php',
-      { type: 'admin' },
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage['token']}`,
-          'Refresh-Token': localStorage['refresh_token'],
+  if (!import.meta.env.DEV) {
+    // 非本地開發，才執行
+    axios
+      .post(
+        'https://web-board.tw/sys/login_axios.php',
+        {
+          type: 'admin',
         },
-      },
-    )
-    .then((res) => {
-      if (res.data.success) {
-        if (res.data.jwt && res.data.refresh_jwt) {
-          sessionStorage['token'] = res.data.jwt
-          localStorage['refresh_token'] = res.data.refresh_jwt
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage['token']}`,
+            'Refresh-Token': localStorage['refresh_token'],
+          },
+          onUploadProgress: function () {
+            // document.querySelector('.ajax_loading').classList.add('show_in');
+          },
+        },
+      )
+      .then(function (response) {
+        console.log(response.data)
+        if (response.data.success) {
+          if (response.data.jwt !== undefined && response.data.refresh_jwt !== undefined) {
+            sessionStorage['token'] = response.data.jwt
+            localStorage['refresh_token'] = response.data.refresh_jwt
+          }
+        } else {
+          alert(response.data.msg)
+          window.location.href = 'https://web-board.tw'
         }
-      } else {
-        alert(res.data.msg)
-        window.location.href = 'https://web-board.tw'
-      }
-    })
-    .catch(console.error)
+      })
+      .catch(function (error) {
+        console.error(error)
+      })
+      .finally(function () {
+        // document.querySelector('.ajax_loading').classList.remove('show_in');
+      })
+  } else {
+    console.log('開發環境，跳過登入請求')
+  }
 })
 </script>
 
