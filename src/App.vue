@@ -1,6 +1,6 @@
-<!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <template>
   <div class="app-main">
+    <div id="custom-cursor"></div>
     <FadeIn>
       <div class="app-loading" v-show="!is_Load">
         <div class="app-loading-container">
@@ -10,95 +10,56 @@
     </FadeIn>
     <div class="app-container">
       <router-view v-slot="{ Component, route }">
-        <FadeIn>
-          <component :is="Component" :key="route.path" :is_Load="is_Load" />
-        </FadeIn>
+        <FadeIn
+          ><component :is="Component" :key="route.path" :is_Load="is_Load"></component
+        ></FadeIn>
       </router-view>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RouterView } from 'vue-router'
 import FadeIn from './components/transition/FadeIn.vue'
 import axios from 'axios'
-import homeVideoSrc from '@/assets/img/home/c1_bg.mp4'
 
 const is_Load = ref(false)
-const progress = ref(0)
-const displayProgress = ref(0)
+const progress = ref(0) // 真實進度
+const displayProgress = ref(0) // 顯示用進度數字
 
-// 圖片預載入
-const waitForPreloadedImages = (): Promise<void> => {
-  return new Promise((resolve) => {
-    const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
-    const total = preloadLinks.length
+const cursor = ref<HTMLElement | null>(null)
 
-    if (total === 0) {
-      progress.value += 50
-      animateProgress()
-      resolve()
-      return
-    }
+const waitForPreloadedImages = () => {
+  const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
+  const total = preloadLinks.length
 
-    let count = 0
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    preloadLinks.forEach((link: any) => {
-      const img = new Image()
-      img.src = link.href
-      img.onload = img.onerror = () => {
-        count++
-        progress.value = Math.round((count / total) * 50)
-        animateProgress()
-        if (count === total) resolve()
-      }
-    })
-  })
-}
-
-// 影片預載入
-const waitForVideoLoad = (): Promise<void> => {
-  return new Promise((resolve) => {
-    const video = document.createElement('video')
-    video.src = homeVideoSrc
-    video.preload = 'metadata' // 只先載頭資訊
-    video.muted = true
-    video.playsInline = true
-
-    const onReady = () => {
-      progress.value = 100
-      animateProgress()
-      resolve()
-    }
-
-    video.addEventListener('canplay', onReady, { once: true })
-    video.addEventListener(
-      'error',
-      () => {
-        console.warn('影片載入失敗，但繼續')
-        resolve()
-      },
-      { once: true },
-    )
-  })
-}
-
-// 整合圖片與影片
-const waitForAssets = async () => {
-  const start = Date.now()
-  await Promise.all([waitForPreloadedImages(), waitForVideoLoad()])
-  const elapsed = Date.now() - start
-  const MIN_DURATION = 1000
-  const delay = Math.max(0, MIN_DURATION - elapsed)
-
-  setTimeout(() => {
+  if (total === 0) {
     is_Load.value = true
     displayProgress.value = 100
-  }, delay)
+    return
+  }
+
+  let count = 0
+  const checkComplete = () => {
+    count++
+    progress.value = Math.round((count / total) * 100)
+    animateProgress()
+    if (count === total) {
+      is_Load.value = true
+    }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  preloadLinks.forEach((link: any) => {
+    const img = new Image()
+    img.src = link.href
+    img.onload = checkComplete
+    img.onerror = checkComplete
+  })
 }
 
-// 平滑進度動畫
+// 讓數字慢慢往 progress.value 靠近
 const animateProgress = () => {
   const step = () => {
     if (displayProgress.value < progress.value) {
@@ -109,12 +70,10 @@ const animateProgress = () => {
   requestAnimationFrame(step)
 }
 
-waitForAssets()
+waitForPreloadedImages()
 
-// 登入檢查邏輯
 onMounted(() => {
   if (!import.meta.env.DEV) {
-    // 非本地開發，才執行
     axios
       .post(
         'https://web-board.tw/sys/login_axios.php',
@@ -127,13 +86,14 @@ onMounted(() => {
             'Refresh-Token': localStorage['refresh_token'],
           },
           onUploadProgress: function () {
-            // document.querySelector('.ajax_loading').classList.add('show_in');
+            //document.querySelector('.ajax_loading').classList.add('show_in');
           },
         },
       )
       .then(function (response) {
         console.log(response.data)
         if (response.data.success) {
+          // -- 刷新 token --
           if (response.data.jwt !== undefined && response.data.refresh_jwt !== undefined) {
             sessionStorage['token'] = response.data.jwt
             localStorage['refresh_token'] = response.data.refresh_jwt
@@ -147,11 +107,39 @@ onMounted(() => {
         console.error(error)
       })
       .finally(function () {
-        // document.querySelector('.ajax_loading').classList.remove('show_in');
+        //document.querySelector('.ajax_loading').classList.remove('show_in');
       })
   } else {
     console.log('開發環境，跳過登入請求')
   }
+
+  cursor.value = document.getElementById('custom-cursor')
+
+  const moveHandler = (e: MouseEvent) => {
+    if (!cursor.value) return
+    cursor.value.style.left = e.clientX + 'px'
+    cursor.value.style.top = e.clientY + 'px'
+  }
+
+  // const clickHandler = (e: MouseEvent) => {
+  //   const heart = document.createElement('div')
+  //   heart.className = 'heart'
+  //   heart.style.left = `${e.clientX}px`
+  //   heart.style.top = `${e.clientY}px`
+  //   document.body.appendChild(heart)
+
+  //   heart.addEventListener('animationend', () => {
+  //     heart.remove()
+  //   })
+  // }
+
+  window.addEventListener('mousemove', moveHandler)
+  // window.addEventListener('click', clickHandler)
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('mousemove', moveHandler)
+    // window.removeEventListener('click', clickHandler)
+  })
 })
 </script>
 
@@ -165,6 +153,7 @@ onMounted(() => {
   height: 100%;
   user-select: none;
   color: #5e4c3f;
+  background: #dcd4c0;
   background: linear-gradient(
     90deg,
     rgb(220, 212, 192) 0%,
@@ -172,7 +161,6 @@ onMounted(() => {
     rgb(218, 209, 188) 100%
   );
   z-index: 99999;
-
   .app-loading-container {
     width: 100%;
     height: 100%;
@@ -205,9 +193,13 @@ onMounted(() => {
     }
   }
 }
-.app-main,
+.app-main {
+  width: 100%;
+  height: 100%;
+}
 .app-container {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 </style>

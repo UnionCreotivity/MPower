@@ -9,14 +9,14 @@
   transform-style: preserve-3d;
   perspective: 800px;
   transition: transform 0.2s ease-out;
-  cursor: pointer;
+
   @media all and (max-width: 1400px) {
     left: 2vw;
     top: 2vw;
   }
   .menu-right {
     width: 2.5vw;
-    cursor: pointer;
+
     position: relative;
     @media all and (max-width: 1400px) {
       width: 3vw;
@@ -72,7 +72,7 @@
     right: 2vw;
     top: 2vw;
     width: 4vw;
-    cursor: pointer;
+
     z-index: 30;
     @media all and (max-width: 1400px) {
       width: 6vw;

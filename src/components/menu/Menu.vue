@@ -155,7 +155,6 @@ const imgRefs = ref<HTMLElement[]>([])
 const setImgRef = (el: Element | ComponentPublicInstance | null, idx: number) => {
   const dom = getDom(el)
   if (dom) {
-    console.log(111)
     imgRefs.value[idx] = dom
   }
 }
