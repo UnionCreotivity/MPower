@@ -1,14 +1,73 @@
 <template>
-  <router-view v-slot="{ Component, route }">
-    <FadeIn><component :is="Component" :key="route.path"></component></FadeIn>
-  </router-view>
+  <div class="app-main">
+    <FadeIn>
+      <div class="app-loading" v-show="!is_Load">
+        <div class="app-loading-container">
+          <div class="progress-text">{{ displayProgress }}%</div>
+        </div>
+      </div>
+    </FadeIn>
+    <div class="app-container">
+      <router-view v-slot="{ Component, route }">
+        <FadeIn
+          ><component :is="Component" :key="route.path" :is_Load="is_Load"></component
+        ></FadeIn>
+      </router-view>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import {onMounted} from 'vue'
+import { ref, onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import FadeIn from './components/transition/FadeIn.vue'
 import axios from 'axios'
+
+const is_Load = ref(false)
+const progress = ref(0) // 真實進度
+const displayProgress = ref(0) // 顯示用進度數字
+
+const waitForPreloadedImages = () => {
+  const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
+  const total = preloadLinks.length
+
+  if (total === 0) {
+    is_Load.value = true
+    displayProgress.value = 100
+    return
+  }
+
+  let count = 0
+  const checkComplete = () => {
+    count++
+    progress.value = Math.round((count / total) * 100)
+    animateProgress()
+    if (count === total) {
+      is_Load.value = true
+    }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  preloadLinks.forEach((link: any) => {
+    const img = new Image()
+    img.src = link.href
+    img.onload = checkComplete
+    img.onerror = checkComplete
+  })
+}
+
+// 讓數字慢慢往 progress.value 靠近
+const animateProgress = () => {
+  const step = () => {
+    if (displayProgress.value < progress.value) {
+      displayProgress.value += 1
+      requestAnimationFrame(step)
+    }
+  }
+  requestAnimationFrame(step)
+}
+
+waitForPreloadedImages()
 
 onMounted(() => {
   axios
@@ -49,4 +108,63 @@ onMounted(() => {
 })
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.app-loading {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  color: #5e4c3f;
+  background: #dcd4c0;
+  background: linear-gradient(
+    90deg,
+    rgb(220, 212, 192) 0%,
+    rgb(248, 244, 225) 23%,
+    rgb(218, 209, 188) 100%
+  );
+  z-index: 99999;
+  .app-loading-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .progress-text {
+      gap: 2px;
+      font-size: 23px;
+      letter-spacing: 0.1em;
+      font-style: italic;
+      font-weight: 500;
+      font-family: 'Junge', cursive;
+    }
+
+    @media screen and (max-width: 1400px) {
+      gap: 12px;
+      > .progress-text {
+        font-size: 16px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      gap: 6px;
+      > .progress-text {
+        font-size: 12px;
+      }
+    }
+  }
+}
+.app-main {
+  width: 100%;
+  height: 100%;
+}
+.app-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+</style>
