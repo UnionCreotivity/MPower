@@ -4,7 +4,16 @@
     <FadeIn>
       <div class="app-loading" v-show="!is_Load">
         <div class="app-loading-container">
-          <div class="progress-text">{{ displayProgress }}%</div>
+          <div class="wave-loading">
+            <span
+              v-for="(letter, index) in loadingText"
+              :key="index"
+              class="wave-letter"
+              :style="{ animationDelay: `${index * 0.1}s` }"
+            >
+              {{ letter }}
+            </span>
+          </div>
         </div>
       </div>
     </FadeIn>
@@ -25,10 +34,52 @@ import FadeIn from './components/transition/FadeIn.vue'
 import axios from 'axios'
 
 const is_Load = ref(false)
-const progress = ref(0) // 真實進度
-const displayProgress = ref(0) // 顯示用進度數字
+// const progress = ref(0) // 真實進度
+// const displayProgress = ref(0) // 顯示用進度數字
+
+const loadingText = ['L', 'O', 'A', 'D', 'I', 'N', 'G']
 
 const cursor = ref<HTMLElement | null>(null)
+
+// const waitForPreloadedImages = () => {
+//   const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
+//   const total = preloadLinks.length
+
+//   if (total === 0) {
+//     is_Load.value = true
+//     displayProgress.value = 100
+//     return
+//   }
+
+//   let count = 0
+//   const checkComplete = () => {
+//     count++
+//     progress.value = Math.round((count / total) * 100)
+//     animateProgress()
+//     if (count === total) {
+//       is_Load.value = true
+//     }
+//   }
+
+//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//   preloadLinks.forEach((link: any) => {
+//     const img = new Image()
+//     img.src = link.href
+//     img.onload = checkComplete
+//     img.onerror = checkComplete
+//   })
+// }
+
+// // 讓數字慢慢往 progress.value 靠近
+// const animateProgress = () => {
+//   const step = () => {
+//     if (displayProgress.value < progress.value) {
+//       displayProgress.value += 1
+//       requestAnimationFrame(step)
+//     }
+//   }
+//   requestAnimationFrame(step)
+// }
 
 const waitForPreloadedImages = () => {
   const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
@@ -36,20 +87,16 @@ const waitForPreloadedImages = () => {
 
   if (total === 0) {
     is_Load.value = true
-    displayProgress.value = 100
     return
   }
 
   let count = 0
   const checkComplete = () => {
     count++
-    progress.value = Math.round((count / total) * 100)
-    animateProgress()
     if (count === total) {
       is_Load.value = true
     }
   }
-
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   preloadLinks.forEach((link: any) => {
     const img = new Image()
@@ -57,17 +104,6 @@ const waitForPreloadedImages = () => {
     img.onload = checkComplete
     img.onerror = checkComplete
   })
-}
-
-// 讓數字慢慢往 progress.value 靠近
-const animateProgress = () => {
-  const step = () => {
-    if (displayProgress.value < progress.value) {
-      displayProgress.value += 1
-      requestAnimationFrame(step)
-    }
-  }
-  requestAnimationFrame(step)
 }
 
 waitForPreloadedImages()
@@ -144,6 +180,56 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+// .app-loading {
+//   position: absolute;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 100%;
+//   height: 100%;
+//   user-select: none;
+//   color: #5e4c3f;
+//   background: #dcd4c0;
+//   background: linear-gradient(
+//     90deg,
+//     rgb(220, 212, 192) 0%,
+//     rgb(248, 244, 225) 23%,
+//     rgb(218, 209, 188) 100%
+//   );
+//   z-index: 99999;
+//   .app-loading-container {
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
+
+//     .progress-text {
+//       gap: 2px;
+//       font-size: 23px;
+//       letter-spacing: 0.1em;
+//       font-style: italic;
+//       font-weight: 500;
+//       font-family: 'Junge', cursive;
+//     }
+
+//     @media screen and (max-width: 1400px) {
+//       gap: 12px;
+//       > .progress-text {
+//         font-size: 16px;
+//       }
+//     }
+//     @media screen and (max-width: 768px) {
+//       gap: 6px;
+//       > .progress-text {
+//         font-size: 12px;
+//       }
+//     }
+//   }
+// }
+
 .app-loading {
   position: absolute;
   display: flex;
@@ -152,8 +238,6 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   user-select: none;
-  color: #5e4c3f;
-  background: #dcd4c0;
   background: linear-gradient(
     90deg,
     rgb(220, 212, 192) 0%,
@@ -161,36 +245,61 @@ onMounted(() => {
     rgb(218, 209, 188) 100%
   );
   z-index: 99999;
+
   .app-loading-container {
     width: 100%;
     height: 100%;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
 
-    .progress-text {
-      gap: 2px;
+    .wave-loading {
+      display: flex;
+      gap: 6px;
+
       font-size: 23px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.02em;
       font-style: italic;
       font-weight: 500;
       font-family: 'Junge', cursive;
-    }
+      .wave-letter {
+        display: inline-block;
+        animation:
+          // wave 2s infinite ease-in-out,
+          shimmer 3s linear infinite;
+        background: linear-gradient(
+          90deg,
+          /* 咖啡深棕 */ #bb7f30,
+          /* 淺咖啡米色 */ #eacda3,
+          /* 米色 */ #e6b980 /* 卡其色 */
+        );
 
-    @media screen and (max-width: 1400px) {
-      gap: 12px;
-      > .progress-text {
-        font-size: 16px;
+        background-size: 300%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        position: relative;
       }
     }
-    @media screen and (max-width: 768px) {
-      gap: 6px;
-      > .progress-text {
-        font-size: 12px;
-      }
-    }
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 300%;
   }
 }
 .app-main {
