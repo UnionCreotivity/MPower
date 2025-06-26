@@ -1,3 +1,4 @@
+<!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <template>
   <div class="app-main">
     <FadeIn>
@@ -9,9 +10,9 @@
     </FadeIn>
     <div class="app-container">
       <router-view v-slot="{ Component, route }">
-        <FadeIn
-          ><component :is="Component" :key="route.path" :is_Load="is_Load"></component
-        ></FadeIn>
+        <FadeIn>
+          <component :is="Component" :key="route.path" :is_Load="is_Load" />
+        </FadeIn>
       </router-view>
     </div>
   </div>
@@ -22,41 +23,77 @@ import { ref, onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import FadeIn from './components/transition/FadeIn.vue'
 import axios from 'axios'
+import homeVideoSrc from '@/assets/img/home/c1_bg.mp4'
 
 const is_Load = ref(false)
-const progress = ref(0) // 真實進度
-const displayProgress = ref(0) // 顯示用進度數字
+const progress = ref(0)
+const displayProgress = ref(0)
 
-const waitForPreloadedImages = () => {
-  const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
-  const total = preloadLinks.length
+// 圖片預載入
+const waitForPreloadedImages = (): Promise<void> => {
+  return new Promise((resolve) => {
+    const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
+    const total = preloadLinks.length
 
-  if (total === 0) {
-    is_Load.value = true
-    displayProgress.value = 100
-    return
-  }
-
-  let count = 0
-  const checkComplete = () => {
-    count++
-    progress.value = Math.round((count / total) * 100)
-    animateProgress()
-    if (count === total) {
-      is_Load.value = true
+    if (total === 0) {
+      progress.value += 50
+      animateProgress()
+      resolve()
+      return
     }
-  }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  preloadLinks.forEach((link: any) => {
-    const img = new Image()
-    img.src = link.href
-    img.onload = checkComplete
-    img.onerror = checkComplete
+    let count = 0
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    preloadLinks.forEach((link: any) => {
+      const img = new Image()
+      img.src = link.href
+      img.onload = img.onerror = () => {
+        count++
+        progress.value = Math.round((count / total) * 50)
+        animateProgress()
+        if (count === total) resolve()
+      }
+    })
   })
 }
 
-// 讓數字慢慢往 progress.value 靠近
+// 影片預載入
+const waitForVideoLoad = (): Promise<void> => {
+  return new Promise((resolve) => {
+    const video = document.createElement('video')
+    video.src = homeVideoSrc
+    video.preload = 'auto'
+    video.muted = true
+    video.playsInline = true
+    video.addEventListener('canplaythrough', () => {
+      progress.value = 100
+      animateProgress()
+      resolve()
+    })
+    video.addEventListener('error', () => {
+      console.warn('影片載入失敗，但繼續')
+      progress.value = 100
+      animateProgress()
+      resolve()
+    })
+  })
+}
+
+// 整合圖片與影片
+const waitForAssets = async () => {
+  const start = Date.now()
+  await Promise.all([waitForPreloadedImages(), waitForVideoLoad()])
+  const elapsed = Date.now() - start
+  const MIN_DURATION = 1000
+  const delay = Math.max(0, MIN_DURATION - elapsed)
+
+  setTimeout(() => {
+    is_Load.value = true
+    displayProgress.value = 100
+  }, delay)
+}
+
+// 平滑進度動畫
 const animateProgress = () => {
   const step = () => {
     if (displayProgress.value < progress.value) {
@@ -67,44 +104,33 @@ const animateProgress = () => {
   requestAnimationFrame(step)
 }
 
-waitForPreloadedImages()
+waitForAssets()
 
+// 登入檢查邏輯
 onMounted(() => {
   axios
     .post(
       'https://web-board.tw/sys/login_axios.php',
-      {
-        type: 'admin',
-      },
+      { type: 'admin' },
       {
         headers: {
           Authorization: `Bearer ${localStorage['token']}`,
           'Refresh-Token': localStorage['refresh_token'],
         },
-        onUploadProgress: function () {
-          //document.querySelector('.ajax_loading').classList.add('show_in');
-        },
       },
     )
-    .then(function (response) {
-      console.log(response.data)
-      if (response.data.success) {
-        // -- 刷新 token --
-        if (response.data.jwt !== undefined && response.data.refresh_jwt !== undefined) {
-          sessionStorage['token'] = response.data.jwt
-          localStorage['refresh_token'] = response.data.refresh_jwt
+    .then((res) => {
+      if (res.data.success) {
+        if (res.data.jwt && res.data.refresh_jwt) {
+          sessionStorage['token'] = res.data.jwt
+          localStorage['refresh_token'] = res.data.refresh_jwt
         }
       } else {
-        alert(response.data.msg)
+        alert(res.data.msg)
         window.location.href = 'https://web-board.tw'
       }
     })
-    .catch(function (error) {
-      console.error(error)
-    })
-    .finally(function () {
-      //document.querySelector('.ajax_loading').classList.remove('show_in');
-    })
+    .catch(console.error)
 })
 </script>
 
@@ -118,7 +144,6 @@ onMounted(() => {
   height: 100%;
   user-select: none;
   color: #5e4c3f;
-  background: #dcd4c0;
   background: linear-gradient(
     90deg,
     rgb(220, 212, 192) 0%,
@@ -126,6 +151,7 @@ onMounted(() => {
     rgb(218, 209, 188) 100%
   );
   z-index: 99999;
+
   .app-loading-container {
     width: 100%;
     height: 100%;
@@ -158,13 +184,9 @@ onMounted(() => {
     }
   }
 }
-.app-main {
-  width: 100%;
-  height: 100%;
-}
+.app-main,
 .app-container {
   width: 100%;
   height: 100%;
-  position: relative;
 }
 </style>
