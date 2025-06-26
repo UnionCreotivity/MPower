@@ -11,6 +11,10 @@ import ArialPhotoView from '@/views/metro/aerialPhoto/ArialPhotoView.vue'
 import MaterView from '@/views/master/MaterView.vue'
 import TestView from '@/views/master/test/TestView.vue'
 
+//建築工藝
+import MethodView from '@/views/method/MethodView.vue'
+import MethodMenuView from '@/views/method/methodMenu/MethodMenuView.vue' //結構工法
+
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
@@ -39,6 +43,18 @@ const router = createRouter({
           name: 'test',
           component: TestView,
         },
+      ],
+    },
+     {
+      path: '/method',
+      component: MethodView,
+      children: [
+        {
+          path: 'methodMenu',
+          name: 'methodMenu',
+          component: MethodMenuView,
+        },
+       
       ],
     },
     {

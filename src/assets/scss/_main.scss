@@ -10,10 +10,13 @@
   --font-family-menu-en: 'Cormorant Garamond', sans-serif;
   --font-family-menu-zh: 'Noto Serif TC', serif;
 
+  --font-family-title-zh: 'Noto Serif TC', serif;
+  --font-family-title-en: 'Cormorant Garamond', sans-serif;
   --font-family-content-zh: '微軟正黑體';
+  --font-color-title: #604c3f;
+  --font-title-zh-size: 2.3vw;
+  --font-title-en-size: 2.8vw;
 
-  //45pt
-  --titleSize: 1.7vw;
   //28pt
   --paraSize: 1vw;
   //title font-weight
@@ -58,11 +61,13 @@ body {
 #custom-cursor {
   position: fixed;
   width: 15px;
+  will-change: transform;
+  position: fixed;
   height: 15px;
   background: #5e4c3f;
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  transform: translate3d(0, 0, 0);
   transition:
     left 0.05s ease,
     top 0.05s ease;

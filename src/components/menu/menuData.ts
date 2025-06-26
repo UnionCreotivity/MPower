@@ -57,22 +57,22 @@ export const menuData = [
     id: 'method',
     zhName: '建築工藝',
     enName: 'METHOD',
-    pathName: '',
+    pathName: 'method',
     list: [
       {
         id: '',
         name: '結構工法',
-        link: 'home',
+        link: 'methodMenu',
       },
       {
         id: '',
         name: '防水工法',
-        link: 'home',
+        link: 'methodMenu',
       },
       {
         id: '',
         name: '貼心工法',
-        link: 'home',
+        link: 'methodMenu',
       },
     ],
   },

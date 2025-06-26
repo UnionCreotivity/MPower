@@ -1,0 +1,27 @@
+.method-menu-view {
+  display: flex;
+  justify-content: center;
+
+  .title-box {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    align-items: center;
+    margin-top: 5vw;
+    .zh {
+      font-size: var(--font-title-zh-size);
+      font-family: var(--font-family-title-zh);
+      color: var(--font-color-title);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+    .en {
+      font-size: var(--font-title-en-size);
+      font-family: var(--font-family-title-en);
+      color: var(--font-color-title);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin-top: 1vw;
+    }
+  }
+}

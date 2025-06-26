@@ -32,7 +32,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RouterView } from 'vue-router'
 import FadeIn from './components/transition/FadeIn.vue'
 import axios from 'axios'
-
+import screenfull from 'screenfull'
 const is_Load = ref(false)
 // const progress = ref(0) // 真實進度
 // const displayProgress = ref(0) // 顯示用進度數字
@@ -150,11 +150,15 @@ onMounted(() => {
   }
 
   cursor.value = document.getElementById('custom-cursor')
-
+  let lastX = 0
+  let lastY = 0
   const moveHandler = (e: MouseEvent) => {
     if (!cursor.value) return
-    cursor.value.style.left = e.clientX + 'px'
-    cursor.value.style.top = e.clientY + 'px'
+    lastX = e.clientX
+    lastY = e.clientY
+    cursor.value.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
+    // cursor.value.style.left = e.clientX + 'px'
+    // cursor.value.style.top = e.clientY + 'px'
   }
 
   // const clickHandler = (e: MouseEvent) => {
@@ -176,6 +180,16 @@ onMounted(() => {
     window.removeEventListener('mousemove', moveHandler)
     // window.removeEventListener('click', clickHandler)
   })
+  if (screenfull.isEnabled) {
+    screenfull.on('change', () => {
+      document.dispatchEvent(
+        new MouseEvent('mousemove', {
+          clientX: lastX,
+          clientY: lastY,
+        }),
+      )
+    })
+  }
 })
 </script>
 

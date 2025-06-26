@@ -69,7 +69,7 @@ const menuItems = [
     id: 'method',
     zhName: '建築工藝',
     enName: 'METHOD',
-    link: 'aerialPhoto',
+    link: 'methodMenu',
   },
   {
     id: 'metier',

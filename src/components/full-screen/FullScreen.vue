@@ -8,9 +8,12 @@
 import screenfull from 'screenfull'
 
 const handleClick = () => {
-  if (screenfull.isEnabled) {
-    screenfull.toggle()
-  }
+  // 先讓事件結束，避免卡住滑鼠動畫
+  setTimeout(() => {
+    if (screenfull.isEnabled) {
+      screenfull.toggle()
+    }
+  }, 50) // 延遲 1 frame (大約 16ms～50ms)
 }
 </script>
 
