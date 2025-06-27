@@ -62,17 +62,17 @@ export const menuData = [
       {
         id: '',
         name: '結構工法',
-        link: 'methodMenu',
+        link: 'structure',
       },
       {
         id: '',
         name: '防水工法',
-        link: 'methodMenu',
+        link: 'waterproof',
       },
       {
         id: '',
         name: '貼心工法',
-        link: 'methodMenu',
+        link: 'intimate',
       },
     ],
   },

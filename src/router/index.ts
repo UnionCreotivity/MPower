@@ -13,7 +13,10 @@ import TestView from '@/views/master/test/TestView.vue'
 
 //建築工藝
 import MethodView from '@/views/method/MethodView.vue'
-import MethodMenuView from '@/views/method/methodMenu/MethodMenuView.vue' //結構工法
+import MethodIndexView from '@/views/method/MethodIndex/MethodIndexView.vue' //結構首頁
+import StructureView from '@/views/method/structure/StructureView.vue' //結構工法
+import WaterproofView from '@/views/method/waterproof/WaterproofView.vue' //防水工法
+import IntimateView from '@/views/method/intimate/IntimateView.vue' //貼心工法
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -50,11 +53,25 @@ const router = createRouter({
       component: MethodView,
       children: [
         {
-          path: 'methodMenu',
-          name: 'methodMenu',
-          component: MethodMenuView,
+          path: '',
+          name: 'methodIndex',
+          component: MethodIndexView,
         },
-       
+        {
+        path: 'structure',
+        name: 'structure',
+        component:StructureView
+      },
+       {
+        path: 'waterproof',
+        name: 'waterproof',
+        component:WaterproofView
+      },
+      {
+        path: 'intimate',
+        name: 'intimate',
+        component:IntimateView
+      }
       ],
     },
     {

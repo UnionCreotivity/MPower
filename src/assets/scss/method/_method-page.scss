@@ -1,0 +1,120 @@
+#method-view {
+  .structure-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .back-button {
+      position: absolute;
+      top: 1.7vw;
+      right: 2vw;
+      width: 1.5vw;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .tab-box {
+      display: flex;
+      width: 100%;
+      justify-content: right;
+      top: 1.5vw;
+      right: 6vw;
+      position: absolute;
+
+      div {
+        cursor: pointer;
+        font-family: var(--font-family-title-zh);
+        color: var(--font-color-title);
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        font-size: var(--font-small-title-zh-size);
+        text-align: center;
+        transition: all 0.5s;
+        padding: 0rem 1.5rem;
+        position: relative;
+        &:not(:last-child)::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 53%;
+          transform: translateY(-50%);
+          height: 65%;
+          border-right: 1px solid #604c3f;
+        }
+      }
+      .active {
+        color: #c2a998;
+      }
+    }
+  }
+
+  .method-content-box {
+    width: 100%;
+    height: 100%;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    display: flex;
+    align-items: center;
+
+    .left-box {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 100%;
+      }
+    }
+    .right-box {
+      width: 40%;
+      display: flex;
+      margin-left: 6vw;
+      flex-direction: column;
+      position: relative;
+
+      .alfa {
+        position: absolute;
+        width: 6vw;
+        right: 3.5vw;
+        top: 1.8vw;
+      }
+
+      .title-box {
+        font-size: 1.7vw;
+        font-family: var(--font-family-title-zh);
+        color: var(--font-color-title);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        padding-bottom: 1vw;
+        margin-bottom: 1.5vw;
+        line-height: 1.5;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0%;
+          width: 10%;
+          height: 1px;
+          background: #604c3f;
+        }
+      }
+      .content-box {
+        display: flex;
+        flex-direction: column;
+        .content {
+          font-size: 1.25vw;
+          font-family: var(--font-content-zh);
+          color: var(--font-content-color);
+          line-height: 2;
+          font-weight: 400;
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
