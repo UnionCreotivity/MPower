@@ -161,24 +161,24 @@ onMounted(() => {
     // cursor.value.style.top = e.clientY + 'px'
   }
 
-  // const clickHandler = (e: MouseEvent) => {
-  //   const heart = document.createElement('div')
-  //   heart.className = 'heart'
-  //   heart.style.left = `${e.clientX}px`
-  //   heart.style.top = `${e.clientY}px`
-  //   document.body.appendChild(heart)
+  const clickHandler = (e: MouseEvent) => {
+    const heart = document.createElement('div')
+    heart.className = 'heart'
+    heart.style.left = `${e.clientX}px`
+    heart.style.top = `${e.clientY}px`
+    document.body.appendChild(heart)
 
-  //   heart.addEventListener('animationend', () => {
-  //     heart.remove()
-  //   })
-  // }
+    heart.addEventListener('animationend', () => {
+      heart.remove()
+    })
+  }
 
   window.addEventListener('mousemove', moveHandler)
-  // window.addEventListener('click', clickHandler)
+  window.addEventListener('click', clickHandler)
 
   onBeforeUnmount(() => {
     window.removeEventListener('mousemove', moveHandler)
-    // window.removeEventListener('click', clickHandler)
+    window.removeEventListener('click', clickHandler)
   })
   if (screenfull.isEnabled) {
     screenfull.on('change', () => {
