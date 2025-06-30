@@ -36,8 +36,8 @@
       </div>
       <div class="link-box">
         <div class="item" v-for="(item, idx) in menuData" :key="item.id" @mouseenter="showImg(idx)">
-          <div class="en">{{ item.enName }}</div>
-          <div class="zh">{{ item.zhName }}</div>
+          <div class="en" @click="handleMainClick(item)">{{ item.enName }}</div>
+          <div class="zh" @click="handleMainClick(item)">{{ item.zhName }}</div>
           <div class="links">
             <router-link :to="{ name: link.link }" v-for="link in item.list" :key="link.id">
               <div>{{ link.name }}</div>
@@ -59,9 +59,19 @@ import gsap from 'gsap'
 import CustomEase from 'gsap/CustomEase'
 import { menuData } from './menuData'
 import '@/assets/scss/menu/_menu.scss'
+import { useRouter } from 'vue-router'
 
+const handleMainClick = (item: (typeof menuData)[number]) => {
+  if (item.pathName) {
+    if (item.jumpToChild && item.list.length > 0) {
+      router.push({ name: item.list[0].link })
+    } else {
+      router.push(`/${item.pathName}`)
+    }
+  }
+}
 const isMobile = ref(false)
-
+const router = useRouter()
 // 控制開關
 const is_Show = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
