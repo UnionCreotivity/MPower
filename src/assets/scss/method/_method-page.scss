@@ -12,6 +12,12 @@
 
       img {
         width: 100%;
+        transition: all 0.5s;
+      }
+      &:hover {
+        img {
+          scale: 1.25;
+        }
       }
     }
 
@@ -42,6 +48,10 @@
           transform: translateY(-50%);
           height: 65%;
           border-right: 1px solid #604c3f;
+        }
+
+        &:hover {
+          color: #c2a998;
         }
       }
       .active {
@@ -101,6 +111,7 @@
           background: #604c3f;
         }
       }
+
       .content-box {
         display: flex;
         flex-direction: column;
