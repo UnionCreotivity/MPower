@@ -1,5 +1,5 @@
 <template>
-  <section class="structure-view">
+  <section class="structure-view method-tab-view">
     <div class="back-button" @click="goBack">
       <img src="../../../assets/img/method/x.svg" alt="" srcset="" />
     </div>

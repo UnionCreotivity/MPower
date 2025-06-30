@@ -1,7 +1,14 @@
 <template>
   <div class="method-content-box">
     <div class="left-box">
-      <img src="../../../assets/img/method/test.webp" alt="" />
+      <img
+        v-for="(img, index) in images"
+        :key="index"
+        :src="img"
+        alt=""
+        class="method-img"
+        :class="{ active: index === currentIndex }"
+      />
     </div>
     <div class="right-box">
       <img class="alfa" src="../../../assets/img/method/alfa.svg" alt="" srcset="" />
@@ -25,4 +32,10 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const images = [new URL('../../../assets/img/method/test.webp', import.meta.url).href]
+
+const currentIndex = ref(0)
+</script>

@@ -4,7 +4,7 @@ export const menuData = [
     zhName: '地段環境',
     enName: 'METRO',
     pathName: 'metro',
-     jumpToChild: true, // 要跳子頁第一個
+    jumpToChild: true, // 要跳子頁第一個
     list: [
       {
         id: 'aerial-photo',
@@ -33,7 +33,7 @@ export const menuData = [
     zhName: '建築規劃',
     enName: 'MASTER',
     pathName: '',
-      jumpToChild: true, // 要跳子頁第一個
+    jumpToChild: true, // 要跳子頁第一個
     list: [
       {
         id: '',
@@ -47,6 +47,7 @@ export const menuData = [
     zhName: '貼心建材',
     enName: 'MANSION',
     pathName: '',
+    jumpToChild: true, // 要跳子頁第一個
     list: [
       {
         id: '',
@@ -84,7 +85,7 @@ export const menuData = [
     zhName: '大熊建設',
     enName: 'METIER',
     pathName: '',
-      jumpToChild: true, // 要跳子頁第一個
+    jumpToChild: true, // 要跳子頁第一個
     list: [
       {
         id: '',
