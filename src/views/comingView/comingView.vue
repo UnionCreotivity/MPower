@@ -1,7 +1,5 @@
 <template>
-  <section class="test-view">
-    <CommingSoon />
-  </section>
+  <CommingSoon />
 </template>
 
 <script setup lang="ts">

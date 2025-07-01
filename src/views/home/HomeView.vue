@@ -57,13 +57,13 @@ const menuItems = [
     id: 'master',
     zhName: '建築規劃',
     enName: 'MASTER',
-    link: 'test',
+    link: 'comingsoon',
   },
   {
     id: 'mansion',
     zhName: '貼心建材',
     enName: 'MANSION',
-    link: 'aerialPhoto',
+    link: 'comingsoon',
   },
   {
     id: 'method',
@@ -75,7 +75,7 @@ const menuItems = [
     id: 'metier',
     zhName: '大熊建設',
     enName: 'METIER',
-    link: 'aerialPhoto',
+    link: 'comingsoon',
   },
 ]
 
@@ -87,13 +87,10 @@ const initGsap = () => {
     { opacity: 0, maskPosition: '100% 0', webkitMaskPosition: '100% 0' },
     {
       duration: 1,
-
       ease: 'steps(70)',
       maskPosition: '0% 0',
-
       opacity: 1,
       webkitMaskPosition: '0% 0',
-      // filter: 'blur(0px)',
     },
   )
 

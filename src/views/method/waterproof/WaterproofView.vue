@@ -28,6 +28,7 @@ import { useRouter } from 'vue-router'
 import WaterWindow from '@/components/method/waterproof/WaterWindow.vue'
 import WaterBath from '@/components/method/waterproof/WaterBath.vue'
 import WaterRoof from '@/components/method/waterproof/WaterRoof.vue'
+import WaterWall from '@/components/method/waterproof/WaterWall.vue'
 
 const router = useRouter()
 const goBack = () => router.push('/method')
@@ -35,7 +36,8 @@ const goBack = () => router.push('/method')
 const tabs = [
   { title: '窗框防水', component: WaterWindow },
   { title: '浴室防水', component: WaterBath },
-  { title: '頂樓防水', component: WaterRoof },
+  { title: '屋頂防水', component: WaterRoof },
+  { title: '外牆防水', component: WaterWall },
 ]
 
 const activeTab = ref(0)

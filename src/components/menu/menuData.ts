@@ -38,7 +38,7 @@ export const menuData = [
       {
         id: '',
         name: '樓層規劃',
-        link: 'home',
+             link: 'comingsoon',
       },
     ],
   },
@@ -52,7 +52,7 @@ export const menuData = [
       {
         id: '',
         name: '嚴選建材',
-        link: 'home',
+        link: 'comingsoon',
       },
     ],
   },
@@ -90,27 +90,27 @@ export const menuData = [
       {
         id: '',
         name: '營建起家',
-        link: 'home',
+        link: 'comingsoon',
       },
       {
         id: '',
         name: '建築團隊',
-        link: 'home',
+        link: 'comingsoon',
       },
       {
         id: '',
         name: '三心二藝',
-        link: 'home',
+        link: 'comingsoon',
       },
       {
         id: '',
         name: '歷年業績',
-        link: 'home',
+        link: 'comingsoon',
       },
       {
         id: '',
         name: '售後服務',
-        link: 'home',
+        link: 'comingsoon',
       },
     ],
   },

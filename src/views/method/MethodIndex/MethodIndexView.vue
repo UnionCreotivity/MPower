@@ -35,13 +35,85 @@
 
 <script setup lang="ts">
 import '@/assets/scss/method/_method-index.scss'
-
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { gsap } from 'gsap'
+import { SplitText } from 'gsap/SplitText'
+
+gsap.registerPlugin(SplitText)
 const router = useRouter()
 
 const goTo = (type: string) => {
   router.push(`/method/${type}`)
 }
+
+const initGsap = () => {
+  const tl = gsap.timeline({ delay: 0.5 })
+
+  tl.from('.method-menu-view .title-box div', {
+    opacity: 0,
+    duration: 0.8,
+    y: 80,
+    stagger: 0.1,
+  })
+    .fromTo(
+      '.method-menu-view .menu-box .item .img-box',
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 3,
+        stagger: 0.2,
+      },
+      '<0.3',
+    )
+    .fromTo(
+      '.method-menu-view .menu-box .item .title',
+      { opacity: 0 },
+      {
+        duration: 1,
+        opacity: 1,
+        stagger: 0.1,
+      },
+      '<0.15',
+    )
+
+  // SplitText 動畫加到 timeline 裡面
+  const splits = gsap.utils.toArray(
+    '.method-menu-view .menu-box .item .img-box .text',
+  ) as HTMLElement[]
+
+  splits.forEach((el) => {
+    const split = SplitText.create(el, {
+      type: 'chars,words,lines',
+      linesClass: 'clip-text',
+    })
+
+    tl.fromTo(
+      split.chars,
+      {
+        'will-change': 'opacity, transform',
+        opacity: 0,
+        yPercent: 120,
+        scaleY: 4,
+        scaleX: 0.7,
+        transformOrigin: '50% 0%',
+      },
+      {
+        duration: 2,
+        ease: 'back.inOut(2)',
+        opacity: 1,
+        yPercent: 0,
+        scaleY: 1,
+        scaleX: 1,
+        stagger: 0.03,
+      },
+      '<0.2', // 控制 SplitText 動畫的起始時機
+    )
+  })
+}
+onMounted(() => {
+  initGsap()
+})
 </script>
 
 <style scoped>

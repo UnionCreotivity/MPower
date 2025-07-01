@@ -34,7 +34,7 @@ const goBack = () => router.push('/method')
 
 const tabs = [
   { title: 'ALFA SAFE', component: StructureAlfaSafe },
-  { title: '系統鋁膜', component: StructureAluminumForm },
+  { title: '筏式基礎', component: StructureAluminumForm },
   { title: '雙層鋼筋', component: StructureDoubleRebar },
   { title: 'SA續接器', component: StructureDoubleRebar },
   { title: '樓板整體粉光', component: StructureDoubleRebar },
