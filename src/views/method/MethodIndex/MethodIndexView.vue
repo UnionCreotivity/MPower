@@ -39,8 +39,10 @@ import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { gsap } from 'gsap'
 import { SplitText } from 'gsap/SplitText'
-
+// import { GSDevTools } from 'gsap/GSDevTools'
 gsap.registerPlugin(SplitText)
+// gsap.registerPlugin(GSDevTools)
+
 const router = useRouter()
 
 const goTo = (type: string) => {
@@ -48,23 +50,46 @@ const goTo = (type: string) => {
 }
 
 const initGsap = () => {
-  const tl = gsap.timeline({ delay: 0.5 })
+  const tl = gsap.timeline({ id: 'method-menu' })
+  // GSDevTools.create({ animation: tl })
 
-  tl.from('.method-menu-view .title-box div', {
-    opacity: 0,
-    duration: 0.8,
-    y: 80,
-    stagger: 0.1,
+  const titleSplits = gsap.utils.toArray('.method-menu-view .title-box div') as HTMLElement[]
+  const mainSplit = SplitText.create(titleSplits, {
+    type: 'chars,words,lines',
+    linesClass: 'clip-text',
   })
+  const imgTextSplits = gsap.utils.toArray(
+    '.method-menu-view .menu-box .item .img-box .text',
+  ) as HTMLElement[]
+  tl.fromTo(
+    mainSplit.chars,
+    {
+      'will-change': 'opacity, transform',
+      opacity: 0,
+      yPercent: 50,
+
+      transformOrigin: '50% 50%',
+    },
+    {
+      duration: 1.3,
+      ease: 'back.inOut(1)',
+      opacity: 1,
+      yPercent: 0,
+
+      stagger: 0.05,
+    },
+  )
+
     .fromTo(
-      '.method-menu-view .menu-box .item .img-box',
-      { opacity: 0 },
+      '.method-menu-view .menu-box .item',
+      { opacity: 0, 'will-change': 'opacity, transform' },
       {
         opacity: 1,
-        duration: 3,
-        stagger: 0.2,
+        ease: 'power1.in',
+        duration: 1,
+        stagger: 0.1,
       },
-      '<0.3',
+      '<1.1',
     )
     .fromTo(
       '.method-menu-view .menu-box .item .title',
@@ -74,40 +99,33 @@ const initGsap = () => {
         opacity: 1,
         stagger: 0.1,
       },
-      '<0.15',
+      '<1.2',
     )
 
-  // SplitText 動畫加到 timeline 裡面
-  const splits = gsap.utils.toArray(
-    '.method-menu-view .menu-box .item .img-box .text',
-  ) as HTMLElement[]
-
-  splits.forEach((el) => {
+  imgTextSplits.forEach((el) => {
     const split = SplitText.create(el, {
       type: 'chars,words,lines',
       linesClass: 'clip-text',
     })
-
-    tl.fromTo(
+    const imgTextTl = gsap.timeline({ delay: 1.3 })
+    imgTextTl.fromTo(
       split.chars,
       {
         'will-change': 'opacity, transform',
+        transformOrigin: '50% 100%',
         opacity: 0,
-        yPercent: 120,
-        scaleY: 4,
-        scaleX: 0.7,
-        transformOrigin: '50% 0%',
+        scale: 3,
+        rotationY: -90,
       },
       {
-        duration: 2,
-        ease: 'back.inOut(2)',
+        duration: 2.5,
+        ease: 'expo',
         opacity: 1,
-        yPercent: 0,
-        scaleY: 1,
-        scaleX: 1,
-        stagger: 0.03,
+        scale: 1,
+        rotationY: 0,
+        stagger: { each: 0.06, from: 'start' },
       },
-      '<0.2', // 控制 SplitText 動畫的起始時機
+      '<0.5',
     )
   })
 }
