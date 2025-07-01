@@ -1,3 +1,5 @@
+@use '../utils/mixin' as *;
+
 #method-view {
   .method-tab-view {
     position: relative;
@@ -111,14 +113,10 @@
       }
 
       .title-box {
-        font-size: 1.7vw;
-        font-family: var(--font-family-title-zh);
-        color: var(--font-color-title);
-        font-weight: 600;
-        letter-spacing: 0.1em;
+        @include pageTitle();
+
         padding-bottom: 1vw;
-        margin-bottom: 1.5vw;
-        line-height: 1.5;
+        margin-bottom: 2vw;
         position: relative;
 
         &::after {
@@ -136,14 +134,11 @@
         display: flex;
         flex-direction: column;
         .content {
-          font-size: 1.25vw;
-          font-family: var(--font-content-zh);
-          color: var(--font-content-color);
-          line-height: 2;
-          font-weight: 400;
-          letter-spacing: 0.1em;
+          @include pageContent();
+
           span {
             font-weight: bold;
+            margin-top: 1vw;
           }
         }
 
@@ -204,6 +199,9 @@
         .next {
           min-width: 45px;
           width: 60px;
+          @media all and (max-width: 1400px) {
+            width: 45px;
+          }
           img {
             width: 100%;
           }

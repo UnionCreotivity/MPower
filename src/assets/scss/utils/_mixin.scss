@@ -1,5 +1,20 @@
-@mixin content() {
+@mixin pageContent() {
+  font-size: 1.25vw;
+  font-family: var(--font-content-zh);
+  color: var(--font-content-color);
+  line-height: 2;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+@mixin pageTitle() {
+  font-size: 1.7vw;
+  font-family: var(--font-family-title-zh);
+  color: var(--font-color-title);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
   @media all and (max-width: 1400px) {
-  font-size: 16px;
-    line-height: 1.8;
+    font-size: 24px;
+  }
 }
