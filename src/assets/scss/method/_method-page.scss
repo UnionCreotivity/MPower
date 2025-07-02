@@ -117,10 +117,10 @@
       }
 
       .title-box {
-        @include pageTitle();
         padding-bottom: 1vw;
         margin-bottom: 2vw;
         position: relative;
+        @include pageTitle();
 
         &::after {
           content: '';
