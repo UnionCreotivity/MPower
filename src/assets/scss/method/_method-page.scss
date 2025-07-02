@@ -30,7 +30,7 @@
       top: 1.5vw;
       right: 6vw;
       position: absolute;
-
+      z-index: 30;
       div {
         cursor: pointer;
         font-family: var(--font-family-title-zh);
@@ -65,19 +65,20 @@
   .method-content-box {
     width: 100%;
     height: 100%;
-    padding-left: 4vw;
+    padding-left: 5vw;
     padding-right: 4vw;
     display: flex;
     align-items: center;
 
     .left-box {
-      width: 55%;
+      width: 53%;
       height: 100%;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      pointer-events: none;
+      overflow: hidden;
+      align-items: center;
       img {
         width: 100%;
         position: absolute;
@@ -85,7 +86,6 @@
         left: 50%;
         opacity: 0;
         transform: translate(-50%, -50%);
-        transition: opacity 0.3s ease;
         z-index: 0;
       }
       img.active {
@@ -96,12 +96,16 @@
       .window-img {
         width: 65%;
       }
+
+      // video {
+      //   width: 90%;
+      // }
     }
 
     .right-box {
       width: 40%;
       display: flex;
-      margin-left: 6vw;
+      margin-left: 4vw;
       flex-direction: column;
       position: relative;
 
@@ -114,7 +118,6 @@
 
       .title-box {
         @include pageTitle();
-
         padding-bottom: 1vw;
         margin-bottom: 2vw;
         position: relative;
@@ -133,12 +136,19 @@
       .content-box {
         display: flex;
         flex-direction: column;
+
         .content {
           @include pageContent();
-
+          width: 88%;
           span {
             font-weight: bold;
             margin-top: 1vw;
+          }
+
+          div {
+            &:last-child {
+              margin-top: 1vw;
+            }
           }
         }
 

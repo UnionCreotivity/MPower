@@ -33,9 +33,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { gsap } from 'gsap'
 
 const images = [new URL('../../../assets/img/method/test.webp', import.meta.url).href]
-
 const currentIndex = ref(0)
+
+const initGsap = () => {
+  const tl = gsap.timeline({ id: 'method' })
+
+  tl.fromTo(
+    '.method-img',
+    {
+      filter: 'brightness(3)',
+      opacity: 0,
+    },
+    {
+      filter: 'brightness(1)',
+      opacity: 1,
+
+      duration: 1.5,
+      ease: 'back.inOut(1)',
+    },
+  )
+}
+
+onMounted(() => {
+  initGsap()
+})
 </script>

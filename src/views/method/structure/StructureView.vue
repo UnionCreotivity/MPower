@@ -28,6 +28,8 @@ import { useRouter } from 'vue-router'
 import StructureAlfaSafe from '@/components/method/structure/StructureAlfaSafe.vue'
 import StructureAluminumForm from '@/components/method/structure/StructureAluminumForm.vue'
 import StructureDoubleRebar from '@/components/method/structure/StructureDoubleRebar.vue'
+import StructureFloorFinishing from '@/components/method/structure/StructureFloorFinishing.vue'
+import StructureSAConnector from '@/components/method/structure/StructureSAConnector.vue'
 
 const router = useRouter()
 const goBack = () => router.push('/method')
@@ -36,8 +38,8 @@ const tabs = [
   { title: 'ALFA SAFE', component: StructureAlfaSafe },
   { title: '筏式基礎', component: StructureAluminumForm },
   { title: '雙層鋼筋', component: StructureDoubleRebar },
-  { title: 'SA續接器', component: StructureDoubleRebar },
-  { title: '樓板整體粉光', component: StructureDoubleRebar },
+  { title: 'SA續接器', component: StructureSAConnector },
+  { title: '樓板整體粉光', component: StructureFloorFinishing },
 ]
 
 const activeTab = ref(0)
