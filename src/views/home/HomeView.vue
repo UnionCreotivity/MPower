@@ -1,22 +1,30 @@
 <template>
   <article id="home-view">
     <div class="video-box">
-      <video class="bg-video" autoplay loop muted playsinline>
-        <source src="../../assets/img/home/c1_bg.mp4" type="video/mp4" />
-      </video>
+      <video
+        ref="bgVideo"
+        class="bg-video"
+        autoplay
+        loop
+        muted
+        playsinline
+        @canplay="onVideoReady"
+      />
     </div>
+
     <FadeIn>
       <div class="home-view-init" v-show="!isShow" @click.stop="showClick">
         <div class="home-view-init-icon">
-          <img src="../../assets/img/home/logo.svg" alt="" />
+          <img src="@/assets/img/home/logo.svg" alt="" />
         </div>
       </div>
     </FadeIn>
+
     <div class="home-view-main" v-show="isShow">
       <div class="svg-wrapper">
         <div class="mask-overlay"></div>
         <div class="svg">
-          <img src="../../assets/img/home/logo.svg" alt="" />
+          <img src="@/assets/img/home/logo.svg" alt="" />
         </div>
       </div>
       <ul class="home-view-menu">
@@ -31,9 +39,8 @@
     </div>
   </article>
 </template>
-
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, defineEmits, onMounted } from 'vue'
 import gsap from 'gsap'
 import screenfull from 'screenfull'
 import FadeIn from '@/components/transition/FadeIn.vue'
@@ -41,9 +48,9 @@ import FullScreen from '@/components/full-screen/FullScreen.vue'
 import '@/assets/scss/home/_home-view.scss'
 // import GSDevTools from 'gsap/GSDevTools'
 // gsap.registerPlugin(GSDevTools)
-
 const isShow = ref(false)
-
+const bgVideo = ref<HTMLVideoElement>()
+const emit = defineEmits(['loaded'])
 // const isEnter = ref(false)
 
 const menuItems = [
@@ -78,7 +85,9 @@ const menuItems = [
     link: 'comingsoon',
   },
 ]
-
+const onVideoReady = () => {
+  emit('loaded') // 告訴 App.vue 可以關 loading
+}
 const initGsap = () => {
   const tl = gsap.timeline({ delay: 0.5 })
 
@@ -118,6 +127,18 @@ const showClick = () => {
   }
   initGsap()
 }
+
+onMounted(async () => {
+  const videoURL = new URL('@/assets/img/home/c1_bg.mp4', import.meta.url).href
+  const res = await fetch(videoURL)
+  const blob = await res.blob()
+  const blobURL = URL.createObjectURL(blob)
+
+  if (bgVideo.value) {
+    bgVideo.value.src = blobURL
+    bgVideo.value.load()
+  }
+})
 </script>
 
 <style scoped></style>

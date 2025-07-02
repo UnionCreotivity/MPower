@@ -2,7 +2,7 @@
   <div class="app-main">
     <div id="custom-cursor"></div>
     <FadeIn>
-      <div class="app-loading" v-show="!is_Load">
+      <div class="app-loading" v-show="!isLoad">
         <div class="app-loading-container">
           <div class="wave-loading">
             <span
@@ -17,11 +17,17 @@
         </div>
       </div>
     </FadeIn>
-    <div class="app-container">
+
+    <div class="app-container" v-show="isLoad">
       <router-view v-slot="{ Component, route }">
-        <FadeIn
-          ><component :is="Component" :key="route.path" :is_Load="is_Load"></component
-        ></FadeIn>
+        <FadeIn>
+          <component
+            :is="Component"
+            :key="route.path"
+            :isLoad="isLoad"
+            @loaded="handleLoaded"
+          ></component>
+        </FadeIn>
       </router-view>
     </div>
   </div>
@@ -30,10 +36,12 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RouterView } from 'vue-router'
+
 import FadeIn from './components/transition/FadeIn.vue'
 import axios from 'axios'
 import screenfull from 'screenfull'
-const is_Load = ref(false)
+
+const isLoad = ref(false)
 // const progress = ref(0) // 真實進度
 // const displayProgress = ref(0) // 顯示用進度數字
 
@@ -46,7 +54,7 @@ const cursor = ref<HTMLElement | null>(null)
 //   const total = preloadLinks.length
 
 //   if (total === 0) {
-//     is_Load.value = true
+//     isLoad.value = true
 //     displayProgress.value = 100
 //     return
 //   }
@@ -57,7 +65,7 @@ const cursor = ref<HTMLElement | null>(null)
 //     progress.value = Math.round((count / total) * 100)
 //     animateProgress()
 //     if (count === total) {
-//       is_Load.value = true
+//       isLoad.value = true
 //     }
 //   }
 
@@ -80,13 +88,20 @@ const cursor = ref<HTMLElement | null>(null)
 //   }
 //   requestAnimationFrame(step)
 // }
+const handleLoaded = () => {
+  isLoad.value = true
+}
 
-const waitForPreloadedImages = () => {
+const waitForPreloadedAssets = () => {
   const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
-  const total = preloadLinks.length
-
+  const videoSrc = new URL('@/assets/img/home/c1_bg.mp4', import.meta.url).href
+  const backgroundImages = [
+    new URL('@/assets/img/home/bg.webp', import.meta.url).href,
+    // 你有用到的背景圖都加進來
+  ]
+  const total = preloadLinks.length + 1 + backgroundImages.length // +1 是影片
   if (total === 0) {
-    is_Load.value = true
+    isLoad.value = true
     return
   }
 
@@ -94,9 +109,10 @@ const waitForPreloadedImages = () => {
   const checkComplete = () => {
     count++
     if (count === total) {
-      is_Load.value = true
+      isLoad.value = true
     }
   }
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   preloadLinks.forEach((link: any) => {
     const img = new Image()
@@ -104,9 +120,23 @@ const waitForPreloadedImages = () => {
     img.onload = checkComplete
     img.onerror = checkComplete
   })
+
+  // 預載你指定的背景圖片
+  backgroundImages.forEach((src) => {
+    const img = new Image()
+    img.src = src
+    img.onload = checkComplete
+    img.onerror = checkComplete
+  })
+
+  const video = document.createElement('video')
+  video.src = videoSrc
+  video.preload = 'auto'
+  video.oncanplaythrough = checkComplete
+  video.onerror = checkComplete
 }
 
-waitForPreloadedImages()
+waitForPreloadedAssets()
 
 onMounted(() => {
   if (!import.meta.env.DEV) {
