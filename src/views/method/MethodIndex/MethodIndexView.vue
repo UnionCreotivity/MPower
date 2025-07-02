@@ -6,7 +6,7 @@
     </div>
 
     <div class="menu-box">
-      <div class="item" @click="goTo('structure')">
+      <div class="item" @click="goTo('structure')" @mouseenter="preloadVideo('structure')">
         <div class="img-box">
           <img src="../../../assets/img/method/1.webp" alt="" />
           <div class="text">STRUCTURE</div>
@@ -14,7 +14,7 @@
         <div class="title">結構工法</div>
       </div>
 
-      <div class="item" @click="goTo('waterproof')">
+      <div class="item" @click="goTo('waterproof')" @mouseenter="preloadVideo('waterproof')">
         <div class="img-box">
           <img src="../../../assets/img/method/2.webp" alt="" />
           <div class="text">WATERPROOF</div>
@@ -22,7 +22,7 @@
         <div class="title">防水工法</div>
       </div>
 
-      <div class="item" @click="goTo('intimate')">
+      <div class="item" @click="goTo('intimate')" @mouseenter="preloadVideo('intimate')">
         <div class="img-box">
           <img src="../../../assets/img/method/3.webp" alt="" />
           <div class="text">INTIMATE</div>
@@ -129,6 +129,42 @@ const initGsap = () => {
     )
   })
 }
+
+const videoSrcMap: Record<string, string | string[]> = {
+  structure: [
+    new URL('@/assets/img/method/AluminumForm.mp4', import.meta.url).href,
+    new URL('@/assets/img/method/DoubleRebar.mp4', import.meta.url).href,
+    new URL('@/assets/img/method/SAConnector.mp4', import.meta.url).href,
+    new URL('@/assets/img/method/FloorFinishing.mp4', import.meta.url).href,
+  ],
+  waterproof: [new URL('@/assets/img/method/Wall.mp4', import.meta.url).href],
+  intimate: [
+    new URL('@/assets/img/method/FloorExhaust.mp4', import.meta.url).href,
+    new URL('@/assets/img/method/MainTrap.mp4', import.meta.url).href,
+    new URL('@/assets/img/method/EmergencyPower.mp4', import.meta.url).href,
+    new URL('@/assets/img/method/WaterPressureTest.mp4', import.meta.url).href,
+  ],
+}
+
+const preloadVideo = (type: string) => {
+  const list = videoSrcMap[type]
+  if (!list) return
+  const urls = Array.isArray(list) ? list : [list]
+
+  urls.forEach((src, index) => {
+    const key = `${type}-${index}`
+    if (document.querySelector(`video[data-preload="${key}"]`)) return
+
+    const video = document.createElement('video')
+    video.src = src
+    video.preload = 'auto'
+    video.muted = true
+    video.setAttribute('data-preload', key)
+    video.style.display = 'none'
+    document.body.appendChild(video)
+  })
+}
+
 onMounted(() => {
   initGsap()
 })
