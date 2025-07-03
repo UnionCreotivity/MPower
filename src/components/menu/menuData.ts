@@ -17,9 +17,9 @@ export const menuData = [
         link: 'aerialPhoto',
       },
       {
-        id: '',
+        id: 'life',
         name: '生活機能',
-        link: 'aerialPhoto',
+        link: 'life',
       },
       {
         id: '',

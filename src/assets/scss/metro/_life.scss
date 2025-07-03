@@ -1,0 +1,112 @@
+@use '../utils/mixin' as *;
+#life-view {
+  display: flex;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  .life-box {
+    display: flex;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    justify-content: space-between;
+    .left-box {
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+      padding-top: 7.5vw;
+      padding-left: 2vw;
+      .title-box {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 1.2vw;
+        margin-bottom: 1vw;
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0%;
+          width: 19%;
+          height: 1px;
+          background: #604c3f;
+        }
+        .en {
+          font-family: var(--font-family-title-en);
+          font-size: 1.85vw;
+          color: #a48b78;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.5vw;
+        }
+        .big-zh {
+          letter-spacing: 0.06em;
+          @include pageTitle();
+        }
+        .zh {
+          font-family: var(--font-family-title-zh);
+          font-size: var(--font-small-title-zh-size);
+          color: var(--font-color-title);
+          letter-spacing: 0.06em;
+          font-weight: 600;
+        }
+      }
+      .content {
+        @include pageContent();
+        font-size: 1vw;
+      }
+      .tab-item-box {
+        margin-top: 2.5vw;
+        display: flex;
+        flex-direction: column;
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          width: 100%;
+          border-bottom: 1px solid #8a8a8a;
+          .text {
+            font-size: 1.25vw;
+            color: #604c3f;
+            font-family: var(--font-family-title-zh);
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            padding-top: 0.7vw;
+            padding-bottom: 0.7vw;
+            border: none;
+          }
+
+          .life-list-squre {
+            width: 8px;
+            height: 8px;
+            background-color: #604c3f;
+            margin-right: 1.5vw;
+            border: none;
+          }
+
+          span {
+            font-size: 16px;
+            margin-left: 1vw;
+            color: #666767;
+            letter-spacing: 0.08em;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .right-box {
+      display: flex;
+      flex-direction: column;
+      width: 78%;
+      display: flex;
+
+      .img-box {
+        width: 100%;
+        img {
+          width: 100%;
+          object-fit: fill;
+        }
+      }
+    }
+  }
+}

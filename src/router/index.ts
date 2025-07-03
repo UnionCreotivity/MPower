@@ -6,6 +6,7 @@ import HomeView from '@/views/home/HomeView.vue'
 // 地段環境
 import MetroView from '@/views/metro/MetroView.vue'
 import ArialPhotoView from '@/views/metro/aerialPhoto/ArialPhotoView.vue'
+import LifeView from '@/views/metro/life/LifeView.vue'
 
 // 建築規劃
 import MaterView from '@/views/master/MaterView.vue'
@@ -36,6 +37,11 @@ const router = createRouter({
           path: 'aerial-photo',
           name: 'aerialPhoto',
           component: ArialPhotoView,
+        },
+         {
+          path: 'life',
+          name: 'life',
+          component: LifeView,
         },
       ],
     },
