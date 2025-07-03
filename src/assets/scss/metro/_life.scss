@@ -41,6 +41,7 @@
         .big-zh {
           letter-spacing: 0.06em;
           @include pageTitle();
+          margin-bottom: 0.4vw;
         }
         .zh {
           font-family: var(--font-family-title-zh);
@@ -99,13 +100,160 @@
       flex-direction: column;
       width: 78%;
       display: flex;
-
+      height: 100%;
+      position: relative;
       .img-box {
         width: 100%;
+        position: relative;
+        // height: 100%;
         img {
           width: 100%;
+          //   height: 100%;
           object-fit: fill;
         }
+      }
+      @keyframes pointAni {
+        0% {
+          transform: translateY(0%);
+        }
+        50% {
+          transform: translateY(-30%);
+        }
+      }
+      .life-view-point {
+        position: absolute;
+        z-index: 10;
+        width: 2vw;
+        .point-img {
+          position: relative;
+          z-index: 10;
+        }
+        .radiation {
+          top: 10%;
+          //   opacity: 1;
+          position: absolute;
+          width: 2vw;
+          height: 2vw;
+          //   transition: opacity 0.5s;
+          .circle {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: rgba(229, 28, 28, 0.4862745098);
+            // animation-name: radiation;
+            animation-duration: 1.35s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            opacity: 0;
+          }
+          > :nth-child(2) {
+            animation-delay: 0.25s;
+          }
+          > :nth-child(3) {
+            animation-delay: 0.5s;
+          }
+        }
+      }
+
+      @keyframes radiation {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(2.5);
+        }
+      }
+      .active {
+        transition: all 0.5s;
+        animation: pointAni 1.5s ease infinite forwards;
+        .radiation {
+          opacity: 1;
+          transition: opacity 0.5s;
+        }
+      }
+
+      .park-point-1 {
+        top: 41%;
+        left: 7.5%;
+      }
+      .park-point-2 {
+        top: 47%;
+        left: 73%;
+      }
+      .park-point-3 {
+        top: 91%;
+        left: 46%;
+      }
+      .park-point-4 {
+        top: 49.5%;
+        left: 54%;
+      }
+
+      .cultural-point-1 {
+        top: 65%;
+        left: 78%;
+      }
+      .cultural-point-2 {
+        top: 57.5%;
+        left: 70.5%;
+      }
+      .cultural-point-3 {
+        top: 70%;
+        left: 67%;
+      }
+      .cultural-point-4 {
+        top: 94%;
+        left: 37%;
+      }
+
+      .shopping-point-1 {
+        top: 86%;
+        left: 57%;
+      }
+
+      .shopping-point-2 {
+        top: 80%;
+        left: 88%;
+      }
+
+      .shopping-point-3 {
+        top: 72%;
+        left: 50%;
+      }
+
+      .shopping-point-4 {
+        top: 47%;
+        left: 63.5%;
+      }
+
+      .shopping-point-5 {
+        top: 94%;
+        left: 51%;
+      }
+
+      .transit-point-1 {
+        top: 5%;
+        left: 39%;
+      }
+
+      .transit-point-2 {
+        top: 73%;
+        left: 83%;
+      }
+
+      .transit-point-3 {
+        top: 12%;
+        left: 78%;
+      }
+
+      .transit-point-4 {
+        top: 14%;
+        left: 11.5%;
       }
     }
   }

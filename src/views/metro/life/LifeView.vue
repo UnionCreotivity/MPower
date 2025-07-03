@@ -15,35 +15,46 @@
           真正時尚，不張揚，而自成路徑。
         </div>
         <div class="tab-item-box">
-          <div>
+          <div v-for="life in lifeList" :key="life.key">
             <div class="life-list-squre"></div>
-            <div class="text">公園綠意<span>GREEN PARK</span></div>
+            <div class="text">
+              {{ life.zhName }}<span>{{ life.enName }}</span>
+            </div>
           </div>
-
-          <div>
+          <!-- <div>
             <div class="life-list-squre"></div>
             <div class="text">優質學區<span>CULTURAL DISTRICT</span></div>
           </div>
-
           <div>
             <div class="life-list-squre"></div>
             <div class="text">繁華商圈<span>SHOPPING DISTRICT</span></div>
           </div>
-
           <div>
             <div class="life-list-squre"></div>
             <div class="text">交通樞紐<span>RAPID TRANSIT</span></div>
           </div>
-
           <div>
             <div class="life-list-squre"></div>
             <div class="text">重大建設<span>MAJOR CONSTRUCTION</span></div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="right-box">
         <div class="img-box">
           <img src="../../../assets/img/life/life_main.webp" alt="" srcset="" />
+          <div
+            class="life-view-point"
+            v-for="point in lifeData"
+            :key="point.id"
+            :class="point.className"
+          >
+            <div class="radiation">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+            <img class="point-img" src="../../../assets/img/life/point.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -53,8 +64,37 @@
 <script setup lang="ts">
 import '@/assets/scss/metro/_life.scss'
 
-import { RouterView } from 'vue-router'
 import ViewFixed from '@/components/view-fixed/ViewFixed.vue'
+
+import { lifeData } from './LifeData'
+
+const lifeList = [
+  {
+    key: 'green-park',
+    zhName: '公園綠意',
+    enName: 'GREEN PARK',
+  },
+  {
+    key: 'cultural-district',
+    zhName: '優質學區',
+    enName: 'CULTURAL DISTRICT',
+  },
+  {
+    key: 'shopping-district',
+    zhName: '繁華商圈',
+    enName: 'SHOPPING DISTRICT',
+  },
+  {
+    key: 'rapid-transit',
+    zhName: '交通樞紐',
+    enName: 'RAPID TRANSIT',
+  },
+  {
+    key: 'major-construction',
+    zhName: '重大建設',
+    enName: 'MAJOR CONSTRUCTION',
+  },
+]
 </script>
 
 <style lang="scss">
