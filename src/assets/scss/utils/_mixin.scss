@@ -19,3 +19,13 @@
     font-size: 24px;
   }
 }
+
+@mixin hint() {
+  color: #3d3a39;
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  position: absolute;
+  right: 0.6vw;
+  bottom: 0.5vw;
+}

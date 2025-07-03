@@ -14,10 +14,11 @@
 
     .back-button {
       position: absolute;
-      top: 1.7vw;
-      right: 2vw;
-      width: 1.5vw;
-
+      top: 0.8vw;
+      padding: 1vw;
+      right: 1vw;
+      width: 3.5vw;
+      z-index: 50;
       img {
         width: 100%;
         transition: all 0.5s;
@@ -85,6 +86,7 @@
       justify-content: center;
       overflow: hidden;
       align-items: center;
+
       img {
         width: 100%;
         position: absolute;
@@ -98,7 +100,23 @@
         opacity: 1;
         z-index: 1;
       }
+      .swcm-img-box {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img {
+          position: relative;
+          top: initial;
+          left: initial;
+          transform: initial;
+        }
 
+        .hint {
+          @include hint();
+        }
+      }
       .window-img {
         width: 65%;
       }

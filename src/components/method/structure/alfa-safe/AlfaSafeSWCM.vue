@@ -1,12 +1,15 @@
 <template>
-  <div class="method-content-box">
+  <div class="method-content-box swcm">
     <div class="left-box">
-      <img
-        class="method-img"
-        src="../../../../assets/img/method/structure/as_1.webp"
-        alt=""
-        srcset=""
-      />
+      <div class="img-box swcm-img-box">
+        <img
+          class="method-img"
+          src="../../../../assets/img/method/structure/as_1.webp"
+          alt=""
+          srcset=""
+        />
+        <div class="hint">3D系統牆示意圖</div>
+      </div>
     </div>
     <div class="right-box">
       <img class="alfa" src="../../../../assets/img/method/alfa.svg" alt="" />
