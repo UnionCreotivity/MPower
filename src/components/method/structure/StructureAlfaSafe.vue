@@ -1,64 +1,49 @@
 <template>
-  <div class="method-content-box">
-    <div class="left-box">
-      <img
-        v-for="(img, index) in images"
-        :key="index"
-        :src="img"
-        alt=""
-        class="method-img"
-        :class="{ active: index === currentIndex }"
+  <div class="method-wrapper">
+    <transition name="fade" mode="out-in">
+      <component
+        :is="currentComponent"
+        :key="currentIndex"
+        @next="nextComponent"
+        @prev="prevComponent"
       />
-    </div>
-    <div class="right-box">
-      <img class="alfa" src="../../../assets/img/method/alfa.svg" alt="" srcset="" />
-      <div class="title-box">
-        ALFA SAFE柱中柱&系統牆<br />
-        結構安全，超越國家品質
-      </div>
-      <div class="content-box">
-        <div class="content">
-          建築一樓+夾層，戴雲發Alfa Safe系統。<br />
-          一根鋼筋到底，一體式系統柱箍。<br />
-          施工品質提升，耐震韌性強化。<br />
-          <span>
-            Alfa safe 耐震系統工法四大創新<br />
-            系統規則化│規格標準化│防呆配件化│作業效率化<br />
-            國家發明創作獎-發明獎金牌，LCBA低碳工法認證</span
-          >
-        </div>
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { gsap } from 'gsap'
+import { ref, computed } from 'vue'
+import AlfaSafeCICS from '@/components/method/structure/alfa-safe/AlfaSafeCICS.vue'
+import AlfaSafeSWCM from '@/components/method/structure/alfa-safe/AlfaSafeSWCM.vue'
+import AlfaSafePerson from '@/components/method/structure/alfa-safe/AlfaSafePerson.vue'
 
-const images = [new URL('../../../assets/img/method/test.webp', import.meta.url).href]
+// 所有元件放進陣列
+const components = [AlfaSafePerson, AlfaSafeCICS, AlfaSafeSWCM]
+
+// 當前 index
 const currentIndex = ref(0)
 
-const initGsap = () => {
-  const tl = gsap.timeline({ id: 'method' })
+// 計算當前要顯示的元件
+const currentComponent = computed(() => components[currentIndex.value])
 
-  tl.fromTo(
-    '.method-img',
-    {
-      filter: 'brightness(3)',
-      opacity: 0,
-    },
-    {
-      filter: 'brightness(1)',
-      opacity: 1,
-
-      duration: 1.5,
-      ease: 'back.inOut(1)',
-    },
-  )
+// 切換上一個
+function prevComponent() {
+  currentIndex.value = (currentIndex.value - 1 + components.length) % components.length
 }
 
-onMounted(() => {
-  initGsap()
-})
+// 切換下一個
+function nextComponent() {
+  currentIndex.value = (currentIndex.value + 1) % components.length
+}
 </script>
+<style scoped>
+/* 淡入淡出動畫 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

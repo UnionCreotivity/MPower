@@ -85,9 +85,11 @@ const menuItems = [
     link: 'comingsoon',
   },
 ]
+
 const onVideoReady = () => {
   emit('loaded') // 告訴 App.vue 可以關 loading
 }
+
 const initGsap = () => {
   const tl = gsap.timeline({ delay: 0.5 })
 
@@ -101,23 +103,17 @@ const initGsap = () => {
       opacity: 1,
       webkitMaskPosition: '0% 0',
     },
+  ).from(
+    '.home-view-menu-item',
+    {
+      duration: 1,
+      y: '60',
+      opacity: 0,
+      stagger: 0.1,
+      filter: 'blur(5px)',
+    },
+    '<0.8',
   )
-
-    .from(
-      '.home-view-menu-item',
-      {
-        duration: 1,
-        y: '60',
-        opacity: 0,
-        stagger: 0.1,
-        filter: 'blur(5px)',
-      },
-      '<0.8',
-    )
-
-  // GSDevTools.create({
-  //   animation: tl,
-  // })
 }
 
 const showClick = () => {

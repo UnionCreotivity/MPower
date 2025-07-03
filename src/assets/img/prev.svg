@@ -1,1 +1,19 @@
-<?xml version='1.0' encoding='UTF-8'?><svg id='_圖層_2' data-name='圖層 2' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 60 60'><defs><linearGradient id='_未命名漸層_75' data-name='未命名漸層 75' x1='0' y1='30' x2='60' y2='30' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='#ca7888'/><stop offset='.46' stop-color='#bd687b'/><stop offset='1' stop-color='#b25b71'/></linearGradient></defs><g id='_圖層_1-2' data-name='圖層 1'><g><circle cx='30' cy='30' r='30' fill='url(#_未命名漸層_75)'/><polyline points='26.19 20.05 16.81 29.43 26.19 38.95' fill='none' stroke='#fff' stroke-miterlimit='10'/><line x1='46.92' y1='29.5' x2='17.42' y2='29.5' fill='none' stroke='#fff' stroke-miterlimit='10'/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #604c3f;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_1-2" data-name="圖層 1">
+    <g>
+      <circle class="cls-1" cx="30.5" cy="30.5" r="30"/>
+      <polyline class="cls-1" points="26.69 20.55 17.31 29.93 26.69 39.45"/>
+      <line class="cls-1" x1="47.42" y1="30" x2="17.92" y2="30"/>
+    </g>
+  </g>
+</svg>

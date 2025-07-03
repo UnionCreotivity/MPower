@@ -14,6 +14,7 @@
               {{ letter }}
             </span>
           </div>
+          <div class="progress-text">{{ displayProgress }}%</div>
         </div>
       </div>
     </FadeIn>
@@ -42,8 +43,8 @@ import axios from 'axios'
 import screenfull from 'screenfull'
 
 const isLoad = ref(false)
-// const progress = ref(0) // 真實進度
-// const displayProgress = ref(0) // 顯示用進度數字
+const progress = ref(0) // 真實進度
+const displayProgress = ref(0) // 顯示用進度數字
 
 const loadingText = ['L', 'O', 'A', 'D', 'I', 'N', 'G']
 
@@ -79,15 +80,16 @@ const cursor = ref<HTMLElement | null>(null)
 // }
 
 // // 讓數字慢慢往 progress.value 靠近
-// const animateProgress = () => {
-//   const step = () => {
-//     if (displayProgress.value < progress.value) {
-//       displayProgress.value += 1
-//       requestAnimationFrame(step)
-//     }
-//   }
-//   requestAnimationFrame(step)
-// }
+const animateProgress = () => {
+  const step = () => {
+    if (displayProgress.value < progress.value) {
+      displayProgress.value += 1
+      requestAnimationFrame(step)
+    }
+  }
+  requestAnimationFrame(step)
+}
+
 const handleLoaded = () => {
   isLoad.value = true
 }
@@ -95,11 +97,8 @@ const handleLoaded = () => {
 const waitForPreloadedAssets = () => {
   const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
   const videoSrc = new URL('@/assets/img/home/c1_bg.mp4', import.meta.url).href
-  const backgroundImages = [
-    new URL('@/assets/img/home/bg.webp', import.meta.url).href,
-    // 你有用到的背景圖都加進來
-  ]
-  const total = preloadLinks.length + 1 + backgroundImages.length // +1 是影片
+  const backgroundImages = [new URL('@/assets/img/home/bg.webp', import.meta.url).href]
+  const total = preloadLinks.length + 1 + backgroundImages.length // +1 是首頁影片
   if (total === 0) {
     isLoad.value = true
     return
@@ -108,6 +107,8 @@ const waitForPreloadedAssets = () => {
   let count = 0
   const checkComplete = () => {
     count++
+    progress.value = Math.round((count / total) * 100)
+    animateProgress()
     if (count === total) {
       isLoad.value = true
     }
@@ -121,7 +122,7 @@ const waitForPreloadedAssets = () => {
     img.onerror = checkComplete
   })
 
-  // 預載你指定的背景圖片
+  // 預載首頁的背景圖片
   backgroundImages.forEach((src) => {
     const img = new Image()
     img.src = src
@@ -296,7 +297,7 @@ onMounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    flex-direction: column;
     .wave-loading {
       display: flex;
       gap: 6px;
@@ -324,6 +325,31 @@ onMounted(() => {
         color: transparent;
         position: relative;
       }
+    }
+
+    .progress-text {
+      display: inline-block;
+      animation:
+          // wave 2s infinite ease-in-out,
+        shimmer 3s linear infinite;
+      background: linear-gradient(
+        90deg,
+        /* 咖啡深棕 */ #bb7f30,
+        /* 淺咖啡米色 */ #eacda3,
+        /* 米色 */ #e6b980 /* 卡其色 */
+      );
+
+      background-size: 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      position: relative;
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      font-style: italic;
+      font-weight: 500;
+      font-family: 'Junge', cursive;
+      margin-top: 0.5vw;
     }
   }
 }

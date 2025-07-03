@@ -1,6 +1,12 @@
 @use '../utils/mixin' as *;
 
 #method-view {
+  .method-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
   .method-tab-view {
     position: relative;
     width: 100%;
@@ -110,10 +116,8 @@
       position: relative;
 
       .alfa {
-        position: absolute;
         width: 6vw;
-        right: 3.5vw;
-        top: 1.8vw;
+        margin-bottom: 1vw;
       }
 
       .title-box {
@@ -136,7 +140,20 @@
       .content-box {
         display: flex;
         flex-direction: column;
-
+        ul {
+          width: 73%;
+          padding-left: 1.5vw;
+          margin-top: 1vw;
+        }
+        ul,
+        li {
+          @include pageContent();
+          list-style-type: disc;
+        }
+        span {
+          @include pageContent();
+          font-weight: bold;
+        }
         .content {
           @include pageContent();
           width: 88%;
@@ -226,6 +243,59 @@
     .window-right-box {
       width: 43%;
       margin-left: 3vw;
+    }
+  }
+
+  .person-content-box {
+    flex-direction: row-reverse;
+
+    .left-box {
+      justify-content: end;
+      .method-img {
+        position: relative;
+        top: initial;
+        left: initial;
+        transform: initial;
+        width: 71%;
+      }
+    }
+
+    .right-box {
+      width: 50%;
+      .content-box {
+        ul {
+          width: 93%;
+          margin-top: 0vw;
+        }
+        span {
+          @include pageContent();
+          font-weight: bold;
+          margin-bottom: 0vw;
+          margin-top: 2vw;
+        }
+      }
+    }
+  }
+
+  .arrow-box {
+    display: flex;
+    margin-top: 2vw;
+    div {
+      width: 2.5vw;
+    }
+    .prev {
+      margin-right: 1.5vw;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        transform: translateX(-15px);
+      }
+    }
+
+    .next {
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        transform: translateX(15px);
+      }
     }
   }
 }
