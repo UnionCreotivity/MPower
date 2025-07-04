@@ -18,7 +18,7 @@
       padding-left: 2vw;
       @media all and (max-width: 1400px) {
         justify-content: center;
-        width: 22%;
+        width: 23%;
       }
       .title-box {
         display: flex;
@@ -88,8 +88,8 @@
             margin-right: 1.5vw;
             border: none;
             @media all and (max-width: 1400px) {
-              width: 6px;
-              height: 6px;
+              width: 5px;
+              height: 5px;
               margin-right: 1vw;
             }
           }
@@ -206,7 +206,10 @@
       .active {
         transition: all 0.5s;
         animation: pointAni 1.5s ease infinite forwards;
-
+        &:hover {
+          transform: translateY(0%);
+          filter: brightness(1);
+        }
         .radiation {
           opacity: 1;
           transition: opacity 0.5s;
@@ -259,7 +262,7 @@
 
       .shopping-point-3 {
         top: 72%;
-        left: 50%;
+        left: 50.5%;
       }
 
       .shopping-point-4 {
@@ -284,7 +287,7 @@
 
       .transit-point-3 {
         top: 12%;
-        left: 78%;
+        left: 85%;
       }
 
       .transit-point-4 {
@@ -308,8 +311,8 @@
       }
 
       .major-point-4 {
-        top: 17%;
-        left: 79.5%;
+        top: 18%;
+        left: 80%;
       }
 
       .major-point-5 {
@@ -318,7 +321,7 @@
       }
 
       .major-point-6 {
-        top: 17%;
+        top: 18%;
         left: 66.5%;
       }
     }

@@ -1,5 +1,5 @@
 <template>
-  <ViewFixed id="life-view">
+  <div id="life-view">
     <div class="life-box">
       <div class="left-box">
         <div class="title-box">
@@ -32,6 +32,7 @@
         <div class="img-box">
           <ScaleDrag :init="initXY" :max-ratio="2">
             <img src="../../../assets/img/life/life_main.webp" alt="" srcset="" />
+            <Glow :parent-length="20" />
             <div
               class="life-view-point"
               v-for="point in lifeData"
@@ -54,7 +55,7 @@
     <FadeIn>
       <LifeFancybox v-if="fancyboxItem" :fancyItem="fancyboxItem" @show-fancybox="showFancybox" />
     </FadeIn>
-  </ViewFixed>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -63,10 +64,11 @@ import '@/assets/scss/metro/_life.scss'
 import { ref, computed } from 'vue'
 import { lifeData } from './LifeData'
 // import { lifeFancyData } from './LifeFancyData'
-import ViewFixed from '@/components/view-fixed/ViewFixed.vue'
+// import ViewFixed from '@/components/view-fixed/ViewFixed.vue'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 import LifeFancybox from '@/components/life-fancybox/LifeFancybox.vue'
 import FadeIn from '@/components/transition/FadeIn.vue'
+import Glow from '@/components/glow-effect/GlowEffect.vue'
 
 const tag = ref('')
 const fancyboxItem = ref<{ key: string; image: string; txt: string }[] | null>(null)

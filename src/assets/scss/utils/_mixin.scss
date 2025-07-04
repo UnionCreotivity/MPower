@@ -6,6 +6,9 @@
   font-weight: 400;
   text-align: justify;
   letter-spacing: 0.1em;
+  @media all and (max-width: 1400px) {
+    font-size: 16px;
+  }
 }
 
 @mixin pageTitle() {

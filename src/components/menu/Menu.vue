@@ -207,7 +207,7 @@ const showClick = (val: boolean) => {
       const tl = gsap.timeline({})
       const texttl = gsap.timeline({})
       const linkBoxes = gsap.utils.toArray<HTMLElement>('.link-box .item .links')
-
+      console.log(linkBoxes)
       // 開啟動畫（向上展開）
       tl.fromTo(
         menuRef.value,
