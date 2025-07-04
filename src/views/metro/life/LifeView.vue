@@ -16,6 +16,7 @@
         </div>
         <div class="tab-item-box">
           <div
+            class="tab-item"
             v-for="life in lifeList"
             :key="life.key"
             @click.stop="handleTag(life.key)"
@@ -31,7 +32,12 @@
       <div class="right-box">
         <div class="img-box">
           <ScaleDrag :init="initXY" :max-ratio="2">
-            <img src="../../../assets/img/life/life_main.webp" alt="" srcset="" />
+            <img
+              class="main-map-img"
+              src="../../../assets/img/life/life_main.webp"
+              alt=""
+              srcset=""
+            />
             <Glow :parent-length="20" />
             <div
               class="life-view-point"
@@ -60,8 +66,8 @@
 
 <script setup lang="ts">
 import '@/assets/scss/metro/_life.scss'
-
-import { ref, computed } from 'vue'
+import gsap from 'gsap'
+import { onMounted, ref, computed } from 'vue'
 import { lifeData } from './LifeData'
 // import { lifeFancyData } from './LifeFancyData'
 // import ViewFixed from '@/components/view-fixed/ViewFixed.vue'
@@ -121,6 +127,51 @@ const showFancybox = (point?: any) => {
 }
 const initXY = computed(() => {
   return window.innerWidth > 1400 ? { x: 300, y: -200 } : { x: 100, y: -100 }
+})
+
+onMounted(() => {
+  const tl = gsap.timeline({ delay: 0.5 })
+  tl.from(
+    '#life-view .life-box .left-box .title-box',
+    {
+      opacity: 0,
+      y: 70,
+      stagger: 0.15,
+      duration: 0.8,
+    },
+    '<0.3',
+  )
+    .from(
+      '#life-view .life-box .left-box .content',
+      {
+        opacity: 0,
+        y: 70,
+        duration: 0.8,
+      },
+      '<0.25',
+    )
+    .from(
+      '#life-view .life-box .left-box .tab-item-box .tab-item',
+      {
+        opacity: 0,
+        y: 70,
+        stagger: 0.15,
+        duration: 1,
+      },
+      '<0.3',
+    )
+    .fromTo(
+      '#life-view .life-box .right-box .img-box',
+      {
+        maskPosition: '200% -100%',
+      },
+      {
+        maskPosition: '0% 100%',
+        willChange: 'maskPosition',
+        duration: 2.5,
+      },
+      '<0.3',
+    )
 })
 </script>
 

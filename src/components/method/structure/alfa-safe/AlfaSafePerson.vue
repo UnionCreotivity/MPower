@@ -77,7 +77,6 @@ const initGsap = () => {
       {
         filter: 'brightness(1)',
         opacity: 1,
-
         duration: 1.5,
         ease: 'back.inOut(1)',
       },

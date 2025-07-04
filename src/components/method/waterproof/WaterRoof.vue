@@ -6,7 +6,7 @@
         :key="index"
         :src="img"
         alt=""
-        class="method-img window-img"
+        class="method-img roof-img"
         :class="{ active: index === currentIndex }"
       />
     </div>
@@ -39,6 +39,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
 
 const images = [
   new URL('../../../assets/img/method/waterproof/1.webp', import.meta.url).href,
@@ -69,6 +71,35 @@ const prevImage = () => {
 const nextImage = () => {
   currentIndex.value = (currentIndex.value + 1) % images.length
 }
+
+const initGsap = () => {
+  const tl = gsap.timeline({})
+
+  tl.fromTo(
+    '#method-view .method-content-box .left-box',
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 2,
+    },
+  ).from(
+    '#method-view .method-content-box .right-box div',
+    {
+      filter: 'blur(8px)',
+      opacity: 0,
+      ease: 'power1.inOut',
+      stagger: 0.15,
+      duration: 1,
+    },
+    '<0.15',
+  )
+}
+
+onMounted(() => {
+  initGsap()
+})
 </script>
 
 <style scoped></style>

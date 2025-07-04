@@ -14,7 +14,7 @@ export const menuData = [
       {
         id: '',
         name: '軌道經濟',
-        link: 'aerialPhoto',
+        link: 'comingsoon',
       },
       {
         id: 'life',
@@ -24,7 +24,7 @@ export const menuData = [
       {
         id: '',
         name: '門牌價值',
-        link: 'aerialPhoto',
+        link: 'comingsoon',
       },
     ],
   },
@@ -38,7 +38,7 @@ export const menuData = [
       {
         id: '',
         name: '樓層規劃',
-             link: 'comingsoon',
+        link: 'comingsoon',
       },
     ],
   },

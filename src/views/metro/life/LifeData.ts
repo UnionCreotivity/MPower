@@ -45,10 +45,10 @@ export const lifeData = [
   },
   {
     tag: 'cultural-district',
-    id: 'princeton', // 普林斯頓小學.
+    id: 'princeton', // 普霖斯頓小學.
     className: 'cultural-point-2',
     image: new URL('@/assets/img/life/school_district/princeton_01.webp', import.meta.url).href,
-    txt: '普林斯頓小學',
+    txt: '普霖斯頓小學',
   },
   {
     tag: 'cultural-district',
@@ -70,35 +70,35 @@ export const lifeData = [
     tag: 'shopping-district',
     id: 'beiping-market', // 北平黃昏市場
     className: 'shopping-point-1',
-    image: new URL('@/assets/img/life/school_district/beiping_market_01.webp', import.meta.url).href,
+    image: new URL('@/assets/img/life/shopping_district/beiping_market_01.webp', import.meta.url).href,
     txt: '北平黃昏市場',
   },
   {
     tag: 'shopping-district',
     id: 'chongde-market', //崇德路商圈
     className: 'shopping-point-2',
-    image: new URL('@/assets/img/life/school_district/chongde_market.webp', import.meta.url).href,
+    image: new URL('@/assets/img/life/shopping_district/chongde_market.webp', import.meta.url).href,
     txt: '崇德路商圈',
   },
   {
     tag: 'shopping-district',
     id: 'kfc-wenxin', //肯德基文心店
     className: 'shopping-point-3',
-    image: new URL('@/assets/img/life/school_district/kfc_wenxin_01.webp', import.meta.url).href,
+    image: new URL('@/assets/img/life/shopping_district/kfc_wenxin_01.webp', import.meta.url).href,
     txt: '肯德基文心店',
   },
   {
     tag: 'shopping-district',
     id: 'shangjing', // 上景興市場
     className: 'shopping-point-4',
-    image: new URL('@/assets/img/life/school_district/shangjing_01.webp', import.meta.url).href,
+    image: new URL('@/assets/img/life/shopping_district/shangjing_01.webp', import.meta.url).href,
     txt: '上景興市場',
   },
   {
     tag: 'shopping-district',
     id: 'tianjin', //天津路商圈
     className: 'shopping-point-5',
-    image: new URL('@/assets/img/life/school_district/tianjin_01.webp', import.meta.url).href,
+    image: new URL('@/assets/img/life/shopping_district/tianjin_01.webp', import.meta.url).href,
     txt: '天津路商圈',
   },
 
@@ -152,21 +152,21 @@ export const lifeData = [
     id: 'green', //44綠美圖
     className: 'major-point-3',
     image: new URL('@/assets/img/life/major_construction/green_01.webp', import.meta.url).href,
-    txt: '綠美圖',
+    txt: '台中綠美圖',
   },
   {
     tag: 'major-construction',
     id: 'hanshin', //41漢神購物廣場
     className: 'major-point-4',
     image: new URL('@/assets/img/life/major_construction/hanshin_01.webp', import.meta.url).href,
-    txt: '漢神購物廣場',
+    txt: '漢神購物中心',
   },
   {
     tag: 'major-construction',
     id: 'popmedia', //47流行影音中心
     className: 'major-point-5',
     image: new URL('@/assets/img/life/major_construction/popmedia_01.webp', import.meta.url).href,
-    txt: '流行影音中心',
+    txt: '中台灣電影中心',
   },
   {
     tag: 'major-construction',

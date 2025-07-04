@@ -38,6 +38,16 @@ const initGsap = () => {
       opacity: 1,
       duration: 2,
     },
+  ).from(
+    '#method-view .method-content-box .right-box div',
+    {
+      filter: 'blur(8px)',
+      opacity: 0,
+      ease: 'power1.inOut',
+      stagger: 0.15,
+      duration: 1,
+    },
+    '<0.3',
   )
 }
 
