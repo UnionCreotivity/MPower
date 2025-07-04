@@ -81,6 +81,7 @@ body {
     top 0.05s ease;
   z-index: 9999;
   mix-blend-mode: hard-light;
+  pointer-events: none;
 }
 .click-effect {
   position: fixed;

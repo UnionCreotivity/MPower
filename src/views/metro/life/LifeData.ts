@@ -44,50 +44,83 @@ export const lifeData = [
 
   //繁華商圈
   {
-    tag: 'shopping',
+    tag: 'shopping-district',
     id: 'beiping-market', // 北平黃昏市場
     className: 'shopping-point-1',
   },
   {
-    tag: 'shopping',
+    tag: 'shopping-district',
     id: 'chongde-market', //崇德路商圈
     className: 'shopping-point-2',
   },
   {
-    tag: 'shopping',
+    tag: 'shopping-district',
     id: 'kfc-wenxin', //肯德基文心店
     className: 'shopping-point-3',
   },
   {
-    tag: 'shopping',
+    tag: 'shopping-district',
     id: 'shangjing', // 上景興市場
     className: 'shopping-point-4',
   },
   {
-    tag: 'shopping',
+    tag: 'shopping-district',
     id: 'tianjin', //天津路商圈
     className: 'shopping-point-5',
   },
 
   //交通樞紐
-   {
-    tag: 'transit',
-    id: 'zhonggang', // 國一中港交流道(低空拍)
+  {
+    tag: 'rapid-transit',
+    id: 'zhonggang', // 國一中港交流道
     className: 'transit-point-1',
   },
-   {
-    tag: 'transit',
+  {
+    tag: 'rapid-transit',
     id: 'mrt-wenxin-chongde', // 捷運文心崇德站
     className: 'transit-point-2',
   },
-   {
-    tag: 'transit',
-    id: 'road74-chongde', // 台74崇德匝道(低空拍)
+  {
+    tag: 'rapid-transit',
+    id: 'road74-chongde', // 台74崇德匝道
     className: 'transit-point-3',
   },
   {
-    tag: 'transit',
-    id: 'shuinan-road', // 水湳轉運中心(低空拍)
+    tag: 'rapid-transit',
+    id: 'shuinan-road', // 水湳轉運中心
     className: 'transit-point-4',
   },
+
+  //重大建設
+  {
+    tag: 'major-construction',
+    id: 'convention', //國際會展中心
+    className: 'major-point-1',
+  },
+  {
+    tag: 'major-construction',
+    id: 'dome', //24台中巨蛋
+    className: 'major-point-2',
+  },
+  {
+    tag: 'major-construction',
+    id: 'green', //44綠美圖
+    className: 'major-point-3',
+  },
+  {
+    tag: 'major-construction',
+    id: 'hanshin', //41漢神購物廣場
+    className: 'major-point-4',
+  },
+  {
+    tag: 'major-construction',
+    id: 'popmedia', //47流行影音中心
+    className: 'major-point-5',
+  },
+    {
+    tag: 'major-construction',
+    id: 'stadium', //34洲際棒球場
+    className: 'major-point-6',
+  },
+
 ]

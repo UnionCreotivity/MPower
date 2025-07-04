@@ -15,46 +15,37 @@
           真正時尚，不張揚，而自成路徑。
         </div>
         <div class="tab-item-box">
-          <div v-for="life in lifeList" :key="life.key">
+          <div
+            v-for="life in lifeList"
+            :key="life.key"
+            @click.stop="handleTag(life.key)"
+            :class="tag === life.key ? 'active' : ''"
+          >
             <div class="life-list-squre"></div>
             <div class="text">
               {{ life.zhName }}<span>{{ life.enName }}</span>
             </div>
           </div>
-          <!-- <div>
-            <div class="life-list-squre"></div>
-            <div class="text">優質學區<span>CULTURAL DISTRICT</span></div>
-          </div>
-          <div>
-            <div class="life-list-squre"></div>
-            <div class="text">繁華商圈<span>SHOPPING DISTRICT</span></div>
-          </div>
-          <div>
-            <div class="life-list-squre"></div>
-            <div class="text">交通樞紐<span>RAPID TRANSIT</span></div>
-          </div>
-          <div>
-            <div class="life-list-squre"></div>
-            <div class="text">重大建設<span>MAJOR CONSTRUCTION</span></div>
-          </div> -->
         </div>
       </div>
       <div class="right-box">
         <div class="img-box">
-          <img src="../../../assets/img/life/life_main.webp" alt="" srcset="" />
-          <div
-            class="life-view-point"
-            v-for="point in lifeData"
-            :key="point.id"
-            :class="point.className"
-          >
-            <div class="radiation">
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
+          <ScaleDrag :init="initXY" :max-ratio="2">
+            <img src="../../../assets/img/life/life_main.webp" alt="" srcset="" />
+            <div
+              class="life-view-point"
+              v-for="point in lifeData"
+              :key="point.id"
+              :class="[point.className, tag === point.tag ? 'active' : '']"
+            >
+              <div class="radiation">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+              </div>
+              <img class="point-img" src="../../../assets/img/life/point.png" alt="" />
             </div>
-            <img class="point-img" src="../../../assets/img/life/point.png" alt="" />
-          </div>
+          </ScaleDrag>
         </div>
       </div>
     </div>
@@ -64,8 +55,9 @@
 <script setup lang="ts">
 import '@/assets/scss/metro/_life.scss'
 
+import { ref, computed } from 'vue'
 import ViewFixed from '@/components/view-fixed/ViewFixed.vue'
-
+import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 import { lifeData } from './LifeData'
 
 const lifeList = [
@@ -95,6 +87,16 @@ const lifeList = [
     enName: 'MAJOR CONSTRUCTION',
   },
 ]
+
+const tag = ref('')
+
+const handleTag = (val: string) => {
+  tag.value = val
+}
+
+const initXY = computed(() => {
+  return window.innerWidth > 1400 ? { x: 300, y: -200 } : { x: 100, y: -100 }
+})
 </script>
 
 <style lang="scss">

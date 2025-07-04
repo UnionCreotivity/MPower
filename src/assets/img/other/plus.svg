@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.56 43.56">
-  <g id="_圖層_2-2" data-name="圖層 2">
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.74 47.74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #604c3f;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_3" data-name="圖層 3">
+    <rect class="cls-1" width="47.74" height="47.74"/>
     <g>
-      <rect x=".5" y=".5" width="42.56" height="42.56" rx="7" ry="7" transform="translate(0 43.56) rotate(-90)" fill="none" stroke="#fff" stroke-miterlimit="10"/>
-      <g>
-        <line x1="7.65" y1="21.09" x2="35.91" y2="21.09" fill="none" stroke="#fff" stroke-miterlimit="10"/>
-        <line x1="21.78" y1="35.22" x2="21.78" y2="6.95" fill="none" stroke="#fff" stroke-miterlimit="10"/>
-      </g>
+      <line class="cls-2" x1="5.59" y1="22.75" x2="41.4" y2="22.75"/>
+      <line class="cls-2" x1="23.5" y1="4.85" x2="23.5" y2="40.65"/>
     </g>
   </g>
 </svg>
