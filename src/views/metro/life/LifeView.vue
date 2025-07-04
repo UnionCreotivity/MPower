@@ -37,18 +37,23 @@
               v-for="point in lifeData"
               :key="point.id"
               :class="[point.className, tag === point.tag ? 'active' : '']"
+              @click="showFancybox(point)"
             >
               <div class="radiation">
                 <div class="circle"></div>
                 <div class="circle"></div>
                 <div class="circle"></div>
               </div>
-              <img class="point-img" src="../../../assets/img/life/point.png" alt="" />
+              <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
             </div>
           </ScaleDrag>
         </div>
       </div>
     </div>
+
+    <FadeIn>
+      <LifeFancybox v-if="fancyboxItem" :fancyItem="fancyboxItem" @show-fancybox="showFancybox" />
+    </FadeIn>
   </ViewFixed>
 </template>
 
@@ -56,9 +61,15 @@
 import '@/assets/scss/metro/_life.scss'
 
 import { ref, computed } from 'vue'
+import { lifeData } from './LifeData'
+// import { lifeFancyData } from './LifeFancyData'
 import ViewFixed from '@/components/view-fixed/ViewFixed.vue'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
-import { lifeData } from './LifeData'
+import LifeFancybox from '@/components/life-fancybox/LifeFancybox.vue'
+import FadeIn from '@/components/transition/FadeIn.vue'
+
+const tag = ref('')
+const fancyboxItem = ref<{ key: string; image: string; txt: string }[] | null>(null)
 
 const lifeList = [
   {
@@ -83,17 +94,29 @@ const lifeList = [
   },
   {
     key: 'major-construction',
-    zhName: '重大建設',
-    enName: 'MAJOR CONSTRUCTION',
+    zhName: '地標新篇',
+    enName: 'EMERGING LANDMARKS',
   },
 ]
-
-const tag = ref('')
 
 const handleTag = (val: string) => {
   tag.value = val
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const showFancybox = (point?: any) => {
+  if (!point || !point.image) {
+    fancyboxItem.value = null // ← 關閉 Fancybox
+    return
+  }
+
+  const images = Array.isArray(point.image) ? point.image : [point.image]
+  fancyboxItem.value = images.map((img: string, i: number) => ({
+    key: `${point.id}-${i}`,
+    image: img,
+    txt: point.txt || '',
+  }))
+}
 const initXY = computed(() => {
   return window.innerWidth > 1400 ? { x: 300, y: -200 } : { x: 100, y: -100 }
 })

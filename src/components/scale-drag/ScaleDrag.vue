@@ -76,8 +76,15 @@ const zoomIn = (e: MouseEvent) => {
   e.preventDefault()
   if (scaleRatio.value < props.maxRatio) {
     scaleRatio.value += 0.5
-    x.value = props.init.x
-    y.value = props.init.y
+
+    let offsetX = 500 // 預設桌機偏移
+    if (window.innerWidth <= 1400) {
+      offsetX = 200 // 平板偏移量
+    }
+
+    x.value = (props.init.x ?? 0) - offsetX
+    y.value = (props.init.y ?? 0) * 3
+
     startScale.value = true
     emits('toggle-text', true)
   }

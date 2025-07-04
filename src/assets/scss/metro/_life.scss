@@ -16,6 +16,10 @@
       width: 20%;
       padding-top: 7.5vw;
       padding-left: 2vw;
+      @media all and (max-width: 1400px) {
+        justify-content: center;
+        width: 22%;
+      }
       .title-box {
         display: flex;
         flex-direction: column;
@@ -83,6 +87,11 @@
             background-color: #604c3f;
             margin-right: 1.5vw;
             border: none;
+            @media all and (max-width: 1400px) {
+              width: 6px;
+              height: 6px;
+              margin-right: 1vw;
+            }
           }
 
           span {
@@ -91,6 +100,9 @@
             color: #666767;
             letter-spacing: 0.08em;
             font-weight: 400;
+            @media all and (max-width: 1400px) {
+              font-size: 0.85vw;
+            }
           }
         }
       }
@@ -102,6 +114,10 @@
       display: flex;
       height: 100%;
       position: relative;
+      @media all and (max-width: 1400px) {
+        justify-content: center;
+        width: 75%;
+      }
       .img-box {
         width: 100%;
         position: relative;
@@ -124,8 +140,19 @@
       .life-view-point {
         position: absolute;
         z-index: 10;
-        width: 2vw;
+        width: 1.5vw;
 
+        /* 預設狀態 */
+        transform: translateY(0%);
+        transition:
+          transform 0.5s ease-in-out,
+          filter 0.5s ease-in-out;
+        filter: brightness(1);
+
+        &:hover {
+          transform: translateY(-30%);
+          filter: brightness(1.2);
+        }
         .point-img {
           position: relative;
           z-index: 10;
@@ -136,6 +163,8 @@
           top: 10%;
           width: 2vw;
           height: 2vw;
+          left: -13%;
+          top: 0%;
           opacity: 0; // 預設不顯示，active 時才顯示
 
           .circle {
@@ -189,7 +218,7 @@
         left: 7.5%;
       }
       .park-point-2 {
-        top: 47%;
+        top: 47.5%;
         left: 73%;
       }
       .park-point-3 {
@@ -234,7 +263,7 @@
       }
 
       .shopping-point-4 {
-        top: 47%;
+        top: 47.5%;
         left: 63.5%;
       }
 
@@ -244,7 +273,7 @@
       }
 
       .transit-point-1 {
-        top: 5%;
+        top: 6%;
         left: 39%;
       }
 
@@ -259,22 +288,22 @@
       }
 
       .transit-point-4 {
-        top: 14%;
+        top: 14.5%;
         left: 11.5%;
       }
 
       .major-point-1 {
-        top: 23%;
+        top: 24%;
         left: 4.5%;
       }
 
       .major-point-2 {
-        top: 14%;
+        top: 15%;
         left: 37.5%;
       }
 
       .major-point-3 {
-        top: 28%;
+        top: 29%;
         left: 15%;
       }
 
