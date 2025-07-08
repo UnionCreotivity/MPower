@@ -130,48 +130,18 @@ const initXY = computed(() => {
 })
 
 onMounted(() => {
-  const tl = gsap.timeline({ delay: 0.5 })
-  tl.from(
-    '#life-view .life-box .left-box .title-box',
+  const tl = gsap.timeline({})
+  tl.fromTo(
+    '#life-view .life-box .right-box .img-box',
     {
-      opacity: 0,
-      y: 70,
-      stagger: 0.15,
-      duration: 0.8,
+      maskPosition: '200% -100%',
     },
-    '<0.3',
+    {
+      maskPosition: '0% 100%',
+      willChange: 'maskPosition',
+      duration: 1.5,
+    },
   )
-    .from(
-      '#life-view .life-box .left-box .content',
-      {
-        opacity: 0,
-        y: 70,
-        duration: 0.8,
-      },
-      '<0.25',
-    )
-    .from(
-      '#life-view .life-box .left-box .tab-item-box .tab-item',
-      {
-        opacity: 0,
-        y: 70,
-        stagger: 0.15,
-        duration: 1,
-      },
-      '<0.3',
-    )
-    .fromTo(
-      '#life-view .life-box .right-box .img-box',
-      {
-        maskPosition: '200% -100%',
-      },
-      {
-        maskPosition: '0% 100%',
-        willChange: 'maskPosition',
-        duration: 2.5,
-      },
-      '<0.3',
-    )
 })
 </script>
 

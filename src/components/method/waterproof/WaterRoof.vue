@@ -20,7 +20,6 @@
             :key="index"
           >
             <p v-html="step"></p>
-            <span class="background-block"></span>
           </li>
         </ol>
       </div>

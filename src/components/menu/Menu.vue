@@ -8,7 +8,7 @@
     @mouseleave="handleMouseLeave"
   >
     <div class="menu-right">
-      <img src="../../assets/img/menu/menu_icon.svg" alt="" />
+      <img :src="isArialPhotoView ? menuWhite : menuDefault" alt="" />
     </div>
   </div>
 
@@ -54,12 +54,15 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, nextTick, type ComponentPublicInstance } from 'vue'
+import { onMounted, ref, nextTick, type ComponentPublicInstance, computed } from 'vue'
 import gsap from 'gsap'
 import CustomEase from 'gsap/CustomEase'
 import { menuData } from './menuData'
 import '@/assets/scss/menu/_menu.scss'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter() // ✅ 有 .push()
+const route = useRoute() // ✅ 有 .name, .params
 
 const handleMainClick = (item: (typeof menuData)[number]) => {
   if (item.pathName) {
@@ -70,11 +73,16 @@ const handleMainClick = (item: (typeof menuData)[number]) => {
     }
   }
 }
-const isMobile = ref(false)
-const router = useRouter()
 // 控制開關
 const is_Show = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
+
+const isArialPhotoView = computed(() => route.name === 'aerialPhoto')
+
+const menuDefault = new URL('@/assets/img/menu/menu_icon.svg', import.meta.url).href
+const menuWhite = new URL('@/assets/img/menu/menu_white.svg', import.meta.url).href
+
+const isMobile = ref(false)
 
 /* 用於磁吸效果 */
 const containerRef = ref<HTMLDivElement | null>(null)
@@ -207,7 +215,7 @@ const showClick = (val: boolean) => {
       const tl = gsap.timeline({})
       const texttl = gsap.timeline({})
       const linkBoxes = gsap.utils.toArray<HTMLElement>('.link-box .item .links')
-      console.log(linkBoxes)
+
       // 開啟動畫（向上展開）
       tl.fromTo(
         menuRef.value,

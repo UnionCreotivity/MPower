@@ -70,6 +70,14 @@
           justify-content: flex-start;
           width: 100%;
           border-bottom: 1px solid #8a8a8a;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            .text {
+              transform: translateX(1vw);
+            }
+          }
+
           .text {
             font-size: 1.25vw;
             color: #604c3f;
@@ -79,6 +87,7 @@
             padding-top: 0.7vw;
             padding-bottom: 0.7vw;
             border: none;
+            transition: all 0.3s ease-in-out;
           }
 
           .life-list-squre {
@@ -214,15 +223,15 @@
       }
 
       .active {
-        transition: all 0.5s;
-        animation: pointAni 1.5s ease infinite forwards;
+        transition: all 0.5s ease-in-out;
+        animation: pointAni 1.5s ease-in-out infinite forwards;
         &:hover {
           transform: translateY(0%);
           filter: brightness(1);
         }
         .radiation {
           opacity: 1;
-          transition: opacity 0.5s;
+          transition: opacity 0.5s ease-in-out;
         }
       }
 

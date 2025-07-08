@@ -1,15 +1,59 @@
+@use '../utils/mixin' as *;
+
 .arial-view {
   position: relative;
   display: flex;
   width: 100%;
-  justify-content: center;
   position: relative;
   overflow: hidden;
+  mask-image: url(../../img/mask_1.png);
+  mask-size: 200% 200%;
+  mask-repeat: no-repeat;
+  mask-position: 200% -100%;
+  -webkit-mask-size: 200% 200%;
+  -webkit-mask-position: 200% -100%;
   .img-box {
     width: 100%;
+    overflow: hidden;
     img {
       width: 100%;
       object-fit: cover;
+    }
+  }
+
+  .content-box {
+    position: absolute;
+    z-index: 10;
+    top: 4%;
+    left: 7%;
+    .title {
+      @include pageTitle();
+      color: white;
+      margin-bottom: 0.5vw;
+    }
+    .small-title {
+      font-family: var(--font-family-title-zh);
+      color: white;
+      letter-spacing: 0.1em;
+      font-size: var(--font-small-title-zh-size);
+      position: relative;
+      padding-bottom: 1vw;
+      margin-bottom: 0.5vw;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0%;
+        width: 9.5%;
+        height: 1px;
+        background: white;
+      }
+    }
+
+    .content {
+      @include pageContent();
+      color: white;
+      font-size: 1.1vw;
     }
   }
 }
