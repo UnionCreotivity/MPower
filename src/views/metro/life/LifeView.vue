@@ -69,6 +69,7 @@ import '@/assets/scss/metro/_life.scss'
 import gsap from 'gsap'
 import { onMounted, ref, computed } from 'vue'
 import { lifeData } from './LifeData'
+import CustomEase from 'gsap/CustomEase'
 // import { lifeFancyData } from './LifeFancyData'
 // import ViewFixed from '@/components/view-fixed/ViewFixed.vue'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
@@ -78,6 +79,9 @@ import Glow from '@/components/glow-effect/GlowEffect.vue'
 
 const tag = ref('')
 const fancyboxItem = ref<{ key: string; image: string; txt: string }[] | null>(null)
+
+gsap.registerPlugin(CustomEase)
+CustomEase.create('myEase', '0.24,0.43,0.15,0.97')
 
 const lifeList = [
   {
@@ -130,18 +134,41 @@ const initXY = computed(() => {
 })
 
 onMounted(() => {
-  const tl = gsap.timeline({})
+  const tl = gsap.timeline({ delay: 0.8 })
   tl.fromTo(
     '#life-view .life-box .right-box .img-box',
     {
-      maskPosition: '200% -100%',
+      autoAlpha: 0,
+      clipPath: 'inset(0 100% 0 0)', // 從右側完全遮住
     },
     {
-      maskPosition: '0% 100%',
-      willChange: 'maskPosition',
-      duration: 1.5,
+      clipPath: 'inset(0 0% 0 0)', // 向左展開到完整顯示
+      duration: 1.7,
+      autoAlpha: 1,
+      ease: 'myEase',
+      overwrite: true,
     },
   )
+    .from(
+      '#life-view .life-box .right-box .img-box img',
+      {
+        scale: 1.2,
+        duration: 1.5,
+        ease: 'myEase',
+        overwrite: true,
+      },
+      '<',
+    )
+    .from(
+      '#life-view .life-box .right-box .life-view-point .point-img',
+      {
+        autoAlpha: 0,
+        duration: 1,
+        eaase: 'power0.inOut',
+        y: 20,
+      },
+      '<0.8',
+    )
 })
 </script>
 

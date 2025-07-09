@@ -130,13 +130,13 @@
       .img-box {
         width: 100%;
         position: relative;
-        mask-image: url(../../img/mask_1.png);
-        mask-size: 200% 200%;
-        mask-repeat: no-repeat;
-        mask-position: 200% -100%;
-        -webkit-mask-size: 200% 200%;
-        -webkit-mask-position: 200% -100%;
-
+        clip-path: inset(0 100% 0 0);
+        // mask-image: url(../../img/mask_1.png);
+        // mask-size: 200% 200%;
+        // mask-repeat: no-repeat;
+        // mask-position: 200% -100%;
+        // -webkit-mask-size: 200% 200%;
+        // -webkit-mask-position: 200% -100%;
         img {
           width: 100%;
           object-fit: fill;
