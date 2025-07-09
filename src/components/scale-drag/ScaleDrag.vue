@@ -77,7 +77,7 @@ const zoomIn = (e: MouseEvent) => {
   if (scaleRatio.value < props.maxRatio) {
     scaleRatio.value += 0.5
 
-    let offsetX = 500 // 預設桌機偏移
+    let offsetX = 400 // 預設桌機偏移
     if (window.innerWidth <= 1400) {
       offsetX = 200 // 平板偏移量
     }
