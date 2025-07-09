@@ -18,9 +18,26 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import gsap from 'gsap'
+import { SplitText } from 'gsap/SplitText'
 
 import '@/assets/scss/metro/_arial-photo.scss'
+
+gsap.registerPlugin(SplitText)
+
 const initGsap = () => {
+  const bigtitle = gsap.utils.toArray('.arial-view .content-box .title') as HTMLElement[]
+  const splitbTitle = SplitText.create(bigtitle, {
+    type: 'chars,words,lines',
+    linesClass: 'clip-text',
+  })
+  const smallTitleSplit = SplitText.create('.small-title', {
+    type: 'chars,words,lines',
+    linesClass: 'clip-text',
+  })
+  const contentSplit = SplitText.create('.content', {
+    type: 'chars,words,lines',
+    linesClass: 'clip-text',
+  })
   const tl = gsap.timeline({})
   tl.fromTo(
     '.arial-view',
@@ -42,15 +59,49 @@ const initGsap = () => {
     )
 
     .from(
-      '.arial-view .content-box div',
+      splitbTitle.chars,
       {
-        opacity: 0,
         y: 70,
-        stagger: 0.15,
+        opacity: 0,
         duration: 1,
+        ease: 'power2.out',
+        stagger: { each: 0.05, from: 'start' },
       },
-      '<0.9',
+      '<0.8',
     )
+    .from(
+      smallTitleSplit.lines,
+      {
+        y: 70,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out',
+      },
+      '<0.5',
+    )
+
+    .from(
+      contentSplit.lines,
+      {
+        y: 70,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out',
+        stagger: { each: 0.15, from: 'start' },
+      },
+      '<0.3',
+    )
+
+  // .from(
+  //   '.arial-view .content-box div',
+  //   {
+  //     opacity: 0,
+  //     y: 70,
+  //     stagger: 0.15,
+  //     duration: 1,
+  //   },
+  //   '<0.9',
+  // )
 }
 onMounted(() => {
   initGsap()

@@ -30,6 +30,15 @@
       @include pageTitle();
       color: white;
       margin-bottom: 0.5vw;
+      overflow: hidden;
+
+      div {
+        overflow: hidden;
+
+        div {
+          display: flex !important;
+        }
+      }
     }
     .small-title {
       font-family: var(--font-family-title-zh);

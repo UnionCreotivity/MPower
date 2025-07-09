@@ -164,7 +164,7 @@ onMounted(() => {
       {
         autoAlpha: 0,
         duration: 1,
-        eaase: 'power0.inOut',
+        ease: 'power0.inOut',
         y: 20,
       },
       '<0.8',
