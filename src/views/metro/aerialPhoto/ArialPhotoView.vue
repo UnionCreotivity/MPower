@@ -8,7 +8,7 @@
       <div class="small-title">3核心3商圈3捷運，十分鐘同步擁有</div>
       <div class="content">
         生活十分鐘，距離縮短、時間讓步！七期+水湳+14期，3核心幕幕換景。<br />
-        捷運綠線串聯繁華，3捷未來交匯。中清+崇德+北平，3商圈季季換新。<br />
+        捷運綠線串聯繁華，3捷未來匯聚。中清+崇德+北平，3商圈繁華不斷。<br />
         未來台中101置地廣場，國際購物滿足品味嚮往！
       </div>
     </div>
@@ -40,17 +40,15 @@ const initGsap = () => {
   })
   const tl = gsap.timeline({})
   tl.fromTo(
-    '.arial-view',
+    '.arial-view .img-box img',
+    { clipPath: 'inset(100% 0% 0% 0%)', opacity: 0 },
     {
-      maskPosition: '200% -100%',
-    },
-    {
-      maskPosition: '0% 100%',
-      willChange: 'maskPosition',
-      duration: 2.5,
+      clipPath: 'inset(0% 0% 0% 0%)',
+      duration: 1,
+      // ease: 'expo.inOut',
+      opacity: 1,
     },
   )
-
     .fromTo(
       '.arial-view .img-box img',
       { scale: 1.3, filter: 'blur(10px) brightness(1.8)' },
@@ -67,7 +65,7 @@ const initGsap = () => {
         ease: 'power2.out',
         stagger: { each: 0.05, from: 'start' },
       },
-      '<0.8',
+      '<0.35',
     )
     .from(
       smallTitleSplit.lines,
