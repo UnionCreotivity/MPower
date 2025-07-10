@@ -134,7 +134,7 @@ const initXY = computed(() => {
 })
 
 onMounted(() => {
-  const tl = gsap.timeline({ delay: 0.8 })
+  const tl = gsap.timeline({ delay: 0.4 })
   tl.fromTo(
     '#life-view .life-box .right-box .img-box',
     {
@@ -143,7 +143,7 @@ onMounted(() => {
     },
     {
       clipPath: 'inset(0 0% 0 0)', // 向左展開到完整顯示
-      duration: 1.7,
+      duration: 2,
       autoAlpha: 1,
       ease: 'myEase',
       overwrite: true,

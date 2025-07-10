@@ -3,7 +3,11 @@ export const lifeData = [
     tag: 'green-park',
     id: 'central-park-area', // 中央公園
     className: 'park-point-1',
-    image: new URL('@/assets/img/life/park/central_01.webp', import.meta.url).href,
+    image: [
+      new URL('@/assets/img/life/park/central_01.webp', import.meta.url).href,
+      new URL('@/assets/img/life/park/central_02.webp', import.meta.url).href,
+      new URL('@/assets/img/life/park/central_03.webp', import.meta.url).href,
+    ],
     txt: '中央公園',
   },
   {
@@ -64,7 +68,15 @@ export const lifeData = [
     image: new URL('@/assets/img/life/school_district/xiaoming_01.webp', import.meta.url).href,
     txt: '曉明女中',
   },
-
+  {
+    tag: 'cultural-district',
+    id: 'cmu', // 中國醫藥大學.
+    className: 'cultural-point-5',
+    image: [new URL('@/assets/img/life/school_district/cmu_1.webp', import.meta.url).href,
+    new URL('@/assets/img/life/school_district/cmu_2.webp', import.meta.url).href,
+    ],
+    txt: '中國醫藥大學',
+  },
   //繁華商圈
   {
     tag: 'shopping-district',
@@ -101,6 +113,15 @@ export const lifeData = [
     image: new URL('@/assets/img/life/shopping_district/tianjin_01.webp', import.meta.url).href,
     txt: '天津路商圈',
   },
+  {
+    tag: 'shopping-district',
+    id: 'home-shopping', //中清路家樂福
+    className: 'shopping-point-6',
+    image: [new URL('@/assets/img/life/shopping_district/home_shopping_1.webp', import.meta.url).href,
+    new URL('@/assets/img/life/shopping_district/home_shopping_2.webp', import.meta.url).href,
+    ],
+    txt: '中清路家樂福',
+  },
 
   //交通樞紐
   {
@@ -130,6 +151,17 @@ export const lifeData = [
     className: 'transit-point-4',
     image: new URL('@/assets/img/life/traffic/highway1_zhonggang_01.webp', import.meta.url).href,
     txt: '水湳轉運中心',
+  },
+
+  {
+    tag: 'rapid-transit',
+    id: 'g07', // 中清文心站
+    className: 'transit-point-5',
+    image: [new URL('@/assets/img/life/traffic/g07_1.webp', import.meta.url).href,
+    new URL('@/assets/img/life/traffic/g07_2.webp', import.meta.url).href,
+    new URL('@/assets/img/life/traffic/g07_3.webp', import.meta.url).href,
+    ],
+    txt: '中清文心站',
   },
 
   //地標新篇
@@ -172,7 +204,10 @@ export const lifeData = [
     tag: 'major-construction',
     id: 'stadium', //34洲際棒球場
     className: 'major-point-6',
-    image: new URL('@/assets/img/life/major_construction/stadium_01.webp', import.meta.url).href,
+    image: [new URL('@/assets/img/life/major_construction/stadium_01.webp', import.meta.url).href,
+    new URL('@/assets/img/life/major_construction/stadium_02.webp', import.meta.url).href,
+    new URL('@/assets/img/life/major_construction/stadium_03.webp', import.meta.url).href,
+    ],
     txt: '洲際棒球場',
   },
 
