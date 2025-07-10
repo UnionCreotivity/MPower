@@ -38,14 +38,13 @@ const initGsap = () => {
     type: 'chars,words,lines',
     linesClass: 'clip-text',
   })
-  const tl = gsap.timeline({})
+  const tl = gsap.timeline({ delay: 0.1 })
   tl.fromTo(
     '.arial-view .img-box img',
     { clipPath: 'inset(100% 0% 0% 0%)', opacity: 0 },
     {
       clipPath: 'inset(0% 0% 0% 0%)',
       duration: 1,
-      // ease: 'expo.inOut',
       opacity: 1,
     },
   )
@@ -55,7 +54,6 @@ const initGsap = () => {
       { duration: 1, scale: 1, filter: 'blur(0px) brightness(1)', ease: 'power1.inOut' },
       '<',
     )
-
     .from(
       splitbTitle.chars,
       {
@@ -77,7 +75,6 @@ const initGsap = () => {
       },
       '<0.5',
     )
-
     .from(
       contentSplit.lines,
       {
@@ -89,17 +86,6 @@ const initGsap = () => {
       },
       '<0.3',
     )
-
-  // .from(
-  //   '.arial-view .content-box div',
-  //   {
-  //     opacity: 0,
-  //     y: 70,
-  //     stagger: 0.15,
-  //     duration: 1,
-  //   },
-  //   '<0.9',
-  // )
 }
 onMounted(() => {
   initGsap()
