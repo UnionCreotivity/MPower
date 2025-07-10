@@ -25,12 +25,13 @@ import '@/assets/scss/method/_method-page.scss'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-import CommingSoon from '@/components/comingsoon/ComingSoon.vue'
-
 import IntimateFloorExhaust from '@/components/method/intimate/IntimateFloorExhaust.vue'
 import IntimateMainTrap from '@/components/method/intimate/IntimateMainTrap.vue'
 import IntimateEmergencyPower from '@/components/method/intimate/IntimateEmergencyPower.vue'
 import IntimateWaterPressureTest from '@/components/method/intimate/IntimateWaterPressureTest.vue'
+import IntimateRoom from '@/components/method/intimate/IntimateRoom.vue'
+import IntimateCharging from '@/components/method/intimate/IntimateCharging.vue'
+import IntimateKitchen from '@/components/method/intimate/IntimateKitchen.vue'
 
 const router = useRouter()
 const goBack = () => router.push('/method')
@@ -39,11 +40,10 @@ const tabs = [
   { title: '當層排氣', component: IntimateFloorExhaust },
   { title: '總存水彎', component: IntimateMainTrap },
   { title: '緊急供電', component: IntimateEmergencyPower },
-  { title: '地下室美化', component: CommingSoon },
+  { title: '客廳雙迴路', component: IntimateRoom },
   { title: '給水試壓', component: IntimateWaterPressureTest },
-  { title: '2F獨立管道', component: CommingSoon },
-  { title: '預留充電管路', component: CommingSoon },
-  { title: '廚房垃圾設備', component: CommingSoon },
+  { title: '預留充電管路', component: IntimateCharging },
+  { title: '廚房垃圾設備', component: IntimateKitchen },
 ]
 
 const activeTab = ref(0)
