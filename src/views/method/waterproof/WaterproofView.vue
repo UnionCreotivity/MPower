@@ -16,6 +16,7 @@
     </div>
 
     <component :is="tabs[activeTab].component" />
+    <div class="right-mark-text">WATERPROOF</div>
   </section>
 </template>
 
@@ -50,6 +51,10 @@ onMounted(() => {
     })
 
     backButton.addEventListener('mouseleave', () => {
+      cursor.classList.remove('cursor--hover')
+    })
+
+    backButton.addEventListener('click', () => {
       cursor.classList.remove('cursor--hover')
     })
   }
