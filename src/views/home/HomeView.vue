@@ -40,11 +40,7 @@
   </article>
 </template>
 <script setup lang="ts">
-<<<<<<< HEAD
-import { onMounted, ref } from 'vue'
-=======
 import { ref, defineEmits, onMounted } from 'vue'
->>>>>>> prod
 import gsap from 'gsap'
 import screenfull from 'screenfull'
 import FadeIn from '@/components/transition/FadeIn.vue'
@@ -68,11 +64,7 @@ const menuItems = [
     id: 'master',
     zhName: '建築規劃',
     enName: 'MASTER',
-<<<<<<< HEAD
-    link: 'test',
-=======
     link: 'comingsoon',
->>>>>>> prod
   },
   {
     id: 'mansion',
@@ -133,11 +125,6 @@ const showClick = () => {
 }
 
 onMounted(async () => {
-<<<<<<< HEAD
-  // 等 Service Worker 準備好
-  if (navigator.serviceWorker?.controller) {
-    console.log('Service Worker 已註冊並控制頁面，快取已在安裝時完成')
-=======
   const videoURL = new URL('@/assets/img/home/c1_bg.mp4', import.meta.url).href
   const res = await fetch(videoURL)
   const blob = await res.blob()
@@ -146,7 +133,6 @@ onMounted(async () => {
   if (bgVideo.value) {
     bgVideo.value.src = blobURL
     bgVideo.value.load()
->>>>>>> prod
   }
 })
 </script>

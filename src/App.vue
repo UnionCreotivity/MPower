@@ -35,11 +35,7 @@
 </template>
 
 <script setup lang="ts">
-<<<<<<< HEAD
-import { onMounted } from 'vue'
-=======
 import { ref, onMounted, onBeforeUnmount } from 'vue'
->>>>>>> prod
 import { RouterView } from 'vue-router'
 
 import FadeIn from './components/transition/FadeIn.vue'
@@ -145,10 +141,6 @@ waitForPreloadedAssets()
 
 onMounted(() => {
   if (!import.meta.env.DEV) {
-<<<<<<< HEAD
-    // 非本地開發，才執行
-=======
->>>>>>> prod
     axios
       .post(
         'https://web-board.tw/sys/login_axios.php',
@@ -161,21 +153,14 @@ onMounted(() => {
             'Refresh-Token': localStorage['refresh_token'],
           },
           onUploadProgress: function () {
-<<<<<<< HEAD
-            // document.querySelector('.ajax_loading').classList.add('show_in');
-=======
             //document.querySelector('.ajax_loading').classList.add('show_in');
->>>>>>> prod
           },
         },
       )
       .then(function (response) {
         console.log(response.data)
         if (response.data.success) {
-<<<<<<< HEAD
-=======
           // -- 刷新 token --
->>>>>>> prod
           if (response.data.jwt !== undefined && response.data.refresh_jwt !== undefined) {
             sessionStorage['token'] = response.data.jwt
             localStorage['refresh_token'] = response.data.refresh_jwt
@@ -189,17 +174,11 @@ onMounted(() => {
         console.error(error)
       })
       .finally(function () {
-<<<<<<< HEAD
-        // document.querySelector('.ajax_loading').classList.remove('show_in');
-=======
         //document.querySelector('.ajax_loading').classList.remove('show_in');
->>>>>>> prod
       })
   } else {
     console.log('開發環境，跳過登入請求')
   }
-<<<<<<< HEAD
-=======
 
   cursor.value = document.getElementById('custom-cursor')
   let lastX = 0
@@ -242,7 +221,6 @@ onMounted(() => {
       )
     })
   }
->>>>>>> prod
 })
 </script>
 

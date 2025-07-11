@@ -22,7 +22,7 @@ import IntimateView from '@/views/method/intimate/IntimateView.vue' // 貼心工
 import ComingView from '@/views/comingView/comingView.vue'
 
 //建築規劃
-import MaterView from '@/views/master/MaterView.vue'
+
 import TestView from '@/views/master/test/TestView.vue'
 
 const router = createRouter({
@@ -42,14 +42,14 @@ const router = createRouter({
           name: 'aerialPhoto',
           component: ArialPhotoView,
         },
-         {
+        {
           path: 'life',
           name: 'life',
           component: LifeView,
         },
       ],
     },
-     {
+    {
       path: '/master',
       component: MaterView,
       children: [
