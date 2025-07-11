@@ -42,3 +42,6 @@ npm run lint
 serve dist -->
 
 <!-- workbox generateSW workbox-config.cjs -->
+
+<!-- npm run build
+npm run preview -->

@@ -63,6 +63,10 @@ const initGsap = () => {
       { duration: 1, scale: 1, filter: 'blur(0px) brightness(1)', ease: 'power1.inOut' },
       '<',
     )
+    .from('.light-video', {
+      opacity: 0,
+      duration: 1,
+    })
     .from(
       splitbTitle.chars,
       {
@@ -72,7 +76,7 @@ const initGsap = () => {
         ease: 'power2.out',
         stagger: { each: 0.05, from: 'start' },
       },
-      '<0.35',
+      '<-0.2',
     )
     .from(
       smallTitleSplit.lines,
