@@ -157,7 +157,7 @@
           position: absolute;
           left: 0;
           bottom: 0%;
-          width: 10%;
+          width: 9%;
           height: 1px;
           background: #604c3f;
         }
@@ -315,6 +315,9 @@
 
     .right-box {
       width: 50%;
+      .title-box::after {
+        width: 8%;
+      }
       .content-box {
         ul {
           width: 93%;
