@@ -143,6 +143,8 @@ const videoSrcMap: Record<string, string | string[]> = {
     new URL('@/assets/img/method/MainTrap.mp4', import.meta.url).href,
     new URL('@/assets/img/method/EmergencyPower.mp4', import.meta.url).href,
     new URL('@/assets/img/method/WaterPressureTest.mp4', import.meta.url).href,
+    new URL('@/assets/img/method/LivingRoom.mp4', import.meta.url).href,
+    new URL('@/assets/img/method/kitchen.mp4', import.meta.url).href,
   ],
 }
 

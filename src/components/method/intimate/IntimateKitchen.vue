@@ -2,7 +2,7 @@
   <div class="method-content-box">
     <div class="left-box">
       <video
-        src="../../../assets/img/method/LivingRoom.mp4"
+        src="../../../assets/img/method/kitchen.mp4"
         autoplay
         muted
         playsinline
