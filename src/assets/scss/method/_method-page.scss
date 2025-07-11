@@ -100,7 +100,11 @@
       justify-content: center;
       overflow: hidden;
       align-items: center;
-
+      .hint {
+        @include hint();
+        bottom: 6vw;
+        color: white;
+      }
       img {
         width: 100%;
         position: absolute;
@@ -220,7 +224,7 @@
             position: relative;
             overflow: hidden;
             padding-left: 0vw;
-            padding-top: 0.5vw;
+            // padding-top: 0.5vw;
             padding-bottom: 0.5vw;
 
             &::after {
@@ -368,4 +372,8 @@
       }
     }
   }
+}
+
+#method-view .window-content-box .right-box .content-box ol {
+  width: 62%;
 }

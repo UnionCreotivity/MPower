@@ -14,7 +14,7 @@ export const menuData = [
       {
         id: '',
         name: '軌道經濟',
-        link: 'comingsoon',
+        link: '',
       },
       {
         id: 'life',
@@ -24,7 +24,7 @@ export const menuData = [
       {
         id: '',
         name: '門牌價值',
-        link: 'comingsoon',
+        link: '',
       },
     ],
   },
@@ -38,7 +38,7 @@ export const menuData = [
       {
         id: '',
         name: '樓層規劃',
-        link: 'comingsoon',
+        link: '',
       },
     ],
   },
@@ -52,7 +52,7 @@ export const menuData = [
       {
         id: '',
         name: '嚴選建材',
-        link: 'comingsoon',
+        link: '',
       },
     ],
   },
@@ -90,27 +90,27 @@ export const menuData = [
       {
         id: '',
         name: '營建起家',
-        link: 'comingsoon',
+        link: '',
       },
       {
         id: '',
         name: '建築團隊',
-        link: 'comingsoon',
+        link: '',
       },
       {
         id: '',
         name: '三心二藝',
-        link: 'comingsoon',
+        link: '',
       },
       {
         id: '',
         name: '歷年業績',
-        link: 'comingsoon',
+        link: '',
       },
       {
         id: '',
         name: '售後服務',
-        link: 'comingsoon',
+        link: '',
       },
     ],
   },

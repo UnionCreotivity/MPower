@@ -149,7 +149,7 @@ export const lifeData = [
     tag: 'rapid-transit',
     id: 'shuinan-road', // 水湳轉運中心
     className: 'transit-point-4',
-    image: new URL('@/assets/img/life/traffic/highway1_zhonggang_01.webp', import.meta.url).href,
+    image: new URL('@/assets/img/life/traffic/shuinan_01.webp', import.meta.url).href,
     txt: '水湳轉運中心',
   },
 

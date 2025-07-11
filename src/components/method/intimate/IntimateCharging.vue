@@ -2,6 +2,7 @@
   <div class="method-content-box">
     <div class="left-box">
       <img src="../../../assets/img/method/Charging.webp" class="method-img charging-img" />
+      <div class="hint">情境示意圖</div>
     </div>
 
     <div class="right-box">

@@ -1,5 +1,5 @@
 <template>
-  <div class="method-content-box">
+  <div class="method-content-box window-content-box">
     <div class="left-box">
       <img
         v-for="(img, index) in images"
@@ -55,7 +55,7 @@ const images = [
 ]
 
 const steps = [
-  '1.窗框四周以彈性水泥施作，<br />開口内部採用RC鋼筋做斜角補強，可防止剪力裂縫',
+  '1.窗框四周以彈性水泥施作，開口内部採用RC鋼筋做斜角補強，可防止剪力裂縫',
   '2.RC灌漿',
   '3.窗框安装',
   '4.嵌縫：灌製防水水泥沙漿',

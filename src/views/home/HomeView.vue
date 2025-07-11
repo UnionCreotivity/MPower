@@ -64,13 +64,13 @@ const menuItems = [
     id: 'master',
     zhName: '建築規劃',
     enName: 'MASTER',
-    link: 'comingsoon',
+    link: '',
   },
   {
     id: 'mansion',
     zhName: '貼心建材',
     enName: 'MANSION',
-    link: 'comingsoon',
+    link: '',
   },
   {
     id: 'method',
@@ -82,7 +82,7 @@ const menuItems = [
     id: 'metier',
     zhName: '大熊建設',
     enName: 'METIER',
-    link: 'comingsoon',
+    link: '',
   },
 ]
 
