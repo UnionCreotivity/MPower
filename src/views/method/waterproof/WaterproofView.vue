@@ -16,6 +16,7 @@
     </div>
 
     <component :is="tabs[activeTab].component" />
+    <div class="right-mark-text">WATERPROOF</div>
   </section>
 </template>
 
