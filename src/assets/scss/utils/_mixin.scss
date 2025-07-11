@@ -1,5 +1,5 @@
 @mixin pageContent() {
-  font-size: 1.25vw;
+  font-size: 1.1vw;
   font-family: var(--font-content-zh);
   color: var(--font-content-color);
   line-height: 2;
@@ -12,7 +12,7 @@
 }
 
 @mixin pageTitle() {
-  font-size: 1.7vw;
+  font-size: 1.6vw;
   font-family: var(--font-family-title-zh);
   color: var(--font-color-title);
   font-weight: 600;

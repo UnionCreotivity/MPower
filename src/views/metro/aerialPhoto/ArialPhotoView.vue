@@ -1,7 +1,10 @@
 <template>
   <section class="arial-view">
     <div class="img-box">
-      <img src="/src/assets/img/metro/arial.webp" alt="" />
+      <picture>
+        <source srcset="/src/assets/img/metro/tablet.webp" media="(max-width: 1400px)" />
+        <img src="/src/assets/img/metro/arial.webp" alt="" />
+      </picture>
     </div>
     <div class="content-box">
       <div class="title">都會價值，默契串流</div>

@@ -4,6 +4,7 @@
       <Swiper
         :speed="1000"
         :slides-per-view="1"
+        :loop="props.fancyItem.length > 1"
         :spaceBetween="25"
         :navigation="navigationOptions"
         :modules="[Navigation]"

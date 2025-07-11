@@ -10,7 +10,7 @@
         :class="{ active: index === currentIndex }"
       />
     </div>
-    <div class="right-box window-right-box">
+    <div class="right-box roff-right-box">
       <div class="title-box">屋頂防水</div>
       <div class="content-box">
         <ol class="step-list">

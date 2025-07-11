@@ -87,7 +87,7 @@ const menuItems = [
 ]
 
 const onVideoReady = () => {
-  emit('loaded') // 告訴 App.vue 可以關 loading
+  emit('loaded')
 }
 
 const initGsap = () => {

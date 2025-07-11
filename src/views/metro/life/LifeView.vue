@@ -135,20 +135,24 @@ const initXY = computed(() => {
 
 onMounted(() => {
   const tl = gsap.timeline({ delay: 0.4 })
-  tl.fromTo(
-    '#life-view .life-box .right-box .img-box',
-    {
-      autoAlpha: 0,
-      clipPath: 'inset(0 100% 0 0)', // 從右側完全遮住
-    },
-    {
-      clipPath: 'inset(0 0% 0 0)', // 向左展開到完整顯示
-      duration: 2,
-      autoAlpha: 1,
-      ease: 'myEase',
-      overwrite: true,
-    },
-  )
+  tl.from('#life-view .life-box .left-box', {
+    autoAlpha: 0,
+    duration: 1,
+  })
+
+    .fromTo(
+      '#life-view .life-box .right-box .img-box',
+      {
+        autoAlpha: 0,
+        clipPath: 'inset(0 100% 0 0)', // 從右側完全遮住
+      },
+      {
+        clipPath: 'inset(0 0% 0 0)', // 向左展開到完整顯示
+        duration: 2,
+        autoAlpha: 1,
+      },
+      '<0.15',
+    )
     .from(
       '#life-view .life-box .right-box .img-box img',
       {
