@@ -67,6 +67,20 @@
         color: #c2a998;
       }
     }
+    .right-mark-text {
+      writing-mode: vertical-lr;
+      font-size: 4.75vw;
+      font-family: var(--font-family-title-en);
+      color: #e2dfdc;
+      font-weight: 500;
+      position: absolute;
+      bottom: 6vw;
+      text-align: end;
+      align-items: center;
+      right: -1vw;
+      z-index: 15;
+      // opacity: 0;
+    }
   }
 
   .method-content-box {
