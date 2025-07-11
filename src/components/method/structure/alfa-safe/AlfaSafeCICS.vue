@@ -8,7 +8,7 @@
       <div class="title-box">ALFA SAFE 柱中柱工法</div>
       <div class="content-box">
         <div class="content">
-          「Alfa Safe柱中柱」採系統化設計與自動化加工， 鋼筋一體彎折、精準預製，取代傳統綁紮。<br />
+          「Alfa Safe柱中柱」採系統化設計與自動化加工，鋼筋一體彎折、精準預製，取代傳統綁紮。<br />
           現場僅需組裝與灌漿，施工快速、品質穩定，有效 減少人力與誤差，全面提升結構安全與效率。
         </div>
         <ul>

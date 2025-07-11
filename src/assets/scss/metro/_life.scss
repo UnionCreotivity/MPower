@@ -80,7 +80,7 @@
           }
 
           .text {
-            font-size: 1.25vw;
+            font-size: 1.15vw;
             color: #604c3f;
             font-family: var(--font-family-title-zh);
             font-weight: 600;
@@ -92,10 +92,10 @@
           }
 
           .life-list-squre {
-            width: 8px;
-            height: 8px;
+            width: 0.35vw;
+            height: 0.35vw;
             background-color: #604c3f;
-            margin-right: 1.5vw;
+            margin-right: 1vw;
             border: none;
             @media all and (max-width: 1400px) {
               width: 5px;
@@ -105,13 +105,13 @@
           }
 
           span {
-            font-size: 16px;
+            font-size: 0.65vw;
             margin-left: 1vw;
             color: #666767;
             letter-spacing: 0.08em;
             font-weight: 400;
             @media all and (max-width: 1400px) {
-              font-size: 0.85vw;
+              font-size: 0.7vw;
             }
           }
         }

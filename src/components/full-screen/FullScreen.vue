@@ -26,7 +26,7 @@ const handleClick = () => {
   height: 3vw;
   opacity: 0.5;
 
-  z-index: 20;
+  z-index: 35;
   img {
     height: 100%;
   }
