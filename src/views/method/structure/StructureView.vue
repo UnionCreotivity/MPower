@@ -58,6 +58,9 @@ onMounted(() => {
     backButton.addEventListener('mouseleave', () => {
       cursor.classList.remove('cursor--hover')
     })
+    backButton.addEventListener('click', () => {
+      cursor.classList.remove('cursor--hover')
+    })
   }
 })
 </script>
