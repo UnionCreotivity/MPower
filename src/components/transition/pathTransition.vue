@@ -1,9 +1,8 @@
 <template>
-  <Transition name="fade" mode="out-in" @before-enter="runRevealAnimation">
-    <slot></slot>
+  <Transition mode="out-in" @before-enter="runRevealAnimation">
+    <slot />
   </Transition>
 
-  <!-- 加上這段 SVG 曲線動畫 -->
   <svg class="overlay" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
     <path
       ref="overlayPath"
@@ -15,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import gsap from 'gsap'
 
 const overlayPath = ref<SVGPathElement | null>(null)
@@ -33,10 +32,11 @@ const paths = {
 const runRevealAnimation = () => {
   if (!overlayPath.value) return
 
-  const tl = gsap.timeline({})
+  const tl = gsap.timeline()
 
   tl.set(overlayPath.value, {
     attr: { d: paths.step1.unfilled },
+    opacity: 1,
   })
     .to(
       overlayPath.value,
@@ -52,33 +52,15 @@ const runRevealAnimation = () => {
       ease: 'power1',
       attr: { d: paths.step1.filled },
     })
-    .to(
-      overlayPath.value,
-      {
-        duration: 0.6,
-        opacity: 0,
-        ease: 'power1.out',
-      },
-      '>-0.2',
-    ) // 淡出與結尾動畫重疊一點點
+    .to(overlayPath.value, {
+      duration: 0.6,
+      opacity: 0,
+      ease: 'power1.out',
+    })
 }
 </script>
 
 <style scoped>
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 4s;
-}
-
-/* SVG overlay styling */
 .overlay {
   position: fixed;
   top: 0;
@@ -90,6 +72,6 @@ const runRevealAnimation = () => {
 }
 
 .overlay__path {
-  fill: #4a90e2;
+  fill: #856b58;
 }
 </style>

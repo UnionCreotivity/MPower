@@ -1,7 +1,7 @@
 <template>
   <div class="app-main">
     <div id="custom-cursor"></div>
-    <FadeIn>
+    <SvgTransition>
       <div class="app-loading" v-show="!isLoad">
         <div class="app-loading-container">
           <div class="wave-loading">
@@ -17,18 +17,18 @@
           <div class="progress-text">{{ displayProgress }}%</div>
         </div>
       </div>
-    </FadeIn>
+    </SvgTransition>
 
     <div class="app-container" v-show="isLoad">
       <router-view v-slot="{ Component, route }">
-        <FadeIn>
+        <SvgTransition>
           <component
             :is="Component"
             :key="route.path"
             :isLoad="isLoad"
             @loaded="handleLoaded"
           ></component>
-        </FadeIn>
+        </SvgTransition>
       </router-view>
     </div>
   </div>
@@ -38,7 +38,8 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RouterView } from 'vue-router'
 
-import FadeIn from './components/transition/FadeIn.vue'
+// import FadeIn from './components/transition/FadeIn.vue'
+import SvgTransition from './components/transition/pathTransition.vue'
 import axios from 'axios'
 import screenfull from 'screenfull'
 
