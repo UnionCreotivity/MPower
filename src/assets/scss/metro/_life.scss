@@ -1,0 +1,363 @@
+@use '../utils/mixin' as *;
+#life-view {
+  display: flex;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  .life-box {
+    display: flex;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    justify-content: space-between;
+    .left-box {
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+      padding-top: 7.5vw;
+      padding-left: 2vw;
+      @media all and (max-width: 1400px) {
+        justify-content: center;
+        width: 23%;
+        padding-top: 0vw;
+      }
+      .title-box {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 1.2vw;
+        margin-bottom: 1vw;
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0%;
+          width: 19%;
+          height: 1px;
+          background: #604c3f;
+        }
+        .en {
+          font-family: var(--font-family-title-en);
+          font-size: 1.85vw;
+          color: #a48b78;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.5vw;
+        }
+        .big-zh {
+          letter-spacing: 0.06em;
+          @include pageTitle();
+          margin-bottom: 0.4vw;
+        }
+        .zh {
+          font-family: var(--font-family-title-zh);
+          font-size: var(--font-small-title-zh-size);
+          color: var(--font-color-title);
+          letter-spacing: 0.06em;
+          font-weight: 600;
+        }
+      }
+      .content {
+        @include pageContent();
+        font-size: 1vw;
+      }
+      .tab-item-box {
+        margin-top: 2.5vw;
+        display: flex;
+        flex-direction: column;
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          width: 100%;
+          border-bottom: 1px solid #8a8a8a;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            .text {
+              transform: translateX(1vw);
+            }
+          }
+
+          .text {
+            font-size: 1.15vw;
+            color: #604c3f;
+            font-family: var(--font-family-title-zh);
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            padding-top: 0.7vw;
+            padding-bottom: 0.7vw;
+            border: none;
+            transition: all 0.3s ease-in-out;
+          }
+
+          .life-list-squre {
+            width: 0.35vw;
+            height: 0.35vw;
+            background-color: #604c3f;
+            margin-right: 1vw;
+            border: none;
+            @media all and (max-width: 1400px) {
+              width: 5px;
+              height: 5px;
+              margin-right: 1vw;
+            }
+          }
+
+          span {
+            font-size: 0.65vw;
+            margin-left: 1vw;
+            color: #666767;
+            letter-spacing: 0.08em;
+            font-weight: 400;
+            @media all and (max-width: 1400px) {
+              font-size: 0.7vw;
+            }
+          }
+        }
+      }
+    }
+    .right-box {
+      display: flex;
+      flex-direction: column;
+      width: 78%;
+      display: flex;
+      height: 100%;
+      position: relative;
+      @media all and (max-width: 1400px) {
+        justify-content: center;
+        width: 75%;
+      }
+      .img-box {
+        width: 100%;
+        position: relative;
+        clip-path: inset(0 100% 0 0);
+        // mask-image: url(../../img/mask_1.png);
+        // mask-size: 200% 200%;
+        // mask-repeat: no-repeat;
+        // mask-position: 200% -100%;
+        // -webkit-mask-size: 200% 200%;
+        // -webkit-mask-position: 200% -100%;
+        img {
+          width: 100%;
+          object-fit: fill;
+        }
+        .main-map-img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+      @keyframes pointAni {
+        0% {
+          transform: translateY(0%);
+        }
+        50% {
+          transform: translateY(-30%);
+        }
+      }
+
+      .life-view-point {
+        position: absolute;
+        z-index: 10;
+        width: 1.1vw;
+
+        /* 預設狀態 */
+        transform: translateY(0%);
+        transition:
+          transform 0.5s ease-in-out,
+          filter 0.5s ease-in-out;
+        filter: brightness(1);
+
+        &:hover {
+          transform: translateY(-30%);
+          filter: brightness(1.2);
+        }
+        .point-img {
+          position: relative;
+          z-index: 10;
+        }
+
+        .radiation {
+          position: absolute;
+          top: 10%;
+          width: 1.35vw;
+          height: 1.35vw;
+          left: -14%;
+          top: 0%;
+          opacity: 0; // 預設不顯示，active 時才顯示
+
+          .circle {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: rgba(255, 101, 101, 0.521);
+            animation-name: radiation;
+            animation-duration: 1.35s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            opacity: 0;
+          }
+
+          .circle:nth-child(2) {
+            animation-delay: 0.25s;
+          }
+
+          .circle:nth-child(3) {
+            animation-delay: 0.5s;
+          }
+        }
+      }
+
+      @keyframes radiation {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(2.5);
+        }
+      }
+
+      .active {
+        transition: all 0.5s ease-in-out;
+        animation: pointAni 1.5s ease-in-out infinite forwards;
+        &:hover {
+          transform: translateY(0%);
+          filter: brightness(1);
+        }
+        .radiation {
+          opacity: 1;
+          transition: opacity 0.5s ease-in-out;
+        }
+      }
+
+      .park-point-1 {
+        top: 42%;
+        left: 8%;
+      }
+      .park-point-2 {
+        top: 48.5%;
+        left: 73.7%;
+      }
+      .park-point-3 {
+        top: 91%;
+        left: 46.5%;
+      }
+      .park-point-4 {
+        top: 51%;
+        left: 54.5%;
+      }
+
+      .cultural-point-1 {
+        top: 66.5%;
+        left: 78.5%;
+      }
+      .cultural-point-2 {
+        top: 58.5%;
+        left: 71%;
+      }
+      .cultural-point-3 {
+        top: 71%;
+        left: 67.5%;
+      }
+      .cultural-point-4 {
+        top: 94.5%;
+        left: 37%;
+      }
+      .cultural-point-5 {
+        top: 59.5%;
+        left: 26%;
+      }
+
+      .shopping-point-1 {
+        top: 87%;
+        left: 57.5%;
+      }
+
+      .shopping-point-2 {
+        top: 80%;
+        left: 88%;
+      }
+
+      .shopping-point-3 {
+        top: 72%;
+        left: 50.5%;
+      }
+
+      .shopping-point-4 {
+        top: 48.5%;
+        left: 64.3%;
+      }
+
+      .shopping-point-5 {
+        top: 94.5%;
+        left: 51%;
+      }
+
+      .shopping-point-6 {
+        top: 67%;
+        left: 29.5%;
+      }
+
+      .transit-point-1 {
+        top: 6%;
+        left: 39%;
+      }
+
+      .transit-point-2 {
+        top: 74%;
+        left: 83%;
+      }
+
+      .transit-point-3 {
+        top: 13%;
+        left: 84.5%;
+      }
+
+      .transit-point-4 {
+        top: 15.5%;
+        left: 12%;
+      }
+
+      .transit-point-5 {
+        top: 74%;
+        left: 32%;
+      }
+
+      .major-point-1 {
+        top: 22.5%;
+        left: 7%;
+      }
+
+      .major-point-2 {
+        top: 16%;
+        left: 38%;
+      }
+
+      .major-point-3 {
+        top: 29.6%;
+        left: 16%;
+      }
+
+      .major-point-4 {
+        top: 18%;
+        left: 80%;
+      }
+
+      .major-point-5 {
+        top: 57%;
+        left: 10%;
+      }
+
+      .major-point-6 {
+        top: 18%;
+        left: 67%;
+      }
+    }
+  }
+}

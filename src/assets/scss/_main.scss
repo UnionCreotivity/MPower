@@ -10,12 +10,23 @@
   --font-family-menu-en: 'Cormorant Garamond', sans-serif;
   --font-family-menu-zh: 'Noto Serif TC', serif;
 
+  --font-family-title-zh: 'Noto Serif TC', serif;
+  --font-family-title-en: 'Cormorant Garamond';
   --font-family-content-zh: '微軟正黑體';
+  --font-color-title: #604c3f;
+  --font-title-zh-size: 2vw;
+  --font-title-en-size: 2.8vw;
 
-  //45pt
-  --titleSize: 1.7vw;
+  --font-content-zh: '微軟正黑體';
+  --font-content-color: #3e3a39;
+
+  //45 pt
+  --font-big-title-zh-size: 1.6vw;
+  //36pt
+  --font-small-title-zh-size: 1.2vw;
+
   //28pt
-  --paraSize: 1vw;
+  --page-size: 1.1vw;
   //title font-weight
   --titleWeight: 500;
 }
@@ -48,9 +59,115 @@ html,
 body {
   width: 100%;
   height: 100%;
+  cursor: none; /* 隱藏原生游標 */
 }
 #app {
   width: 100%;
   height: 100dvh;
-  // background-color: #faf8f0;
+}
+#custom-cursor {
+  position: fixed;
+  width: 15px;
+  will-change: transform;
+  position: fixed;
+  height: 15px;
+  background: #5e4c3f;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  transition:
+    left 0.05s ease,
+    top 0.05s ease,
+    width 0.1s ease-in-out,
+    height 0.1s ease-in-out;
+  z-index: 9999;
+  mix-blend-mode: hard-light;
+  pointer-events: none;
+
+  &.cursor--hover {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+// 滑鼠點擊效果
+.click-effect {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00c8ff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: clickAnim 0.6s forwards;
+  z-index: 9998;
+}
+.sparkle {
+  position: fixed;
+  font-size: 20px;
+  color: #ffe6fb;
+  animation: sparkleFly 0.8s ease-out forwards;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: 9998;
+  text-shadow:
+    0 0 5px #ffcaff,
+    0 0 10px #ffbefa,
+    0 0 20px #ff70e7;
+}
+
+.sparkle::before {
+  content: '✨';
+}
+
+@keyframes sparkleFly {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -200%) scale(2) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes clickAnim {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
+  }
+}
+
+/* 點擊愛心動畫 */
+.heart {
+  position: fixed;
+  font-size: 20px;
+  color: #ff4d89;
+  animation: flyUp 0.8s ease-out forwards;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+}
+
+.heart::before {
+  content: '😂';
+}
+
+@keyframes flyUp {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -150%) scale(1.8);
+    opacity: 0;
+  }
+}
+a {
+  /* 隱藏原生游標 */
+  cursor: none;
 }

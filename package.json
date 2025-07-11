@@ -19,7 +19,7 @@
     "gsap": "^3.13.0",
     "pinia": "^3.0.1",
     "screenfull": "^6.0.2",
-    "swiper": "^11.2.8",
+    "swiper": "^11.2.10",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
@@ -27,6 +27,7 @@
     "@tsconfig/node22": "^22.0.1",
     "@types/axios": "^0.14.4",
     "@types/node": "^22.14.0",
+    "@types/three": "^0.177.0",
     "@vitejs/plugin-legacy": "^6.1.1",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/eslint-config-prettier": "^10.2.0",

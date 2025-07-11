@@ -8,7 +8,7 @@
     @mouseleave="handleMouseLeave"
   >
     <div class="menu-right">
-      <img src="../../assets/img/menu/menu_icon.svg" alt="" />
+      <img :src="isArialPhotoView ? menuWhite : menuDefault" alt="" />
     </div>
   </div>
 
@@ -36,8 +36,8 @@
       </div>
       <div class="link-box">
         <div class="item" v-for="(item, idx) in menuData" :key="item.id" @mouseenter="showImg(idx)">
-          <div class="en">{{ item.enName }}</div>
-          <div class="zh">{{ item.zhName }}</div>
+          <div class="en" @click="handleMainClick(item)">{{ item.enName }}</div>
+          <div class="zh" @click="handleMainClick(item)">{{ item.zhName }}</div>
           <div class="links">
             <router-link :to="{ name: link.link }" v-for="link in item.list" :key="link.id">
               <div>{{ link.name }}</div>
@@ -54,17 +54,35 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, nextTick, type ComponentPublicInstance } from 'vue'
+import { onMounted, ref, nextTick, type ComponentPublicInstance, computed } from 'vue'
 import gsap from 'gsap'
 import CustomEase from 'gsap/CustomEase'
 import { menuData } from './menuData'
 import '@/assets/scss/menu/_menu.scss'
+import { useRouter, useRoute } from 'vue-router'
 
-const isMobile = ref(false)
+const router = useRouter() // ✅ 有 .push()
+const route = useRoute() // ✅ 有 .name, .params
 
+const handleMainClick = (item: (typeof menuData)[number]) => {
+  if (item.pathName) {
+    if (item.jumpToChild && item.list.length > 0) {
+      router.push({ name: item.list[0].link })
+    } else {
+      router.push(`/${item.pathName}`)
+    }
+  }
+}
 // 控制開關
 const is_Show = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
+
+const isArialPhotoView = computed(() => route.name === 'aerialPhoto')
+
+const menuDefault = new URL('@/assets/img/menu/menu_icon.svg', import.meta.url).href
+const menuWhite = new URL('@/assets/img/menu/menu_white.svg', import.meta.url).href
+
+const isMobile = ref(false)
 
 /* 用於磁吸效果 */
 const containerRef = ref<HTMLDivElement | null>(null)

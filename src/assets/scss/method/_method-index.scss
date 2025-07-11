@@ -1,0 +1,108 @@
+.method-menu-view {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+  @media all and (max-width: 1400px) {
+    padding-top: 0vw;
+  }
+  .title-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .zh {
+      font-size: var(--font-title-zh-size);
+      font-family: var(--font-family-title-zh);
+      color: var(--font-color-title);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+    .en {
+      font-size: var(--font-title-en-size);
+      font-family: var(--font-family-title-en);
+      color: var(--font-color-title);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      margin-top: 0.5vw;
+    }
+  }
+
+  .menu-box {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    margin-top: 3vw;
+    width: 76%;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      margin-right: 4vw;
+      position: relative;
+      &:last-child {
+        margin-right: 0vw;
+      }
+      &:hover {
+        .img-box {
+          img {
+            transform: scale(1.1);
+          }
+          &::after {
+            opacity: 1;
+          }
+        }
+
+        .title {
+          color: #ddd3bf;
+        }
+      }
+
+      .img-box {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+
+        .text {
+          writing-mode: vertical-lr;
+          font-size: var(--font-title-en-size);
+          font-family: var(--font-family-title-en);
+          color: #f4f3ec;
+          font-weight: 500;
+          position: absolute;
+          bottom: 0px;
+          text-align: end;
+          align-items: center;
+          left: -1vw;
+          z-index: 15;
+          //
+        }
+        img {
+          width: 100%;
+          transition: transform 0.5s ease;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(139, 109, 92, 0.3), rgba(0, 0, 0, 0.3));
+          opacity: 0;
+          transition: opacity 0.5s ease;
+        }
+      }
+
+      .title {
+        font-family: var(--font-family-title-zh);
+        color: var(--font-color-title);
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        font-size: var(--font-small-title-zh-size);
+        text-align: center;
+        margin-top: 1.5vw;
+        transition: all 0.5s;
+      }
+    }
+  }
+}

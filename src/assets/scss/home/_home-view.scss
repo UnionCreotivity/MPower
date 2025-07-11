@@ -34,7 +34,7 @@
       top: 43%;
       left: 49%;
       transform: translate(-50%, -50%);
-      cursor: pointer;
+
       z-index: 40;
       @media all and (max-width: 1400px) {
         width: 40vw;
@@ -113,9 +113,9 @@
       top: 43%;
       left: 49%;
       transform: translate(-50%, -50%);
-      cursor: pointer;
+
       @include mask(#00000000, 7100%, 100%);
-      cursor: pointer;
+
       // -webkit-animation: ani2 1s steps(70) forwards;
       // animation: ani2 1s steps(70) forwards;
       will-change: mask-position;
