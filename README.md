@@ -40,3 +40,5 @@ npm run lint
 
 <!-- npm install -g serve
 serve dist -->
+
+<!-- workbox generateSW workbox-config.cjs -->
