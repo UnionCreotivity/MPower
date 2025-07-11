@@ -77,10 +77,17 @@ body {
   transform: translate3d(0, 0, 0);
   transition:
     left 0.05s ease,
-    top 0.05s ease;
+    top 0.05s ease,
+    width 0.1s ease-in-out,
+    height 0.1s ease-in-out;
   z-index: 9999;
   mix-blend-mode: hard-light;
   pointer-events: none;
+
+  &.cursor--hover {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 // 滑鼠點擊效果

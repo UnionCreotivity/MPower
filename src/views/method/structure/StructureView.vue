@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import '@/assets/scss/method/_method-page.scss'
 
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 import StructureAlfaSafe from '@/components/method/structure/StructureAlfaSafe.vue'
@@ -43,6 +43,22 @@ const tabs = [
 ]
 
 const activeTab = ref(0)
+
+onMounted(() => {
+  if (window.innerWidth <= 1400) return
+  const backButton = document.querySelector('.back-button')
+  const cursor = document.getElementById('custom-cursor')
+
+  if (backButton && cursor) {
+    backButton.addEventListener('mouseenter', () => {
+      cursor.classList.add('cursor--hover')
+    })
+
+    backButton.addEventListener('mouseleave', () => {
+      cursor.classList.remove('cursor--hover')
+    })
+  }
+})
 </script>
 
 <style scoped></style>

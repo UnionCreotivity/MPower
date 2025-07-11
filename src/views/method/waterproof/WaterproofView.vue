@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import '@/assets/scss/method/_method-page.scss'
 
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 import WaterWindow from '@/components/method/waterproof/WaterWindow.vue'
@@ -39,7 +39,21 @@ const tabs = [
   { title: '屋頂防水', component: WaterRoof },
   { title: '外牆防水', component: WaterWall },
 ]
+onMounted(() => {
+  if (window.innerWidth <= 1400) return
+  const backButton = document.querySelector('.back-button')
+  const cursor = document.getElementById('custom-cursor')
 
+  if (backButton && cursor) {
+    backButton.addEventListener('mouseenter', () => {
+      cursor.classList.add('cursor--hover')
+    })
+
+    backButton.addEventListener('mouseleave', () => {
+      cursor.classList.remove('cursor--hover')
+    })
+  }
+})
 const activeTab = ref(0)
 </script>
 
