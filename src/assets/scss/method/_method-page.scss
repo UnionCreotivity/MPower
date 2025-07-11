@@ -100,11 +100,7 @@
       justify-content: center;
       overflow: hidden;
       align-items: center;
-      .hint {
-        @include hint();
-        bottom: 6vw;
-        color: white;
-      }
+
       img {
         width: 100%;
         position: absolute;
@@ -309,6 +305,27 @@
           .content-box {
             width: 81%;
           }
+        }
+      }
+    }
+  }
+
+  .charging-box {
+    .left-box {
+      .img-box {
+        width: 100%;
+        position: relative;
+        img {
+          position: relative;
+          top: inherit;
+          left: inherit;
+          transform: inherit;
+        }
+        .hint {
+          @include hint();
+          bottom: 1%;
+          right: 1%;
+          color: white;
         }
       }
     }
