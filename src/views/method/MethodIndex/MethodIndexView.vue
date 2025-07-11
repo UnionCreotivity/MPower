@@ -133,6 +133,7 @@ const initGsap = () => {
 const videoSrcMap: Record<string, string | string[]> = {
   structure: [
     new URL('@/assets/img/method/AluminumForm.mp4', import.meta.url).href,
+    new URL('@/assets/img/method/zuzuzu.mp4', import.meta.url).href,
     new URL('@/assets/img/method/DoubleRebar.mp4', import.meta.url).href,
     new URL('@/assets/img/method/SAConnector.mp4', import.meta.url).href,
     new URL('@/assets/img/method/FloorFinishing.mp4', import.meta.url).href,

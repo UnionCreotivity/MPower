@@ -35,23 +35,23 @@
       position: relative;
       .life-swiper-text {
         position: absolute;
-        top: 83%;
+        top: 85%;
         right: 0%;
         display: flex;
         flex-direction: column;
-        font-size: 1.5vw;
+        font-size: 1.2vw;
         letter-spacing: 7px;
         text-align: center;
-        width: 18.5%;
+        width: 12%;
 
         p {
           font-family: var(--font-family-title-zh);
           font-weight: 600;
           text-align: left;
-          color: black;
-          background-color: white;
+          color: #000000;
+          background-color: #fff;
           padding-left: 8%;
-          padding-block: 4%;
+          padding-block: 2%;
           width: 100%;
         }
 

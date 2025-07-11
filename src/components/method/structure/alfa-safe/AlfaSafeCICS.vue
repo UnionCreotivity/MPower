@@ -1,7 +1,7 @@
 <template>
   <div class="method-content-box">
     <div class="left-box">
-      <img class="method-img" src="../../../../assets/img/method/test.webp" alt="" srcset="" />
+      <video :src="videoSrc" autoplay muted playsinline controls loop class="left-video"></video>
     </div>
     <div class="right-box">
       <img class="alfa" src="../../../../assets/img/method/alfa.svg" alt="" />
@@ -35,20 +35,18 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
-
+const videoSrc = new URL('@/assets/img/method/zuzuzu.mp4', import.meta.url).href
 const initGsap = () => {
   const tl = gsap.timeline({ id: 'method' })
 
   tl.fromTo(
-    '.method-img',
+    '.left-video',
     {
-      filter: 'brightness(3)',
       opacity: 0,
     },
     {
-      filter: 'brightness(1)',
       opacity: 1,
-      duration: 1,
+      duration: 2,
     },
   )
     .from(
