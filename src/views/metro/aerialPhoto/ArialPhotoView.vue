@@ -5,6 +5,12 @@
         <source srcset="/src/assets/img/metro/tablet.webp" media="(max-width: 1400px)" />
         <img src="/src/assets/img/metro/arial.webp" alt="" />
       </picture>
+      <video class="light-video" autoplay loop muted playsinline>
+        <source
+          src="https://ws.srl.tw/cs/2024050617332581/img/img2024050718025926.mp4"
+          type="video/mp4"
+        />
+      </video>
     </div>
     <div class="content-box">
       <div class="title">都會價值，默契串流</div>
@@ -57,6 +63,10 @@ const initGsap = () => {
       { duration: 1, scale: 1, filter: 'blur(0px) brightness(1)', ease: 'power1.inOut' },
       '<',
     )
+    .from('.light-video', {
+      opacity: 0,
+      duration: 1,
+    })
     .from(
       splitbTitle.chars,
       {
@@ -66,7 +76,7 @@ const initGsap = () => {
         ease: 'power2.out',
         stagger: { each: 0.05, from: 'start' },
       },
-      '<0.35',
+      '<-0.2',
     )
     .from(
       smallTitleSplit.lines,
