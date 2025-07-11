@@ -11,9 +11,25 @@
     width: 100%;
     overflow: hidden;
     will-change: clip-path;
+    position: relative;
     img {
       width: 100%;
       object-fit: cover;
+    }
+    .light-video {
+      mix-blend-mode: plus-lighter;
+      position: absolute;
+      transform: translate3d(0, 0, 0);
+      z-index: 10;
+      width: 10vw;
+      top: 56%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      @media all and (max-width: 1400px) {
+        top: 66%;
+        left: 50%;
+      }
     }
   }
 
