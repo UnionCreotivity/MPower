@@ -52,6 +52,10 @@ onMounted(() => {
     backButton.addEventListener('mouseleave', () => {
       cursor.classList.remove('cursor--hover')
     })
+
+    backButton.addEventListener('click', () => {
+      cursor.classList.remove('cursor--hover')
+    })
   }
 })
 const activeTab = ref(0)
