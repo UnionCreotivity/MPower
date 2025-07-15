@@ -1,6 +1,6 @@
 <template>
   <div class="app-main">
-    <div id="custom-cursor"></div>
+    <CustomCursor />
     <FadeIn>
       <div class="app-loading" v-show="!isLoad">
         <div class="app-loading-container">
@@ -35,49 +35,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted } from 'vue'
 import { RouterView } from 'vue-router'
-
+import CustomCursor from './components/custom-cursor/CustomCursor.vue'
 import FadeIn from './components/transition/FadeIn.vue'
 import axios from 'axios'
-import screenfull from 'screenfull'
 
 const isLoad = ref(false)
 const progress = ref(0) // 真實進度
 const displayProgress = ref(0) // 顯示用進度數字
 
 const loadingText = ['L', 'O', 'A', 'D', 'I', 'N', 'G']
-
-const cursor = ref<HTMLElement | null>(null)
-
-// const waitForPreloadedImages = () => {
-//   const preloadLinks = document.querySelectorAll('link[rel="preload"][as="image"]')
-//   const total = preloadLinks.length
-
-//   if (total === 0) {
-//     isLoad.value = true
-//     displayProgress.value = 100
-//     return
-//   }
-
-//   let count = 0
-//   const checkComplete = () => {
-//     count++
-//     progress.value = Math.round((count / total) * 100)
-//     animateProgress()
-//     if (count === total) {
-//       isLoad.value = true
-//     }
-//   }
-
-//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//   preloadLinks.forEach((link: any) => {
-//     const img = new Image()
-//     img.src = link.href
-//     img.onload = checkComplete
-//     img.onerror = checkComplete
-//   })
-// }
 
 // // 讓數字慢慢往 progress.value 靠近
 const animateProgress = () => {
@@ -178,48 +146,6 @@ onMounted(() => {
       })
   } else {
     console.log('開發環境，跳過登入請求')
-  }
-
-  cursor.value = document.getElementById('custom-cursor')
-  let lastX = 0
-  let lastY = 0
-  const moveHandler = (e: MouseEvent) => {
-    if (!cursor.value) return
-    lastX = e.clientX
-    lastY = e.clientY
-    cursor.value.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
-    // cursor.value.style.left = e.clientX + 'px'
-    // cursor.value.style.top = e.clientY + 'px'
-  }
-
-  // const clickHandler = (e: MouseEvent) => {
-  //   const heart = document.createElement('div')
-  //   heart.className = 'heart'
-  //   heart.style.left = `${e.clientX}px`
-  //   heart.style.top = `${e.clientY}px`
-  //   document.body.appendChild(heart)
-
-  //   heart.addEventListener('animationend', () => {
-  //     heart.remove()
-  //   })
-  // }
-
-  window.addEventListener('mousemove', moveHandler)
-  // window.addEventListener('click', clickHandler)
-
-  onBeforeUnmount(() => {
-    window.removeEventListener('mousemove', moveHandler)
-    // window.removeEventListener('click', clickHandler)
-  })
-  if (screenfull.isEnabled) {
-    screenfull.on('change', () => {
-      document.dispatchEvent(
-        new MouseEvent('mousemove', {
-          clientX: lastX,
-          clientY: lastY,
-        }),
-      )
-    })
   }
 })
 </script>
