@@ -10,8 +10,13 @@
         :modules="[Navigation]"
         class="life-swiper-main"
       >
-        <swiper-slide v-for="item in props.fancyItem" :key="item.key" class="life-swiper-item">
-          <img :src="item.image" />
+        <swiper-slide
+          v-for="item in props.fancyItem"
+          :key="item.image"
+          class="life-swiper-item"
+          @click="closeClick"
+        >
+          <img :src="item.image" :alt="item.txt" />
           <div class="life-swiper-text">
             <p>{{ item.txt }}</p>
             <div class="life-swiper-line"></div>
@@ -21,13 +26,15 @@
     </div>
 
     <div class="prev" v-if="hasMultiple">
-      <img src="../../assets/img/other/left_arrow.svg" alt="" />
+      <img src="../../assets/img/other/left_arrow.svg" alt="上一張" />
     </div>
     <div class="next" v-if="hasMultiple">
-      <img src="../../assets/img/other/right_arrow.svg" alt="" />
+      <img src="../../assets/img/other/right_arrow.svg" alt="下一張" />
     </div>
-    <div class="life-fancy-button" @click="closeClick">
-      <img src="../../assets/img/other/X.svg" alt="" />
+
+    <!-- 關閉按鈕保留也可點 -->
+    <div class="life-fancy-button" @click="closeClick" aria-label="關閉">
+      <img src="../../assets/img/other/X.svg" alt="關閉" />
     </div>
   </div>
 </template>
@@ -47,6 +54,7 @@ const navigationOptions = computed(() =>
   hasMultiple.value ? { prevEl: '.prev', nextEl: '.next' } : false,
 )
 const closeClick = () => {
+  console.log(11)
   emits('show-fancybox')
 }
 </script>

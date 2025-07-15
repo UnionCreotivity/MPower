@@ -8,6 +8,7 @@
   background-color: #a48b78;
   overflow: hidden;
   z-index: 30;
+  border: 1px solid red;
   .prev,
   .next {
     position: absolute;
@@ -69,7 +70,7 @@
   }
   .life-fancy-button {
     position: absolute;
-    right: 3vw;
+    right: 2vw;
     top: 2vw;
     width: 2vw;
     height: 2vw;
