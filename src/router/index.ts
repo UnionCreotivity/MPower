@@ -18,8 +18,6 @@ import StructureView from '@/views/method/structure/StructureView.vue' // 結構
 import WaterproofView from '@/views/method/waterproof/WaterproofView.vue' // 防水工法
 import IntimateView from '@/views/method/intimate/IntimateView.vue' // 貼心工法
 
-// Coming Soon 共用頁面
-import ComingView from '@/views/comingView/comingView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -38,7 +36,7 @@ const router = createRouter({
           name: 'aerialPhoto',
           component: ArialPhotoView,
         },
-         {
+        {
           path: 'life',
           name: 'life',
           component: LifeView,
@@ -50,16 +48,16 @@ const router = createRouter({
       name: 'master',
       component: MaterView,
     },
-    {
-      path: '/mansion',
-      name: 'mansion',
-      component: ComingView, // 直接顯示 Coming Soon 頁
-    },
-    {
-      path: '/metier',
-      name: 'metier',
-      component: ComingView, // 直接顯示 Coming Soon 頁
-    },
+    // {
+    //   path: '/mansion',
+    //   name: 'mansion',
+    //   component: '',
+    // },
+    // {
+    //   path: '/metier',
+    //   name: 'metier',
+    //   component: '',
+    // },
     {
       path: '/method',
       component: MethodView,
@@ -86,12 +84,7 @@ const router = createRouter({
         },
       ],
     },
-    // ✅ 統一 Coming Soon 路由
-    {
-      path: '/comingsoon',
-      name: 'comingsoon',
-      component: ComingView,
-    },
+
     // 404 fallback
     {
       path: '/:pathMatch(.*)*',
