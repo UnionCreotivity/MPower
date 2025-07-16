@@ -38,10 +38,15 @@
         <div class="item" v-for="(item, idx) in menuData" :key="item.id" @mouseenter="showImg(idx)">
           <div class="en" @click="handleMainClick(item)">{{ item.enName }}</div>
           <div class="zh" @click="handleMainClick(item)">{{ item.zhName }}</div>
-          <div class="links">
+          <!-- <div class="links">
             <router-link :to="{ name: link.link }" v-for="link in item.list" :key="link.id">
               <div>{{ link.name }}</div>
             </router-link>
+          </div> -->
+          <div class="links">
+            <div v-for="link in item.list" :key="link.id" @click="handleSubLinkClick(link.link)">
+              {{ link.name }}
+            </div>
           </div>
         </div>
       </div>
@@ -71,6 +76,14 @@ const handleMainClick = (item: (typeof menuData)[number]) => {
     } else {
       router.push(`/${item.pathName}`)
     }
+  }
+}
+const handleSubLinkClick = (targetName: string) => {
+  if (route.name === targetName) {
+    showClick(false)
+  } else {
+    router.push({ name: targetName })
+    showClick(false)
   }
 }
 // 控制開關

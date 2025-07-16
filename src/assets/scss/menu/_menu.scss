@@ -207,7 +207,8 @@
             top: 0px;
             left: 32%;
           }
-          a {
+          a,
+          div {
             font-family: var(--font-family-menu-en);
             font-size: 1.1vw;
             letter-spacing: 0.12em;
@@ -225,6 +226,10 @@
                 color: #ddd3bf;
                 transition: all 0.5s;
               }
+            }
+            &:hover {
+              color: #ddd3bf;
+              transition: all 0.5s;
             }
           }
         }
