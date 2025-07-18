@@ -69,32 +69,12 @@ import { useRouter, useRoute } from 'vue-router'
 const router = useRouter() // ✅ 有 .push()
 const route = useRoute() // ✅ 有 .name, .params
 
-const handleMainClick = (item: (typeof menuData)[number]) => {
-  if (item.pathName) {
-    if (item.jumpToChild && item.list.length > 0) {
-      router.push({ name: item.list[0].link })
-    } else {
-      router.push(`/${item.pathName}`)
-    }
-  }
-}
-const handleSubLinkClick = (targetName: string) => {
-  if (route.name === targetName) {
-    showClick(false)
-  } else {
-    router.push({ name: targetName })
-    showClick(false)
-  }
-}
 // 控制開關
 const is_Show = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
-
 const isArialPhotoView = computed(() => route.name === 'aerialPhoto')
-
 const menuDefault = new URL('@/assets/img/menu/menu_icon.svg', import.meta.url).href
 const menuWhite = new URL('@/assets/img/menu/menu_white.svg', import.meta.url).href
-
 const isMobile = ref(false)
 
 /* 用於磁吸效果 */
@@ -187,6 +167,24 @@ const setImgRef = (el: Element | ComponentPublicInstance | null, idx: number) =>
   const dom = getDom(el)
   if (dom) {
     imgRefs.value[idx] = dom
+  }
+}
+
+const handleMainClick = (item: (typeof menuData)[number]) => {
+  if (item.pathName) {
+    if (item.jumpToChild && item.list.length > 0) {
+      router.push({ name: item.list[0].link })
+    } else {
+      router.push(`/${item.pathName}`)
+    }
+  }
+}
+const handleSubLinkClick = (targetName: string) => {
+  if (route.name === targetName) {
+    showClick(false)
+  } else {
+    router.push({ name: targetName })
+    showClick(false)
   }
 }
 
