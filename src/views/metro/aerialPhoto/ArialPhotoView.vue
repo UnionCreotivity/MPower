@@ -11,31 +11,152 @@
           type="video/mp4"
         />
       </video>
-    </div>
-    <div class="content-box">
-      <div class="title">都會價值，默契串流</div>
-      <div class="small-title">3核心3商圈3捷運，十分鐘同步擁有</div>
-      <div class="content">
-        生活十分鐘，距離縮短、時間讓步！七期+水湳+14期，3核心幕幕換景。<br />
-        捷運綠線串聯繁華，3捷未來匯聚。中清+崇德+北平，3商圈繁華不斷。<br />
-        未來台中101置地廣場，國際購物滿足品味嚮往！
+
+      <!-- 軌道經濟物件 -->
+      <div class="red-line mrt-line">
+        <img src="/src/assets/img/metro/red_line.webp" alt="" srcset="" />
       </div>
+      <div class="green-line mrt-line">
+        <img src="/src/assets/img/metro/green_line.webp" alt="" srcset="" />
+      </div>
+      <div class="blue-line mrt-line">
+        <img src="/src/assets/img/metro/blue_line.webp" alt="" srcset="" />
+      </div>
+      <div class="orange-line mrt-line">
+        <img src="/src/assets/img/metro/orange_line.webp" alt="" srcset="" />
+      </div>
+
+      <!-- 繁華商圈物件 -->
+      <div class="tab3-img1">
+        <img src="/src/assets/img/metro/tab3_1.png" alt="" srcset="" />
+      </div>
+      <div class="tab3-img2">
+        <img src="/src/assets/img/metro/tab3_2.png" alt="" srcset="" />
+      </div>
+      <div class="tab3-img3">
+        <img src="/src/assets/img/metro/tab3_3.png" alt="" srcset="" />
+      </div>
+
+      <!-- 金軸核心物件 -->
+      <div class="tab4-img1">
+        <img src="/src/assets/img/metro/tab4_1.png" alt="" srcset="" />
+      </div>
+      <div class="tab4-img2">
+        <img src="/src/assets/img/metro/tab4_2.png" alt="" srcset="" />
+      </div>
+      <div class="tab4-img3">
+        <img src="/src/assets/img/metro/tab4_3.png" alt="" srcset="" />
+      </div>
+    </div>
+
+    <div class="tab-box">
+      <div
+        v-for="(tab, index) in tabs"
+        :key="tab.title"
+        :class="{ active: index === currentIndex }"
+        @click="switchContent(index)"
+      >
+        {{ tab.title }}
+      </div>
+    </div>
+
+    <div v-for="(content, i) in filteredContentData" :key="currentIndex" class="content-box active">
+      <div class="title">{{ content.title }}</div>
+      <div class="small-title">{{ content.subtitle }}</div>
+      <div class="content" v-html="content.content"></div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 
 import '@/assets/scss/metro/_arial-photo.scss'
 
+const isAnimating = ref(false)
+
+const tabs = [
+  { title: '空拍鳥瞰' },
+  { title: '軌道經濟' },
+  { title: '繁華商圈' },
+  { title: '金軸核心' },
+]
+
+const contentData = ref([
+  {
+    title: '都市發展，接軌未來',
+    subtitle: '3捷運3商圈3核心，十分鐘同步擁有',
+    content: `
+    生活十分鐘，文心一條通！綠線+橘線+紅線，3捷運未來匯聚。<br />
+    中清+崇德+北平，3商圈繁華不斷。七期+水湳+14期，3核心<br />
+    風光相映。未來台中101置地廣場，國際購物滿足品味嚮往！<br />
+    `,
+  },
+  {
+    title: '移動價值，無限增殖',
+    subtitle: '3捷運，繁榮軌跡匯聚',
+    content: `
+    綠線｜目前完工計畫延伸彰化、<br />
+    橘線｜直通台中國際機場定案，<br />
+    紅線｜貫穿崇德路發展性預議，<br />
+    台中之最，三捷融匯，核心地段。<br />
+    城市路網串聯開創經濟發展新格局！
+    `,
+  },
+  {
+    title: '生活合圍，繁華共見',
+    subtitle: '3商圈，繁華一脈相連',
+    content: `
+    北平、崇德、中清三大生活圈合圍，<br />
+    從熟悉日常、精品消費到商務往來。<br />
+    北平商圈，店家雲集，巷弄飄香；<br />
+    崇德樞紐，商機蓬勃，人潮不歇；<br />
+    中清主幹，生活購物，機能齊備。<br />
+    無需奔波，即可滿足日常所需的食尚美好。
+    `,
+  },
+  {
+    title: '政經中心，百貨在即',
+    subtitle: '3核心，繁盛四方齊騁',
+    content: `
+    七期新市政｜新光三越、大遠百水湳經貿園區｜綠美圖、國際會展中心，<br />
+    十四期重劃｜洲際漢神、超巨蛋滿足您對都市生活的期許及嚮往，只要<br />
+    10分鐘，掌握核心大台中！
+    `,
+  },
+])
+
+const currentIndex = ref(0)
+
+// 這是解決 ESLint 警告，讓 v-for 用篩選過只有一筆的陣列
+const filteredContentData = computed(() => [contentData.value[currentIndex.value]])
+
+const switchContent = async (index: number) => {
+  if (isAnimating.value || index === currentIndex.value) return
+  isAnimating.value = true
+
+  // 舊內容出場動畫
+  await gsap.to('.content-box.active', {
+    opacity: 0,
+    y: 50,
+    duration: 0.4,
+    ease: 'power1.out',
+  })
+
+  currentIndex.value = index
+  await nextTick()
+
+  // 新內容進場動畫
+  await changeContent()
+  isAnimating.value = false
+}
+
 gsap.registerPlugin(SplitText)
 
 const initGsap = () => {
-  const bigtitle = gsap.utils.toArray('.arial-view .content-box .title') as HTMLElement[]
-  const splitbTitle = SplitText.create(bigtitle, {
+  const splitbTitle = SplitText.create('.arial-view .content-box .title', {
     type: 'chars,words,lines',
     linesClass: 'clip-text',
   })
@@ -100,6 +221,57 @@ const initGsap = () => {
       '<0.3',
     )
 }
+
+const changeContent = async () => {
+  await nextTick()
+  const activeBox = document.querySelector('.content-box.active')
+
+  if (!activeBox) {
+    console.warn('⚠️ .content-box.active not found.')
+    return
+  }
+
+  // 取得裡面要動畫的元素
+  const title = activeBox.querySelector('.title')
+  const smallTitle = activeBox.querySelector('.small-title')
+  const content = activeBox.querySelector('.content')
+
+  const tl = gsap.timeline({})
+
+  tl.from(
+    title,
+    {
+      y: 70,
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.out',
+    },
+    '<0.15',
+  )
+    .from(
+      smallTitle,
+      {
+        y: 70,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out',
+      },
+      '<0.15',
+    )
+    .from(
+      content,
+      {
+        y: 70,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out',
+      },
+      '<0.15',
+    )
+
+  return tl
+}
+
 onMounted(() => {
   initGsap()
 })
