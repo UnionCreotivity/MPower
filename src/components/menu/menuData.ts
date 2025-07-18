@@ -17,15 +17,26 @@ export const menuData = [
         link: '',
       },
       {
-        id: 'life',
-        name: '生活機能',
-        link: 'life',
+        id: '',
+        name: '金軸核心',
+        link: '',
+      },
+      {
+        id: '',
+        name: '繁華商圈',
+        link: '',
       },
       {
         id: '',
         name: '門牌價值',
         link: '',
       },
+      {
+        id: 'life',
+        name: '生活機能',
+        link: 'life',
+      },
+
     ],
   },
   {
@@ -35,6 +46,11 @@ export const menuData = [
     pathName: '',
     jumpToChild: true, // 要跳子頁第一個
     list: [
+      {
+        id: '',
+        name: '建築團隊',
+        link: '',
+      },
       {
         id: '',
         name: '樓層規劃',
@@ -92,11 +108,7 @@ export const menuData = [
         name: '營建起家',
         link: '',
       },
-      {
-        id: '',
-        name: '建築團隊',
-        link: '',
-      },
+
       {
         id: '',
         name: '三心二藝',
