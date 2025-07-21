@@ -262,25 +262,47 @@ const onLeave = (el: Element, done: () => void) => {
   })
 }
 
+// onMounted(() => {
+//   const tabFromQuery = parseInt(route.query.tab as string)
+//   if (!isNaN(tabFromQuery) && tabFromQuery >= 0 && tabFromQuery < tabs.length) {
+//     currentIndex.value = tabFromQuery
+//   } else {
+//     currentIndex.value = 0
+//   }
+//   initGsap()
+// })
+
 onMounted(() => {
   const tabFromQuery = parseInt(route.query.tab as string)
-  if (!isNaN(tabFromQuery) && tabFromQuery >= 0 && tabFromQuery < tabs.length) {
-    currentIndex.value = tabFromQuery
+  if (!isNaN(tabFromQuery)) {
+    if (tabFromQuery === 4) {
+      showHouseNumber.value = true
+    } else if (tabFromQuery >= 0 && tabFromQuery < tabs.length) {
+      currentIndex.value = tabFromQuery
+    } else {
+      currentIndex.value = 0
+      showHouseNumber.value = false
+    }
   } else {
     currentIndex.value = 0
+    showHouseNumber.value = false
   }
   initGsap()
 })
 
 watch(
   () => route.query.tab,
+
   (newVal) => {
     const tab = parseInt(newVal as string)
-    if (!isNaN(tab) && tab >= 0 && tab < tabs.length) {
-      currentIndex.value = tab
-    }
-    if (tab === 4) {
-      showHouseNumber.value = true
+    if (!isNaN(tab)) {
+      console.log(tab)
+      if (tab === 4) {
+        showHouseNumber.value = true
+      } else if (tab >= 0 && tab < tabs.length) {
+        currentIndex.value = tab
+        showHouseNumber.value = false
+      }
     }
   },
 )
