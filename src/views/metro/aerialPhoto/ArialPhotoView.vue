@@ -58,6 +58,7 @@
       >
         {{ tab.title }}
       </div>
+      <div class="house-number-tab" @click="showHouseNumber = true">門牌價值</div>
     </div>
 
     <div v-for="(content, i) in filteredContentData" :key="currentIndex" class="content-box active">
@@ -65,6 +66,10 @@
       <div class="small-title">{{ content.subtitle }}</div>
       <div class="content" v-html="content.content"></div>
     </div>
+
+    <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
+      <HouseNumber v-if="showHouseNumber" @close="showHouseNumber = false" />
+    </Transition>
   </section>
 </template>
 
@@ -72,10 +77,13 @@
 import { ref, computed, onMounted, nextTick } from 'vue'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
-
+import HouseNumber from '@/components/metro/HouseNumber.vue'
 import '@/assets/scss/metro/_arial-photo.scss'
 
+gsap.registerPlugin(SplitText)
+
 const isAnimating = ref(false)
+const showHouseNumber = ref(false)
 
 const tabs = [
   { title: '空拍鳥瞰' },
@@ -133,27 +141,14 @@ const currentIndex = ref(0)
 // 這是解決 ESLint 警告，讓 v-for 用篩選過只有一筆的陣列
 const filteredContentData = computed(() => [contentData.value[currentIndex.value]])
 
-const switchContent = async (index: number) => {
+const switchContent = (index: number) => {
   if (isAnimating.value || index === currentIndex.value) return
   isAnimating.value = true
-
-  // 舊內容出場動畫
-  await gsap.to('.content-box.active', {
-    opacity: 0,
-    y: 50,
-    duration: 0.4,
-    ease: 'power1.out',
-  })
-
   currentIndex.value = index
-  await nextTick()
-
-  // 新內容進場動畫
-  await changeContent()
+  showHouseNumber.value = false // 每次點 tab 都先關掉 HouseNumber
+  changeContent()
   isAnimating.value = false
 }
-
-gsap.registerPlugin(SplitText)
 
 const initGsap = () => {
   const splitbTitle = SplitText.create('.arial-view .content-box .title', {
@@ -227,7 +222,6 @@ const changeContent = async () => {
   const activeBox = document.querySelector('.content-box.active')
 
   if (!activeBox) {
-    console.warn('⚠️ .content-box.active not found.')
     return
   }
 
@@ -270,6 +264,28 @@ const changeContent = async () => {
     )
 
   return tl
+}
+
+const onBeforeEnter = (el: Element) => {
+  gsap.set(el, { opacity: 0 })
+}
+
+const onEnter = (el: Element, done: () => void) => {
+  gsap.to(el, {
+    opacity: 1,
+    duration: 0.6,
+    ease: 'power2.out',
+    onComplete: done,
+  })
+}
+
+const onLeave = (el: Element, done: () => void) => {
+  gsap.to(el, {
+    opacity: 0,
+    duration: 0.5,
+    ease: 'power2.inOut',
+    onComplete: done,
+  })
 }
 
 onMounted(() => {
