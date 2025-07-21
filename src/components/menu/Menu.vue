@@ -44,7 +44,11 @@
             </router-link>
           </div> -->
           <div class="links">
-            <div v-for="link in item.list" :key="link.id" @click="handleSubLinkClick(link.link)">
+            <div
+              v-for="link in item.list"
+              :key="link.id"
+              @click="handleSubLinkClick(link.link, link.tab)"
+            >
               {{ link.name }}
             </div>
           </div>
@@ -179,12 +183,32 @@ const handleMainClick = (item: (typeof menuData)[number]) => {
     }
   }
 }
-const handleSubLinkClick = (targetName: string) => {
-  if (route.name === targetName) {
+const handleSubLinkClick = (link: string, tab?: number) => {
+  if (link) {
+    // 有路由名稱，要跳轉頁面
+    if (tab !== undefined) {
+      // 有 tab 參數，就帶 query
+      router.push({ name: link, query: { tab } })
+    } else {
+      // 沒有 tab，純跳頁
+      router.push({ name: link })
+    }
     showClick(false)
   } else {
-    router.push({ name: targetName })
-    showClick(false)
+    // 沒有路由名稱的，理論上就是同頁切 tab
+    if (route.name === 'aerialPhoto') {
+      if (tab !== undefined) {
+        // 同頁改 tab query，不刷新頁面
+        router.replace({ name: 'aerialPhoto', query: { tab } })
+      }
+      showClick(false)
+    } else {
+      // 其他頁面想切 tab，就跳 aerialPhoto 並帶 tab
+      if (tab !== undefined) {
+        router.push({ name: 'aerialPhoto', query: { tab } })
+      }
+      showClick(false)
+    }
   }
 }
 

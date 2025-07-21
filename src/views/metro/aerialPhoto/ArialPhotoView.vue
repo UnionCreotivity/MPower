@@ -12,59 +12,10 @@
         />
       </video>
 
-      <!-- 軌道經濟物件 -->
-      <Transition name="fade" mode="out-in">
-        <template v-if="visibleLines.mrt">
-          <div key="mrt" class="mrt-group">
-            <div class="red-line mrt-line">
-              <img src="/src/assets/img/metro/red_line.webp" alt="" />
-            </div>
-            <div class="green-line mrt-line">
-              <img src="/src/assets/img/metro/green_line.webp" alt="" />
-            </div>
-            <div class="blue-line mrt-line">
-              <img src="/src/assets/img/metro/blue_line.webp" alt="" />
-            </div>
-            <div class="orange-line mrt-line">
-              <img src="/src/assets/img/metro/orange_line.webp" alt="" />
-            </div>
-          </div>
-        </template>
-      </Transition>
-
-      <!-- 繁華商圈物件 -->
-      <Transition name="fade" mode="out-in">
-        <template v-if="visibleLines.business">
-          <div key="business" class="business-group">
-            <div class="tab3-img1 business-line">
-              <img src="/src/assets/img/metro/tab3_1.png" alt="" />
-            </div>
-            <div class="tab3-img2 business-line">
-              <img src="/src/assets/img/metro/tab3_2.png" alt="" />
-            </div>
-            <div class="tab3-img3 business-line">
-              <img src="/src/assets/img/metro/tab3_3.png" alt="" />
-            </div>
-          </div>
-        </template>
-      </Transition>
-
-      <!-- 金軸核心物件 -->
-      <Transition name="fade" mode="out-in">
-        <template v-if="visibleLines.core">
-          <div key="core" class="core-group">
-            <div class="tab4-img1 core-line">
-              <img src="/src/assets/img/metro/tab4_1.svg" alt="" />
-            </div>
-            <div class="tab4-img2 core-line">
-              <img src="/src/assets/img/metro/tab4_2.svg" alt="" />
-            </div>
-            <div class="tab4-img3 core-line">
-              <img src="/src/assets/img/metro/tab4_3.svg" alt="" />
-            </div>
-          </div>
-        </template>
-      </Transition>
+      <!-- 下面可切換的圖層 -->
+      <TransitionGroup name="fade" tag="div">
+        <component v-for="(comp, i) in currentLayerComponents" :is="comp" :key="i" />
+      </TransitionGroup>
     </div>
 
     <div class="tab-box">
@@ -92,11 +43,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick } from 'vue'
+import { ref, computed, onMounted, nextTick, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import HouseNumber from '@/components/metro/HouseNumber.vue'
+import MrtGroup from '@/components/metro/MrtGroup.vue'
+import BusinessGroup from '@/components/metro/BusinessGroup.vue'
+import CoreGroup from '@/components/metro/CoreGroup.vue'
+
 import '@/assets/scss/metro/_arial-photo.scss'
 
 gsap.registerPlugin(SplitText)
@@ -135,6 +90,15 @@ const contentData = ref([
     `,
   },
   {
+    title: '政經中心，百貨在即',
+    subtitle: '3核心，繁盛四方齊騁',
+    content: `
+    七期新市政｜新光三越、大遠百水湳經貿園區｜綠美圖、國際會展中心，<br />
+    十四期重劃｜洲際漢神、超巨蛋滿足您對都市生活的期許及嚮往，只要<br />
+    10分鐘，掌握核心大台中！
+    `,
+  },
+  {
     title: '生活合圍，繁華共見',
     subtitle: '3商圈，繁華一脈相連',
     content: `
@@ -146,23 +110,24 @@ const contentData = ref([
     無需奔波，即可滿足日常所需的食尚美好。
     `,
   },
-  {
-    title: '政經中心，百貨在即',
-    subtitle: '3核心，繁盛四方齊騁',
-    content: `
-    七期新市政｜新光三越、大遠百水湳經貿園區｜綠美圖、國際會展中心，<br />
-    十四期重劃｜洲際漢神、超巨蛋滿足您對都市生活的期許及嚮往，只要<br />
-    10分鐘，掌握核心大台中！
-    `,
-  },
 ])
 
-// 控制顯示哪種線條
-const visibleLines = computed(() => {
-  return {
-    mrt: currentIndex.value === 0 || currentIndex.value === 1,
-    core: currentIndex.value === 0 || currentIndex.value === 2,
-    business: currentIndex.value === 0 || currentIndex.value === 3,
+const currentLayerComponents = computed(() => {
+  if (currentIndex.value === 0) {
+    // 空拍鳥瞰，三個一起顯示
+    return [MrtGroup, CoreGroup, BusinessGroup]
+  }
+
+  switch (currentIndex.value) {
+    case 1:
+      return [MrtGroup]
+    case 2:
+      return [CoreGroup]
+    case 3:
+      return [BusinessGroup]
+
+    default:
+      return []
   }
 })
 
@@ -301,9 +266,24 @@ onMounted(() => {
   const tabFromQuery = parseInt(route.query.tab as string)
   if (!isNaN(tabFromQuery) && tabFromQuery >= 0 && tabFromQuery < tabs.length) {
     currentIndex.value = tabFromQuery
+  } else {
+    currentIndex.value = 0
   }
   initGsap()
 })
+
+watch(
+  () => route.query.tab,
+  (newVal) => {
+    const tab = parseInt(newVal as string)
+    if (!isNaN(tab) && tab >= 0 && tab < tabs.length) {
+      currentIndex.value = tab
+    }
+    if (tab === 4) {
+      showHouseNumber.value = true
+    }
+  },
+)
 </script>
 
 <style scoped>
