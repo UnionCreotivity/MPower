@@ -54,7 +54,6 @@ const navigationOptions = computed(() =>
   hasMultiple.value ? { prevEl: '.prev', nextEl: '.next' } : false,
 )
 const closeClick = () => {
-  console.log(11)
   emits('show-fancybox')
 }
 </script>

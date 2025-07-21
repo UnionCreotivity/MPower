@@ -1,5 +1,5 @@
 <template>
-  <section class="arial-view">
+  <section class="arial-view" id="content-box-container">
     <div class="img-box">
       <picture>
         <source srcset="/src/assets/img/metro/tablet.webp" media="(max-width: 1400px)" />
@@ -14,7 +14,12 @@
 
       <!-- 下面可切換的圖層 -->
       <TransitionGroup name="fade" tag="div">
-        <component v-for="(comp, i) in currentLayerComponents" :is="comp" :key="i" />
+        <component
+          v-for="(comp, i) in currentLayerComponents"
+          :is="comp"
+          :key="i"
+          @open-green-line="showGreenLine = true"
+        />
       </TransitionGroup>
     </div>
 
@@ -39,6 +44,11 @@
     <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
       <HouseNumber v-if="showHouseNumber" @close="showHouseNumber = false" />
     </Transition>
+
+    <!-- 綠線詳細視窗 -->
+    <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
+      <GreenLine v-if="showGreenLine" @close="showGreenLine = false" />
+    </Transition>
   </section>
 </template>
 
@@ -51,7 +61,8 @@ import HouseNumber from '@/components/metro/HouseNumber.vue'
 import MrtGroup from '@/components/metro/MrtGroup.vue'
 import BusinessGroup from '@/components/metro/BusinessGroup.vue'
 import CoreGroup from '@/components/metro/CoreGroup.vue'
-
+import GreenLine from '@/components/metro/GreenLine.vue'
+const showGreenLine = ref(false)
 import '@/assets/scss/metro/_arial-photo.scss'
 
 gsap.registerPlugin(SplitText)
