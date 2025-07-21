@@ -27,25 +27,25 @@
       </div>
 
       <!-- 繁華商圈物件 -->
-      <div class="tab3-img1">
+      <div class="tab3-img1 business-line">
         <img src="/src/assets/img/metro/tab3_1.png" alt="" srcset="" />
       </div>
-      <div class="tab3-img2">
+      <div class="tab3-img2 business-line">
         <img src="/src/assets/img/metro/tab3_2.png" alt="" srcset="" />
       </div>
-      <div class="tab3-img3">
+      <div class="tab3-img3 business-line">
         <img src="/src/assets/img/metro/tab3_3.png" alt="" srcset="" />
       </div>
 
       <!-- 金軸核心物件 -->
-      <div class="tab4-img1">
-        <img src="/src/assets/img/metro/tab4_1.png" alt="" srcset="" />
+      <div class="tab4-img1 core-line">
+        <img src="/src/assets/img/metro/tab4_1.svg" alt="" srcset="" />
       </div>
-      <div class="tab4-img2">
-        <img src="/src/assets/img/metro/tab4_2.png" alt="" srcset="" />
+      <div class="tab4-img2 core-line">
+        <img src="/src/assets/img/metro/tab4_2.svg" alt="" srcset="" />
       </div>
-      <div class="tab4-img3">
-        <img src="/src/assets/img/metro/tab4_3.png" alt="" srcset="" />
+      <div class="tab4-img3 core-line">
+        <img src="/src/assets/img/metro/tab4_3.svg" alt="" srcset="" />
       </div>
     </div>
 
