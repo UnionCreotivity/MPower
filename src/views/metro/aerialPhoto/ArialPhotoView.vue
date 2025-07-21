@@ -3,7 +3,7 @@
     <div class="img-box">
       <picture>
         <source srcset="/src/assets/img/metro/tablet.webp" media="(max-width: 1400px)" />
-        <img src="/src/assets/img/metro/arial.webp" alt="" />
+        <img src="/src/assets/img/metro/arial.webp" alt="" class="arial-img" />
       </picture>
       <video class="light-video" autoplay loop muted playsinline>
         <source
@@ -13,40 +13,58 @@
       </video>
 
       <!-- 軌道經濟物件 -->
-      <div class="red-line mrt-line">
-        <img src="/src/assets/img/metro/red_line.webp" alt="" srcset="" />
-      </div>
-      <div class="green-line mrt-line">
-        <img src="/src/assets/img/metro/green_line.webp" alt="" srcset="" />
-      </div>
-      <div class="blue-line mrt-line">
-        <img src="/src/assets/img/metro/blue_line.webp" alt="" srcset="" />
-      </div>
-      <div class="orange-line mrt-line">
-        <img src="/src/assets/img/metro/orange_line.webp" alt="" srcset="" />
-      </div>
+      <Transition name="fade" mode="out-in">
+        <template v-if="visibleLines.mrt">
+          <div key="mrt" class="mrt-group">
+            <div class="red-line mrt-line">
+              <img src="/src/assets/img/metro/red_line.webp" alt="" />
+            </div>
+            <div class="green-line mrt-line">
+              <img src="/src/assets/img/metro/green_line.webp" alt="" />
+            </div>
+            <div class="blue-line mrt-line">
+              <img src="/src/assets/img/metro/blue_line.webp" alt="" />
+            </div>
+            <div class="orange-line mrt-line">
+              <img src="/src/assets/img/metro/orange_line.webp" alt="" />
+            </div>
+          </div>
+        </template>
+      </Transition>
 
       <!-- 繁華商圈物件 -->
-      <div class="tab3-img1 business-line">
-        <img src="/src/assets/img/metro/tab3_1.png" alt="" srcset="" />
-      </div>
-      <div class="tab3-img2 business-line">
-        <img src="/src/assets/img/metro/tab3_2.png" alt="" srcset="" />
-      </div>
-      <div class="tab3-img3 business-line">
-        <img src="/src/assets/img/metro/tab3_3.png" alt="" srcset="" />
-      </div>
+      <Transition name="fade" mode="out-in">
+        <template v-if="visibleLines.business">
+          <div key="business" class="business-group">
+            <div class="tab3-img1 business-line">
+              <img src="/src/assets/img/metro/tab3_1.png" alt="" />
+            </div>
+            <div class="tab3-img2 business-line">
+              <img src="/src/assets/img/metro/tab3_2.png" alt="" />
+            </div>
+            <div class="tab3-img3 business-line">
+              <img src="/src/assets/img/metro/tab3_3.png" alt="" />
+            </div>
+          </div>
+        </template>
+      </Transition>
 
       <!-- 金軸核心物件 -->
-      <div class="tab4-img1 core-line">
-        <img src="/src/assets/img/metro/tab4_1.svg" alt="" srcset="" />
-      </div>
-      <div class="tab4-img2 core-line">
-        <img src="/src/assets/img/metro/tab4_2.svg" alt="" srcset="" />
-      </div>
-      <div class="tab4-img3 core-line">
-        <img src="/src/assets/img/metro/tab4_3.svg" alt="" srcset="" />
-      </div>
+      <Transition name="fade" mode="out-in">
+        <template v-if="visibleLines.core">
+          <div key="core" class="core-group">
+            <div class="tab4-img1 core-line">
+              <img src="/src/assets/img/metro/tab4_1.svg" alt="" />
+            </div>
+            <div class="tab4-img2 core-line">
+              <img src="/src/assets/img/metro/tab4_2.svg" alt="" />
+            </div>
+            <div class="tab4-img3 core-line">
+              <img src="/src/assets/img/metro/tab4_3.svg" alt="" />
+            </div>
+          </div>
+        </template>
+      </Transition>
     </div>
 
     <div class="tab-box">
@@ -75,6 +93,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import HouseNumber from '@/components/metro/HouseNumber.vue'
@@ -84,12 +103,14 @@ gsap.registerPlugin(SplitText)
 
 const isAnimating = ref(false)
 const showHouseNumber = ref(false)
+const route = useRoute()
+const currentIndex = ref(0)
 
 const tabs = [
   { title: '空拍鳥瞰' },
   { title: '軌道經濟' },
-  { title: '繁華商圈' },
   { title: '金軸核心' },
+  { title: '繁華商圈' },
 ]
 
 const contentData = ref([
@@ -136,16 +157,22 @@ const contentData = ref([
   },
 ])
 
-const currentIndex = ref(0)
+// 控制顯示哪種線條
+const visibleLines = computed(() => {
+  return {
+    mrt: currentIndex.value === 0 || currentIndex.value === 1,
+    core: currentIndex.value === 0 || currentIndex.value === 2,
+    business: currentIndex.value === 0 || currentIndex.value === 3,
+  }
+})
 
-// 這是解決 ESLint 警告，讓 v-for 用篩選過只有一筆的陣列
 const filteredContentData = computed(() => [contentData.value[currentIndex.value]])
 
 const switchContent = (index: number) => {
   if (isAnimating.value || index === currentIndex.value) return
   isAnimating.value = true
   currentIndex.value = index
-  showHouseNumber.value = false // 每次點 tab 都先關掉 HouseNumber
+  showHouseNumber.value = false
   changeContent()
   isAnimating.value = false
 }
@@ -164,36 +191,19 @@ const initGsap = () => {
     linesClass: 'clip-text',
   })
   const tl = gsap.timeline({ delay: 0.1 })
-  tl.fromTo(
-    '.arial-view .img-box img',
-    { clipPath: 'inset(100% 0% 0% 0%)', opacity: 0 },
-    {
-      clipPath: 'inset(0% 0% 0% 0%)',
-      duration: 1,
-      opacity: 1,
-    },
-  )
-    .fromTo(
-      '.arial-view .img-box img',
-      { scale: 1.3, filter: 'blur(10px) brightness(1.8)' },
-      { duration: 1, scale: 1, filter: 'blur(0px) brightness(1)', ease: 'power1.inOut' },
-      '<',
-    )
-    .from('.light-video', {
+  tl.from('.img-box', {
+    opacity: 0,
+    duration: 1,
+    ease: 'power1.inOut',
+  })
+
+    .from(splitbTitle.chars, {
+      y: 70,
       opacity: 0,
       duration: 1,
+      ease: 'power2.out',
+      stagger: { each: 0.05, from: 'start' },
     })
-    .from(
-      splitbTitle.chars,
-      {
-        y: 70,
-        opacity: 0,
-        duration: 1,
-        ease: 'power2.out',
-        stagger: { each: 0.05, from: 'start' },
-      },
-      '<-0.2',
-    )
     .from(
       smallTitleSplit.lines,
       {
@@ -225,7 +235,6 @@ const changeContent = async () => {
     return
   }
 
-  // 取得裡面要動畫的元素
   const title = activeBox.querySelector('.title')
   const smallTitle = activeBox.querySelector('.small-title')
   const content = activeBox.querySelector('.content')
@@ -273,7 +282,7 @@ const onBeforeEnter = (el: Element) => {
 const onEnter = (el: Element, done: () => void) => {
   gsap.to(el, {
     opacity: 1,
-    duration: 0.6,
+    duration: 0.5,
     ease: 'power2.out',
     onComplete: done,
   })
@@ -282,15 +291,32 @@ const onEnter = (el: Element, done: () => void) => {
 const onLeave = (el: Element, done: () => void) => {
   gsap.to(el, {
     opacity: 0,
-    duration: 0.5,
+    duration: 0.4,
     ease: 'power2.inOut',
     onComplete: done,
   })
 }
 
 onMounted(() => {
+  const tabFromQuery = parseInt(route.query.tab as string)
+  if (!isNaN(tabFromQuery) && tabFromQuery >= 0 && tabFromQuery < tabs.length) {
+    currentIndex.value = tabFromQuery
+  }
   initGsap()
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+</style>
