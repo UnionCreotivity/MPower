@@ -55,18 +55,18 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, nextTick, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
+import gsap from 'gsap'
+
 import HouseNumber from '@/components/metro/HouseNumber.vue'
 import MrtGroup from '@/components/metro/MrtGroup.vue'
 import BusinessGroup from '@/components/metro/BusinessGroup.vue'
 import CoreGroup from '@/components/metro/CoreGroup.vue'
 import GreenLine from '@/components/metro/GreenLine.vue'
-const showGreenLine = ref(false)
 import '@/assets/scss/metro/_arial-photo.scss'
 
 gsap.registerPlugin(SplitText)
-
+const showGreenLine = ref(false)
 const isAnimating = ref(false)
 const showHouseNumber = ref(false)
 const route = useRoute()

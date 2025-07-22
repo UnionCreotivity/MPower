@@ -13,7 +13,7 @@
   </div>
 
   <div class="menu-main" ref="menuRef" v-show="is_Show">
-    <div class="menu-main-bg"><img src="../../assets/img/menu/menu_bg.webp" alt="" /></div>
+    <div class="menu-main-bg"><img src="../../assets/img/menu/menu_bg.webp" alt="menu_bg" /></div>
 
     <div class="left-img-box">
       <div class="images">
@@ -31,7 +31,7 @@
     <div class="right-menu-box">
       <div class="logo-box">
         <router-link :to="{ name: 'home' }">
-          <img src="../../assets/img/home/logo.svg" alt="" />
+          <img src="../../assets/img/home/logo.svg" alt="logo" />
         </router-link>
       </div>
       <div class="link-box">
@@ -57,7 +57,7 @@
     </div>
 
     <div class="menu-icon-close" @click.stop="showClick(false)">
-      <img src="../../assets/img/menu/close.svg" alt="" />
+      <img src="../../assets/img/menu/close.svg" alt="close" />
     </div>
   </div>
 </template>

@@ -1,13 +1,13 @@
 <template>
   <div class="business-group">
     <div class="tab3-img1 business-line">
-      <img src="/src/assets/img/metro/tab3_1.png" alt="繁華商圈圖1" />
+      <img src="/src/assets/img/metro/tab3_1.png" alt="tab3_1" />
     </div>
     <div class="tab3-img2 business-line">
-      <img src="/src/assets/img/metro/tab3_2.png" alt="繁華商圈圖2" />
+      <img src="/src/assets/img/metro/tab3_2.png" alt="tab3_2" />
     </div>
     <div class="tab3-img3 business-line">
-      <img src="/src/assets/img/metro/tab3_3.png" alt="繁華商圈圖3" />
+      <img src="/src/assets/img/metro/tab3_3.png" alt="tab3_3" />
     </div>
   </div>
 </template>

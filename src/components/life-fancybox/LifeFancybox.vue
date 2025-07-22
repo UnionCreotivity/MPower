@@ -26,15 +26,15 @@
     </div>
 
     <div class="prev" v-if="hasMultiple">
-      <img src="../../assets/img/other/left_arrow.svg" alt="上一張" />
+      <img src="../../assets/img/other/left_arrow.svg" alt="left_arrow" />
     </div>
     <div class="next" v-if="hasMultiple">
-      <img src="../../assets/img/other/right_arrow.svg" alt="下一張" />
+      <img src="../../assets/img/other/right_arrow.svg" alt="right_arrow" />
     </div>
 
     <!-- 關閉按鈕保留也可點 -->
-    <div class="life-fancy-button" @click="closeClick" aria-label="關閉">
-      <img src="../../assets/img/other/X.svg" alt="關閉" />
+    <div class="life-fancy-button" @click="closeClick" aria-label="close">
+      <img src="../../assets/img/other/x.svg" alt="x" />
     </div>
   </div>
 </template>

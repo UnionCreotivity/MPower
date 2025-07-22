@@ -2,7 +2,7 @@
   <div class="number-box">
     <div class="metro-content-box">
       <div class="back-button" @click="closeBox">
-        <img src="../../assets/img/other/x.svg" alt="關閉" />
+        <img src="../../assets/img/other/x.svg" alt="x" />
       </div>
       <div class="left-box"></div>
       <div class="right-box">

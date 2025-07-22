@@ -8,12 +8,11 @@
 import screenfull from 'screenfull'
 
 const handleClick = () => {
-  // 先讓事件結束，避免卡住滑鼠動畫
   setTimeout(() => {
     if (screenfull.isEnabled) {
       screenfull.toggle()
     }
-  }, 50) // 延遲 1 frame (大約 16ms～50ms)
+  }, 50)
 }
 </script>
 
@@ -25,7 +24,7 @@ const handleClick = () => {
   width: 3vw;
   height: 3vw;
   opacity: 0.5;
-  z-index: 35;
+  z-index: 65;
   img {
     height: 100%;
   }
