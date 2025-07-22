@@ -38,8 +38,8 @@
 }
 @media all and (max-width: 1400px) {
   .loan-view-right .loan-view-right-container .loan-view-cal-item {
-    width: 5.75vw;
-    height: 5.75vw;
+    width: 4.75vw;
+    height: 4.75vw;
   }
 }
 .loan-view-right .loan-view-right-container .loan-view-cal-item img {
@@ -108,4 +108,9 @@
   margin-top: 2vw;
   color: #f7f8f8;
   background-color: #604c3f;
+}
+@media all and (max-width: 1400px) {
+  .loan-view-right .loan-view-right-container .loan-view-right-submit {
+    font-size: 18px;
+  }
 }

@@ -1,10 +1,7 @@
 <template>
   <section class="arial-view" id="content-box-container">
     <div class="img-box">
-      <picture>
-        <source srcset="/src/assets/img/metro/tablet.webp" media="(max-width: 1400px)" />
-        <img src="/src/assets/img/metro/arial.webp" alt="" class="arial-img" />
-      </picture>
+      <img src="/src/assets/img/metro/arial.webp" alt="" class="arial-img" />
       <video class="light-video" autoplay loop muted playsinline>
         <source
           src="https://ws.srl.tw/cs/2024050617332581/img/img2024050718025926.mp4"

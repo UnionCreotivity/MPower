@@ -152,8 +152,8 @@
     top: 4%;
     left: 7%;
     @media all and (max-width: 1400px) {
-      top: 8%;
-      left: 8%;
+      top: 3%;
+      left: 7%;
     }
     .title {
       @include pageTitle();
@@ -196,6 +196,9 @@
       @include pageContent();
       color: white;
       font-size: 1.1vw;
+      @media all and (max-width: 1400px) {
+        font-size: 14px;
+      }
     }
   }
 }

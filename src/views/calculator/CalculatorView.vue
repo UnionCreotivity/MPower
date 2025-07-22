@@ -1,5 +1,7 @@
 <template>
   <section class="loan-view">
+    <Menu />
+    <FullScreen />
     <div class="title-box">貸款試算</div>
     <div class="loan-view-container">
       <div class="loan-view-left">
@@ -91,8 +93,6 @@
       />
     </div>
   </section>
-  <Menu />
-  <FullScreen />
 </template>
 
 <script setup lang="ts">

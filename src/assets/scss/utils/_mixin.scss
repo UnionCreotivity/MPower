@@ -12,7 +12,7 @@
 }
 
 @mixin pageTitle() {
-  font-size: var(--page-size);
+  font-size: var(--font-big-title-zh-size);
   font-family: var(--font-family-title-zh);
   color: var(--font-color-title);
   font-weight: 600;

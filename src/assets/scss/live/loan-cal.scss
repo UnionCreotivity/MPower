@@ -34,8 +34,8 @@
       cursor: pointer;
       transition: all 0.1s;
       @include pad {
-        width: 5.75vw;
-        height: 5.75vw;
+        width: 4.75vw;
+        height: 4.75vw;
       }
       img {
         transform: translate(-50%, -50%);
@@ -126,6 +126,9 @@
       margin-top: 2vw;
       color: #f7f8f8;
       background-color: #604c3f;
+      @include pad {
+        font-size: 18px;
+      }
     }
   }
 }
