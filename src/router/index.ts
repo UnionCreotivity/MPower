@@ -18,6 +18,9 @@ import StructureView from '@/views/method/structure/StructureView.vue' // 結構
 import WaterproofView from '@/views/method/waterproof/WaterproofView.vue' // 防水工法
 import IntimateView from '@/views/method/intimate/IntimateView.vue' // 貼心工法
 
+// 房貸試算
+import CalculatorView from '@/views/calculator/CalculatorView.vue'
+
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -26,6 +29,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+    },
+    {
+      path: '/calculator',
+      name: 'calculator',
+      component: CalculatorView,
     },
     {
       path: '/metro',

@@ -137,13 +137,20 @@
 
     .logo-box {
       width: 18vw;
-      overflow: hidden;
+      position: relative;
+      // overflow: hidden;
       @media all and (max-width: 1400px) {
         width: 23vw;
       }
 
       img {
         width: 100%;
+      }
+      .calculator-link {
+        position: absolute;
+        bottom: 2vw;
+        right: -3.5vw;
+        width: 1.8vw;
       }
     }
 

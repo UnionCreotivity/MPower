@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.75 64.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5e4c3f;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_1-2" data-name="圖層 1">
+    <g id="Layer_1" data-name="Layer 1">
+      <g>
+        <path class="cls-1" d="M52.75,16.31H0V0h52.75v16.31ZM1.65,14.66h49.45V1.65H1.65v13.01Z"/>
+        <path class="cls-1" d="M52.75,64.1H0V14.67h52.75v49.44ZM1.65,62.45h49.45V16.32H1.65v46.14Z"/>
+        <rect class="cls-1" x="8.5" y="28.4" width="10.38" height="1.65"/>
+        <rect class="cls-1" x="34.21" y="28.4" width="11.17" height="1.65"/>
+        <rect class="cls-1" x="9.55" y="51.33" width="8.28" height="1.65"/>
+        <rect class="cls-1" x="12.86" y="24.04" width="1.65" height="10.38"/>
+        <rect class="cls-1" x="39.64" y="46.32" width="1.65" height="11.67" transform="translate(-25.03 43.89) rotate(-44.99)"/>
+        <rect class="cls-1" x="34.63" y="51.33" width="11.67" height="1.65" transform="translate(-25.02 43.86) rotate(-44.98)"/>
+        <path class="cls-1" d="M13.69,50.39c-1.3,0-2.36-1.06-2.36-2.36s1.06-2.36,2.36-2.36,2.36,1.06,2.36,2.36-1.06,2.36-2.36,2.36ZM13.69,47.32c-.39,0-.71.32-.71.71s.32.71.71.71.71-.32.71-.71-.32-.71-.71-.71Z"/>
+        <path class="cls-1" d="M13.69,58.71c-1.3,0-2.36-1.06-2.36-2.36s1.06-2.36,2.36-2.36,2.36,1.06,2.36,2.36-1.06,2.36-2.36,2.36ZM13.69,55.63c-.39,0-.71.32-.71.71s.32.71.71.71.71-.32.71-.71-.32-.71-.71-.71Z"/>
+        <rect class="cls-1" x="25.55" y="15.49" width="1.65" height="47.79"/>
+        <rect class="cls-1" x=".83" y="40.13" width="51.1" height="1.65"/>
+      </g>
+    </g>
+  </g>
+</svg>

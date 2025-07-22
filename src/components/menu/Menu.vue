@@ -14,7 +14,6 @@
 
   <div class="menu-main" ref="menuRef" v-show="is_Show">
     <div class="menu-main-bg"><img src="../../assets/img/menu/menu_bg.webp" alt="menu_bg" /></div>
-
     <div class="left-img-box">
       <div class="images">
         <div
@@ -33,7 +32,12 @@
         <router-link :to="{ name: 'home' }">
           <img src="../../assets/img/home/logo.svg" alt="logo" />
         </router-link>
+
+        <router-link :to="{ name: 'calculator' }" class="calculator-link">
+          <img src="../../assets/img/menu/calculate.svg" alt="calculate" srcset="" />
+        </router-link>
       </div>
+
       <div class="link-box">
         <div class="item" v-for="(item, idx) in menuData" :key="item.id" @mouseenter="showImg(idx)">
           <div class="en" @click="handleMainClick(item)">{{ item.enName }}</div>

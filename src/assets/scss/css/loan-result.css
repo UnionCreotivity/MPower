@@ -1,0 +1,77 @@
+.loan-view-result {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: 3vw;
+  width: 55%;
+  position: relative;
+}
+.loan-view-result::after {
+  content: "";
+  background-color: #a48b78;
+  height: 94%;
+  width: 1px;
+  position: absolute;
+  right: -4vw;
+}
+.loan-view-result::before {
+  content: "";
+  background-color: #a48b78;
+  height: 94%;
+  width: 1px;
+  position: absolute;
+  left: -4vw;
+}
+.loan-view-result .loan-result-col {
+  display: flex;
+  width: 100%;
+}
+.loan-view-result .loan-result-col .left-box {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  margin-right: 3vw;
+}
+.loan-view-result .loan-result-col .right-box {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+.loan-view-result .loan-result-col .loan-result-li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #3e3a39;
+  width: 100%;
+  margin-bottom: 2.5vw;
+}
+.loan-view-result .loan-result-col .loan-result-li div {
+  font-family: "Noto Serif TC", serif;
+  font-size: var(--page-size);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  width: 52%;
+}
+.loan-view-result .loan-result-col .loan-result-li .nember-box {
+  display: flex;
+  justify-content: space-between;
+  width: 66%;
+}
+.loan-view-result .loan-result-col .loan-result-li .nember-box .loan-result-number {
+  position: relative;
+  text-align: center;
+  font-family: "Noto Serif TC", serif;
+  font-size: var(--page-size);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  height: 1.5vw;
+  border-bottom: 1px solid #604c3f;
+  width: 100%;
+}
+.loan-view-result .loan-result-col .loan-result-li .nember-box .loan-result-text {
+  font-family: "Noto Serif TC", serif;
+  font-size: var(--page-size);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-left: 1vw;
+}
