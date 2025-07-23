@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 443.24 241.2">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: .02em;
+      }
+
+      .cls-3 {
+        font-family: NotoSerifTC-SemiBold, 'Noto Serif TC';
+        font-size: 45px;
+        font-variation-settings: 'wght' 600;
+        letter-spacing: .1em;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #604c3f;
+      }
+
+      .cls-5 {
+        fill: gray;
+        font-family: MinionVariableConcept-Roman, 'Minion Variable Concept';
+        font-size: 31.54px;
+        font-variation-settings: 'wght' 400, 'opsz' 11;
+      }
+
+      .cls-6 {
+        letter-spacing: .07em;
+      }
+
+      .cls-7 {
+        letter-spacing: .02em;
+      }
+
+      .cls-8 {
+        letter-spacing: .01em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        font-family: CrimsonText-Regular, 'Crimson Text';
+        font-size: 116.2px;
+      }
+
+      .cls-10 {
+        letter-spacing: .03em;
+      }
+
+      .cls-11 {
+        letter-spacing: .06em;
+      }
+
+      .cls-12 {
+        letter-spacing: .02em;
+      }
+
+      .cls-13 {
+        fill: none;
+        stroke: #604c3f;
+        stroke-miterlimit: 10;
+        stroke-width: .74px;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_3" data-name="圖層 3">
+    <text class="cls-3" transform="translate(50.87 184.66)"><tspan x="0" y="0">全區平面參考圖</tspan></text>
+    <text class="cls-4" transform="translate(55.95 95.32)"><tspan x="0" y="0">3F-12F</tspan></text>
+    <text class="cls-5" transform="translate(49.95 229.75)"><tspan class="cls-7" x="0" y="0">O</tspan><tspan class="cls-10" x="24.44" y="0">V</tspan><tspan x="44.94" y="0">E</tspan><tspan class="cls-6" x="63.52" y="0">R</tspan><tspan class="cls-12" x="85.1" y="0">A</tspan><tspan x="104.78" y="0">LL </tspan><tspan class="cls-1" x="147.96" y="0">F</tspan><tspan class="cls-8" x="165.4" y="0">L</tspan><tspan class="cls-2" x="183.63" y="0">O</tspan><tspan class="cls-9" x="208.01" y="0">O</tspan><tspan x="231.98" y="0">R P</tspan><tspan class="cls-11" x="276.83" y="0">L</tspan><tspan class="cls-12" x="296.7" y="0">A</tspan><tspan x="316.38" y="0">N</tspan></text>
+    <line class="cls-13" x1=".37" y1="140.34" x2=".37" y2="236.34"/>
+    <line class="cls-13" x1="442.87" y1="141.34" x2="442.87" y2="237.34"/>
+  </g>
+</svg>
