@@ -11,6 +11,9 @@ import LifeView from '@/views/metro/life/LifeView.vue'
 // 建築規劃
 import MaterView from '@/views/master/MaterView.vue'
 
+import BuildingView from '@/views/master/building/BuildingView.vue'
+
+
 // 建築工藝
 import MethodView from '@/views/method/MethodView.vue'
 import MethodIndexView from '@/views/method/MethodIndex/MethodIndexView.vue' // 結構首頁
@@ -55,6 +58,14 @@ const router = createRouter({
       path: '/master',
       name: 'master',
       component: MaterView,
+      children: [
+        {
+          path: 'buildling',
+          name: 'buildling',
+          component: BuildingView,
+        },
+
+      ],
     },
     // {
     //   path: '/mansion',

@@ -7,31 +7,31 @@ export const menuData = [
     jumpToChild: true, // 要跳子頁第一個
     list: [
       {
-        id: 'aerial-photo',
+        id: 'aerialphoto',
         name: '空拍鳥瞰',
         link: 'aerialPhoto',
         tab: 0,
       },
       {
-        id: '',
+        id: 'aerialphoto',
         name: '軌道經濟',
         link: '',
         tab: 1,
       },
       {
-        id: '',
+        id: 'aerialphoto',
         name: '金軸核心',
         link: '',
         tab: 2,
       },
       {
-        id: '',
+        id: 'aerialphoto',
         name: '繁華商圈',
         link: '',
         tab: 3,
       },
       {
-        id: '',
+        id: 'aerialphoto',
         name: '門牌價值',
         link: '',
         tab: 4,
@@ -58,9 +58,9 @@ export const menuData = [
 
       },
       {
-        id: '',
+        id: 'buildling',
         name: '樓層規劃',
-        link: '',
+        link: 'buildling',
 
       },
     ],
@@ -88,19 +88,19 @@ export const menuData = [
     jumpToChild: false, // 跳主頁面
     list: [
       {
-        id: '',
+        id: 'structure',
         name: '結構工法',
         link: 'structure',
 
       },
       {
-        id: '',
+        id: 'waterproof',
         name: '防水工法',
         link: 'waterproof',
 
       },
       {
-        id: '',
+        id: 'intimate',
         name: '貼心工法',
         link: 'intimate',
 
