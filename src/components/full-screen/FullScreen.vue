@@ -1,11 +1,20 @@
 <template>
   <div class="full-screen" @click.stop="handleClick">
-    <img src="@/assets/img/other/full-screen.svg" alt="" />
+    <img :src="isWhiteFullIcon ? fullIconWhite : fullIconDefault" alt="" />
   </div>
 </template>
 
 <script setup lang="ts">
 import screenfull from 'screenfull'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+const whiteMenuRoutes = ['buildling']
+const isWhiteFullIcon = computed(() => whiteMenuRoutes.includes(route.name as string))
+const fullIconDefault = new URL('@/assets/img/other/full-screen.svg', import.meta.url).href
+const fullIconWhite = new URL('@/assets/img/other/full-screen-white.min.svg', import.meta.url).href
 
 const handleClick = () => {
   setTimeout(() => {

@@ -16,10 +16,16 @@
     right: 1vw;
     color: #3d3a39;
   }
+  .title-img {
+    position: absolute;
+    top: 26%;
+    left: 4%;
+    width: 17vw;
+  }
 
   .main-box {
     position: absolute;
-    top: 8%;
+    top: 10%;
     width: 58%;
     height: 60%;
     right: 5.2%;
@@ -34,12 +40,18 @@
 
     .link-box {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       z-index: 10;
       width: 300px;
       height: 300px;
       width: 290px;
       height: 290px;
-      // 真正的動畫光線
+      width: 11.5vw;
+      height: 11.5vw;
+      // 光線
       .gradient-line {
         position: absolute;
         top: 0;
@@ -71,6 +83,24 @@
         --angle: 360deg;
       }
     }
+
+    .item-logo {
+      display: flex;
+      flex-direction: column;
+
+      width: 40%;
+      margin-bottom: 1vw;
+      img {
+        width: 100%;
+      }
+    }
+    .item-name {
+      font-family: 'Noto Serif TC', serif;
+      color: #534741;
+      font-weight: bold;
+      font-size: 1.4vw;
+      letter-spacing: 0.08em;
+    }
     .link-box1 {
       grid-row: 1 / span 1;
       grid-column: 1 / span 1;
@@ -78,22 +108,37 @@
     .link-box2 {
       grid-row: 1 / span 1;
       grid-column: 3 / span 1;
+      .item-logo {
+        width: 75%;
+      }
     }
     .link-box3 {
       grid-row: 1 / span 1;
       grid-column: 5 / span 1;
+      .item-logo {
+        width: 75%;
+      }
     }
     .link-box4 {
       grid-row: 2 / span 1;
       grid-column: 2 / span 1;
+      .item-logo {
+        width: 35%;
+      }
     }
     .link-box5 {
       grid-row: 2 / span 1;
       grid-column: 4 / span 1;
+      .item-logo {
+        width: 65%;
+      }
     }
     .link-box6 {
       grid-row: 3 / span 1;
       grid-column: 1 / span 1;
+      .item-logo {
+        width: 63%;
+      }
     }
     .link-box7 {
       grid-row: 3 / span 1;

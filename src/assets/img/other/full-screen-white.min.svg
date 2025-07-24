@@ -1,0 +1,20 @@
+<svg id="prefix___圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.75 46.15">
+    <defs>
+        <style>
+            .prefix__cls-1 {
+                fill: none;
+                stroke: #fff;
+                stroke-miterlimit: 10
+            }
+        </style>
+    </defs>
+    <g id="prefix___圖層_2-2" data-name="圖層 2">
+        <g id="prefix___圖層_3" data-name="圖層 3">
+            <path class="prefix__cls-1" d="M20.8 22.55h16.12M28.86 30.61V14.48" />
+            <g>
+                <path class="prefix__cls-1"
+                    d="M57.25 15.58V3.03c0-1.4-1.97-2.53-4.39-2.53h-12.9M.5 15.58v27.54c0 1.4 1.97 2.53 4.39 2.53h13.06M57.25 15.58v27.54c0 1.4-1.97 2.53-4.39 2.53h-12.9M.5 15.58V3.03C.5 1.63 2.47.5 4.89.5h13.06" />
+            </g>
+        </g>
+    </g>
+</svg>

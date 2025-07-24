@@ -13,6 +13,10 @@
     width: 1px;
     position: absolute;
     right: -4vw;
+    @media all and (max-width: 1400px) {
+      height: 103%;
+      right: -3vw;
+    }
   }
 
   &::before {
@@ -22,6 +26,11 @@
     width: 1px;
     position: absolute;
     left: -4vw;
+
+    @media all and (max-width: 1400px) {
+      height: 103%;
+      left: -3vw;
+    }
   }
   .loan-result-col {
     display: flex;
