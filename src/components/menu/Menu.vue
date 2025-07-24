@@ -8,7 +8,7 @@
     @mouseleave="handleMouseLeave"
   >
     <div class="menu-right">
-      <img :src="isArialPhotoView ? menuWhite : menuDefault" alt="" />
+      <img :src="isWhiteMenu ? menuWhite : menuDefault" alt="" />
     </div>
   </div>
 
@@ -80,7 +80,10 @@ const route = useRoute() // ✅ 有 .name, .params
 // 控制開關
 const is_Show = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
-const isArialPhotoView = computed(() => route.name === 'aerialPhoto')
+
+const whiteMenuRoutes = ['aerialPhoto', 'mansionIndex']
+const isWhiteMenu = computed(() => whiteMenuRoutes.includes(route.name as string))
+
 const menuDefault = new URL('@/assets/img/menu/menu_icon.svg', import.meta.url).href
 const menuWhite = new URL('@/assets/img/menu/menu_white.svg', import.meta.url).href
 const isMobile = ref(false)

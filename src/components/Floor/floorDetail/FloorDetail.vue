@@ -10,15 +10,19 @@
         <img :src="currentFloor.textImg" />
       </div>
       <div class="right-box">
-        <img :src="currentFloor.img" :alt="floor" />
+        <ScaleDrag :init="initXY" :max-ratio="2">
+          <img :src="currentFloor.img" :alt="floor" />
+        </ScaleDrag>
       </div>
     </div>
+
+    <div class="hint">實際家具配置及平面與建材依買賣契約書為準</div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
-
+import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 const props = defineProps<{ floor: string }>()
 
 // 所有樓層對應資料
@@ -88,7 +92,9 @@ const floorDetailMap: Record<string, { img: string; textImg: string }> = {
     textImg: new URL('@/assets/img/building/rf_text.svg', import.meta.url).href,
   },
 }
-
+const initXY = computed(() => {
+  return { x: 400, y: 0 }
+})
 // 根據傳入樓層取資料
 const currentFloor = computed(() => floorDetailMap[props.floor])
 </script>

@@ -69,14 +69,13 @@ export const menuData = [
     id: 'mansion',
     zhName: '貼心建材',
     enName: 'MANSION',
-    pathName: '',
-    jumpToChild: true, // 要跳子頁第一個
+    pathName: 'mansion',
+    jumpToChild: false, // 跳主頁面
     list: [
       {
-        id: '',
+        id: 'mansionIndex',
         name: '嚴選建材',
-        link: '',
-
+        link: 'mansionIndex',
       },
     ],
   },

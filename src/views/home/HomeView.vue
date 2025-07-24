@@ -70,7 +70,7 @@ const menuItems = [
     id: 'mansion',
     zhName: '貼心建材',
     enName: 'MANSION',
-    link: '',
+    link: 'mansionIndex',
   },
   {
     id: 'method',

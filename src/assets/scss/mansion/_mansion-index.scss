@@ -1,0 +1,112 @@
+@use '../utils/mixin' as *;
+
+.mansion-menu-view {
+  display: flex;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  .bg {
+    width: 100%;
+    height: 100%;
+  }
+  .hint {
+    @include hint();
+    bottom: 1vw;
+    right: 1vw;
+    color: #3d3a39;
+  }
+
+  .main-box {
+    position: absolute;
+    top: 8%;
+    width: 58%;
+    height: 60%;
+    right: 5.2%;
+
+    display: grid;
+    // display: flex;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    z-index: 2;
+
+    .link-box {
+      position: relative;
+      z-index: 10;
+      width: 300px;
+      height: 300px;
+      width: 290px;
+      height: 290px;
+      // 真正的動畫光線
+      .gradient-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100.5%;
+        height: 100.7%;
+        border: 2px solid #c6c2bf;
+        border-image-slice: 1;
+        --angle: 0deg;
+      }
+      // 只有基數才加上流光動畫
+      &:nth-child(odd) .gradient-line {
+        border: 2px solid transparent;
+        border-image: conic-gradient(
+            from var(--angle),
+            #c6c2bf 0deg 72deg,
+            #c6c2bf 72deg 144deg,
+            #c6c2bf 144deg 216deg,
+            #c6c2bf 216deg 288deg,
+            rgb(236, 233, 224, 0.6) 356deg 360deg,
+            #c6c2bf 216deg 360deg
+          )
+          1 stretch;
+        animation: borderAni 5s linear infinite;
+      }
+    }
+    @keyframes borderAni {
+      to {
+        --angle: 360deg;
+      }
+    }
+    .link-box1 {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+    }
+    .link-box2 {
+      grid-row: 1 / span 1;
+      grid-column: 3 / span 1;
+    }
+    .link-box3 {
+      grid-row: 1 / span 1;
+      grid-column: 5 / span 1;
+    }
+    .link-box4 {
+      grid-row: 2 / span 1;
+      grid-column: 2 / span 1;
+    }
+    .link-box5 {
+      grid-row: 2 / span 1;
+      grid-column: 4 / span 1;
+    }
+    .link-box6 {
+      grid-row: 3 / span 1;
+      grid-column: 1 / span 1;
+    }
+    .link-box7 {
+      grid-row: 3 / span 1;
+      grid-column: 3 / span 1;
+    }
+    .link-box8 {
+      grid-row: 3 / span 1;
+      grid-column: 5 / span 1;
+    }
+  }
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}

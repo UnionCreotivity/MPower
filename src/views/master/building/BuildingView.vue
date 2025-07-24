@@ -22,7 +22,7 @@ function handleSelectFloor(floorId: string) {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition:

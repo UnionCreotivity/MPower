@@ -10,9 +10,11 @@ import LifeView from '@/views/metro/life/LifeView.vue'
 
 // 建築規劃
 import MaterView from '@/views/master/MaterView.vue'
-
 import BuildingView from '@/views/master/building/BuildingView.vue'
 
+// 貼心建材MansionIndexView
+import MansionView from '@/views/mansion/MansionView.vue'
+import MansionIndexView from '@/views/mansion/MansionIndex/MansionIndexView.vue'
 
 // 建築工藝
 import MethodView from '@/views/method/MethodView.vue'
@@ -67,11 +69,18 @@ const router = createRouter({
 
       ],
     },
-    // {
-    //   path: '/mansion',
-    //   name: 'mansion',
-    //   component: '',
-    // },
+    {
+      path: '/mansionIndex',
+      component: MansionView,
+      children: [
+        {
+          path: 'mansionIndex',
+          name: 'mansionIndex',
+          component: MansionIndexView,
+        },
+
+      ],
+    },
     // {
     //   path: '/metier',
     //   name: 'metier',
