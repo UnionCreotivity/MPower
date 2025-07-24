@@ -3,6 +3,11 @@
     <img class="bg" src="../../../assets/img/mansion/mansion.webp" alt="mansion" />
     <div class="hint">情境示意圖</div>
     <img class="title-img" src="../../../assets/img/mansion/title.svg" alt="title" srcset="" />
+    <img class="shine1 shine" src="../../../assets/img/mansion/shineshine.png" alt="" srcset="" />
+    <img class="shine2 shine" src="../../../assets/img/mansion/shineshine.png" alt="" srcset="" />
+    <img class="shine3 shine" src="../../../assets/img/mansion/shineshine.png" alt="" srcset="" />
+    <img class="shine4 shine" src="../../../assets/img/mansion/shineshine.png" alt="" srcset="" />
+
     <div class="main-box">
       <a
         v-for="(item, index) in linkBoxList"

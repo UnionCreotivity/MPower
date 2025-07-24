@@ -18,6 +18,15 @@
     }
   }
 
+  .hint {
+    @include hint();
+    z-index: 15;
+    right: initial;
+    bottom: 1vw;
+    left: 1vw;
+    color: white;
+  }
+
   .daytime {
     position: absolute;
     right: 1.2vw;

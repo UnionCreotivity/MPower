@@ -22,16 +22,63 @@
     left: 4%;
     width: 17vw;
   }
+  .shine {
+    position: absolute;
+    width: 4vw;
+    z-index: 10;
+    mix-blend-mode: screen;
+  }
+  .shine1 {
+    top: 27%;
+    left: 46.3%;
+    animation: lighterShine 3.5s ease-in-out infinite;
+    transform-origin: center center;
+  }
 
+  .shine2 {
+    top: 27%;
+    left: 57.8%;
+    animation: lighterShine 4s ease-in-out infinite;
+    transform-origin: center center;
+  }
+
+  .shine3 {
+    top: 67.5%;
+    left: 57.8%;
+    animation: lighterShine 4s ease-in-out infinite;
+    transform-origin: center center;
+  }
+
+  .shine4 {
+    top: 67.5%;
+    left: 80.8%;
+    animation: lighterShine 3s ease-in-out infinite;
+    transform-origin: center center;
+  }
+  @keyframes lighterShine {
+    0% {
+      scale: 0;
+      rotate: 0;
+    }
+    30% {
+      scale: 1;
+    }
+    60% {
+      scale: 0;
+      rotate: 360deg;
+    }
+    100% {
+      scale: 0;
+      rotate: 360deg;
+    }
+  }
   .main-box {
     position: absolute;
     top: 10%;
     width: 58%;
     height: 60%;
     right: 5.2%;
-
     display: grid;
-    // display: flex;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(6, 1fr);
@@ -56,9 +103,9 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100.5%;
-        height: 100.7%;
-        border: 2px solid #c6c2bf;
+        width: 100.7%;
+        height: 100.6%;
+        border: 2px solid #b8b4b1;
         border-image-slice: 1;
         --angle: 0deg;
       }
@@ -67,12 +114,12 @@
         border: 2px solid transparent;
         border-image: conic-gradient(
             from var(--angle),
-            #c6c2bf 0deg 72deg,
-            #c6c2bf 72deg 144deg,
-            #c6c2bf 144deg 216deg,
-            #c6c2bf 216deg 288deg,
+            #b8b4b1 0deg 72deg,
+            #b8b4b1 72deg 144deg,
+            #b8b4b1 144deg 216deg,
+            #b8b4b1 216deg 288deg,
             rgb(236, 233, 224, 0.6) 356deg 360deg,
-            #c6c2bf 216deg 360deg
+            #b8b4b1 216deg 360deg
           )
           1 stretch;
         animation: borderAni 5s linear infinite;

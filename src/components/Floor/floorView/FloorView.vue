@@ -12,6 +12,8 @@
   <div class="night" @click="mainImage = nightImg">
     <img src="../../../assets/img/building/night.png" alt="night" />
   </div>
+
+  <div class="hint">3D外觀示意圖</div>
 </template>
 
 <script setup lang="ts">
