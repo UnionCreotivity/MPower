@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.23 39.23">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .4;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fbb03b;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_5" data-name="圖層 5">
+    <g>
+      <circle class="cls-1" cx="19.61" cy="19.61" r="19.61"/>
+      <circle class="cls-2" cx="19.61" cy="19.61" r="9.81"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+@use '../../utils/mixin' as *;
+
+.tlk-brand-box {
+  display: flex;
+  width: 100%;
+  height: 100svh;
+  flex-direction: column;
+  .banner-box {
+    position: relative;
+    width: 100%;
+    flex: 1.1;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    .hint {
+      @include hint();
+      color: white;
+    }
+  }
+
+  .main-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    .en-title {
+      font-family: var(--font-family-title-en);
+      font-size: 1.7vw;
+      color: #a38a77;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5vw;
+    }
+
+    .zh-title {
+      padding-bottom: 1vw;
+      margin-bottom: 1.5vw;
+      position: relative;
+      @include pageTitle();
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 45%;
+        bottom: 0%;
+        width: 9%;
+        height: 1px;
+        background: #604c3f;
+      }
+    }
+
+    .content-box {
+      @include pageContent();
+      text-align: center;
+      div {
+        margin-top: 1vw;
+      }
+    }
+  }
+}

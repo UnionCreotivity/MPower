@@ -1,0 +1,157 @@
+@use '../../utils/mixin' as *;
+
+.tlk-product-box {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 100svh;
+  justify-content: space-between;
+  .left-box {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5vw;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    .img-box {
+      width: 100%;
+      position: relative;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .hint {
+        @include hint();
+        color: white;
+      }
+
+      .dot {
+        position: absolute;
+        z-index: 10;
+        width: 2vw;
+        img {
+          width: 100%;
+        }
+      }
+
+      .dot1 {
+        top: 22%;
+        right: 32%;
+      }
+
+      .dot2 {
+        top: 22%;
+        right: 18%;
+      }
+
+      .dot3 {
+        top: 36%;
+        left: 26%;
+      }
+
+      .dot4 {
+        top: 61%;
+        left: 26%;
+      }
+
+      .dot5 {
+        top: 75%;
+        left: 51%;
+      }
+
+      .dot6 {
+        top: 58%;
+        right: 21%;
+      }
+
+      .dot7 {
+        top: 62%;
+        right: 25%;
+      }
+
+      .dot8 {
+        top: 71%;
+        left: 26%;
+      }
+
+      .dot9 {
+        top: 61%;
+        left: 40%;
+      }
+
+      .dot.active {
+        border-radius: 50%;
+        animation: glowPulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes glowPulse {
+        0% {
+          box-shadow:
+            0 0 10px 4px rgba(186, 150, 100, 0.6),
+            0 0 20px 8px rgba(186, 150, 100, 0.4);
+        }
+        50% {
+          box-shadow:
+            0 0 15px 6px rgba(186, 150, 100, 0.9),
+            0 0 25px 12px rgba(186, 150, 100, 0.6);
+        }
+        100% {
+          box-shadow:
+            0 0 10px 4px rgba(186, 150, 100, 0.6),
+            0 0 20px 8px rgba(186, 150, 100, 0.4);
+        }
+      }
+    }
+  }
+  .right-box {
+    // flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+
+    .product-box {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-left: 3vw;
+      padding-right: 4vw;
+      .title-img-box {
+        width: 100%;
+        height: 19.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2vw;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          display: block;
+        }
+      }
+      .content-box {
+        @include pageContent();
+        display: flex;
+        .left {
+          margin-right: 1vw;
+        }
+        ul,
+        li {
+          list-style-type: disc;
+        }
+      }
+    }
+  }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

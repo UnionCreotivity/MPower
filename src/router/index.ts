@@ -15,6 +15,8 @@ import BuildingView from '@/views/master/building/BuildingView.vue'
 // 貼心建材MansionIndexView
 import MansionView from '@/views/mansion/MansionView.vue'
 import MansionIndexView from '@/views/mansion/MansionIndex/MansionIndexView.vue'
+import TlkIndexView from '@/views/mansion/Tlk/TlkIndexView.vue' //tlk
+
 
 // 建築工藝
 import MethodView from '@/views/method/MethodView.vue'
@@ -71,21 +73,22 @@ const router = createRouter({
     },
     {
       path: '/mansionIndex',
+
       component: MansionView,
       children: [
         {
-          path: 'mansionIndex',
+          path: '',
           name: 'mansionIndex',
           component: MansionIndexView,
         },
-
+        {
+          path: 'tlkIndex',
+          name: 'tlkIndex',
+          component: TlkIndexView,
+        },
       ],
     },
-    // {
-    //   path: '/metier',
-    //   name: 'metier',
-    //   component: '',
-    // },
+
     {
       path: '/method',
       component: MethodView,

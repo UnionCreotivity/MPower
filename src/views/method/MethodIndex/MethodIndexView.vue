@@ -67,7 +67,6 @@ const initGsap = () => {
       'will-change': 'opacity, transform',
       opacity: 0,
       yPercent: 50,
-
       transformOrigin: '50% 50%',
     },
     {

@@ -81,7 +81,7 @@ const route = useRoute() // ✅ 有 .name, .params
 const is_Show = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
 
-const whiteMenuRoutes = ['aerialPhoto', 'mansionIndex']
+const whiteMenuRoutes = ['aerialPhoto', 'mansionIndex', 'tlkIndex']
 const isWhiteMenu = computed(() => whiteMenuRoutes.includes(route.name as string))
 const menuDefault = new URL('@/assets/img/menu/menu_icon.svg', import.meta.url).href
 const menuWhite = new URL('@/assets/img/menu/menu_white.svg', import.meta.url).href

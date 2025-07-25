@@ -9,9 +9,10 @@
     <img class="shine4 shine" src="../../../assets/img/mansion/shineshine.png" alt="" srcset="" />
 
     <div class="main-box">
-      <a
+      <router-link
         v-for="(item, index) in linkBoxList"
         :key="index"
+        :to="{ name: item.routeName }"
         class="link-box"
         :class="`link-box${index + 1}`"
       >
@@ -20,7 +21,7 @@
           <img :src="item.img" alt="" srcset="" />
         </div>
         <div class="item-name">{{ item.text }}</div>
-      </a>
+      </router-link>
     </div>
   </section>
 </template>
@@ -34,34 +35,42 @@ const linkBoxList = [
   {
     text: '嚴選廚具',
     img: new URL('../../../assets/img/mansion/1.svg', import.meta.url).href,
+    routeName: 'tlkIndex',
   },
   {
     text: '精品衛浴',
     img: new URL('../../../assets/img/mansion/2.svg', import.meta.url).href,
+    routeName: '',
   },
   {
     text: '電子鎖',
     img: new URL('../../../assets/img/mansion/3.svg', import.meta.url).href,
+    routeName: '',
   },
   {
     text: '氣密窗',
     img: new URL('../../../assets/img/mansion/4.svg', import.meta.url).href,
+    routeName: '',
   },
   {
     text: '耐磨地板',
     img: new URL('../../../assets/img/mansion/5.svg', import.meta.url).href,
+    routeName: '',
   },
   {
     text: '全熱交換器',
     img: new URL('../../../assets/img/mansion/6.svg', import.meta.url).href,
+    routeName: '',
   },
   {
     text: 'E-HOME',
     img: '',
+    routeName: '',
   },
   {
     text: '工作陽台',
     img: '',
+    routeName: '',
   },
 ]
 
