@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="hint">實際家具配置及平面與建材依買賣契約書為準</div>
+    <div class="detail-hint">實際家具配置及平面與建材依買賣契約書為準</div>
   </div>
 </template>
 

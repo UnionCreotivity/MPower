@@ -29,7 +29,7 @@
     mix-blend-mode: screen;
   }
   .shine1 {
-    top: 27%;
+    top: 47%;
     left: 46.3%;
     animation: lighterShine 3.5s ease-in-out infinite;
     transform-origin: center center;
@@ -37,8 +37,9 @@
 
   .shine2 {
     top: 27%;
+    animation-delay: 2s;
     left: 57.8%;
-    animation: lighterShine 4s ease-in-out infinite;
+    animation: lighterShine 3s ease-in-out infinite;
     transform-origin: center center;
   }
 
@@ -79,8 +80,7 @@
     height: 60%;
     right: 5.2%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
     z-index: 2;
@@ -92,12 +92,13 @@
       justify-content: center;
       align-items: center;
       z-index: 10;
-      width: 300px;
-      height: 300px;
-      width: 290px;
-      height: 290px;
+      // width: 300px;
+      // height: 300px;
+      // width: 290px;
+      // height: 290px;
       width: 11.5vw;
       height: 11.5vw;
+
       // 光線
       .gradient-line {
         position: absolute;
@@ -134,7 +135,6 @@
     .item-logo {
       display: flex;
       flex-direction: column;
-
       width: 40%;
       margin-bottom: 1vw;
       img {

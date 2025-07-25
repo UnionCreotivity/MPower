@@ -85,14 +85,9 @@ CustomEase.create('myEase', '0.24,0.43,0.15,0.97')
 
 const lifeList = [
   {
-    key: 'green-park',
-    zhName: '公園綠意',
-    enName: 'GREEN PARK',
-  },
-  {
-    key: 'cultural-district',
-    zhName: '優質學區',
-    enName: 'CULTURAL DISTRICT',
+    key: 'rapid-transit',
+    zhName: '交通樞紐',
+    enName: 'RAPID TRANSIT',
   },
   {
     key: 'shopping-district',
@@ -100,15 +95,20 @@ const lifeList = [
     enName: 'SHOPPING DISTRICT',
   },
   {
-    key: 'rapid-transit',
-    zhName: '交通樞紐',
-    enName: 'RAPID TRANSIT',
+    key: 'green-park',
+    zhName: '公園綠意',
+    enName: 'GREEN PARK',
   },
   {
     key: 'major-construction',
     zhName: '地標新篇',
     enName: 'EMERGING LANDMARKS',
   },
+  // {
+  //   key: 'cultural-district',
+  //   zhName: '優質學區',
+  //   enName: 'CULTURAL DISTRICT',
+  // },
 ]
 
 const handleTag = (val: string) => {

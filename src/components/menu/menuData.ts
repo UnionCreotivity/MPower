@@ -70,7 +70,7 @@ export const menuData = [
     zhName: '貼心建材',
     enName: 'MANSION',
     pathName: 'mansion',
-    jumpToChild: false, // 跳主頁面
+    jumpToChild: true, // 跳主頁面
     list: [
       {
         id: 'mansionIndex',

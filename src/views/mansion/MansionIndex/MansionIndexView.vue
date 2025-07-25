@@ -20,15 +20,14 @@
           <img :src="item.img" alt="" srcset="" />
         </div>
         <div class="item-name">{{ item.text }}</div>
-        <!-- <div class="material-img-box-light">
-          <img :src="item.img" />
-        </div> -->
       </a>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import gsap from 'gsap'
 import '@/assets/scss/mansion/_mansion-index.scss'
 
 const linkBoxList = [
@@ -41,7 +40,7 @@ const linkBoxList = [
     img: new URL('../../../assets/img/mansion/2.svg', import.meta.url).href,
   },
   {
-    text: '墊子所',
+    text: '電子鎖',
     img: new URL('../../../assets/img/mansion/3.svg', import.meta.url).href,
   },
   {
@@ -65,6 +64,45 @@ const linkBoxList = [
     img: '',
   },
 ]
+
+onMounted(() => {
+  const tl = gsap.timeline({ delay: 0.3 })
+  tl.from('.link-box', {
+    autoAlpha: 0,
+    y: 100,
+    duration: 1,
+    // ease: 'back.out(1.7)',
+    ease: 'back.out(0.5)', // 彈性效果
+    stagger: {
+      each: 0.08,
+      from: 'center',
+    },
+  })
+
+  // tl.from('.link-box', {
+  //   autoAlpha: 0,
+  //   rotationX: -90,
+  //   transformOrigin: 'center center',
+  //   duration: 1,
+
+  //   stagger: {
+  //     each: 0.08,
+  //     from: 'center',
+  //   },
+  // })
+
+  // tl.from('.link-box', {
+  //   autoAlpha: 0,
+  //   y: 40,
+  //   scale: 0.95,
+  //   duration: 1.2,
+  //   ease: 'power2.out',
+  //   stagger: {
+  //     each: 0.15,
+  //     from: 'center',
+  //   },
+  // })
+})
 </script>
 
 <style scoped></style>
