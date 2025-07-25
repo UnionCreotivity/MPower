@@ -98,7 +98,9 @@
       // height: 290px;
       width: 11.5vw;
       height: 11.5vw;
-
+      transition:
+        transform 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
       // 光線
       .gradient-line {
         position: absolute;
@@ -212,6 +214,14 @@
       //     1 stretch;
       //   animation: borderAni 5s linear infinite;
       // }
+    }
+
+    .link-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      transition:
+        transform 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
     }
     @keyframes borderAni {
       to {

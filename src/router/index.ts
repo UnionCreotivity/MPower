@@ -16,6 +16,8 @@ import BuildingView from '@/views/master/building/BuildingView.vue'
 import MansionView from '@/views/mansion/MansionView.vue'
 import MansionIndexView from '@/views/mansion/MansionIndex/MansionIndexView.vue'
 import TlkIndexView from '@/views/mansion/Tlk/TlkIndexView.vue' //tlk
+import LockView from '@/views/mansion/lock/LockView.vue' //電子鎖
+
 
 
 // 建築工藝
@@ -85,6 +87,11 @@ const router = createRouter({
           path: 'tlkIndex',
           name: 'tlkIndex',
           component: TlkIndexView,
+        },
+        {
+          path: 'lockIndex',
+          name: 'lockIndex',
+          component: LockView,
         },
       ],
     },

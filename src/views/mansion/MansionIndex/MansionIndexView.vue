@@ -47,7 +47,7 @@ const linkBoxList = [
   {
     text: '電子鎖',
     img: new URL('../../../assets/img/mansion/3.svg', import.meta.url).href,
-    routeName: '',
+    routeName: 'lockIndex',
   },
   {
     text: '氣密窗',

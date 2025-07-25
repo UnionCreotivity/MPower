@@ -1,0 +1,78 @@
+@use '../../utils/mixin' as *;
+
+.lock-content-box {
+  width: 100%;
+  height: 100%;
+  padding-left: 4vw;
+  padding-right: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  .lock-icon {
+    position: absolute;
+    width: 10vw;
+    right: 2vw;
+    top: 2vw;
+  }
+  .left-box {
+    width: 53%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .right-box {
+    width: 42%;
+    display: flex;
+    margin-left: 4vw;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    .title-img-box {
+      width: 14vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+    }
+    .content-box {
+      display: flex;
+      flex-direction: column;
+      ul {
+        padding-left: 1.1vw;
+        margin-top: 1vw;
+      }
+      ul,
+      li {
+        @include pageContent();
+        list-style-type: disc;
+      }
+
+      .content {
+        @include pageContent();
+        width: 88%;
+        width: 91%;
+        span {
+          font-weight: bold;
+          margin-top: 1vw;
+        }
+
+        div {
+          &:last-child {
+            margin-top: 1vw;
+          }
+        }
+      }
+    }
+  }
+}
