@@ -17,6 +17,8 @@
         :class="`link-box${index + 1}`"
       >
         <div class="gradient-line"></div>
+
+        <div class="run-light"></div>
         <div class="item-logo">
           <img :src="item.img" alt="" srcset="" />
         </div>

@@ -110,21 +110,108 @@
         border-image-slice: 1;
         --angle: 0deg;
       }
-      // 只有基數才加上流光動畫
-      &:nth-child(odd) .gradient-line {
-        border: 2px solid transparent;
-        border-image: conic-gradient(
-            from var(--angle),
-            #b8b4b1 0deg 72deg,
-            #b8b4b1 72deg 144deg,
-            #b8b4b1 144deg 216deg,
-            #b8b4b1 216deg 288deg,
-            rgb(236, 233, 224, 0.6) 356deg 360deg,
-            #b8b4b1 216deg 360deg
-          )
-          1 stretch;
-        animation: borderAni 5s linear infinite;
+
+      // 預設沒有 run-light
+      .run-light {
+        display: none;
       }
+
+      // 只有基數才顯示光點動畫
+      &:nth-child(4n) .run-light {
+        display: block;
+        position: absolute;
+        width: 5px;
+        height: 1.4vw;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(255, 255, 255, 0.15) 80%
+        );
+        box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.3);
+        mix-blend-mode: screen;
+        mix-blend-mode: plus-lighter;
+        animation: followBoxPathRotate 15s linear infinite;
+        z-index: 2;
+      }
+
+      .gradient-line {
+        z-index: 0;
+      }
+
+      .item-logo,
+      .item-name {
+        z-index: 1;
+        position: relative;
+      }
+      @keyframes followBoxPathRotate {
+        /* 預設起點：左上角，水平橢圓 */
+        0% {
+          top: 0%;
+          left: 0%;
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+        /* 上邊橫線，光暈水平 */
+        24.9% {
+          top: 0%;
+          left: 100%;
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+        /* 右邊豎線，光暈垂直 */
+        25% {
+          top: 0%;
+          left: 100%;
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        49.9% {
+          top: 100%;
+          left: 100%;
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        /* 下邊橫線，光暈水平 */
+        50% {
+          top: 100%;
+          left: 100%;
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+        74.9% {
+          top: 100%;
+          left: 0%;
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+        /* 左邊豎線，光暈垂直 */
+        75% {
+          top: 100%;
+          left: 0%;
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        99.9% {
+          top: 0%;
+          left: 0%;
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        /* 回到起點，光暈水平 */
+        100% {
+          top: 0%;
+          left: 0%;
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+      // 只有基數才加上流光動畫
+      // &:nth-child(odd) .gradient-line {
+      //   border: 2px solid transparent;
+      //   border-image: conic-gradient(
+      //       from var(--angle),
+      //       #b8b4b1 0deg 72deg,
+      //       #b8b4b1 72deg 144deg,
+      //       #b8b4b1 144deg 216deg,
+      //       #b8b4b1 216deg 288deg,
+      //       rgba(224, 210, 189, 0.9) 356deg 360deg,
+      //       #b8b4b1 216deg 360deg
+      //     )
+      //     1 stretch;
+      //   animation: borderAni 5s linear infinite;
+      // }
     }
     @keyframes borderAni {
       to {
