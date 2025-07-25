@@ -14,7 +14,9 @@
       </div>
     </div>
 
-    <component :is="tabs[activeTab].component" />
+    <transition name="fade" mode="out-in">
+      <component :is="tabs[activeTab].component" :key="activeTab" />
+    </transition>
   </section>
 </template>
 

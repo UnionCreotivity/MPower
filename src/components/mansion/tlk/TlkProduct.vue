@@ -1,8 +1,13 @@
 <template>
   <div class="tlk-product-box">
+    <div class="overlay-close" @click="handleClose"></div>
     <div class="left-box">
       <div class="img-box">
-        <img src="../../../assets/img/mansion/tlk/tlk_img_main2.webp" alt="tlk_img_main2" />
+        <img
+          class="main-img"
+          src="../../../assets/img/mansion/tlk/tlk_img_main2.webp"
+          alt="tlk_img_main2"
+        />
         <div class="hint">情境示意圖</div>
 
         <div
@@ -30,11 +35,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import '@/assets/scss/mansion/tlk/_tlk-product.scss'
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import gsap from 'gsap'
 
+const router = useRouter()
 const activeIndex = ref(0) // 預設第一個顯示
-console.log(activeIndex)
+
+const handleClose = () => {
+  router.push('/mansionIndex')
+}
+
 const productList = [
   {
     img: new URL('@/assets/img/mansion/tlk/leiser.webp', import.meta.url).href,
@@ -137,6 +149,44 @@ const productList = [
     `,
   },
 ]
+
+onMounted(() => {
+  const tl = gsap.timeline({})
+
+  tl.fromTo(
+    '.tlk-product-box .left-box',
+    {
+      autoAlpha: 0,
+      clipPath: 'inset(0 100% 0 0)',
+    },
+    {
+      clipPath: 'inset(0 0% 0 0)',
+      duration: 1,
+      autoAlpha: 1,
+    },
+  )
+    .fromTo(
+      '.tlk-product-box .left-box img',
+      {
+        scale: 1.2,
+      },
+      {
+        scale: 1,
+        duration: 1,
+      },
+      '<',
+    )
+    .from(
+      '.tlk-product-box .right-box div',
+      {
+        autoAlpha: 0,
+        y: 70,
+        duration: 1,
+        stagger: 0.3,
+      },
+      '<0.5',
+    )
+})
 </script>
 
 <style scoped></style>

@@ -1,5 +1,6 @@
 <template>
   <div class="tlk-brand-box">
+    <div class="overlay-close" @click="handleClose"></div>
     <div class="banner-box">
       <img src="../../../assets/img/mansion/tlk/tlk_img_main.webp" alt="" srcset="" />
       <div class="hint">情境示意圖</div>
@@ -25,7 +26,13 @@ import '@/assets/scss/mansion/tlk/_tlk-brand.scss'
 import { onMounted } from 'vue'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 gsap.registerPlugin(SplitText)
+
+const handleClose = () => {
+  router.push('/mansionIndex')
+}
 
 onMounted(() => {
   const enSplit = SplitText.create('.tlk-brand-box .main-box .en-title', {
@@ -44,15 +51,15 @@ onMounted(() => {
     duration: 1.3,
     filter: 'blur(10px)',
     scale: 1.5,
+    autoAlpha: 0,
   })
     .from(
       enSplit.chars,
       {
         y: 70,
         filter: 'blur(5px)',
-        opacity: 0,
+        autoAlpha: 0,
         duration: 0.5,
-
         stagger: { each: 0.05, from: 'center' },
       },
       '<0.5',
@@ -62,7 +69,7 @@ onMounted(() => {
       {
         y: 70,
         filter: 'blur(5px)',
-        opacity: 0,
+        autoAlpha: 0,
         duration: 0.8,
         stagger: { each: 0.05, from: 'center' },
       },
@@ -72,7 +79,7 @@ onMounted(() => {
       '.tlk-brand-box .main-box .content-box',
       {
         y: 80,
-        opacity: 0,
+        autoAlpha: 0,
         duration: 1,
       },
       '<0.55',
