@@ -77,18 +77,33 @@ const linkBoxList = [
 ]
 
 onMounted(() => {
-  const tl = gsap.timeline({ delay: 1 })
-  tl.from('.link-box', {
-    autoAlpha: 0,
-
-    duration: 1,
-    // ease: 'back.out(1.7)',
-    ease: 'back.out(0.5)', // 彈性效果
-    stagger: {
-      each: 0.08,
-      from: 'center',
+  const tl = gsap.timeline({ delay: 0.5 })
+  tl.fromTo(
+    '.mansion-menu-view .bg',
+    {
+      autoAlpha: 0,
+      filter: 'brightness(2) blur(6px)',
     },
-  })
+    {
+      filter: 'brightness(1) blur(0px)',
+      duration: 1,
+      autoAlpha: 1,
+      ease: 'power1.inOut',
+    },
+  ).from(
+    '.link-box',
+    {
+      autoAlpha: 0,
+      duration: 1,
+      filter: 'blur(5px)',
+      // ease: 'back.out(0.5)', // 彈性效果
+      stagger: {
+        each: 0.08,
+        from: 'center',
+      },
+    },
+    '0.35',
+  )
 
   // tl.from('.link-box', {
   //   autoAlpha: 0,

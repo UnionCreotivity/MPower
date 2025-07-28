@@ -6,6 +6,32 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  .front-cloud1 {
+    position: absolute;
+    bottom: -5vw;
+    left: -2vw;
+    width: 40vw;
+    z-index: 10;
+    pointer-events: none;
+    max-width: 100%;
+    animation: animate calc(4s * var(--i)) linear infinite;
+  }
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+
+    25%,
+    75% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1.85);
+      opacity: 0;
+    }
+  }
 
   .img-box {
     width: 100%;

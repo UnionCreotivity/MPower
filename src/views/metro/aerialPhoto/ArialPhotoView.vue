@@ -1,7 +1,13 @@
 <template>
   <section class="arial-view" id="content-box-container">
+    <img class="front-cloud1" src="/src/assets/img/metro/cloud8.png" alt="cloud8" style="--i: 2" />
+
     <div class="img-box">
-      <img src="/src/assets/img/metro/arial.webp" alt="" class="arial-img" />
+      <picture>
+        <source srcset="/src/assets/img/metro/tablet.webp" media="(max-width: 1400px)" />
+        <img src="/src/assets/img/metro/arial.webp" alt="" class="arial-img" />
+      </picture>
+
       <video class="light-video" autoplay loop muted playsinline>
         <source
           src="https://ws.srl.tw/cs/2024050617332581/img/img2024050718025926.mp4"
@@ -171,7 +177,6 @@ const initGsap = () => {
     duration: 1,
     ease: 'power1.inOut',
   })
-
     .from(splitbTitle.chars, {
       y: 70,
       opacity: 0,
