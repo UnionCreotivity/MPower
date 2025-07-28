@@ -77,20 +77,33 @@ const linkBoxList = [
 ]
 
 onMounted(() => {
-  const tl = gsap.timeline({ delay: 0.5 })
-  tl.fromTo(
-    '.mansion-menu-view .bg',
-    {
-      autoAlpha: 0,
-      filter: 'brightness(2) blur(6px)',
-    },
-    {
-      filter: 'brightness(1) blur(0px)',
-      duration: 1,
-      autoAlpha: 1,
-      ease: 'power1.inOut',
-    },
-  )
+  const tl = gsap.timeline({})
+  tl
+    // .fromTo(
+    //   '.mansion-menu-view .bg',
+    //   {
+    //     autoAlpha: 0,
+    //     filter: 'brightness(2) blur(6px)',
+    //   },
+    //   {
+    //     filter: 'brightness(1) blur(0px)',
+    //     duration: 1,
+    //     autoAlpha: 1,
+    //     ease: 'power1.inOut',
+    //   },
+    // )
+    .fromTo(
+      '.mansion-menu-view .bg',
+      {
+        maskPosition: '200% 0',
+      },
+      {
+        maskPosition: '0% 0%',
+        duration: 1.5,
+        // ease: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
+        ease: 'power1.inOut',
+      },
+    )
     .from(
       '.mansion-menu-view .title-img',
       {
@@ -98,7 +111,7 @@ onMounted(() => {
         duration: 1,
         y: 70,
       },
-      '0.35',
+      '<0.3',
     )
     .from(
       '.link-box',
@@ -112,7 +125,7 @@ onMounted(() => {
           from: 'center',
         },
       },
-      '0.7',
+      '<0.7',
     )
 
   // tl.from('.link-box', {

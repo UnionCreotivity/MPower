@@ -24,6 +24,12 @@
     justify-content: center;
     overflow: hidden;
     align-items: center;
+    mask-image: linear-gradient(90deg, #000 0, #000 50%, transparent 100%);
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 200% 100%;
+    mask-size: 200% 100%;
+    -webkit-mask-position: 200% 0;
+    mask-position: 200% 0;
 
     .img-box {
       position: relative;

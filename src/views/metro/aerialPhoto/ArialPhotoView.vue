@@ -171,19 +171,33 @@ const initGsap = () => {
     linesClass: 'clip-text',
   })
 
-  const tl = gsap.timeline({})
-  tl.from('.img-box', {
-    autoAlpha: 0,
-    duration: 1,
-    ease: 'power1.inOut',
-  })
-    .from(splitbTitle.chars, {
-      y: 70,
-      autoAlpha: 0,
-      duration: 1,
-      ease: 'power2.out',
-      stagger: { each: 0.05, from: 'start' },
-    })
+  const tl = gsap.timeline({ delay: 0.2 })
+  tl.fromTo(
+    '.arial-view',
+    { maskSize: '0.1%' },
+    { maskSize: '400%', ease: 'Power0.easeNone', duration: 6 },
+  )
+    .from(
+      '.arial-view .img-box',
+      {
+        scale: 1.4,
+        autoAlpha: 0,
+        duration: 1,
+      },
+      '<0.1',
+    )
+
+    .from(
+      splitbTitle.chars,
+      {
+        y: 70,
+        autoAlpha: 0,
+        duration: 1,
+        ease: 'power2.out',
+        stagger: { each: 0.05, from: 'start' },
+      },
+      '<0.35',
+    )
     .from(
       smallTitleSplit.lines,
       {

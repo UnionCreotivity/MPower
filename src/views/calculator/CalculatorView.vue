@@ -2,7 +2,7 @@
   <section class="loan-view">
     <Menu />
     <FullScreen />
-    <div class="title-box">貸款試算</div>
+    <div class="title-box">房貸試算</div>
     <div class="loan-view-container">
       <div class="loan-view-left">
         <div class="loan-view-bottom">

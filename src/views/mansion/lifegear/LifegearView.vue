@@ -31,11 +31,39 @@
 <script setup lang="ts">
 import '@/assets/scss/mansion/mansion-single/_mansion-single.scss'
 import { useRouter } from 'vue-router'
+import { onMounted } from 'vue'
+import gsap from 'gsap'
+
 const router = useRouter()
 
 const handleClose = () => {
   router.push('/mansionIndex')
 }
+
+onMounted(() => {
+  const tl = gsap.timeline({})
+  tl.fromTo(
+    '.mansion-single-box .left-box',
+    {
+      maskPosition: '200% 0',
+    },
+    {
+      maskPosition: '0% 0%',
+      duration: 1,
+      ease: 'power1.inOut',
+    },
+  ).from(
+    '.mansion-single-box .right-box div',
+    {
+      filter: 'blur(8px)',
+      autoAlpha: 0,
+      ease: 'power1.inOut',
+      stagger: 0.2,
+      duration: 1,
+    },
+    '<0.3',
+  )
+})
 </script>
 
 <style scoped></style>

@@ -32,10 +32,6 @@
         <router-link :to="{ name: 'home' }">
           <img src="../../assets/img/home/logo.svg" alt="logo" />
         </router-link>
-
-        <router-link :to="{ name: 'calculator' }" class="calculator-link">
-          <img src="../../assets/img/menu/calculate.svg" alt="calculate" srcset="" />
-        </router-link>
       </div>
 
       <div class="link-box">
@@ -289,6 +285,7 @@ const showClick = (val: boolean) => {
         .from([linkBoxes[3].children], { y: 70, opacity: 0, duration: 0.8, stagger: 0.1 }, '<')
         .from([linkBoxes[4].children], { y: 70, opacity: 0, duration: 0.8, stagger: 0.1 }, '<')
 
+        .from('.calculator-link', { y: 70, opacity: 0, duration: 0.8, stagger: 0.1 }, '<')
       // Reset all image z-index and clip-path
       imgRefs.value.forEach((el) => {
         gsap.set(el, { clipPath: 'inset(100% 0% 0% 0%)', zIndex: 0 })

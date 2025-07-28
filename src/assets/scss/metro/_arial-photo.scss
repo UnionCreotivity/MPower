@@ -6,7 +6,14 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-
+  mask-image: url(../../img/metro/cloud-mask_2.png);
+  // mask-image: url(https://ws.srl.tw/cs/2023110910342542/img/img202311091121566.png);
+  -webkit-mask-size: 0.1%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-size: 0.1%;
+  mask-repeat: no-repeat;
+  mask-position: center;
   .front-cloud1 {
     position: absolute;
     bottom: -5vw;
