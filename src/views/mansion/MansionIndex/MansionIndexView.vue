@@ -90,20 +90,30 @@ onMounted(() => {
       autoAlpha: 1,
       ease: 'power1.inOut',
     },
-  ).from(
-    '.link-box',
-    {
-      autoAlpha: 0,
-      duration: 1,
-      filter: 'blur(5px)',
-      // ease: 'back.out(0.5)', // 彈性效果
-      stagger: {
-        each: 0.08,
-        from: 'center',
-      },
-    },
-    '0.35',
   )
+    .from(
+      '.mansion-menu-view .title-img',
+      {
+        autoAlpha: 0,
+        duration: 1,
+        y: 70,
+      },
+      '0.35',
+    )
+    .from(
+      '.link-box',
+      {
+        autoAlpha: 0,
+        duration: 1,
+        filter: 'blur(5px)',
+        // ease: 'back.out(0.5)', // 彈性效果
+        stagger: {
+          each: 0.08,
+          from: 'center',
+        },
+      },
+      '0.7',
+    )
 
   // tl.from('.link-box', {
   //   autoAlpha: 0,

@@ -25,13 +25,10 @@ function handleSelectFloor(floorId: string) {
 <style lang="scss" scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: scale(0.95);
 }
 </style>

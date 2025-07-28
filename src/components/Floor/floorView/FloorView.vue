@@ -45,10 +45,12 @@ const initGsap = () => {
     {
       autoAlpha: 0,
       filter: 'brightness(2) blur(6px)',
+      scale: 1.3,
     },
     {
       filter: 'brightness(1) blur(0px)',
       duration: 1,
+      scale: 1,
       autoAlpha: 1,
       ease: 'power1.inOut',
     },

@@ -14,6 +14,7 @@
     height: 100%;
     pointer-events: none;
   }
+
   .loan-view-right-container {
     width: 55%;
     display: grid;
@@ -21,9 +22,11 @@
     grid-template-rows: repeat(4, 1fr);
     gap: 1.5vw;
     z-index: 1;
+
     @media all and (max-width: 1400px) {
       width: 62%;
     }
+
     .loan-view-cal-item {
       width: 3.75vw;
       height: 3.75vw;
@@ -33,77 +36,92 @@
       margin: auto;
       cursor: pointer;
       transition: all 0.1s;
+
       @include pad {
         width: 4.75vw;
         height: 4.75vw;
       }
+
       img {
         transform: translate(-50%, -50%);
         position: absolute;
         left: 50%;
         top: 50%;
       }
+
       &:active {
         transform: scale(0.95);
         transition: all 0.1s;
       }
     }
+
     .loan-cal-1 {
       img {
         width: 0.5vw;
         left: 46%;
       }
     }
+
     .loan-cal-2 {
       img {
         width: 0.95vw;
       }
     }
+
     .loan-cal-3 {
       img {
         width: 0.9vw;
       }
     }
+
     .loan-cal-4 {
       img {
         width: 1vw;
       }
     }
+
     .loan-cal-5 {
       img {
         width: 0.95vw;
       }
     }
+
     .loan-cal-6 {
       img {
         width: 0.9vw;
       }
     }
+
     .loan-cal-7 {
       img {
         width: 0.95vw;
       }
     }
+
     .loan-cal-8 {
       img {
         width: 0.85vw;
       }
     }
+
     .loan-cal-9 {
       img {
         width: 0.9vw;
       }
     }
+
     .loan-cal-dot {
       img {
         width: 0.25vw;
       }
     }
+
     .loan-cal-0 {
       img {
         width: 1vw;
       }
     }
+
     .loan-cal-icon-2 {
       img {
         width: 2vw;
@@ -112,6 +130,7 @@
         }
       }
     }
+
     .loan-view-right-submit {
       grid-column: 1 / span 3;
       grid-row: 5 / span 1;

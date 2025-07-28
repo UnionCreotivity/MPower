@@ -58,6 +58,7 @@
       -webkit-mask-size: $x1 $y1;
       mask-size: $x1 $y1;
     }
+
     @-webkit-keyframes ani {
       from {
         -webkit-mask-position: 0 0;
@@ -113,7 +114,6 @@
       top: 43%;
       left: 49%;
       transform: translate(-50%, -50%);
-
       @include mask(#00000000, 7100%, 100%);
 
       // -webkit-animation: ani2 1s steps(70) forwards;

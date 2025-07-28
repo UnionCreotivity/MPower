@@ -9,8 +9,9 @@
   .overlay-close {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 35%;
+    left: initial;
     height: 100%;
     z-index: 1; // 要小於 dot 的 z-index
     background: transparent;
@@ -37,7 +38,7 @@
 
       .dot {
         position: absolute;
-        z-index: 10;
+        z-index: 30;
         width: 2vw;
 
         img {
