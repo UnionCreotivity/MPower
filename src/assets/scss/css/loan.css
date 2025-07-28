@@ -5,6 +5,14 @@
   background-color: #f4f3ec;
   display: flex;
   flex-direction: column;
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 50%, transparent 100%);
+          mask-image: linear-gradient(90deg, #000 0, #000 50%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 200% 100%;
+  mask-size: 200% 100%;
+  -webkit-mask-position: 200% 0;
+  mask-position: 200% 0;
 }
 .loan-view .title-box {
   font-size: var(--font-big-title-zh-size);

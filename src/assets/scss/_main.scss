@@ -63,6 +63,11 @@ body {
   height: 100%;
   cursor: none; /* 隱藏原生游標 */
 }
+
+.app-container {
+  background-color: #f4f3ec;
+}
+
 #app {
   width: 100%;
   height: 100dvh;

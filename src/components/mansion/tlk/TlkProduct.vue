@@ -189,4 +189,16 @@ onMounted(() => {
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease-in-out;
+  filter: blur(0);
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(4px);
+}
+</style>

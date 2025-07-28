@@ -96,12 +96,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import LoanCal from '@/components/loan/LoanCal.vue'
 import { useLoanStore } from '@/stores/loanStore'
 import LoanResult from '@/components/loan/LoanResult.vue'
 import Menu from '../../components/menu/Menu.vue'
 import FullScreen from '../../components/full-screen/FullScreen.vue'
+import gsap from 'gsap'
+
 import '@/assets/scss/live/loan.scss'
 
 const nowInputId = ref('')
@@ -193,6 +195,21 @@ watch(
     testRatio()
   },
 )
+onMounted(() => {
+  const tl = gsap.timeline({ delay: 0.15 })
+  tl.fromTo(
+    '.loan-view',
+    {
+      maskPosition: '200% 0',
+    },
+    {
+      maskPosition: '0% 0%',
+      duration: 1.5,
+      // ease: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
+      ease: 'power1.inOut',
+    },
+  )
+})
 </script>
 
 <style scoped></style>
