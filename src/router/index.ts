@@ -17,7 +17,7 @@ import MansionView from '@/views/mansion/MansionView.vue'
 import MansionIndexView from '@/views/mansion/MansionIndex/MansionIndexView.vue'
 import TlkIndexView from '@/views/mansion/Tlk/TlkIndexView.vue' //tlk
 import LockView from '@/views/mansion/lock/LockView.vue' //電子鎖
-
+import LifegearView from '@/views/mansion/lifegear/LifegearView.vue' //全熱交換機
 
 
 // 建築工藝
@@ -92,6 +92,11 @@ const router = createRouter({
           path: 'lockIndex',
           name: 'lockIndex',
           component: LockView,
+        },
+        {
+          path: 'lifegearIndex',
+          name: 'lifegearIndex',
+          component: LifegearView,
         },
       ],
     },

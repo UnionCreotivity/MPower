@@ -62,7 +62,7 @@ const linkBoxList = [
   {
     text: '全熱交換器',
     img: new URL('../../../assets/img/mansion/6.svg', import.meta.url).href,
-    routeName: '',
+    routeName: 'lifegearIndex',
   },
   {
     text: 'E-HOME',
@@ -77,10 +77,10 @@ const linkBoxList = [
 ]
 
 onMounted(() => {
-  const tl = gsap.timeline({ delay: 0.3 })
+  const tl = gsap.timeline({ delay: 1 })
   tl.from('.link-box', {
     autoAlpha: 0,
-    y: 100,
+
     duration: 1,
     // ease: 'back.out(1.7)',
     ease: 'back.out(0.5)', // 彈性效果

@@ -1,5 +1,5 @@
 <template>
-  <div class="lock-content-box">
+  <div class="lock-content-box mansion-single-box">
     <div class="overlay-close" @click="handleClose"></div>
     <img src="../../../assets/img/mansion/3.svg" alt="" class="lock-icon" />
     <div class="left-box">
@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import '@/assets/scss/mansion/lock/_lock-index.scss'
+import '@/assets/scss/mansion/mansion-single/_mansion-single.scss'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 

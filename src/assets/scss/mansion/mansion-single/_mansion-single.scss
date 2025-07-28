@@ -1,6 +1,6 @@
 @use '../../utils/mixin' as *;
 
-.lock-content-box {
+.mansion-single-box {
   width: 100%;
   height: 100%;
   padding-left: 4vw;
@@ -24,6 +24,21 @@
     justify-content: center;
     overflow: hidden;
     align-items: center;
+
+    .img-box {
+      position: relative;
+      width: 100%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .hint {
+        @include hint();
+        color: white;
+      }
+    }
   }
 
   .right-box {

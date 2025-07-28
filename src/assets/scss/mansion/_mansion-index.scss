@@ -218,10 +218,8 @@
 
     .link-box:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-      transition:
-        transform 0.3s ease-in-out,
-        box-shadow 0.3s ease-in-out;
+
+      transition: transform 0.3s ease-in-out;
     }
     @keyframes borderAni {
       to {
