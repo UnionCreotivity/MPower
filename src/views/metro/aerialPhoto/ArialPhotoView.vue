@@ -63,6 +63,7 @@ import GreenLine from '@/components/metro/GreenLine.vue'
 import '@/assets/scss/metro/_arial-photo.scss'
 
 gsap.registerPlugin(SplitText)
+
 const showGreenLine = ref(false)
 const isAnimating = ref(false)
 const showHouseNumber = ref(false)
@@ -163,6 +164,7 @@ const initGsap = () => {
     type: 'chars,words,lines',
     linesClass: 'clip-text',
   })
+
   const tl = gsap.timeline({ delay: 0.1 })
   tl.from('.img-box', {
     opacity: 0,

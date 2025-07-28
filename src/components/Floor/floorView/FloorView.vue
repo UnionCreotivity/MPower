@@ -31,10 +31,50 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
+import { ref, onMounted } from 'vue'
+import gsap from 'gsap'
 const buildingImg = new URL('@/assets/img/building/building.webp', import.meta.url).href
 const nightImg = new URL('@/assets/img/building/night.webp', import.meta.url).href
 
 const mainImage = ref(buildingImg)
+
+const initGsap = () => {
+  const tl = gsap.timeline({ delay: 0.15 })
+  tl.fromTo(
+    '.building-view .floor-view img',
+    {
+      autoAlpha: 0,
+      filter: 'brightness(2) blur(6px)',
+    },
+    {
+      filter: 'brightness(1) blur(0px)',
+      duration: 1,
+      autoAlpha: 1,
+      ease: 'power1.inOut',
+    },
+  )
+    .from(
+      '.content-box div',
+      {
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        stagger: { each: 0.15, from: 'start' },
+      },
+      '<0.3',
+    )
+    .from(
+      '.building-view .content-box .icon',
+      {
+        y: 70,
+        opacity: 0,
+        duration: 1,
+      },
+      '<0.55',
+    )
+}
+
+onMounted(() => {
+  initGsap()
+})
 </script>
