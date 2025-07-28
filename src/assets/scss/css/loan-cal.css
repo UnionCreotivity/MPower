@@ -34,7 +34,7 @@
   position: relative;
   margin: auto;
   cursor: pointer;
-  transition: all 0.1s;
+  transition: all 0.1s ease-in-out;
 }
 @media all and (max-width: 1400px) {
   .loan-view-right .loan-view-right-container .loan-view-cal-item {
@@ -50,7 +50,9 @@
 }
 .loan-view-right .loan-view-right-container .loan-view-cal-item:active {
   transform: scale(0.95);
-  transition: all 0.1s;
+}
+.loan-view-right .loan-view-right-container .loan-view-cal-item:hover {
+  background-color: #e6dfd3;
 }
 .loan-view-right .loan-view-right-container .loan-cal-1 img {
   width: 0.5vw;

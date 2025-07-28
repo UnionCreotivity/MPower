@@ -171,15 +171,15 @@ const initGsap = () => {
     linesClass: 'clip-text',
   })
 
-  const tl = gsap.timeline({ delay: 0.1 })
+  const tl = gsap.timeline({})
   tl.from('.img-box', {
-    opacity: 0,
+    autoAlpha: 0,
     duration: 1,
     ease: 'power1.inOut',
   })
     .from(splitbTitle.chars, {
       y: 70,
-      opacity: 0,
+      autoAlpha: 0,
       duration: 1,
       ease: 'power2.out',
       stagger: { each: 0.05, from: 'start' },
@@ -188,7 +188,7 @@ const initGsap = () => {
       smallTitleSplit.lines,
       {
         y: 70,
-        opacity: 0,
+        autoAlpha: 0,
         duration: 1,
         ease: 'power2.out',
       },
@@ -198,7 +198,7 @@ const initGsap = () => {
       contentSplit.lines,
       {
         y: 70,
-        opacity: 0,
+        autoAlpha: 0,
         duration: 1,
         ease: 'power2.out',
         stagger: { each: 0.15, from: 'start' },

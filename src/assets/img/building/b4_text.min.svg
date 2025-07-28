@@ -1,0 +1,42 @@
+<svg id="prefix___圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 443.24 241.2">
+    <defs>
+        <style>
+            .prefix__cls-12 {
+                letter-spacing: .02em
+            }
+
+            .prefix__cls-13 {
+                fill: none;
+                stroke: #604c3f;
+                stroke-miterlimit: 10;
+                stroke-width: .74px
+            }
+        </style>
+    </defs>
+    <g id="prefix___圖層_3" data-name="圖層 3"><text transform="translate(50.87 184.67)"
+            style="font-variation-settings:'wght' 600" fill="#604c3f" font-family="NotoSerifTC-SemiBold,'Noto Serif TC'"
+            font-size="45" letter-spacing=".1em" font-weight="600">
+            <tspan x="0" y="0">全區平面參考圖</tspan>
+        </text><text transform="translate(161.95 95.32)" font-family="CrimsonText-Regular,'Crimson Text'"
+            font-size="116.2" fill="#604c3f">
+            <tspan x="0" y="0">B4</tspan>
+        </text><text transform="translate(49.95 229.75)" style="font-variation-settings:'wght' 400,'opsz' 11"
+            fill="gray" font-family="MinionVariableConcept-Roman,'Minion Variable Concept'" font-size="31.54">
+            <tspan x="0" y="0" letter-spacing=".02em">O</tspan>
+            <tspan x="24.44" y="0" letter-spacing=".03em">V</tspan>
+            <tspan x="44.94" y="0">E</tspan>
+            <tspan x="63.52" y="0" letter-spacing=".07em">R</tspan>
+            <tspan class="prefix__cls-12" x="85.1" y="0">A</tspan>
+            <tspan x="104.78" y="0">LL </tspan>
+            <tspan x="147.96" y="0" letter-spacing="0">F</tspan>
+            <tspan x="165.4" y="0" letter-spacing=".01em">L</tspan>
+            <tspan x="183.63" y="0" letter-spacing=".02em">O</tspan>
+            <tspan x="208.01" y="0" letter-spacing="0">O</tspan>
+            <tspan x="231.98" y="0">R P</tspan>
+            <tspan x="276.83" y="0" letter-spacing=".06em">L</tspan>
+            <tspan class="prefix__cls-12" x="296.7" y="0">A</tspan>
+            <tspan x="316.38" y="0">N</tspan>
+        </text>
+        <path class="prefix__cls-13" d="M.37 140.34v96M442.87 141.34v96" />
+    </g>
+</svg>

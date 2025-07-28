@@ -31,27 +31,27 @@ const floorDetailMap: Record<string, { img: string; textImg: string }> = {
   },
   '3F-12F': {
     img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/3f12f_text.min.svg', import.meta.url).href,
   },
   B1: {
     img: new URL('@/assets/img/building/b1.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/b1_text.svg', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/b1_text.min.svg', import.meta.url).href,
   },
   B2: {
     img: new URL('@/assets/img/building/b2.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/b2_text.svg', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/b2_text.min.svg', import.meta.url).href,
   },
   B3: {
     img: new URL('@/assets/img/building/b3.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/b3_text.svg', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/b3_text.min.svg', import.meta.url).href,
   },
   B4: {
     img: new URL('@/assets/img/building/b4.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/b4_text.svg', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/b4_text.min.svg', import.meta.url).href,
   },
   R1: {
     img: new URL('@/assets/img/building/r1.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/rf_text.svg', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/rf_text.min.svg', import.meta.url).href,
   },
 }
 const initXY = computed(() => {

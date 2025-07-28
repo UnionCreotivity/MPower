@@ -59,7 +59,7 @@ const initGsap = () => {
       '.content-box div',
       {
         y: 80,
-        opacity: 0,
+        autoAlpha: 0,
         duration: 1,
         stagger: { each: 0.15, from: 'start' },
       },
@@ -69,10 +69,20 @@ const initGsap = () => {
       '.building-view .content-box .icon',
       {
         y: 70,
-        opacity: 0,
+        autoAlpha: 0,
         duration: 1,
       },
       '<0.55',
+    )
+
+    .from(
+      '.building-view .bg-text',
+      {
+        x: 70,
+        autoAlpha: 0,
+        duration: 1,
+      },
+      '<0.3',
     )
 }
 

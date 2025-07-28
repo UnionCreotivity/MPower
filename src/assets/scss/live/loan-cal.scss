@@ -35,8 +35,7 @@
       position: relative;
       margin: auto;
       cursor: pointer;
-      transition: all 0.1s;
-
+      transition: all 0.1s ease-in-out;
       @include pad {
         width: 4.75vw;
         height: 4.75vw;
@@ -51,7 +50,10 @@
 
       &:active {
         transform: scale(0.95);
-        transition: all 0.1s;
+      }
+
+      &:hover {
+        background-color: #e6dfd3;
       }
     }
 
