@@ -39,20 +39,22 @@
               srcset=""
             />
             <Glow :parent-length="20" />
-            <div
-              class="life-view-point"
-              v-for="point in lifeData"
-              :key="point.id"
-              :class="[point.className, tag === point.tag ? 'active' : '']"
-              @click="showFancybox(point)"
-            >
-              <div class="radiation">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
+            <TransitionGroup name="fade" tag="div">
+              <div
+                class="life-view-point"
+                v-for="point in filteredLifeData"
+                :key="point.id"
+                :class="[point.className, tag === point.tag ? 'active' : '']"
+                @click="showFancybox(point)"
+              >
+                <div class="radiation">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                </div>
+                <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
               </div>
-              <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
-            </div>
+            </TransitionGroup>
           </ScaleDrag>
         </div>
       </div>
@@ -111,8 +113,11 @@ const lifeList = [
   // },
 ]
 
+//篩選好 lifeData
+const filteredLifeData = computed(() => lifeData.filter((point) => point.tag === tag.value))
+
 const handleTag = (val: string) => {
-  tag.value = val
+  tag.value = tag.value === val ? '' : val
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
