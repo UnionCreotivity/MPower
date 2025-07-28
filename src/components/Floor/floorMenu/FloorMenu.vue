@@ -18,7 +18,7 @@
 import '@/assets/scss/building/_building-view.scss'
 import { ref } from 'vue'
 
-const floorList = ['R1', '3F-12F', '2F', '1F', 'B1', 'B2', 'B3', 'B4']
+const floorList = ['R1', '3F-12F', '2F', 'B1', 'B2', 'B3', 'B4']
 </script>
 
 <style lang="scss"></style>

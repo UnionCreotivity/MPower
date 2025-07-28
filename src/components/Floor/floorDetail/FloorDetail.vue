@@ -1,9 +1,6 @@
 <template>
   <div class="floor-detail">
-    <div class="close-btn" @click="$emit('close')">
-      <img src="../../../assets/img/other/x.svg" alt="" srcset="" />
-    </div>
-
+    <div class="overlay-close" @click="$emit('close')"></div>
     <div class="main-box">
       <div class="decorate">FLOOR PLAN</div>
       <div class="left-box">
@@ -23,6 +20,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
+
 const props = defineProps<{ floor: string }>()
 
 // 所有樓層對應資料
@@ -31,43 +29,7 @@ const floorDetailMap: Record<string, { img: string; textImg: string }> = {
     img: new URL('@/assets/img/building/2f.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/2f_text.svg', import.meta.url).href,
   },
-  '3F': {
-    img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
-  },
-  '4F': {
-    img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
-  },
-  '5F': {
-    img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
-  },
-  '6F': {
-    img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
-  },
-  '7F': {
-    img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
-  },
-  '8F': {
-    img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
-  },
-  '9F': {
-    img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
-  },
-  '10F': {
-    img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
-  },
-  '11F': {
-    img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
-  },
-  '12F': {
+  '3F-12F': {
     img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/3f12f_text.svg', import.meta.url).href,
   },
