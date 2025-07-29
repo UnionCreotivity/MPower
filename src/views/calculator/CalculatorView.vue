@@ -101,7 +101,7 @@ import LoanCal from '@/components/loan/LoanCal.vue'
 import { useLoanStore } from '@/stores/loanStore'
 import LoanResult from '@/components/loan/LoanResult.vue'
 import Menu from '../../components/menu/Menu.vue'
-import FullScreen from '../../components/full-screen/FullScreen.vue'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 import gsap from 'gsap'
 
 import '@/assets/scss/live/loan.scss'

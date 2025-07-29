@@ -34,10 +34,12 @@
       </div>
     </div>
   </div>
+  <FullScreen />
 </template>
 
 <script setup lang="ts">
 import '@/assets/scss/mansion/mansion-single/_mansion-single.scss'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 import { useRouter } from 'vue-router'
 import { onMounted } from 'vue'
 import gsap from 'gsap'

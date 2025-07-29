@@ -32,14 +32,18 @@
 
     <div class="detail-hint">實際家具配置及平面與建材依買賣契約書為準</div>
   </div>
+  <transition name="fade" mode="out-in">
+    <FloorCompass v-if="showCompass" @close="showCompass = false" />
+  </transition>
 
-  <FloorCompass v-if="showCompass" @close="showCompass = false" />
+  <FullScreen :forceBrownIcon="true" />
 </template>
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 import FloorCompass from '@/components/Floor/floorCompass/FloorCompass.vue'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const props = defineProps<{ floor: string }>()
 const showCompass = ref(false)

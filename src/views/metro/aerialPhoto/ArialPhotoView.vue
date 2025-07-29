@@ -53,6 +53,7 @@
       <GreenLine v-if="showGreenLine" @close="showGreenLine = false" />
     </Transition>
   </section>
+  <FullScreen :forceWhiteIcon="true" />
 </template>
 
 <script setup lang="ts">
@@ -66,6 +67,7 @@ import MrtGroup from '@/components/metro/MrtGroup.vue'
 import BusinessGroup from '@/components/metro/BusinessGroup.vue'
 import CoreGroup from '@/components/metro/CoreGroup.vue'
 import GreenLine from '@/components/metro/GreenLine.vue'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 import '@/assets/scss/metro/_arial-photo.scss'
 
 gsap.registerPlugin(SplitText)

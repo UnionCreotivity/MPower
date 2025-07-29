@@ -28,10 +28,12 @@
     </div>
     <img class="icon" src="../../../assets/img/building/icon.svg" alt="icon" srcset="" />
   </div>
+  <FullScreen :forceWhiteIcon="true" />
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 import gsap from 'gsap'
 const buildingImg = new URL('@/assets/img/building/building.webp', import.meta.url).href
 const nightImg = new URL('@/assets/img/building/night.webp', import.meta.url).href

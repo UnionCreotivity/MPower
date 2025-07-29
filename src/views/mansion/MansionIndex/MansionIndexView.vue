@@ -26,12 +26,14 @@
       </router-link>
     </div>
   </section>
+  <FullScreen :forceWhiteIcon="true" />
 </template>
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import gsap from 'gsap'
 import '@/assets/scss/mansion/_mansion-index.scss'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const linkBoxList = [
   {

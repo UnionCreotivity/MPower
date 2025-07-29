@@ -208,6 +208,7 @@
       width: 100%;
       height: 100%;
       position: relative;
+      justify-content: center;
       .decorate {
         position: absolute;
         left: -1vw;
@@ -219,7 +220,6 @@
       .left-box {
         display: flex;
         width: 40%;
-
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -228,15 +228,19 @@
         }
       }
       .right-box {
-        width: 50%;
+        width: 55%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         position: relative;
         z-index: 30;
+        margin-right: 2vw;
         img {
-          width: 47%;
+          width: 46%;
+        }
+        .zoom {
+          right: -5%;
         }
         .camera-box {
           position: absolute;
@@ -246,10 +250,10 @@
           }
         }
         .top-camera {
-          top: 7%;
+          top: 3%;
         }
         .bottom-camera {
-          bottom: 7%;
+          bottom: 3%;
         }
 
         .imgBoxIn {
@@ -338,6 +342,7 @@
       background-color: #604c3f;
       padding: 1.65vw 0vw;
       border-radius: 10px;
+      z-index: 40;
       .floor {
         padding: 0.3vw 1.7vw;
         text-align: center;

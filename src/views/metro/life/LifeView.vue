@@ -64,6 +64,7 @@
       <LifeFancybox v-if="fancyboxItem" :fancyItem="fancyboxItem" @show-fancybox="showFancybox" />
     </FadeIn>
   </div>
+  <FullScreen />
 </template>
 
 <script setup lang="ts">
@@ -78,6 +79,7 @@ import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 import LifeFancybox from '@/components/life-fancybox/LifeFancybox.vue'
 import FadeIn from '@/components/transition/FadeIn.vue'
 import Glow from '@/components/glow-effect/GlowEffect.vue'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const tag = ref('')
 const fancyboxItem = ref<{ key: string; image: string; txt: string }[] | null>(null)

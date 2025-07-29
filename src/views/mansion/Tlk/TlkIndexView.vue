@@ -18,6 +18,7 @@
       <component :is="tabs[activeTab].component" :key="activeTab" />
     </transition>
   </section>
+  <FullScreen />
 </template>
 
 <script setup lang="ts">
@@ -26,6 +27,7 @@ import '@/assets/scss/mansion/tlk/_tlk-index.scss'
 import { ref } from 'vue'
 import TlkBrand from '@/components/mansion/tlk/TlkBrand.vue'
 import TlkProduct from '@/components/mansion/tlk/TlkProduct.vue'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const activeTab = ref(0)
 

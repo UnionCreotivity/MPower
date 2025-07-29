@@ -1,7 +1,6 @@
 <template>
   <div class="floor-compass-modal">
-    <div class="overlay" @click="$emit('close')"></div>
-
+    <div class="overlay-close" @click="$emit('close')"></div>
     <div class="modal-content">
       <div class="img-box">
         <transition name="fade" mode="out-in">
@@ -33,11 +32,12 @@
       </div>
     </div>
   </div>
+  <FullScreen :forceWhiteIcon="true" />
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-// const emit = defineEmits(['close'])
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const floorSelectList: Record<string, { northImg: string; sorthImg: string; hint: string }> = {
   '3F': {

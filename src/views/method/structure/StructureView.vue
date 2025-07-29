@@ -18,6 +18,7 @@
     <component :is="tabs[activeTab].component" />
     <div class="right-mark-text">STRUCTURE</div>
   </section>
+  <FullScreen />
 </template>
 
 <script setup lang="ts">
@@ -31,6 +32,7 @@ import StructureAluminumForm from '@/components/method/structure/StructureAlumin
 import StructureDoubleRebar from '@/components/method/structure/StructureDoubleRebar.vue'
 import StructureFloorFinishing from '@/components/method/structure/StructureFloorFinishing.vue'
 import StructureSAConnector from '@/components/method/structure/StructureSAConnector.vue'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const router = useRouter()
 const goBack = () => router.push('/method')

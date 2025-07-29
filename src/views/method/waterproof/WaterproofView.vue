@@ -18,6 +18,7 @@
     <component :is="tabs[activeTab].component" />
     <div class="right-mark-text">WATERPROOF</div>
   </section>
+  <FullScreen />
 </template>
 
 <script setup lang="ts">
@@ -30,6 +31,7 @@ import WaterWindow from '@/components/method/waterproof/WaterWindow.vue'
 import WaterBath from '@/components/method/waterproof/WaterBath.vue'
 import WaterRoof from '@/components/method/waterproof/WaterRoof.vue'
 import WaterWall from '@/components/method/waterproof/WaterWall.vue'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const router = useRouter()
 const goBack = () => router.push('/method')

@@ -31,6 +31,7 @@
       </div>
     </div>
   </section>
+  <FullScreen />
 </template>
 
 <script setup lang="ts">
@@ -39,6 +40,7 @@ import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { gsap } from 'gsap'
 import { SplitText } from 'gsap/SplitText'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 // import { GSDevTools } from 'gsap/GSDevTools'
 gsap.registerPlugin(SplitText)
 // gsap.registerPlugin(GSDevTools)

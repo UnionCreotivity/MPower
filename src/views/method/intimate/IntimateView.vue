@@ -18,6 +18,7 @@
     <component :is="tabs[activeTab].component" />
     <div class="right-mark-text">INTIMATE</div>
   </section>
+  <FullScreen />
 </template>
 
 <script setup lang="ts">
@@ -33,6 +34,7 @@ import IntimateWaterPressureTest from '@/components/method/intimate/IntimateWate
 import IntimateRoom from '@/components/method/intimate/IntimateRoom.vue'
 import IntimateCharging from '@/components/method/intimate/IntimateCharging.vue'
 import IntimateKitchen from '@/components/method/intimate/IntimateKitchen.vue'
+import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const router = useRouter()
 const goBack = () => router.push('/method')
