@@ -3,9 +3,13 @@
     <div class="overlay-close" @click="$emit('close')"></div>
     <div class="modal-content">
       <div class="img-box">
-        <transition name="fade" mode="out-in">
-          <img :src="currentImg" :key="currentImg" />
-        </transition>
+        <img
+          ref="imgRef"
+          :src="currentImg"
+          alt=""
+          style="transition: opacity 0.5s ease"
+          :style="{ opacity: imgOpacity, transition: 'opacity 0.5s ease' }"
+        />
 
         <div class="hint">{{ currentHint }}</div>
       </div>
@@ -19,13 +23,15 @@
           :style="{ transform: `rotate(${sectorRotation}deg)` }"
         />
       </div>
-      <div class="floor-select-box">
+      <div class="floor-select-box" ref="floorBox">
+        <div class="slider" :style="sliderStyle"></div>
         <div
           class="floor"
-          v-for="floorKey in Object.keys(floorSelectList)"
+          v-for="(floorKey, index) in Object.keys(floorSelectList)"
           :key="floorKey"
           :class="{ active: selectedFloor === floorKey }"
           @click="selectFloor(floorKey)"
+          ref="el => floorRefs[index] = el"
         >
           <div>{{ floorKey }}</div>
         </div>
@@ -36,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch, nextTick, onMounted } from 'vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const floorSelectList: Record<string, { northImg: string; sorthImg: string; hint: string }> = {
@@ -65,12 +71,18 @@ const floorSelectList: Record<string, { northImg: string; sorthImg: string; hint
 const selectedFloor = ref('3F')
 const isNorth = ref(true) // ✅ 狀態控制 north or sorth
 const sectorRotation = ref(0)
+const imgOpacity = ref(1)
+const imgRef = ref<HTMLImageElement | null>(null)
 
-function selectFloor(floorKey: string) {
-  selectedFloor.value = floorKey
-  isNorth.value = true
-  sectorRotation.value = 0
+const floorBox = ref<HTMLElement | null>(null)
+interface SliderStyle {
+  left?: string
+  width?: string
+  top?: string
+  height?: string
 }
+
+const sliderStyle = ref<SliderStyle>({})
 
 // 根據當前狀態與樓層，回傳對應圖片
 const currentImg = computed(() => {
@@ -89,12 +101,62 @@ function toggleDirection() {
   isNorth.value = !isNorth.value
   sectorRotation.value += 180
 }
+
+function updateSlider() {
+  nextTick(() => {
+    if (!floorBox.value) return
+    const floors = floorBox.value.querySelectorAll('.floor')
+    const selectedIndex = Object.keys(floorSelectList).indexOf(selectedFloor.value)
+    if (selectedIndex < 0 || selectedIndex >= floors.length) return
+    const selectedEl = floors[selectedIndex] as HTMLElement
+    if (!selectedEl) return
+
+    const boxRect = floorBox.value.getBoundingClientRect()
+    const elRect = selectedEl.getBoundingClientRect()
+
+    sliderStyle.value = {
+      top: elRect.top - boxRect.top + 'px',
+      height: elRect.height + 'px',
+      left: '0px',
+      width: '100%',
+    }
+  })
+}
+
+// 選擇樓層時呼叫滑動條更新
+function selectFloor(floorKey: string) {
+  selectedFloor.value = floorKey
+  isNorth.value = true
+  sectorRotation.value = 0
+  updateSlider()
+}
+// 初始化時先呼叫一次
+onMounted(async () => {
+  await nextTick()
+  console.log(floorBox.value, 'floorBox.value') // 確認是否有拿到元素
+  updateSlider()
+})
+
+// 監聽樓層變化也更新
+watch(selectedFloor, async () => {
+  updateSlider()
+  if (!imgRef.value) return
+
+  // 先淡出
+  imgOpacity.value = 0
+  await new Promise((r) => setTimeout(r, 500)) // 等淡出300ms
+
+  // 換圖片 (這裡圖片 src 是由 currentImg 綁定，自動更新)
+
+  // 再淡入
+  imgOpacity.value = 1
+})
 </script>
 
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.4s ease-out;
+  transition: opacity 0.5s;
 }
 
 .fade-enter-from,

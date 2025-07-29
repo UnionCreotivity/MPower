@@ -18,7 +18,7 @@
                 class="camera"
               />
             </div>
-            <img :src="currentFloor.img" :alt="floor" />
+            <img :src="currentFloor.img" :alt="floor" class="floor-plan-img" />
             <div class="camera-box bottom-camera" @click="showCompass = true">
               <img
                 v-if="props.floor === '3F-12F'"
@@ -92,6 +92,24 @@ onMounted(() => {
   if (detailEl.value) {
     gsap.fromTo(detailEl.value, { opacity: 0 }, { opacity: 1, duration: 0.6 })
   }
+
+  const tl = gsap.timeline({})
+  tl.fromTo(
+    '.building-view .floor-detail .main-box .left-box img',
+    {
+      autoAlpha: 0,
+      y: 70,
+    },
+    { autoAlpha: 1, duration: 1, y: 0 },
+  ).fromTo(
+    '.building-view .floor-detail .main-box .right-box .imgBoxIn .floor-plan-img',
+    {
+      autoAlpha: 0,
+      y: 70,
+    },
+    { autoAlpha: 1, duration: 1, y: 0 },
+    '<0.3',
+  )
 })
 
 onBeforeUnmount(() => {

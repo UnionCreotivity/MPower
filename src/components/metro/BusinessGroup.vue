@@ -17,10 +17,6 @@
 </script>
 
 <style scoped>
-.business-group {
-  /* 繁華商圈容器樣式 */
-}
-
 .business-line img {
   max-width: 100%;
   display: block;

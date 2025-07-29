@@ -223,6 +223,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         img {
           width: 40%;
         }
@@ -234,8 +235,9 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        z-index: 30;
+        // z-index: 30;
         margin-right: 2vw;
+
         img {
           width: 46%;
         }
@@ -244,16 +246,26 @@
         }
         .camera-box {
           position: absolute;
-
+          z-index: 30;
           img {
             width: 2vw;
+            transition: transform 0.3s ease-in-out;
+          }
+          &:hover {
+            img {
+              transform: scale(1.15);
+            }
           }
         }
+
         .top-camera {
           top: 3%;
+          z-index: 30;
         }
+
         .bottom-camera {
           bottom: 3%;
+          z-index: 30;
         }
 
         .imgBoxIn {
@@ -313,7 +325,7 @@
       position: absolute;
       left: 1.65%;
       top: 20%;
-
+      z-index: 30;
       img {
         width: 7.2vw;
       }
@@ -336,28 +348,43 @@
     }
 
     .floor-select-box {
-      position: absolute;
+      position: fixed;
       left: 2%;
       top: 35%;
       background-color: #604c3f;
       padding: 1.65vw 0vw;
       border-radius: 10px;
       z-index: 40;
+      .slider {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 0;
+
+        background-color: #998675;
+        border-radius: 2px;
+        transition: top 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: top;
+        z-index: 1;
+      }
       .floor {
         padding: 0.3vw 1.7vw;
         text-align: center;
+        z-index: 3;
+        position: relative;
         div {
           color: white;
           font-size: 1.4vw;
           font-family: 'Crimson Text', serif;
           border-bottom: 1px solid white;
           padding: 0vw 0.3vw;
+          z-index: 3;
         }
       }
 
-      .floor.active {
-        background-color: #998675;
-      }
+      // .floor.active {
+      //   background-color: #998675;
+      // }
     }
   }
 }
