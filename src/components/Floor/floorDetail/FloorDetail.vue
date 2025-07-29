@@ -1,6 +1,7 @@
 <template>
   <div class="floor-detail">
     <div class="overlay-close" @click="$emit('close')"></div>
+    <img src="../../../assets/img/building/compass.png" alt="" class="compass" />
     <div class="main-box">
       <div class="decorate">FLOOR PLAN</div>
       <div class="left-box">
@@ -8,20 +9,40 @@
       </div>
       <div class="right-box">
         <ScaleDrag :init="initXY" :max-ratio="2">
+          <div class="camera-box top-camera" @click="showCompass = true">
+            <img
+              v-if="props.floor === '3F-12F'"
+              src="../../../assets/img/building/camera.png"
+              alt=""
+              class="camera"
+            />
+          </div>
           <img :src="currentFloor.img" :alt="floor" />
+          <div class="camera-box bottom-camera" @click="showCompass = true">
+            <img
+              v-if="props.floor === '3F-12F'"
+              src="../../../assets/img/building/camera.png"
+              alt=""
+              class="camera"
+            />
+          </div>
         </ScaleDrag>
       </div>
     </div>
 
     <div class="detail-hint">實際家具配置及平面與建材依買賣契約書為準</div>
   </div>
+
+  <FloorCompass v-if="showCompass" @close="showCompass = false" />
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
+import FloorCompass from '@/components/Floor/floorCompass/FloorCompass.vue'
 
 const props = defineProps<{ floor: string }>()
+const showCompass = ref(false)
 
 // 所有樓層對應資料
 const floorDetailMap: Record<string, { img: string; textImg: string }> = {

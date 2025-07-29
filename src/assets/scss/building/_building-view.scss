@@ -179,19 +179,18 @@
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100vw;
     height: 100svh;
     z-index: 45;
     pointer-events: auto;
     background-color: #f3f2eb;
 
-    .close-btn {
+    .compass {
       position: absolute;
       top: 0.8vw;
       padding: 1vw;
       right: 1vw;
-      width: 3.5vw;
+      width: 7vw;
       z-index: 50;
       img {
         width: 100%;
@@ -234,8 +233,23 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        z-index: 30;
         img {
           width: 47%;
+        }
+        .camera-box {
+          position: absolute;
+
+          img {
+            width: 2vw;
+          }
+        }
+        .top-camera {
+          top: 7%;
+        }
+        .bottom-camera {
+          bottom: 7%;
         }
 
         .imgBoxIn {
@@ -255,6 +269,90 @@
       font-size: 19px;
       bottom: 2vw;
       right: 3vw;
+    }
+  }
+
+  .floor-compass-modal {
+    width: 100%;
+    height: 100svh;
+    position: fixed;
+    z-index: 50;
+    inset: 0;
+    background-color: #f4f3ec;
+
+    .modal-content {
+      width: 100%;
+      height: 100%;
+    }
+
+    .img-box {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: flex;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        // transition: all 0.3s ease-in-out;
+      }
+
+      .hint {
+        @include hint();
+        color: white;
+        left: initial;
+        right: 1vw;
+      }
+    }
+
+    .compass {
+      position: absolute;
+      left: 1.65%;
+      top: 20%;
+
+      img {
+        width: 7.2vw;
+      }
+      .sector {
+        position: absolute;
+        top: 18%;
+        left: 25%;
+        width: 3vw;
+        transition:
+          transform 0.6s ease-in-out,
+          filter 0.3s ease-in-out;
+        transform-origin: 53% 93%;
+      }
+
+      &:hover {
+        .sector {
+          filter: brightness(1.3);
+        }
+      }
+    }
+
+    .floor-select-box {
+      position: absolute;
+      left: 2%;
+      top: 35%;
+      background-color: #604c3f;
+      padding: 1.65vw 0vw;
+      border-radius: 10px;
+      .floor {
+        padding: 0.3vw 1.7vw;
+        text-align: center;
+        div {
+          color: white;
+          font-size: 1.4vw;
+          font-family: 'Crimson Text', serif;
+          border-bottom: 1px solid white;
+          padding: 0vw 0.3vw;
+        }
+      }
+
+      .floor.active {
+        background-color: #998675;
+      }
     }
   }
 }
