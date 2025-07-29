@@ -25,8 +25,8 @@
         </ul>
       </div>
     </div>
+    <FullScreen />
   </div>
-  <FullScreen />
 </template>
 
 <script setup lang="ts">

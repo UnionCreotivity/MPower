@@ -17,8 +17,8 @@
     <transition name="fade" mode="out-in">
       <component :is="tabs[activeTab].component" :key="activeTab" />
     </transition>
+    <FullScreen />
   </section>
-  <FullScreen />
 </template>
 
 <script setup lang="ts">

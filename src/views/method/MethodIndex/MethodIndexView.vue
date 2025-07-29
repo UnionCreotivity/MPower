@@ -30,8 +30,8 @@
         <div class="title">貼心工法</div>
       </div>
     </div>
+    <FullScreen />
   </section>
-  <FullScreen />
 </template>
 
 <script setup lang="ts">

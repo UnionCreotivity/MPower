@@ -63,8 +63,8 @@
     <FadeIn>
       <LifeFancybox v-if="fancyboxItem" :fancyItem="fancyboxItem" @show-fancybox="showFancybox" />
     </FadeIn>
+    <FullScreen />
   </div>
-  <FullScreen />
 </template>
 
 <script setup lang="ts">

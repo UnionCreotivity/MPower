@@ -17,8 +17,8 @@
 
     <component :is="tabs[activeTab].component" />
     <div class="right-mark-text">STRUCTURE</div>
+    <FullScreen />
   </section>
-  <FullScreen />
 </template>
 
 <script setup lang="ts">

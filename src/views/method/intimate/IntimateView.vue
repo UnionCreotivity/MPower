@@ -17,8 +17,8 @@
 
     <component :is="tabs[activeTab].component" />
     <div class="right-mark-text">INTIMATE</div>
+    <FullScreen />
   </section>
-  <FullScreen />
 </template>
 
 <script setup lang="ts">

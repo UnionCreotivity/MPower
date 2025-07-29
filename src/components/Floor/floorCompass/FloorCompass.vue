@@ -31,8 +31,8 @@
         </div>
       </div>
     </div>
+    <FullScreen :forceWhiteIcon="true" />
   </div>
-  <FullScreen :forceWhiteIcon="true" />
 </template>
 
 <script setup lang="ts">
