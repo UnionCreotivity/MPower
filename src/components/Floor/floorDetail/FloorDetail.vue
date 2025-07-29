@@ -1,5 +1,7 @@
 <template>
-  <div class="floor-detail">
+  <div class="floor-detail-wrapper"></div>
+
+  <div class="floor-detail" ref="detailEl">
     <div class="overlay-close" @click="$emit('close')"></div>
     <img src="../../../assets/img/building/compass.png" alt="" class="compass" />
     <div class="main-box">
@@ -40,13 +42,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
+import gsap from 'gsap'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 import FloorCompass from '@/components/Floor/floorCompass/FloorCompass.vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const props = defineProps<{ floor: string }>()
 const showCompass = ref(false)
+const detailEl = ref<HTMLElement | null>(null)
 
 // 所有樓層對應資料
 const floorDetailMap: Record<string, { img: string; textImg: string }> = {
@@ -84,4 +88,16 @@ const initXY = computed(() => {
 })
 // 根據傳入樓層取資料
 const currentFloor = computed(() => floorDetailMap[props.floor])
+
+onMounted(() => {
+  if (detailEl.value) {
+    gsap.fromTo(detailEl.value, { opacity: 0 }, { opacity: 1, duration: 0.6 })
+  }
+})
+
+onBeforeUnmount(() => {
+  if (detailEl.value) {
+    gsap.to(detailEl.value, { opacity: 0, duration: 0.3, ease: 'power1.out' }) // 可選加上淡出動畫
+  }
+})
 </script>

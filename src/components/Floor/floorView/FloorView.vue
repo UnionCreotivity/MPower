@@ -41,7 +41,7 @@ const nightImg = new URL('@/assets/img/building/night.webp', import.meta.url).hr
 const mainImage = ref(buildingImg)
 
 const initGsap = () => {
-  const tl = gsap.timeline({ delay: 0.15 })
+  const tl = gsap.timeline({})
   tl.fromTo(
     '.building-view .floor-view img',
     {

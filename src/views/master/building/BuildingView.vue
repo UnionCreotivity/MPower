@@ -2,9 +2,8 @@
   <section class="building-view">
     <FloorView @selectFloor="handleSelectFloor" v-if="!selectedFloor" />
     <FloorMenu @selectFloor="handleSelectFloor" />
-    <Transition name="fade" mode="out-in">
-      <FloorDetail v-if="selectedFloor" :floor="selectedFloor" @close="selectedFloor = null" />
-    </Transition>
+
+    <FloorDetail v-if="selectedFloor" :floor="selectedFloor" @close="selectedFloor = null" />
   </section>
 </template>
 
@@ -22,10 +21,10 @@ function handleSelectFloor(floorId: string) {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 .fade-enter-from,
 .fade-leave-to {
