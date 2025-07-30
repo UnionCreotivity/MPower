@@ -18,7 +18,7 @@
     <div class="hint">3D外觀示意圖</div>
 
     <div class="content-box">
-      <div class="title">俐落線條．理性構築</div>
+      <div class="title" ref="title">俐落線條．理性構築</div>
       <div class="small-title">以實用為本，少即是多，藏即是顯</div>
       <div class="content">
         理性人本為筆，書寫出生活的實用秩序。<br />
@@ -37,10 +37,15 @@
 import { ref, onMounted } from 'vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
 import gsap from 'gsap'
+import SplitText from 'gsap/SplitText'
+
 const buildingImg = new URL('@/assets/img/building/building.webp', import.meta.url).href
 const nightImg = new URL('@/assets/img/building/night.webp', import.meta.url).href
-
 const mainImage = ref(buildingImg)
+
+gsap.registerPlugin(SplitText)
+
+const title = ref<HTMLElement | null>(null)
 
 const initGsap = () => {
   const tl = gsap.timeline({})
@@ -92,5 +97,22 @@ const initGsap = () => {
 
 onMounted(() => {
   initGsap()
+  if (!title.value) return
+
+  const split = new SplitText(title.value, { type: 'chars' })
+  const chars = split.chars
+
+  gsap.set(chars, { color: '#af8b73' })
+
+  gsap.to(chars, {
+    color: '#604c3f',
+    stagger: {
+      each: 0.15,
+      repeat: -1,
+      yoyo: true,
+    },
+    duration: 1.25,
+    ease: 'power1.inOut',
+  })
 })
 </script>
