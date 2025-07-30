@@ -52,8 +52,8 @@
     <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
       <GreenLine v-if="showGreenLine" @close="showGreenLine = false" />
     </Transition>
-    <FullScreen :forceWhiteIcon="true" />
   </section>
+  <FullScreen :forceWhiteIcon="true" />
 </template>
 
 <script setup lang="ts">

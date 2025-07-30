@@ -3,14 +3,9 @@
     <div class="overlay-close" @click="$emit('close')"></div>
     <div class="modal-content">
       <div class="img-box">
-        <img
-          ref="imgRef"
-          :src="currentImg"
-          alt=""
-          style="transition: opacity 0.5s ease"
-          :style="{ opacity: imgOpacity, transition: 'opacity 0.5s ease' }"
-        />
-
+        <transition name="fade" mode="out-in">
+          <img v-if="currentImg" :src="currentImg" :key="currentImg" ref="imgRef" alt="" />
+        </transition>
         <div class="hint">{{ currentHint }}</div>
       </div>
       <div class="compass" @click="toggleDirection">
@@ -71,7 +66,7 @@ const floorSelectList: Record<string, { northImg: string; sorthImg: string; hint
 const selectedFloor = ref('3F')
 const isNorth = ref(true) // ✅ 狀態控制 north or sorth
 const sectorRotation = ref(0)
-const imgOpacity = ref(1)
+
 const imgRef = ref<HTMLImageElement | null>(null)
 
 const floorBox = ref<HTMLElement | null>(null)
@@ -133,34 +128,29 @@ function selectFloor(floorKey: string) {
 // 初始化時先呼叫一次
 onMounted(async () => {
   await nextTick()
-  console.log(floorBox.value, 'floorBox.value') // 確認是否有拿到元素
+
   updateSlider()
 })
 
 // 監聽樓層變化也更新
 watch(selectedFloor, async () => {
   updateSlider()
-  if (!imgRef.value) return
-
-  // 先淡出
-  imgOpacity.value = 0
-  await new Promise((r) => setTimeout(r, 500)) // 等淡出300ms
-
-  // 換圖片 (這裡圖片 src 是由 currentImg 綁定，自動更新)
-
-  // 再淡入
-  imgOpacity.value = 1
 })
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
 }
 </style>
