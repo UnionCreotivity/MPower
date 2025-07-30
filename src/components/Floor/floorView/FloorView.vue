@@ -59,16 +59,15 @@ onMounted(() => {
   tl.fromTo(
     '.building-view .floor-view img',
     {
+      scale: 1.3,
       autoAlpha: 0,
       filter: 'brightness(2) blur(6px)',
-      scale: 1.3,
     },
     {
       filter: 'brightness(1) blur(0px)',
       duration: 1,
       scale: 1,
       autoAlpha: 1,
-      ease: 'power1.inOut',
     },
   )
 
@@ -89,6 +88,28 @@ onMounted(() => {
       '<0.55',
     )
 
+    // .fromTo(
+    //   chars,
+    //   {
+    //     'will-change': 'opacity, transform',
+    //     autoAlpha: 0,
+    //     yPercent: 120,
+    //     scaleY: 2.3,
+    //     scaleX: 0.7,
+    //     transformOrigin: '50% 0%',
+    //   },
+    //   {
+    //     duration: 2,
+    //     ease: 'back.inOut(2)',
+    //     autoAlpha: 1,
+    //     yPercent: 0,
+    //     scaleY: 1,
+    //     scaleX: 1,
+    //     stagger: 0.03,
+    //   },
+    //   '<0.07',
+    // )
+
     .fromTo(
       splsplitSmallTitle.chars,
       {
@@ -103,7 +124,7 @@ onMounted(() => {
         scaleY: 1,
         stagger: 0.05,
       },
-      '<0.2',
+      '<0.25',
     )
 
     .fromTo(
@@ -114,7 +135,7 @@ onMounted(() => {
         x: 70,
       },
       { x: 0, filter: 'blur(0px)', duration: 1, autoAlpha: 1 },
-      '<0.6',
+      '<0.7',
     )
     .fromTo(
       [splitContent.lines[1], splitContent.lines[3]],

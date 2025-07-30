@@ -31,7 +31,7 @@ onMounted(() => {
   const split = new SplitText(floorTitle.value, { type: 'chars' })
   const chars = split.chars
 
-  gsap.set(chars, { opacity: 0.35 })
+  gsap.set(chars, { opacity: 0.25 })
 
   gsap.to(chars, {
     opacity: 1,

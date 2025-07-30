@@ -39,7 +39,9 @@
       <div class="loan-view-cal-item loan-cal-icon-2" @click.stop="backClick">
         <img src="/src/assets/img/loan/icon-1.min.svg" alt="" />
       </div>
-      <button class="loan-view-right-submit" @click.stop="submitClick">確認送出</button>
+      <button class="loan-view-right-submit" @click.stop="submitClick">
+        <span>確認送出</span>
+      </button>
     </div>
   </div>
 </template>

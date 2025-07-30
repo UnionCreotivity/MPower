@@ -191,14 +191,28 @@
   }
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-clear button {
-  color: #3e3a39;
-  border: 1px solid #3e3a39;
+  color: #604c3f;
+  border: 1px solid #604c3f;
   background-color: transparent;
+  cursor: none;
+  transition: all 0.25s ease-in-out;
+}
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-clear button:hover {
+  background-color: #604c3f;
+  color: #f7f8f8;
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-cal button {
   color: #f7f8f8;
   border: none;
   background-color: #604c3f;
+  cursor: none;
+  border: 1px solid transparent;
+  transition: all 0.25s ease-in-out;
+}
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-cal button:hover {
+  border: 1px solid #604c3f;
+  background-color: transparent;
+  color: #604c3f;
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button {
   font-family: "Noto Serif TC", serif;
@@ -209,11 +223,12 @@
   padding-block: 0.4vw;
   padding-inline: 3.25vw;
   letter-spacing: 2px;
-  transition: all 0.1s;
+  transition: all 0.1s ease-in-out;
+  cursor: none;
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button:active {
   transform: scale(0.95);
-  transition: all 0.1s;
+  transition: all 0.1s ease-in-out;
 }
 @media all and (max-width: 1400px) {
   .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button {
