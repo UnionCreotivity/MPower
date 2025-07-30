@@ -3,9 +3,8 @@
     <div class="overlay-close" @click="$emit('close')"></div>
     <div class="modal-content">
       <div class="img-box">
-        <transition name="fade" mode="out-in">
-          <img v-if="currentImg" :src="currentImg" :key="currentImg" ref="imgRef" alt="" />
-        </transition>
+        <img v-if="currentImg" :src="currentImg" :key="currentImg" ref="imgRef" alt="" />
+
         <div class="hint">{{ currentHint }}</div>
       </div>
       <div class="compass" @click="toggleDirection">
@@ -39,6 +38,7 @@
 <script setup lang="ts">
 import { ref, computed, watch, nextTick, onMounted } from 'vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
+import gsap from 'gsap'
 
 const floorSelectList: Record<string, { northImg: string; sorthImg: string; hint: string }> = {
   '3F': {
@@ -92,9 +92,9 @@ const currentHint = computed(() => floorSelectList[selectedFloor.value]?.hint ??
 function toggleDirection() {
   const current = floorSelectList[selectedFloor.value]
   if (!current.sorthImg) return
-
   isNorth.value = !isNorth.value
   sectorRotation.value += 180
+  imgAni()
 }
 
 function updateSlider() {
@@ -123,12 +123,31 @@ function selectFloor(floorKey: string) {
   selectedFloor.value = floorKey
   isNorth.value = true
   sectorRotation.value = 0
+  imgAni()
   updateSlider()
 }
+
+const imgAni = () => {
+  console.log(11)
+  const tl = gsap.timeline({})
+  tl.fromTo(
+    '.building-view .floor-compass-modal .img-box',
+    {
+      maskPosition: '200% 0',
+    },
+    {
+      maskPosition: '0% 0%',
+      duration: 1.5,
+      // ease: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
+      ease: 'power1.inOut',
+    },
+  )
+}
+
 // 初始化時先呼叫一次
 onMounted(async () => {
   await nextTick()
-
+  imgAni()
   updateSlider()
 })
 
@@ -138,19 +157,4 @@ watch(selectedFloor, async () => {
 })
 </script>
 
-<style scoped>
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.3s ease;
-}
-</style>
+<style scoped></style>
