@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="floor-view-box">
     <div class="floor-view">
       <transition name="fade" mode="out-in">
         <img :key="mainImage" :src="mainImage" alt="floor image" />

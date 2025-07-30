@@ -21,5 +21,12 @@ import ViewFixed from '@/components/view-fixed/ViewFixed.vue'
     flex-direction: column;
     justify-content: center;
   }
+
+  .full-screen {
+    @media all and (max-width: 1400px) {
+      right: 2vw;
+      bottom: 4%;
+    }
+  }
 }
 </style>

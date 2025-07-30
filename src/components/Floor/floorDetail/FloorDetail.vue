@@ -83,7 +83,11 @@ const floorDetailMap: Record<string, { img: string; textImg: string }> = {
   },
 }
 const initXY = computed(() => {
-  return { x: 400, y: 0 }
+  const screenWidth = window.innerWidth
+  return {
+    x: screenWidth < 1400 ? 200 : 400,
+    y: 0,
+  }
 })
 // 根據傳入樓層取資料
 const currentFloor = computed(() => floorDetailMap[props.floor])

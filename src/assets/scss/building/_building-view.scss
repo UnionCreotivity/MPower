@@ -28,6 +28,12 @@
     }
   }
 
+  .floor-view-box {
+    @media all and (max-width: 1440px) {
+      height: 100%;
+    }
+  }
+
   .floor-view {
     width: 100%;
     height: 100%;
@@ -104,6 +110,15 @@
     right: 1.2vw;
     bottom: 9.7vw;
     width: 2.5vw;
+    @media all and (max-width: 1440px) {
+      right: 3.2vw;
+      bottom: 11vw;
+    }
+    @media all and (max-width: 1400px) {
+      width: 3.5vw;
+      right: 3.6vw;
+      bottom: 13vw;
+    }
     img {
       width: 100%;
     }
@@ -114,6 +129,15 @@
     right: 1.2vw;
     bottom: 6.5vw;
     width: 2.5vw;
+    @media all and (max-width: 1440px) {
+      right: 3.2vw;
+      bottom: 7.5vw;
+    }
+    @media all and (max-width: 1400px) {
+      width: 3.5vw;
+      right: 3.6vw;
+      bottom: 8.5vw;
+    }
     img {
       width: 100%;
     }
@@ -129,7 +153,7 @@
     flex-direction: column;
     padding-top: 8vw;
     @media all and (max-width: 1440px) {
-      right: 7vw;
+      right: 9vw;
     }
 
     .floor-box {
@@ -192,6 +216,9 @@
       right: 1vw;
       width: 7vw;
       z-index: 50;
+      @media all and (max-width: 1400px) {
+        width: 9vw;
+      }
       img {
         width: 100%;
         transition: all 0.5s;
@@ -216,6 +243,11 @@
         color: #e2dfdc;
         top: 24%;
         writing-mode: vertical-lr;
+        @media all and (max-width: 1400px) {
+          left: -1.5vw;
+          font-size: 6.3vw;
+          top: 24%;
+        }
       }
       .left-box {
         display: flex;
@@ -226,6 +258,9 @@
 
         img {
           width: 40%;
+          @media all and (max-width: 1400px) {
+            width: 53%;
+          }
         }
       }
       .right-box {
@@ -239,6 +274,10 @@
 
         img {
           width: 46%;
+
+          @media all and (max-width: 1400px) {
+            width: 65%;
+          }
         }
         .zoom {
           right: -5%;
@@ -249,6 +288,9 @@
           img {
             width: 2vw;
             transition: transform 0.3s ease-in-out;
+            @media all and (max-width: 1400px) {
+              width: 3vw;
+            }
           }
           &:hover {
             img {
@@ -260,11 +302,19 @@
         .top-camera {
           top: 3%;
           z-index: 30;
+          @media all and (max-width: 1400px) {
+            top: 3%;
+            right: 48%;
+          }
         }
 
         .bottom-camera {
           bottom: 3%;
           z-index: 30;
+          @media all and (max-width: 1400px) {
+            bottom: 3%;
+            right: 48%;
+          }
         }
 
         .imgBoxIn {
@@ -280,10 +330,10 @@
 
     .detail-hint {
       position: absolute;
-      @include hint();
       font-size: 19px;
       bottom: 1.5vw;
       right: 3vw;
+      @include hint();
     }
   }
 

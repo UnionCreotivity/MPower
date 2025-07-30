@@ -72,8 +72,8 @@ const linkBoxList = [
     routeName: '',
   },
   {
-    text: '工作陽台',
-    img: '',
+    text: '衛浴配件',
+    img: new URL('../../../assets/img/mansion/logo.png', import.meta.url).href,
     routeName: '',
   },
 ]

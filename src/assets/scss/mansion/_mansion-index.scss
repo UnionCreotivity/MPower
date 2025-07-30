@@ -6,7 +6,9 @@
   height: auto;
   overflow: hidden;
   position: relative;
-
+  @media all and (max-width: 1400px) {
+    height: 100%;
+  }
   .bg {
     width: 100%;
     height: 100%;
@@ -16,6 +18,9 @@
     mask-size: 200% 100%;
     -webkit-mask-position: 200% 0;
     mask-position: 200% 0;
+    @media all and (max-width: 1400px) {
+      object-fit: cover;
+    }
   }
   .hint {
     @include hint();
@@ -28,6 +33,11 @@
     top: 26%;
     left: 4%;
     width: 17vw;
+
+    @media all and (max-width: 1400px) {
+      left: 3%;
+      width: 19vw;
+    }
   }
   .shine {
     position: absolute;
@@ -40,6 +50,9 @@
     left: 46.3%;
     animation: lighterShine 3.5s ease-in-out infinite;
     transform-origin: center center;
+    @media all and (max-width: 1400px) {
+      left: 45%;
+    }
   }
 
   .shine2 {
@@ -48,6 +61,9 @@
     left: 57.8%;
     animation: lighterShine 3s ease-in-out infinite;
     transform-origin: center center;
+    @media all and (max-width: 1400px) {
+      left: 57.5%;
+    }
   }
 
   .shine3 {
@@ -55,6 +71,10 @@
     left: 57.8%;
     animation: lighterShine 4s ease-in-out infinite;
     transform-origin: center center;
+    @media all and (max-width: 1400px) {
+      top: 63.5%;
+      left: 57.5%;
+    }
   }
 
   .shine4 {
@@ -62,6 +82,11 @@
     left: 80.8%;
     animation: lighterShine 3s ease-in-out infinite;
     transform-origin: center center;
+
+    @media all and (max-width: 1400px) {
+      top: 63.5%;
+      left: 82.5%;
+    }
   }
   @keyframes lighterShine {
     0% {
@@ -92,6 +117,11 @@
     grid-template-rows: repeat(4, 1fr);
     z-index: 2;
 
+    @media all and (max-width: 1400px) {
+      top: 16%;
+      right: 7.5%;
+    }
+
     .link-box {
       position: relative;
       display: flex;
@@ -108,6 +138,11 @@
       transition:
         transform 0.3s ease-in-out,
         box-shadow 0.3s ease-in-out;
+
+      @media all and (max-width: 1400px) {
+        width: 12.5vw;
+        height: 12.5vw;
+      }
       // 光線
       .gradient-line {
         position: absolute;

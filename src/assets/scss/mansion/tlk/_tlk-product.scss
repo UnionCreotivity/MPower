@@ -11,6 +11,7 @@
     top: 0;
     right: 0;
     width: 35%;
+    // width: 100%;
     left: initial;
     height: 100%;
     z-index: 1; // 要小於 dot 的 z-index
@@ -129,6 +130,10 @@
       flex-direction: column;
       padding-left: 3vw;
       padding-right: 4vw;
+      @media all and (max-width: 1400px) {
+        padding-left: 2vw;
+        padding-right: 2vw;
+      }
       .title-img-box {
         width: 100%;
         height: 19.5vw;

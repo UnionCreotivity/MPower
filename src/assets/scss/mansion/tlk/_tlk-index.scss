@@ -51,6 +51,11 @@
     width: 3.5vw;
     left: 5vw;
     top: 1.6vw;
+    @media all and (max-width: 1400px) {
+      left: 6vw;
+      top: 2.6vw;
+    }
+
     img {
       width: 100%;
     }

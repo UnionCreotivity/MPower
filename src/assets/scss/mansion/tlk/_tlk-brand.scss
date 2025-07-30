@@ -23,6 +23,9 @@
     img {
       width: 100%;
       object-fit: cover;
+      @media all and (max-width: 1400px) {
+        height: 100%;
+      }
     }
     .hint {
       @include hint();

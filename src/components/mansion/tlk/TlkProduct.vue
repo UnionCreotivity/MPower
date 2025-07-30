@@ -1,6 +1,5 @@
 <template>
   <div class="tlk-product-box">
-    <div class="overlay-close" @click="handleClose"></div>
     <div class="left-box">
       <div class="img-box">
         <img
@@ -31,6 +30,8 @@
         </div>
       </transition>
     </div>
+
+    <div class="overlay-close" @click="handleClose"></div>
   </div>
 </template>
 
