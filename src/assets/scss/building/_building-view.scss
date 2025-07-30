@@ -110,8 +110,8 @@
   .daytime {
     position: absolute;
     right: 1.2vw;
-    bottom: 9.7vw;
-    width: 2.5vw;
+    bottom: 7.7vw;
+    width: 2vw;
     @media all and (max-width: 1440px) {
       right: 3.2vw;
       bottom: 11vw;
@@ -129,8 +129,8 @@
   .night {
     position: absolute;
     right: 1.2vw;
-    bottom: 6.5vw;
-    width: 2.5vw;
+    bottom: 5vw;
+    width: 2vw;
     @media all and (max-width: 1440px) {
       right: 3.2vw;
       bottom: 7.5vw;
@@ -437,7 +437,7 @@
         top: 0;
         background-color: #998675;
         border-radius: 2px;
-        transition: top 0.5s;
+        transition: top 0.5s ease-in-out;
         will-change: top;
         z-index: 1;
       }

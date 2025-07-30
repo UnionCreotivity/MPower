@@ -70,15 +70,26 @@ import { menuData } from './menuData'
 import '@/assets/scss/menu/_menu.scss'
 import { useRouter, useRoute } from 'vue-router'
 
-const router = useRouter() // ✅ 有 .push()
-const route = useRoute() // ✅ 有 .name, .params
+const router = useRouter() // 有 .push()
+const route = useRoute() // 有 .name, .params
 
 // 控制開關
 const is_Show = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
 
-const whiteMenuRoutes = ['aerialPhoto', 'mansionIndex', 'tlkIndex']
-const isWhiteMenu = computed(() => whiteMenuRoutes.includes(route.name as string))
+const whiteMenuRoutes = ['aerialPhoto', 'mansionIndex', 'tlkIndex', 'lifegearIndex']
+const isWhiteMenu = computed(() => {
+  const name = route.name as string
+  const isSmallScreen = window.innerWidth < 1400
+  const forceDefaultInSmallScreen = ['tlkIndex', 'lifegearIndex']
+
+  if (forceDefaultInSmallScreen.includes(name) && isSmallScreen) {
+    return false
+  }
+
+  return whiteMenuRoutes.includes(name)
+})
+
 const menuDefault = new URL('@/assets/img/menu/menu_icon.svg', import.meta.url).href
 const menuWhite = new URL('@/assets/img/menu/menu_white.svg', import.meta.url).href
 

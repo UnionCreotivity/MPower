@@ -26,9 +26,9 @@ const handleClick = () => {
 <style lang="scss" scoped>
 .full-screen {
   position: absolute;
-  right: 3vw;
-  bottom: 5%;
-  width: 3vw;
+  right: 2vw;
+  bottom: 1vw;
+  width: 2.5vw;
   height: 3vw;
   opacity: 0.8;
   z-index: 65;

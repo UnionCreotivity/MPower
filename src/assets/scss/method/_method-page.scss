@@ -39,7 +39,6 @@
       position: absolute;
       z-index: 30;
       div {
-        cursor: pointer;
         font-family: var(--font-family-title-zh);
         color: var(--font-color-title);
         font-weight: bold;
@@ -80,6 +79,11 @@
       right: -1vw;
       z-index: 15;
       // opacity: 0;
+      @media all and (max-width: 1400px) {
+        font-size: 6vw;
+        bottom: 14vw;
+        right: -2vw;
+      }
     }
   }
 

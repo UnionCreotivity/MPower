@@ -64,7 +64,7 @@ const floorSelectList: Record<string, { northImg: string; sorthImg: string; hint
 }
 
 const selectedFloor = ref('3F')
-const isNorth = ref(true) // ✅ 狀態控制 north or sorth
+const isNorth = ref(true) // 狀態控制 north or sorth
 const sectorRotation = ref(0)
 
 const imgRef = ref<HTMLImageElement | null>(null)

@@ -6,7 +6,7 @@
   height: auto;
   overflow: hidden;
   position: relative;
-  @media all and (max-width: 1400px) {
+  @media all and (max-width: 1680px) {
     height: 100%;
   }
   .bg {
@@ -18,7 +18,7 @@
     mask-size: 200% 100%;
     -webkit-mask-position: 200% 0;
     mask-position: 200% 0;
-    @media all and (max-width: 1400px) {
+    @media all and (max-width: 1680px) {
       object-fit: cover;
     }
   }
@@ -340,11 +340,17 @@
     .link-box7 {
       grid-row: 3 / span 1;
       grid-column: 3 / span 1;
+      .item-logo {
+        width: 75%;
+      }
     }
 
     .link-box8 {
       grid-row: 3 / span 1;
       grid-column: 5 / span 1;
+      .item-logo {
+        width: 50%;
+      }
     }
   }
 }

@@ -68,7 +68,7 @@ const linkBoxList = [
   },
   {
     text: 'E-HOME',
-    img: '',
+    img: new URL('../../../assets/img/mansion/3.svg', import.meta.url).href,
     routeName: '',
   },
   {
