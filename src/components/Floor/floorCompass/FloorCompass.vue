@@ -109,11 +109,21 @@ function updateSlider() {
     const boxRect = floorBox.value.getBoundingClientRect()
     const elRect = selectedEl.getBoundingClientRect()
 
-    sliderStyle.value = {
-      top: elRect.top - boxRect.top + 0.5 + 'px',
-      height: elRect.height - 15 + 'px',
-      left: '0px',
-      width: '100%',
+    const window_width = window.screen.width
+    if (window_width <= 1400) {
+      sliderStyle.value = {
+        top: elRect.top - boxRect.top + 0.5 + 'px',
+        height: elRect.height - 10 + 'px',
+        left: '0px',
+        width: '100%',
+      }
+    } else {
+      sliderStyle.value = {
+        top: elRect.top - boxRect.top + 0.5 + 'px',
+        height: elRect.height - 15 + 'px',
+        left: '0px',
+        width: '100%',
+      }
     }
   })
 }
