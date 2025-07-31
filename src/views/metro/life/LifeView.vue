@@ -27,6 +27,11 @@
               {{ life.zhName }}<span>{{ life.enName }}</span>
             </div>
           </div>
+
+          <div class="tab-item school-tab" :key="school" @click.stop="handleTag(school)">
+            <div class="life-list-squre"></div>
+            <div class="text">優質學區<span>CULTURAL DISTRICT</span></div>
+          </div>
         </div>
       </div>
       <div class="right-box">
@@ -83,6 +88,7 @@ import FullScreen from '@/components/full-screen/FullScreen.vue'
 
 const tag = ref('')
 const fancyboxItem = ref<{ key: string; image: string; txt: string }[] | null>(null)
+const school = 'cultural-district'
 
 gsap.registerPlugin(CustomEase)
 CustomEase.create('myEase', '0.24,0.43,0.15,0.97')

@@ -113,15 +113,15 @@ export const lifeData = [
     image: new URL('@/assets/img/life/shopping_district/tianjin_01.webp', import.meta.url).href,
     txt: '天津路商圈',
   },
-  {
-    tag: 'shopping-district',
-    id: 'home-shopping', //中清路家樂福
-    className: 'shopping-point-6',
-    image: [new URL('@/assets/img/life/shopping_district/home_shopping_1.webp', import.meta.url).href,
-    new URL('@/assets/img/life/shopping_district/home_shopping_2.webp', import.meta.url).href,
-    ],
-    txt: '中清路家樂福',
-  },
+  // {
+  //   tag: 'shopping-district',
+  //   id: 'home-shopping', //中清路家樂福
+  //   className: 'shopping-point-6',
+  //   image: [new URL('@/assets/img/life/shopping_district/home_shopping_1.webp', import.meta.url).href,
+  //   new URL('@/assets/img/life/shopping_district/home_shopping_2.webp', import.meta.url).href,
+  //   ],
+  //   txt: '中清路家樂福',
+  // },
 
   //交通樞紐
   {
@@ -129,7 +129,7 @@ export const lifeData = [
     id: 'zhonggang', // 國一中港交流道
     className: 'transit-point-1',
     image: new URL('@/assets/img/life/traffic/highway1_zhonggang_01.webp', import.meta.url).href,
-    txt: '國一中港交流道',
+    txt: '中清交流道',
   },
   {
     tag: 'rapid-transit',

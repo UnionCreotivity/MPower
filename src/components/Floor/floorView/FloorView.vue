@@ -70,7 +70,6 @@ onMounted(() => {
       autoAlpha: 1,
     },
   )
-
     .fromTo(
       chars,
       {
@@ -87,29 +86,6 @@ onMounted(() => {
       },
       '<0.55',
     )
-
-    // .fromTo(
-    //   chars,
-    //   {
-    //     'will-change': 'opacity, transform',
-    //     autoAlpha: 0,
-    //     yPercent: 120,
-    //     scaleY: 2.3,
-    //     scaleX: 0.7,
-    //     transformOrigin: '50% 0%',
-    //   },
-    //   {
-    //     duration: 2,
-    //     ease: 'back.inOut(2)',
-    //     autoAlpha: 1,
-    //     yPercent: 0,
-    //     scaleY: 1,
-    //     scaleX: 1,
-    //     stagger: 0.03,
-    //   },
-    //   '<0.07',
-    // )
-
     .fromTo(
       splsplitSmallTitle.chars,
       {
@@ -126,7 +102,6 @@ onMounted(() => {
       },
       '<0.25',
     )
-
     .fromTo(
       [splitContent.lines[0], splitContent.lines[2], splitContent.lines[4]],
       {
@@ -143,7 +118,6 @@ onMounted(() => {
       { x: 0, duration: 1, filter: 'blur(0px)', autoAlpha: 1 },
       '<0.1',
     )
-
     .from(
       '.building-view .content-box .icon',
       {

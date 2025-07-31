@@ -2,7 +2,12 @@
   <div class="floor-detail-wrapper">
     <div class="floor-detail" ref="detailEl">
       <div class="overlay-close" @click="$emit('close')"></div>
-      <img src="../../../assets/img/building/compass.png" alt="" class="compass" />
+      <img
+        src="../../../assets/img/building/compass.png"
+        alt=""
+        class="compass"
+        v-if="props.floor !== 'B4' && props.floor !== 'R1'"
+      />
       <div class="main-box">
         <div class="decorate">FLOOR PLAN</div>
         <div class="left-box">
@@ -18,7 +23,12 @@
                 class="camera"
               />
             </div>
-            <img :src="currentFloor.img" :alt="floor" class="floor-plan-img" />
+            <img
+              :src="currentFloor.img"
+              :alt="floor"
+              class="floor-plan-img"
+              :class="[currentFloor.className]"
+            />
             <div class="camera-box bottom-camera" @click="showCompass = true">
               <img
                 v-if="props.floor === '3F-12F'"
@@ -29,9 +39,8 @@
             </div>
           </ScaleDrag>
         </div>
+        <div class="detail-hint">實際家具配置及平面與建材依買賣契約書為準</div>
       </div>
-
-      <div class="detail-hint">實際家具配置及平面與建材依買賣契約書為準</div>
     </div>
     <transition name="fade" mode="out-in">
       <FloorCompass v-if="showCompass" @close="showCompass = false" />
@@ -52,34 +61,41 @@ const showCompass = ref(false)
 const detailEl = ref<HTMLElement | null>(null)
 
 // 所有樓層對應資料
-const floorDetailMap: Record<string, { img: string; textImg: string }> = {
+const floorDetailMap: Record<string, { img: string; textImg: string; className: string }> = {
   '2F': {
     img: new URL('@/assets/img/building/2f.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/2f_text.svg', import.meta.url).href,
+    className: 'floor-2f',
   },
   '3F-12F': {
     img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/3f12f_text.min.svg', import.meta.url).href,
+    className: 'floor-3F-12F',
   },
   B1: {
     img: new URL('@/assets/img/building/b1.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b1_text.min.svg', import.meta.url).href,
+    className: 'floor-B1',
   },
   B2: {
     img: new URL('@/assets/img/building/b2.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b2_text.min.svg', import.meta.url).href,
+    className: 'floor-B2',
   },
   B3: {
     img: new URL('@/assets/img/building/b3.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b3_text.min.svg', import.meta.url).href,
+    className: 'floor-B3',
   },
   B4: {
     img: new URL('@/assets/img/building/b4.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b4_text.min.svg', import.meta.url).href,
+    className: 'floor-B4',
   },
   R1: {
     img: new URL('@/assets/img/building/r1.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/rf_text.min.svg', import.meta.url).href,
+    className: 'floor-R1',
   },
 }
 const initXY = computed(() => {
