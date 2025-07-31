@@ -45,7 +45,9 @@
 
       .hint {
         @include hint();
-        color: white;
+        & {
+          color: white;
+        }
       }
     }
   }
@@ -85,13 +87,17 @@
       ul,
       li {
         @include pageContent();
-        list-style-type: disc;
+        & {
+          list-style-type: disc;
+        }
       }
 
       .content {
         @include pageContent();
-        width: 88%;
-        width: 91%;
+        & {
+          width: 91%;
+        }
+
         span {
           font-weight: bold;
           margin-top: 1vw;

@@ -192,16 +192,22 @@
         ul,
         li {
           @include pageContent();
-          list-style-type: disc;
+          & {
+            list-style-type: disc;
+          }
         }
         span {
           @include pageContent();
-          font-weight: bold;
+          & {
+            font-weight: bold;
+          }
         }
         .content {
           @include pageContent();
-          width: 88%;
-          width: 91%;
+
+          & {
+            width: 91%;
+          }
           span {
             font-weight: bold;
             margin-top: 1vw;
@@ -327,9 +333,12 @@
         }
         .hint {
           @include hint();
-          bottom: 1%;
-          right: 1%;
-          color: white;
+
+          & {
+            bottom: 1%;
+            right: 1%;
+            color: white;
+          }
         }
       }
     }
@@ -364,9 +373,11 @@
         }
         span {
           @include pageContent();
-          font-weight: bold;
-          margin-bottom: 0vw;
-          margin-top: 2vw;
+          & {
+            font-weight: bold;
+            margin-bottom: 0vw;
+            margin-top: 2vw;
+          }
         }
       }
     }

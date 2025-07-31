@@ -86,7 +86,10 @@
             }
             .hint {
               @include hint();
-              color: white;
+
+              & {
+                color: white;
+              }
             }
           }
         }
@@ -107,9 +110,12 @@
       }
       .title-box {
         @include pageTitle();
-        position: relative;
-        padding-bottom: 1vw;
-        margin-bottom: 1.5vw;
+        & {
+          position: relative;
+          padding-bottom: 1vw;
+          margin-bottom: 1.5vw;
+        }
+
         &::after {
           content: '';
           position: absolute;
@@ -123,7 +129,9 @@
 
       .light-box-content-box {
         @include pageContent();
-        width: 73%;
+        & {
+          width: 73%;
+        }
       }
 
       .btn-box {

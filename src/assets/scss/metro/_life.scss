@@ -51,7 +51,9 @@
         .big-zh {
           letter-spacing: 0.06em;
           @include pageTitle();
-          margin-bottom: 0.4vw;
+          & {
+            margin-bottom: 0.4vw;
+          }
         }
         .zh {
           font-family: var(--font-family-title-zh);
@@ -63,7 +65,9 @@
       }
       .content {
         @include pageContent();
-        font-size: 1vw;
+        & {
+          font-size: 1vw;
+        }
       }
       .tab-item-box {
         margin-top: 2.5vw;

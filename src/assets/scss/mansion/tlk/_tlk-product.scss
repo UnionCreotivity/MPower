@@ -34,7 +34,9 @@
       }
       .hint {
         @include hint();
-        color: white;
+        & {
+          color: white;
+        }
       }
 
       .dot {
@@ -151,7 +153,10 @@
       }
       .content-box {
         @include pageContent();
-        display: flex;
+        & {
+          display: flex;
+        }
+
         .left {
           margin-right: 1vw;
         }

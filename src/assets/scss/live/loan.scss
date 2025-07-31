@@ -49,10 +49,11 @@
       }
       .title-box {
         @include pageTitle();
-
-        width: 100%;
-        margin-bottom: 5vw;
-        text-align: center;
+        & {
+          width: 100%;
+          margin-bottom: 5vw;
+          text-align: center;
+        }
       }
       .loan-view-bottom {
         display: flex;

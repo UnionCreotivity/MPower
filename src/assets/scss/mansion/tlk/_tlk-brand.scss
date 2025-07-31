@@ -29,7 +29,9 @@
     }
     .hint {
       @include hint();
-      color: white;
+      & {
+        color: white;
+      }
     }
   }
 
@@ -67,7 +69,10 @@
 
     .content-box {
       @include pageContent();
-      text-align: center;
+
+      & {
+        text-align: center;
+      }
       div {
         margin-top: 1vw;
       }

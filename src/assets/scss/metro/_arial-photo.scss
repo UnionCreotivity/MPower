@@ -197,9 +197,11 @@
     }
     .title {
       @include pageTitle();
-      color: white;
-      margin-bottom: 0.5vw;
-      overflow: hidden;
+      & {
+        color: white;
+        margin-bottom: 0.5vw;
+        overflow: hidden;
+      }
 
       div {
         overflow: hidden;
@@ -234,8 +236,10 @@
 
     .content {
       @include pageContent();
-      color: white;
-      font-size: 1.1vw;
+      & {
+        font-size: 1.1vw;
+        color: white;
+      }
       @media all and (max-width: 1400px) {
         font-size: 14px;
       }
