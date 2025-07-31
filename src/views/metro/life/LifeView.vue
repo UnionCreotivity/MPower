@@ -176,16 +176,6 @@ onMounted(() => {
       },
       '<',
     )
-    .from(
-      '#life-view .life-box .right-box .life-view-point .point-img',
-      {
-        autoAlpha: 0,
-        duration: 1,
-        ease: 'power0.inOut',
-        y: 20,
-      },
-      '<0.8',
-    )
 })
 </script>
 
