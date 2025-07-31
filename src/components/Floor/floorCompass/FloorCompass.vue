@@ -138,7 +138,6 @@ function selectFloor(floorKey: string) {
 }
 
 const imgAni = () => {
-  console.log(11)
   const tl = gsap.timeline({})
   tl.fromTo(
     '.building-view .floor-compass-modal .img-box',

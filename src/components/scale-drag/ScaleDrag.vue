@@ -77,7 +77,6 @@ const zoomIn = (e: MouseEvent) => {
 
   if (scaleRatio.value < props.maxRatio) {
     scaleRatio.value += 0.5
-    console.log('scaleRatio:', scaleRatio.value)
 
     let offsetX = 400 // 預設桌機偏移
     if (window.innerWidth <= 1400) {
@@ -104,7 +103,6 @@ const zoomOut = (e: MouseEvent) => {
 
   if (scaleRatio.value > 1) {
     scaleRatio.value -= 0.5
-    console.log('scaleRatio:', scaleRatio.value)
 
     let offsetX = 400
     if (window.innerWidth <= 1400) {

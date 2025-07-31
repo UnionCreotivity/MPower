@@ -335,7 +335,6 @@ watch(
   (newVal) => {
     const tab = parseInt(newVal as string)
     if (!isNaN(tab)) {
-      console.log(tab)
       if (tab === 4) {
         showHouseNumber.value = true
       } else if (tab >= 0 && tab < tabs.length) {

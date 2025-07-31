@@ -126,7 +126,6 @@ onMounted(() => {
         },
       )
       .then(function (response) {
-        console.log(response.data)
         if (response.data.success) {
           // -- 刷新 token --
           if (response.data.jwt !== undefined && response.data.refresh_jwt !== undefined) {

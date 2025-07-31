@@ -19,7 +19,7 @@ const emit = defineEmits(['close'])
 const props = defineProps<{
   imgIndex: number
 }>()
-console.log(props.imgIndex)
+
 const closeBox = () => {
   emit('close')
 }
