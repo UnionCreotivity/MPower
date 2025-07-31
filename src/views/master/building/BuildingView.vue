@@ -2,7 +2,6 @@
   <section class="building-view">
     <FloorView @selectFloor="handleSelectFloor" v-if="!selectedFloor" />
     <FloorMenu @selectFloor="handleSelectFloor" />
-
     <FloorDetail v-if="selectedFloor" :floor="selectedFloor" @close="selectedFloor = null" />
   </section>
 </template>

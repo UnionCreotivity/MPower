@@ -5,12 +5,17 @@
   overflow: hidden;
   object-fit: cover;
   height: 100%;
-
+  .full-screen {
+    @media all and (max-width: 1400px) {
+      bottom: 1%;
+      right: 1.5vw;
+    }
+  }
   .bg-text {
     position: absolute;
     letter-spacing: 0.03em;
     writing-mode: vertical-lr;
-    font-size: 5.2vw;
+    font-size: 5vw;
     font-family: 'Cormorant Infant';
     color: #e2dfdc;
     top: 5vw;
@@ -58,48 +63,30 @@
     .title {
       @include pageTitle();
       color: #604c3f;
-      margin-bottom: 0.3vw;
       overflow: hidden;
       font-weight: 600;
       position: relative;
+      padding-bottom: 0.2vw;
+    }
 
-      // margin-bottom: 1.5vw;
-      padding-bottom: 0.5vw;
-      // &::after {
-      //   content: '';
-      //   position: absolute;
-      //   left: 0;
-      //   bottom: 0%;
-      //   width: 14%;
-      //   height: 1px;
-      //   background: #604c3f;
-      // }
-    }
-    .line {
-      width: 14%;
-      margin-bottom: 1.5vw;
-      height: 1px;
-      background: #604c3f;
-    }
     .small-title {
       font-family: var(--font-family-title-zh);
       color: #604c3f;
       letter-spacing: 0.1em;
       font-size: var(--font-small-title-zh-size);
       position: relative;
-      padding-bottom: 1vw;
+      padding-bottom: 0.8vw;
       font-weight: 600;
       margin-bottom: 1vw;
+    }
 
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0%;
-        width: 14%;
-        height: 1px;
-        background: #604c3f;
-      }
+    .line {
+      position: absolute;
+      left: 0;
+      height: 1px;
+      background: #604c3f;
+      width: 14%;
+      bottom: 0%;
     }
 
     .content {
@@ -132,12 +119,12 @@
     bottom: 7.7vw;
     width: 2vw;
     @media all and (max-width: 1440px) {
-      right: 3.2vw;
-      bottom: 11vw;
+      right: 1.2vw;
+      bottom: 10.5vw;
     }
     @media all and (max-width: 1400px) {
       width: 3.5vw;
-      right: 3.6vw;
+      right: 1.8vw;
       bottom: 13vw;
     }
     img {
@@ -151,12 +138,12 @@
     bottom: 5vw;
     width: 2vw;
     @media all and (max-width: 1440px) {
-      right: 3.2vw;
+      right: 1.2vw;
       bottom: 7.5vw;
     }
     @media all and (max-width: 1400px) {
       width: 3.5vw;
-      right: 3.6vw;
+      right: 1.8vw;
       bottom: 8.5vw;
     }
     img {
@@ -261,9 +248,9 @@
       .decorate {
         position: absolute;
         left: -1vw;
-        font-size: 4.3vw;
+        font-size: 4.8vw;
         color: #e2dfdc;
-        top: 24%;
+        top: 22%;
         writing-mode: vertical-lr;
 
         @media all and (max-width: 1400px) {
@@ -281,6 +268,7 @@
 
         img {
           width: 40%;
+          margin-left: 4vw;
           @media all and (max-width: 1400px) {
             width: 53%;
           }
@@ -492,12 +480,13 @@
       top: 35%;
       background-color: #604c3f;
       padding: 1.65vw 0vw;
-      border-radius: 10px;
+      border-radius: 15px;
       z-index: 40;
       @media all and (max-width: 1400px) {
         left: 3%;
         padding: 2vw 0vw;
       }
+
       .slider {
         position: absolute;
         left: 0;
@@ -510,13 +499,16 @@
         z-index: 1;
       }
       .floor {
-        padding: 0.3vw 1.7vw;
+        padding: 0.25vw 1.7vw;
         text-align: center;
         z-index: 3;
         position: relative;
+        // margin-bottom: 0.15vw;
+        // margin-top: 0.15vw;
         @media all and (max-width: 1400px) {
           padding: 0.4vw 2.5vw;
         }
+
         div {
           color: white;
           font-size: 1.4vw;
@@ -524,16 +516,18 @@
           border-bottom: 1px solid white;
           padding: 0vw 0.3vw;
           z-index: 3;
+          padding-bottom: 0.3vw;
           @media all and (max-width: 1400px) {
             font-size: 2vw;
             padding: 0vw 0.6vw;
           }
         }
+        &:last-child {
+          div {
+            border-bottom: none;
+          }
+        }
       }
-
-      // .floor.active {
-      //   background-color: #998675;
-      // }
     }
   }
 }

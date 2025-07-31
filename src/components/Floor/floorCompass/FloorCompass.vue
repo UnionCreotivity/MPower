@@ -110,8 +110,8 @@ function updateSlider() {
     const elRect = selectedEl.getBoundingClientRect()
 
     sliderStyle.value = {
-      top: elRect.top - boxRect.top + 'px',
-      height: elRect.height + 'px',
+      top: elRect.top - boxRect.top + 0.5 + 'px',
+      height: elRect.height - 15 + 'px',
       left: '0px',
       width: '100%',
     }

@@ -6,11 +6,11 @@
       </transition>
     </div>
 
-    <div class="daytime" @click="mainImage = buildingImg">
+    <div class="daytime">
       <img src="../../../assets/img/building/daytime.png" alt="daytime" />
     </div>
 
-    <div class="night" @click="mainImage = nightImg">
+    <div class="night">
       <img src="../../../assets/img/building/night.png" alt="night" />
     </div>
 
@@ -19,7 +19,11 @@
 
     <div class="content-box">
       <div class="title" ref="title">俐落線條．理性構築</div>
-      <div class="small-title" ref="smallTitle">以實用為本，少即是多，藏即是顯</div>
+      <div class="small-title" ref="smallTitle">
+        以實用為本，少即是多，藏即是顯
+        <div class="line"></div>
+      </div>
+
       <div class="content" ref="content">
         理性人本為筆，書寫出生活的實用秩序。<br />
         每一筆俐落，回應城市節奏的韻律。<br />
@@ -40,7 +44,7 @@ import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 
 const buildingImg = new URL('@/assets/img/building/building.webp', import.meta.url).href
-const nightImg = new URL('@/assets/img/building/night.webp', import.meta.url).href
+// const nightImg = new URL('@/assets/img/building/night.webp', import.meta.url).href
 const mainImage = ref(buildingImg)
 
 gsap.registerPlugin(SplitText)
@@ -102,6 +106,15 @@ onMounted(() => {
       },
       '<0.25',
     )
+    .from(
+      '.building-view .line',
+      {
+        autoAlpha: 0,
+        duration: 0.7,
+      },
+      '<0.1',
+    )
+
     .fromTo(
       [splitContent.lines[0], splitContent.lines[2], splitContent.lines[4]],
       {
@@ -110,7 +123,7 @@ onMounted(() => {
         x: 70,
       },
       { x: 0, filter: 'blur(0px)', duration: 1, autoAlpha: 1 },
-      '<0.7',
+      '<0.5',
     )
     .fromTo(
       [splitContent.lines[1], splitContent.lines[3]],
