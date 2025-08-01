@@ -11,32 +11,23 @@
       <div class="main-box">
         <div class="decorate">FLOOR PLAN</div>
         <div class="left-box">
-          <img :src="currentFloor.textImg" />
+          <img :src="currentFloor.textImg" class="floor-text-img" />
+          <div
+            class="camera-box top-camera"
+            @click="showCompass = true"
+            v-if="props.floor === '3F-12F'"
+          >
+            <div class="text">View</div>
+          </div>
         </div>
         <div class="right-box">
           <ScaleDrag :init="initXY" :max-ratio="2">
-            <div class="camera-box top-camera" @click="showCompass = true">
-              <img
-                v-if="props.floor === '3F-12F'"
-                src="../../../assets/img/building/camera.png"
-                alt=""
-                class="camera"
-              />
-            </div>
             <img
               :src="currentFloor.img"
               :alt="floor"
               class="floor-plan-img"
               :class="[currentFloor.className]"
             />
-            <div class="camera-box bottom-camera" @click="showCompass = true">
-              <img
-                v-if="props.floor === '3F-12F'"
-                src="../../../assets/img/building/camera.png"
-                alt=""
-                class="camera"
-              />
-            </div>
           </ScaleDrag>
         </div>
         <div class="detail-hint">實際家具配置及平面與建材依買賣契約書為準</div>
@@ -115,7 +106,7 @@ onMounted(() => {
 
   const tl = gsap.timeline({})
   tl.fromTo(
-    '.building-view .floor-detail .main-box .left-box img',
+    '.building-view .floor-detail .main-box .left-box .floor-text-img,.camera-box',
     {
       autoAlpha: 0,
       y: 70,

@@ -249,12 +249,12 @@
       justify-content: center;
       .decorate {
         position: absolute;
-        left: -1vw;
+        left: -1.5vw;
         font-size: 4.8vw;
         color: #e2dfdc;
         top: 22%;
         writing-mode: vertical-lr;
-
+        font-family: 'Cormorant Infant';
         @media all and (max-width: 1400px) {
           left: -1.5vw;
           font-size: 6.3vw;
@@ -267,12 +267,47 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
         img {
           width: 40%;
           margin-left: 4vw;
           @media all and (max-width: 1400px) {
             width: 53%;
+          }
+        }
+        .camera-box {
+          z-index: 30;
+          margin-left: 4vw;
+          padding: 0.2vw 1.1vw;
+          border-radius: 2vw;
+          border: 1px solid #604c3f;
+          margin-top: 1.5vw;
+          display: flex;
+          align-items: center;
+          padding-right: 0.95vw;
+
+          @media all and (max-width: 1400px) {
+            font-size: 1.6vw;
+            padding: 0.3vw 1.7vw;
+            padding-right: 1.5vw;
+          }
+
+          &:hover {
+            .text {
+              color: #a5836d;
+              transform: scale(1.05);
+            }
+          }
+
+          .text {
+            font-family: 'Cormorant Infant';
+            color: #604c3f;
+            font-size: 1.15vw;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            transition: all 0.25s ease-in-out;
+            @media all and (max-width: 1400px) {
+              font-size: 1.5vw;
+            }
           }
         }
       }
@@ -348,22 +383,6 @@
 
         .zoom {
           right: -5%;
-        }
-        .camera-box {
-          position: absolute;
-          z-index: 30;
-          img {
-            width: 2vw;
-            transition: transform 0.3s ease-in-out;
-            @media all and (max-width: 1400px) {
-              width: 3vw;
-            }
-          }
-          &:hover {
-            img {
-              transform: scale(1.15);
-            }
-          }
         }
 
         .top-camera {
