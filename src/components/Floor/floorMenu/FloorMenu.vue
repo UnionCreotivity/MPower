@@ -6,7 +6,7 @@
         v-for="floor in floorList"
         :key="floor"
         class="floor"
-        @click="$emit('selectFloor', floor)"
+        @click="floor !== '1F' && $emit('selectFloor', floor)"
       >
         {{ floor }}
       </div>
@@ -22,7 +22,7 @@ import SplitText from 'gsap/SplitText'
 
 gsap.registerPlugin(SplitText)
 
-const floorList = ['R1', '3F-12F', '2F', 'B1', 'B2', 'B3', 'B4']
+const floorList = ['R1', '3F-12F', '2F', '1F', 'B1', 'B2', 'B3', 'B4']
 const floorTitle = ref<HTMLElement | null>(null)
 
 onMounted(() => {

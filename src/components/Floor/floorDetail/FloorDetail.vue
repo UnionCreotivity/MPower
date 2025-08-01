@@ -63,6 +63,11 @@ const floorDetailMap: Record<string, { img: string; textImg: string; className: 
     textImg: new URL('@/assets/img/building/3f12f_text.min.svg', import.meta.url).href,
     className: 'floor-3F-12F',
   },
+  '1': {
+    img: '',
+    textImg: '',
+    className: '',
+  },
   B1: {
     img: new URL('@/assets/img/building/b1.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b1_text.min.svg', import.meta.url).href,

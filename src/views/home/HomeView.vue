@@ -58,13 +58,13 @@ const menuItems = [
     id: 'metro',
     zhName: '地段環境',
     enName: 'METRO',
-    link: '',
+    link: 'life',
   },
   {
     id: 'master',
     zhName: '建築規劃',
     enName: 'MASTER',
-    link: '',
+    link: 'buildling',
   },
   {
     id: 'mansion',
