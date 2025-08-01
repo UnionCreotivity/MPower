@@ -78,22 +78,24 @@ const zoomIn = (e: MouseEvent) => {
   if (scaleRatio.value < props.maxRatio) {
     scaleRatio.value += 0.5
 
-    let offsetX = 400 // 預設桌機偏移
+    let offsetX = 400
     if (window.innerWidth <= 1400) {
-      offsetX = 200 // 平板偏移量
+      offsetX = 200
     }
 
     x.value = (props.init.x ?? 0) - offsetX
 
-    // 根據放大倍率調整 Y 偏移量
     if (scaleRatio.value === 1.5) {
       y.value = (props.init.y ?? 0) * 3
     } else if (scaleRatio.value >= 2) {
-      y.value = (props.init.y ?? 0) * 5 // 點兩下放更大
+      y.value = (props.init.y ?? 0) * 5
     }
 
     startScale.value = true
     emits('toggle-text', true)
+
+    //  新增 class
+    imgBox.value?.classList.add('img-zoom-in')
   }
 }
 
@@ -111,7 +113,6 @@ const zoomOut = (e: MouseEvent) => {
 
     x.value = (props.init.x ?? 0) - offsetX
 
-    // 根據縮放比例調整 y 值，與 zoomIn 對稱
     if (scaleRatio.value === 1.5) {
       y.value = (props.init.y ?? 0) * 3
     } else if (scaleRatio.value <= 1) {
@@ -119,6 +120,8 @@ const zoomOut = (e: MouseEvent) => {
       y.value = 0
       startScale.value = false
       emits('toggle-text', false)
+
+      imgBox.value?.classList.remove('img-zoom-in')
     }
   }
 }

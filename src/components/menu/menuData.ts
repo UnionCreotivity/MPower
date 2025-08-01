@@ -73,9 +73,9 @@ export const menuData = [
     jumpToChild: true, // 跳主頁面
     list: [
       {
-        id: 'mansionIndex',
+        id: '',
         name: '嚴選建材',
-        link: 'mansionIndex',
+        link: '',
       },
     ],
   },
@@ -138,9 +138,9 @@ export const menuData = [
         link: '',
       },
       {
-        id: 'calculator',
+        id: '',
         name: '房貸試算',
-        link: 'calculator',
+        link: '',
       },
     ],
   },
