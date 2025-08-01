@@ -58,7 +58,7 @@ const menuItems = [
     id: 'metro',
     zhName: '地段環境',
     enName: 'METRO',
-    link: 'aerialPhoto',
+    link: '',
   },
   {
     id: 'master',

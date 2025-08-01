@@ -208,22 +208,24 @@ const handleSubLinkClick = (link: string, tab?: number) => {
       router.push({ name: link })
     }
     showClick(false)
-  } else {
-    // 沒有路由名稱的，理論上就是同頁切 tab
-    if (route.name === 'aerialPhoto') {
-      if (tab !== undefined) {
-        // 同頁改 tab query，不刷新頁面
-        router.replace({ name: 'aerialPhoto', query: { tab } })
-      }
-      showClick(false)
-    } else {
-      // 其他頁面想切 tab，就跳 aerialPhoto 並帶 tab
-      if (tab !== undefined) {
-        router.push({ name: 'aerialPhoto', query: { tab } })
-      }
-      showClick(false)
-    }
   }
+
+  // else {
+  //   // 沒有路由名稱的，理論上就是同頁切 tab
+  //   if (route.name === 'aerialPhoto') {
+  //     if (tab !== undefined) {
+  //       // 同頁改 tab query，不刷新頁面
+  //       router.replace({ name: 'aerialPhoto', query: { tab } })
+  //     }
+  //     showClick(false)
+  //   } else {
+  //     // 其他頁面想切 tab，就跳 aerialPhoto 並帶 tab
+  //     if (tab !== undefined) {
+  //       router.push({ name: 'aerialPhoto', query: { tab } })
+  //     }
+  //     showClick(false)
+  //   }
+  // }
 }
 
 let zCounter = 1 // 每張圖都會把自身 z-index 設成 ++zCounter
