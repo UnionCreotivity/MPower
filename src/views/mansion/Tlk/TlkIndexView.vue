@@ -23,7 +23,6 @@
 
 <script setup lang="ts">
 import '@/assets/scss/mansion/tlk/_tlk-index.scss'
-
 import { ref } from 'vue'
 import TlkBrand from '@/components/mansion/tlk/TlkBrand.vue'
 import TlkProduct from '@/components/mansion/tlk/TlkProduct.vue'

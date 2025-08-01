@@ -232,17 +232,12 @@
       right: 1vw;
       width: 7vw;
       z-index: 50;
+
       @media all and (max-width: 1400px) {
         width: 8vw;
       }
       img {
         width: 100%;
-        transition: all 0.5s;
-      }
-      &:hover {
-        img {
-          scale: 1.25;
-        }
       }
     }
 
@@ -313,7 +308,7 @@
             width: 67%;
           }
         }
-        .floor-2f {
+        .floor-2F {
           @media all and (max-width: 1400px) {
             width: 62%;
           }

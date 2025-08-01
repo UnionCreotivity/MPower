@@ -17,7 +17,6 @@
         :class="`link-box${index + 1}`"
       >
         <div class="gradient-line"></div>
-
         <div class="run-light"></div>
         <div class="item-logo">
           <img :src="item.img" alt="" srcset="" />
@@ -32,8 +31,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import gsap from 'gsap'
-import '@/assets/scss/mansion/_mansion-index.scss'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
+import '@/assets/scss/mansion/_mansion-index.scss'
 
 const linkBoxList = [
   {

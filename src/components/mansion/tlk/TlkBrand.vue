@@ -27,6 +27,7 @@ import { onMounted } from 'vue'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import { useRouter } from 'vue-router'
+
 const router = useRouter()
 gsap.registerPlugin(SplitText)
 

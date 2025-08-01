@@ -35,7 +35,9 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
+
 const videoSrc = new URL('@/assets/img/method/zuzuzu.mp4', import.meta.url).href
+
 const initGsap = () => {
   const tl = gsap.timeline({ id: 'method' })
 

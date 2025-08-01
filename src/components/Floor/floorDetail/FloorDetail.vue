@@ -65,7 +65,7 @@ const floorDetailMap: Record<string, { img: string; textImg: string; className: 
   '2F': {
     img: new URL('@/assets/img/building/2f.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/2f_text.svg', import.meta.url).href,
-    className: 'floor-2f',
+    className: 'floor-2F',
   },
   '3F-12F': {
     img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
@@ -134,7 +134,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   if (detailEl.value) {
-    gsap.to(detailEl.value, { opacity: 0, duration: 0.3, ease: 'power1.out' }) // 可選加上淡出動畫
+    gsap.to(detailEl.value, { opacity: 0, duration: 0.3, ease: 'power1.out' })
   }
 })
 </script>

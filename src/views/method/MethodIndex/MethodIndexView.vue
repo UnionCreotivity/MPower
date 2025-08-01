@@ -41,6 +41,7 @@ import { useRouter } from 'vue-router'
 import { gsap } from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
+
 // import { GSDevTools } from 'gsap/GSDevTools'
 gsap.registerPlugin(SplitText)
 // gsap.registerPlugin(GSDevTools)

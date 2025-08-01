@@ -62,7 +62,6 @@ const floorSelectList: Record<string, { northImg: string; sorthImg: string; hint
     hint: '12F實景示意圖',
   },
 }
-
 const selectedFloor = ref('3F')
 const isNorth = ref(true) // 狀態控制 north or sorth
 const sectorRotation = ref(0)

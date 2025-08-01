@@ -42,12 +42,11 @@ import { ref, onMounted } from 'vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
+gsap.registerPlugin(SplitText)
 
 const buildingImg = new URL('@/assets/img/building/building.webp', import.meta.url).href
 // const nightImg = new URL('@/assets/img/building/night.webp', import.meta.url).href
 const mainImage = ref(buildingImg)
-
-gsap.registerPlugin(SplitText)
 
 const title = ref<HTMLElement | null>(null)
 const smallTitle = ref<HTMLElement | null>(null)

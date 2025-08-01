@@ -83,11 +83,10 @@
 <script setup lang="ts">
 import { ref, watch, computed, onMounted } from 'vue'
 import { useLoanStore } from '@/stores/loanStore'
-import '@/assets/scss/live/loan-result.scss'
 import { storeToRefs } from 'pinia'
+import '@/assets/scss/live/loan-result.scss'
 
 const loanStore = useLoanStore()
-
 const is_Allowance = ref(false)
 
 // const {

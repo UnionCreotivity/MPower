@@ -12,9 +12,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-// 也可以放動畫
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .core-line img {

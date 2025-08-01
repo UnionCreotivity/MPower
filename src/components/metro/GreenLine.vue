@@ -67,10 +67,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import gsap from 'gsap'
-import '@/assets/scss/metro/_metro-light-box.scss'
 import GreenLineImg from './MrtLightImgBox/LineImg.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, EffectFade, Autoplay } from 'swiper/modules'
+import '@/assets/scss/metro/_metro-light-box.scss'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
