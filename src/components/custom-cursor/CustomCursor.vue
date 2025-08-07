@@ -105,7 +105,7 @@ function getTrailStyle(index: number) {
     width 0.1s ease-in-out,
     height 0.1s ease-in-out;
   z-index: 9999;
-  mix-blend-mode: hard-light;
+  mix-blend-mode: exclusion;
 }
 
 .trail {

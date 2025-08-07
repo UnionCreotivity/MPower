@@ -22,6 +22,7 @@
           :is="comp"
           :key="i"
           @open-green-line="showGreenLine = true"
+          @open-red-line="showRedLine = true"
         />
       </TransitionGroup>
     </div>
@@ -44,14 +45,14 @@
       <div class="content" v-html="content.content"></div>
     </div>
 
-    <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
-      <HouseNumber v-if="showHouseNumber" @close="showHouseNumber = false" />
-    </Transition>
+    <!-- 門牌詳細內容 -->
+    <HouseNumber v-if="showHouseNumber" @close="showHouseNumber = false" />
 
     <!-- 綠線詳細內容 -->
-    <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
-      <GreenLine v-if="showGreenLine" @close="showGreenLine = false" />
-    </Transition>
+    <GreenLine v-if="showGreenLine" @close="showGreenLine = false" />
+
+    <!-- 紅線詳細內容 -->
+    <RedLine v-if="showRedLine" @close="showRedLine = false" />
   </section>
   <FullScreen :forceWhiteIcon="true" />
 </template>
@@ -67,12 +68,14 @@ import MrtGroup from '@/components/metro/MrtGroup.vue'
 import BusinessGroup from '@/components/metro/BusinessGroup.vue'
 import CoreGroup from '@/components/metro/CoreGroup.vue'
 import GreenLine from '@/components/metro/GreenLine.vue'
+import RedLine from '@/components/metro/RedLine.vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
 import '@/assets/scss/metro/_arial-photo.scss'
 
 gsap.registerPlugin(SplitText)
 
 const showGreenLine = ref(false)
+const showRedLine = ref(false)
 const isAnimating = ref(false)
 const showHouseNumber = ref(false)
 const route = useRoute()

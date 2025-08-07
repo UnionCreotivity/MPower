@@ -16,6 +16,7 @@
       alt="red point"
       @mouseenter="onRedMouseEnter"
       @mouseleave="onRedMouseLeave"
+      @click="$emit('open-red-line')"
     />
     <img
       class="orange-line-point"

@@ -50,6 +50,9 @@
       .green-en {
         color: #00ff00;
       }
+      .red-en {
+        color: #ff0000;
+      }
     }
 
     .main-content-box {
@@ -70,6 +73,9 @@
         }
         .green-small-title {
           color: #00ff00;
+        }
+        .red-small-title {
+          color: #ff0000;
         }
         .content {
           @include pageContent();
@@ -99,6 +105,10 @@
       img {
         width: 100%;
       }
+    }
+
+    .red-line-img {
+      width: 33%;
     }
 
     .light {
