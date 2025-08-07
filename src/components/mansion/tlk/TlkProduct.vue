@@ -23,6 +23,12 @@
     <div class="right-box">
       <transition name="fade" mode="out-in">
         <div v-if="productList[activeIndex]" :key="activeIndex" class="product-box">
+          <div class="title-text">
+            <div class="icon">
+              <img :src="productList[activeIndex].iconImg" alt="" srcset="" />
+            </div>
+            <div class="text">{{ productList[activeIndex].title }}</div>
+          </div>
           <div class="title-img-box">
             <img :src="productList[activeIndex].img" alt="product-title" />
           </div>
@@ -50,6 +56,8 @@ const handleClose = () => {
 
 const productList = [
   {
+    iconImg: '',
+    title: '雷射封邊',
     img: new URL('@/assets/img/mansion/tlk/leiser.webp', import.meta.url).href,
     content: `
       與熱熔膠技術不同，高能量雷射熔化封邊帶上的超薄功能層，然後通過輥軸將封邊帶黏合到家具面板上，形成無縫邊緣，確保持久且防潮的連接。<br /><br />
@@ -59,6 +67,8 @@ const productList = [
     `,
   },
   {
+    iconImg: new URL('@/assets/img/mansion/tlk/blum.svg', import.meta.url).href,
+    title: '多功能式專利鉸鏈',
     img: new URL('@/assets/img/mansion/tlk/blum2.webp', import.meta.url).href,
     content: `
      <ul class="ul-box">
@@ -70,19 +80,31 @@ const productList = [
     `,
   },
   {
+    iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
+    title: '櫻花AI升降靜音油機',
     img: new URL('@/assets/img/mansion/tlk/sakura.webp', import.meta.url).href,
     content: `
-    • AI智能風控科技，自動調節最適風量<br />
-    • 熱感偵測技術，不限爐具隨心搭配<br />
-    • 進煙口自動下降，排煙更即時<br />
-    • 渦輪變頻科技，Turbo大吸力吸更淨<br />
-    • 靜音除味功能，安靜舒適排除油煙餘味<br />
-    • 256點偵測，大量蒐集溫度數據
+    <div class="sakura-content-box">
+      <ul class="ul-box">
+      <li>AI智能風控科技，自動調節最適風量</li>
+      <li>熱感偵測技術，不限爐具隨心搭配</li>
+      <li>進煙口自動下降，排煙更即時</li>
+      <li>渦輪變頻科技，Turbo大吸力吸更淨</li>
+         <li>靜音除味功能，安靜舒適排除油煙餘味</li>
+            <li>256點偵測，大量蒐集溫度數據</li>
+       
+    </ul>
+       <div class="sakura-btn"><div>櫻花廚具</div></div>
+   </div>
     `,
   },
   {
+    iconImg: new URL('@/assets/img/mansion/tlk/svago.svg', import.meta.url).href,
+    title: '橫式雙口IH感應爐',
     img: new URL('@/assets/img/mansion/tlk/svago.webp', import.meta.url).href,
     content: `
+ <div class="sakura-content-box">
+<div class="top-box">
       <div class="left">
       • 9段火力，滑動觸控<br />
       • 小火持續加熱功能<br />
@@ -95,10 +117,13 @@ const productList = [
       • 自動鍋具檢測<br />
       • 餘溫警示與兒童安全鎖<br />
       • 感應鍋徑最小12公分
-    </div>
+    </div></div>
+     <div class="sakura-btn"><div>櫻花廚具</div></div> </div>
     `,
   },
   {
+    iconImg: new URL('@/assets/img/mansion/tlk/bosch.svg', import.meta.url).href,
+    title: '全嵌式洗碗機',
     img: new URL('@/assets/img/mansion/tlk/bosch.webp', import.meta.url).href,
     content: `
     <ul class="ul-box">
@@ -111,6 +136,8 @@ const productList = [
     `,
   },
   {
+    iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
+    title: '廚房不鏽鋼無鉛伸縮龍頭',
     img: new URL('@/assets/img/mansion/tlk/sakura2.webp', import.meta.url).href,
     content: `
     <ul class="ul-box">
@@ -124,6 +151,8 @@ const productList = [
     `,
   },
   {
+    iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
+    title: '不鏽鋼單槽手工方型水槽組',
     img: new URL('@/assets/img/mansion/tlk/sakura3.webp', import.meta.url).href,
     content: `
       • 底部處理：噴塗防汗漆+貼附消音墊。<br />
@@ -131,6 +160,8 @@ const productList = [
     `,
   },
   {
+    iconImg: new URL('@/assets/img/mansion/tlk/blum.svg', import.meta.url).href,
+    title: '抽屜系統',
     img: new URL('@/assets/img/mansion/tlk/blum.webp', import.meta.url).href,
     content: `
       • 承重50公斤/開關60,000次<br />
@@ -139,6 +170,8 @@ const productList = [
     `,
   },
   {
+    iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
+    title: '石英石檯面',
     img: new URL('@/assets/img/mansion/tlk/sakura4.webp', import.meta.url).href,
     content: `
     <ul class="ul-box">
@@ -146,6 +179,26 @@ const productList = [
       <li>高耐熱：熔點高達1600°C，面對鍋具高溫、爐火加熱也不易變形或軟化，使用安心。</li>
       <li>高耐污：表面緻密，吸水率低於0.05%，不易滲透髒污，輕輕一擦即恢復潔淨光澤。</li>
       <li>高耐蝕：優異的抗酸鹼性能，長期使用也不會產生變色或褪色問題，歷久彌新。</li>
+    </ul>
+    `,
+  },
+  {
+    iconImg: '',
+    title: '感應掛架櫃下燈',
+    img: new URL('@/assets/img/mansion/tlk/light.webp', import.meta.url).href,
+    content: `
+    <ul class="ul-box">
+      <li>內建觸控感應開關、台灣製造、可搭配掛架使用</li>
+    </ul>
+    `,
+  },
+  {
+    iconImg: '',
+    title: '置物架、紙巾架',
+    img: new URL('@/assets/img/mansion/tlk/shelf.webp', import.meta.url).href,
+    content: `
+    <ul class="ul-box">
+      <li>鐵板噴塗特殊漆+防水抗貝特板</li>
     </ul>
     `,
   },
