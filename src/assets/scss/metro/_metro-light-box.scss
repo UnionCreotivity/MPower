@@ -102,6 +102,9 @@
             font-size: 1.1vw;
             color: white;
           }
+          @media all and (max-width: 1400px) {
+            font-size: 16px;
+          }
         }
       }
 
@@ -109,6 +112,9 @@
         width: 7.5vw;
         margin-top: 0.5vw;
         z-index: 20;
+        @media all and (max-width: 1400px) {
+          width: 8.5vw;
+        }
         img {
           width: 100%;
         }
@@ -176,6 +182,15 @@
   .main-box {
     height: 100%;
     width: 100%;
+    .img-box {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
     .title {
       width: 23vw;
       position: absolute;

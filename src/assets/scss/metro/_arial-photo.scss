@@ -86,6 +86,11 @@
       top: 46%;
       right: 13.5%;
       will-change: filter;
+      @media all and (max-width: 1400px) {
+        width: 14%;
+        top: 55%;
+        right: 8.5%;
+      }
     }
 
     .green-line {
@@ -95,6 +100,13 @@
       bottom: -2.5%;
       will-change: filter;
       right: 10%;
+      @media all and (max-width: 1400px) {
+        width: 94%;
+
+        bottom: -3.5%;
+
+        right: 4%;
+      }
     }
 
     .blue-line {
@@ -104,6 +116,11 @@
       bottom: 29%;
       will-change: filter;
       right: 0%;
+      @media all and (max-width: 1400px) {
+        width: 92%;
+        bottom: 23%;
+        right: -7%;
+      }
     }
 
     .orange-line {
@@ -113,6 +130,11 @@
       bottom: 12%;
       will-change: filter;
       left: 2.3%;
+      @media all and (max-width: 1400px) {
+        width: 62%;
+        bottom: 8%;
+        left: -8.7%;
+      }
     }
 
     .green-line-point {
@@ -123,6 +145,11 @@
       bottom: 33%;
       transition: none; /* 用 GSAP 控制 */
       transform-origin: center center;
+      @media all and (max-width: 1400px) {
+        left: 32.5%;
+        width: 2.5vw;
+        bottom: 28%;
+      }
     }
 
     .red-line-point {
@@ -133,6 +160,11 @@
       bottom: 25%;
       transition: none;
       transform-origin: center center;
+      @media all and (max-width: 1400px) {
+        right: 14.7%;
+        width: 2.5vw;
+        bottom: 15%;
+      }
     }
 
     .orange-line-point {
@@ -141,6 +173,11 @@
       left: 27%;
       width: 1vw;
       bottom: 25%;
+      @media all and (max-width: 1400px) {
+        left: 21%;
+        width: 2.5vw;
+        bottom: 20%;
+      }
     }
 
     .tab3-img1 {
@@ -149,6 +186,11 @@
       position: absolute;
       bottom: 32.7%;
       left: 37%;
+      @media all and (max-width: 1400px) {
+        width: 18%;
+        bottom: 26.7%;
+        left: 33%;
+      }
     }
 
     .tab3-img2 {
@@ -157,6 +199,11 @@
       position: absolute;
       bottom: 2%;
       left: 36.5%;
+      @media all and (max-width: 1400px) {
+        width: 23%;
+        bottom: -2.5%;
+        left: 33.5%;
+      }
     }
 
     .tab3-img3 {
@@ -165,6 +212,25 @@
       position: absolute;
       bottom: 10%;
       left: 65.7%;
+      @media all and (max-width: 1400px) {
+        width: 25%;
+        bottom: 6%;
+        left: 66.7%;
+      }
+    }
+
+    .tab3-line-bg {
+      width: 80%;
+      z-index: 30;
+      position: absolute;
+      bottom: 29%;
+      right: 0%;
+      opacity: 0.7;
+      @media all and (max-width: 1400px) {
+        width: 80%;
+
+        bottom: 25%;
+      }
     }
 
     .tab4-img1 {
@@ -173,6 +239,11 @@
       z-index: 30;
       bottom: 44%;
       left: 13.5%;
+      @media all and (max-width: 1400px) {
+        width: 1.3%;
+        bottom: 37%;
+        left: 8.5%;
+      }
     }
 
     .tab4-img2 {
@@ -181,6 +252,11 @@
       z-index: 30;
       bottom: 41.7%;
       left: 36%;
+      @media all and (max-width: 1400px) {
+        width: 1.3%;
+        bottom: 35%;
+        left: 34%;
+      }
     }
 
     .tab4-img3 {
@@ -189,6 +265,11 @@
       z-index: 30;
       bottom: 37%;
       left: 60.5%;
+      @media all and (max-width: 1400px) {
+        width: 1.3%;
+        bottom: 30.5%;
+        left: 62%;
+      }
     }
   }
   .tab-box {
@@ -280,9 +361,9 @@
       & {
         font-size: 1.1vw;
         color: white;
-      }
-      @media all and (max-width: 1400px) {
-        font-size: 14px;
+        @media all and (max-width: 1400px) {
+          font-size: 16px;
+        }
       }
     }
   }

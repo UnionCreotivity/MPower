@@ -1,13 +1,17 @@
 <template>
   <div class="business-group">
     <div class="tab3-img1 business-line">
-      <img src="/src/assets/img/metro/tab3_1.png" alt="tab3_1" />
+      <img src="@/assets/img/metro/tab3_1.png" alt="tab3_1" />
     </div>
     <div class="tab3-img2 business-line">
-      <img src="/src/assets/img/metro/tab3_2.png" alt="tab3_2" />
+      <img src="@/assets/img/metro/tab3_2.png" alt="tab3_2" />
     </div>
     <div class="tab3-img3 business-line">
-      <img src="/src/assets/img/metro/tab3_3.png" alt="tab3_3" />
+      <img src="@/assets/img/metro/tab3_3.png" alt="tab3_3" />
+    </div>
+
+    <div class="tab3-line-bg">
+      <img src="@/assets/img/metro/tab3_bgline.png" alt="" srcset="" />
     </div>
   </div>
 </template>

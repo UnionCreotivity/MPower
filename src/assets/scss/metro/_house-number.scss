@@ -62,6 +62,9 @@
         & {
           color: white;
         }
+        @media all and (max-width: 1400px) {
+          font-size: 16px;
+        }
       }
     }
 
