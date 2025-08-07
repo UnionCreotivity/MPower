@@ -54,15 +54,25 @@
       object-fit: cover;
     }
 
+    .light {
+      mix-blend-mode: plus-lighter;
+      position: absolute;
+      z-index: 40;
+      width: 6vw;
+      top: 78%;
+      left: 50%;
+      transform: translate(-50%, -50%) translate3d(0, 0, 0);
+      pointer-events: none;
+    }
+
     .light-video {
       mix-blend-mode: plus-lighter;
       position: absolute;
-      transform: translate3d(0, 0, 0);
-      z-index: 10;
+      z-index: 40;
       width: 10vw;
       top: 56%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) translate3d(0, 0, 0);
       pointer-events: none;
       @media all and (max-width: 1400px) {
         top: 66%;
@@ -76,6 +86,7 @@
       position: absolute;
       top: 46%;
       right: 13.5%;
+      will-change: filter;
     }
 
     .green-line {
@@ -83,6 +94,7 @@
       z-index: 32;
       position: absolute;
       bottom: -2.5%;
+      will-change: filter;
       right: 10%;
     }
 
@@ -91,15 +103,45 @@
       z-index: 30;
       position: absolute;
       bottom: 29%;
+      will-change: filter;
       right: 0%;
     }
 
     .orange-line {
       width: 50%;
-      z-index: 30;
+      z-index: 37;
       position: absolute;
       bottom: 12%;
+      will-change: filter;
       left: 2.3%;
+    }
+
+    .green-line-point {
+      position: absolute;
+      z-index: 40;
+      left: 37.5%;
+      width: 1vw;
+      bottom: 33%;
+      transition: none; /* 用 GSAP 控制 */
+      transform-origin: center center;
+    }
+
+    .red-line-point {
+      position: absolute;
+      z-index: 40;
+      right: 18.7%;
+      width: 1vw;
+      bottom: 25%;
+      transition: none;
+      transform-origin: center center;
+    }
+
+    .orange-line-point {
+      position: absolute;
+      z-index: 40;
+      left: 27%;
+      width: 1vw;
+      bottom: 25%;
     }
 
     .tab3-img1 {

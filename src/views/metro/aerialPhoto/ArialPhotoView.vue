@@ -7,7 +7,7 @@
         <source srcset="/src/assets/img/metro/tablet.webp" media="(max-width: 1400px)" />
         <img src="/src/assets/img/metro/arial.webp" alt="" class="arial-img" />
       </picture>
-
+      <img class="light" src="../../../assets/img/metro/light.png" alt="light" srcset="" />
       <video class="light-video" autoplay loop muted playsinline>
         <source
           src="https://ws.srl.tw/cs/2024050617332581/img/img2024050718025926.mp4"
@@ -48,7 +48,7 @@
       <HouseNumber v-if="showHouseNumber" @close="showHouseNumber = false" />
     </Transition>
 
-    <!-- 綠線詳細視窗 -->
+    <!-- 綠線詳細內容 -->
     <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
       <GreenLine v-if="showGreenLine" @close="showGreenLine = false" />
     </Transition>
@@ -188,7 +188,6 @@ const initGsap = () => {
       },
       '<0.1',
     )
-
     .from(
       splitbTitle.chars,
       {

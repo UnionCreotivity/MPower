@@ -1,119 +1,48 @@
 <template>
-  <div class="line-popup">
+  <div class="line-popup green-line-box">
+    <div class="overlay-close" @click="$emit('close')"></div>
     <div class="main-box">
-      <div class="metro-light-box">
-        <div class="metro-light-content-box">
-          <div class="back-button" @click="closeBox">
-            <img src="../../assets/img/other/x.svg" alt="x" />
-          </div>
-          <div class="left-box">
-            <div class="swiper-box">
-              <Swiper
-                :speed="1000"
-                :loop="true"
-                :slides-per-view="1"
-                :navigation="navigationOptions"
-                :modules="[Navigation, EffectFade, Autoplay]"
-                :effect="'fade'"
-                class="swiper-main"
-              >
-                <swiper-slide>
-                  <img src="../../assets/img/metro/green_line1.webp" alt="green_line1" srcset="" />
-                  <div class="hint">台中捷運實景示意圖</div>
-                </swiper-slide>
-                <swiper-slide>
-                  <img src="../../assets/img/metro/green_line2.webp" alt="green_line2" srcset="" />
-                  <div class="hint">台中捷運實景示意圖</div>
-                </swiper-slide>
-              </Swiper>
-              <div class="prev">
-                <img src="../../assets/img/other/left_arrow.svg" alt="left_arrow" />
-              </div>
-              <div class="next">
-                <img src="../../assets/img/other/right_arrow.svg" alt="right_arrow" />
-              </div>
-            </div>
-          </div>
-          <div class="right-box">
-            <div class="en-title">TAICHUNG MASS RAPID TRANSIT</div>
-            <div class="title-box">台中捷運綠線</div>
-            <div class="light-box-content-box">
-              台中捷運綠線全長約16.71公里，沿線共設18站，已於110年4月25日正式通車，串聯烏日、文心及北屯等重要生活圈。<br />
-              為擴大捷運效益，綠線延伸至大坑與彰化的可行性研究，已於109年7月通過交通部審查，並於113年1月31日獲行政院正式核定，未來可望帶動更廣泛的區域發展與通勤便利性。
-            </div>
+      <div class="img-box">
+        <img src="../../assets/img/metro/green_line_bg.webp" alt="green_line_bg" srcset="" />
+      </div>
+      <div class="hint">捷運綠線實景</div>
 
-            <div class="btn-box">
-              <div class="btn" @click="openLineImg(1)">
-                <img src="../../assets/img/metro/green_btn_1.svg" alt="" />
-              </div>
-              <div class="btn" @click="openLineImg(2)">
-                <img src="../../assets/img/metro/green_btn_2.svg" alt="" />
-              </div>
-            </div>
-          </div>
+      <div class="title-box">
+        <div class="zh">台中捷運完工</div>
+        <div class="en green-en">TMRT GREEN LINE</div>
+      </div>
+
+      <div class="main-content-box">
+        <div class="list">
+          <div class="small-title green-small-title">路段│</div>
+          <div class="content">烏日-文心-北屯+彰化-大坑延伸段</div>
+        </div>
+        <div class="list">
+          <div class="small-title green-small-title">路線長度│</div>
+          <div class="content">主線約16.71公里，共18站+延伸約9.93公里，共8站</div>
+        </div>
+        <div class="list">
+          <div class="small-title green-small-title">計畫進度│</div>
+          <div class="content">2021年主線完工通車+2024年延伸段核定通過</div>
+        </div>
+
+        <div class="btn">
+          <img src="../../assets/img/metro/taipei_btn.png" alt="" />
         </div>
       </div>
+
+      <div class="line-img">
+        <img src="../../assets/img/metro/green_line_item.webp" alt="" srcset="" />
+      </div>
+      <img class="light" src="../../assets/img/metro/light.png" alt="light" srcset="" />
     </div>
-    <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
-      <GreenLineImg
-        v-if="showGreenLineImg"
-        :imgIndex="selectedImageIndex"
-        @close="showGreenLineImg = false"
-      />
-    </Transition>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import gsap from 'gsap'
-import GreenLineImg from './MrtLightImgBox/LineImg.vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, EffectFade, Autoplay } from 'swiper/modules'
 import '@/assets/scss/metro/_metro-light-box.scss'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/effect-fade'
-
-const navigationOptions = {
-  prevEl: '.prev',
-  nextEl: '.next',
-}
-
-const showGreenLineImg = ref(false)
-const selectedImageIndex = ref(1)
-
-const openLineImg = (index: number) => {
-  selectedImageIndex.value = index
-  showGreenLineImg.value = true
-}
-const onBeforeEnter = (el: Element) => {
-  gsap.set(el, { opacity: 0 })
-}
-
-const onEnter = (el: Element, done: () => void) => {
-  gsap.to(el, {
-    opacity: 1,
-    duration: 0.5,
-    ease: 'power2.out',
-    onComplete: done,
-  })
-}
-
-const onLeave = (el: Element, done: () => void) => {
-  gsap.to(el, {
-    opacity: 0,
-    duration: 0.4,
-    ease: 'power2.inOut',
-    onComplete: done,
-  })
-}
-
-const emit = defineEmits(['close'])
-
-const closeBox = () => {
-  emit('close')
-}
 </script>
 
 <style scoped></style>

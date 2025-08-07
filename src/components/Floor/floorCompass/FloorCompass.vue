@@ -41,25 +41,25 @@ import FullScreen from '@/components/full-screen/FullScreen.vue'
 import gsap from 'gsap'
 
 const floorSelectList: Record<string, { northImg: string; sorthImg: string; hint: string }> = {
-  '3F': {
-    northImg: new URL('@/assets/img/building/1.webp', import.meta.url).href,
-    sorthImg: '',
-    hint: '3F實景示意圖',
-  },
-  '5F': {
-    northImg: new URL('@/assets/img/building/3.webp', import.meta.url).href,
-    sorthImg: '',
-    hint: '5F實景示意圖',
+  '12F': {
+    northImg: new URL('@/assets/img/building/6.webp', import.meta.url).href,
+    sorthImg: new URL('@/assets/img/building/4.webp', import.meta.url).href,
+    hint: '12F實景示意圖',
   },
   '8F': {
     northImg: new URL('@/assets/img/building/5.webp', import.meta.url).href,
     sorthImg: new URL('@/assets/img/building/2.webp', import.meta.url).href,
     hint: '8F實景示意圖',
   },
-  '12F': {
-    northImg: new URL('@/assets/img/building/6.webp', import.meta.url).href,
-    sorthImg: new URL('@/assets/img/building/4.webp', import.meta.url).href,
-    hint: '12F實景示意圖',
+  '5F': {
+    northImg: new URL('@/assets/img/building/3.webp', import.meta.url).href,
+    sorthImg: '',
+    hint: '5F實景示意圖',
+  },
+  '3F': {
+    northImg: new URL('@/assets/img/building/1.webp', import.meta.url).href,
+    sorthImg: '',
+    hint: '3F實景示意圖',
   },
 }
 const selectedFloor = ref('3F')

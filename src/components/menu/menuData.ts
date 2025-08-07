@@ -9,7 +9,7 @@ export const menuData = [
       {
         id: 'aerialphoto',
         name: '空拍鳥瞰',
-        link: '',
+        link: 'aerialPhoto',
         tab: 0,
       },
       {
