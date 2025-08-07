@@ -25,6 +25,7 @@
       ref="orangePoint"
       src="../../assets/img/life/point.svg"
       alt="orange point"
+      @click="$emit('open-orange-line')"
     />
 
     <div class="red-line mrt-line" ref="redLine">

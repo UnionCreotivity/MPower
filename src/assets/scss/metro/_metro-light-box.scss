@@ -29,6 +29,11 @@
       color: white;
     }
 
+    .orange-hint {
+      bottom: initial;
+      top: 1%;
+    }
+
     .title-box {
       display: flex;
       flex-direction: column;
@@ -53,6 +58,9 @@
       .red-en {
         color: #ff0000;
       }
+      .orange-en {
+        color: #ff5000;
+      }
     }
 
     .main-content-box {
@@ -76,6 +84,9 @@
         }
         .red-small-title {
           color: #ff0000;
+        }
+        .orange-small-title {
+          color: #ff5000;
         }
         .content {
           @include pageContent();
@@ -109,6 +120,11 @@
 
     .red-line-img {
       width: 33%;
+    }
+
+    .orange-line-img {
+      width: 28.5%;
+      top: 51%;
     }
 
     .light {

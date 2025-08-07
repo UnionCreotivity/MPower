@@ -23,6 +23,7 @@
           :key="i"
           @open-green-line="showGreenLine = true"
           @open-red-line="showRedLine = true"
+          @open-orange-line="showOrangeLine = true"
         />
       </TransitionGroup>
     </div>
@@ -53,6 +54,9 @@
 
     <!-- 紅線詳細內容 -->
     <RedLine v-if="showRedLine" @close="showRedLine = false" />
+
+    <!-- 橘線詳細內容 -->
+    <OrangeLine v-if="showOrangeLine" @close="showOrangeLine = false" />
   </section>
   <FullScreen :forceWhiteIcon="true" />
 </template>
@@ -67,8 +71,11 @@ import HouseNumber from '@/components/metro/HouseNumber.vue'
 import MrtGroup from '@/components/metro/MrtGroup.vue'
 import BusinessGroup from '@/components/metro/BusinessGroup.vue'
 import CoreGroup from '@/components/metro/CoreGroup.vue'
+
 import GreenLine from '@/components/metro/GreenLine.vue'
 import RedLine from '@/components/metro/RedLine.vue'
+import OrangeLine from '@/components/metro/OrangeLine.vue'
+
 import FullScreen from '@/components/full-screen/FullScreen.vue'
 import '@/assets/scss/metro/_arial-photo.scss'
 
@@ -76,6 +83,7 @@ gsap.registerPlugin(SplitText)
 
 const showGreenLine = ref(false)
 const showRedLine = ref(false)
+const showOrangeLine = ref(false)
 const isAnimating = ref(false)
 const showHouseNumber = ref(false)
 const route = useRoute()
