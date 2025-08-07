@@ -76,7 +76,7 @@ const productList = [
       <li>開關200,000次</li>
       <li>通過DIN檢驗測試合格</li>
       <li>消費者可因個人使用力道習慣或門板材質重量，進行鉸鍊緩衝力道調整</li>
-    </ul>
+     </ul>
     `,
   },
   {
@@ -86,16 +86,15 @@ const productList = [
     content: `
     <div class="sakura-content-box">
       <ul class="ul-box">
-      <li>AI智能風控科技，自動調節最適風量</li>
-      <li>熱感偵測技術，不限爐具隨心搭配</li>
-      <li>進煙口自動下降，排煙更即時</li>
-      <li>渦輪變頻科技，Turbo大吸力吸更淨</li>
-         <li>靜音除味功能，安靜舒適排除油煙餘味</li>
-            <li>256點偵測，大量蒐集溫度數據</li>
-       
-    </ul>
-       <div class="sakura-btn"><div>櫻花廚具</div></div>
-   </div>
+        <li>AI智能風控科技，自動調節最適風量</li>
+        <li>熱感偵測技術，不限爐具隨心搭配</li>
+        <li>進煙口自動下降，排煙更即時</li>
+        <li>渦輪變頻科技，Turbo大吸力吸更淨</li>
+        <li>靜音除味功能，安靜舒適排除油煙餘味</li>
+        <li>256點偵測，大量蒐集溫度數據</li>
+      </ul>
+      <div class="sakura-btn"><div>櫻花廚具</div></div>
+    </div>
     `,
   },
   {
@@ -103,22 +102,24 @@ const productList = [
     title: '橫式雙口IH感應爐',
     img: new URL('@/assets/img/mansion/tlk/svago.webp', import.meta.url).href,
     content: `
- <div class="sakura-content-box">
-<div class="top-box">
-      <div class="left">
-      • 9段火力，滑動觸控<br />
-      • 小火持續加熱功能<br />
-      • 1分鐘-3小時定時設定<br />
-      • 2小時超時自動關機<br />
-      • Stop&Go暫停功能<br />
+    <div class="sakura-content-box">
+      <div class="top-box">
+        <div class="left">
+        • 9段火力，滑動觸控<br />
+        • 小火持續加熱功能<br />
+        • 1分鐘-3小時定時設定<br />
+        • 2小時超時自動關機<br />
+        • Stop&Go暫停功能<br />
+        </div>
+        <div class="right">
+        • 操作方式：觸控+滑動式<br />
+        • 自動鍋具檢測<br />
+        • 餘溫警示與兒童安全鎖<br />
+        • 感應鍋徑最小12公分
+        </div>
+      </div>
+     <div class="sakura-btn"><div>櫻花廚具</div></div>
     </div>
-    <div class="right">
-      • 操作方式：觸控+滑動式<br />
-      • 自動鍋具檢測<br />
-      • 餘溫警示與兒童安全鎖<br />
-      • 感應鍋徑最小12公分
-    </div></div>
-     <div class="sakura-btn"><div>櫻花廚具</div></div> </div>
     `,
   },
   {
