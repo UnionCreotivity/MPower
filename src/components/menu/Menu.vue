@@ -77,11 +77,11 @@ const route = useRoute() // 有 .name, .params
 const is_Show = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
 
-const whiteMenuRoutes = ['aerialPhoto', 'mansionIndex', 'tlkIndex', 'lifegearIndex']
+const whiteMenuRoutes = ['aerialPhoto', 'mansionIndex', 'tlkIndex', 'lifegearIndex', 'duravitIndex']
 const isWhiteMenu = computed(() => {
   const name = route.name as string
   const isSmallScreen = window.innerWidth < 1400
-  const forceDefaultInSmallScreen = ['tlkIndex', 'lifegearIndex']
+  const forceDefaultInSmallScreen = ['tlkIndex', 'lifegearIndex', 'duravitIndex']
 
   if (forceDefaultInSmallScreen.includes(name) && isSmallScreen) {
     return false

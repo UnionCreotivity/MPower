@@ -43,7 +43,7 @@ const linkBoxList = [
   {
     text: '精品衛浴',
     img: new URL('../../../assets/img/mansion/2.svg', import.meta.url).href,
-    routeName: '',
+    routeName: 'duravitIndex',
   },
   {
     text: '電子鎖',

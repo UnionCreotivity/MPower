@@ -18,7 +18,7 @@ import MansionIndexView from '@/views/mansion/MansionIndex/MansionIndexView.vue'
 import TlkIndexView from '@/views/mansion/Tlk/TlkIndexView.vue' //tlk
 import LockView from '@/views/mansion/lock/LockView.vue' //電子鎖
 import LifegearView from '@/views/mansion/lifegear/LifegearView.vue' //全熱交換機
-
+import DuravitIndexView from '@/views/mansion/duravit/DuravitIndexView.vue' //衛浴
 
 // 建築工藝
 import MethodView from '@/views/method/MethodView.vue'
@@ -29,6 +29,7 @@ import IntimateView from '@/views/method/intimate/IntimateView.vue' // 貼心工
 
 // 房貸試算
 import CalculatorView from '@/views/calculator/CalculatorView.vue'
+
 
 
 const router = createRouter({
@@ -97,6 +98,11 @@ const router = createRouter({
           path: 'lifegearIndex',
           name: 'lifegearIndex',
           component: LifegearView,
+        },
+        {
+          path: 'duravitIndex',
+          name: 'duravitIndex',
+          component: DuravitIndexView,
         },
       ],
     },

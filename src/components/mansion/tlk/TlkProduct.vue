@@ -8,18 +8,16 @@
           alt="tlk_img_main2"
         />
         <div class="hint">情境示意圖</div>
-
-        <div
-          v-for="(dot, index) in productList"
-          :key="index"
-          :class="['dot', `dot${index + 1}`, { active: activeIndex === index }]"
-          @click="activeIndex = index"
-        >
-          <img src="../../../assets/img/mansion/tlk/dot.svg" alt="dot" />
-        </div>
       </div>
     </div>
-
+    <div
+      v-for="(dot, index) in productList"
+      :key="index"
+      :class="['dot', `dot${index + 1}`, { active: activeIndex === index }]"
+      @click="activeIndex = index"
+    >
+      <img src="../../../assets/img/mansion/tlk/dot.svg" alt="dot" />
+    </div>
     <div class="right-box">
       <transition name="fade" mode="out-in">
         <div v-if="productList[activeIndex]" :key="activeIndex" class="product-box">
