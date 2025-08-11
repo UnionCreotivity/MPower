@@ -33,12 +33,26 @@
             <img :src="productList[activeIndex].img" alt="product-title" />
           </div>
           <div class="content-box" v-html="productList[activeIndex].content" />
+          <div v-if="productList[activeIndex]?.hasVideo" class="sakura-btn" @click="showVideoBox">
+            <div>櫻花廚具</div>
+          </div>
         </div>
       </transition>
     </div>
 
     <div class="overlay-close" @click="handleClose"></div>
   </div>
+  <transition name="fade" mode="out-in">
+    <div class="sakura-video" @click="handleCloseVideo" v-if="showVideo">
+      <video
+        src="../../../assets/img/mansion/sakura_video.mp4"
+        autoplay
+        muted
+        playsinline
+        controls
+        loop
+      ></video></div
+  ></transition>
 </template>
 
 <script setup lang="ts">
@@ -50,6 +64,16 @@ import gsap from 'gsap'
 const router = useRouter()
 const activeIndex = ref(0) // 預設第一個顯示
 
+const showVideo = ref(false)
+
+const handleCloseVideo = () => {
+  showVideo.value = false
+}
+
+const showVideoBox = () => {
+  showVideo.value = true
+}
+
 const handleClose = () => {
   router.push('/mansionIndex')
 }
@@ -59,6 +83,7 @@ const productList = [
     iconImg: '',
     title: '雷射封邊',
     img: new URL('@/assets/img/mansion/tlk/leiser.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
       與熱熔膠技術不同，高能量雷射熔化封邊帶上的超薄功能層，然後通過輥軸將封邊帶黏合到家具面板上，形成無縫邊緣，確保持久且防潮的連接。<br /><br />
       搭配E1櫃體板材<br />
@@ -70,6 +95,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/tlk/blum.svg', import.meta.url).href,
     title: '多功能式專利鉸鏈',
     img: new URL('@/assets/img/mansion/tlk/blum2.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
      <ul class="ul-box">
       <li>可調式緩衝鉸鍊門開107度</li>
@@ -83,6 +109,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
     title: '櫻花AI升降靜音油機',
     img: new URL('@/assets/img/mansion/tlk/sakura.webp', import.meta.url).href,
+    hasVideo: true,
     content: `
     <div class="sakura-content-box">
       <ul class="ul-box">
@@ -93,7 +120,7 @@ const productList = [
         <li>靜音除味功能，安靜舒適排除油煙餘味</li>
         <li>256點偵測，大量蒐集溫度數據</li>
       </ul>
-      <div class="sakura-btn"><div>櫻花廚具</div></div>
+    
     </div>
     `,
   },
@@ -101,6 +128,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/tlk/svago.svg', import.meta.url).href,
     title: '橫式雙口IH感應爐',
     img: new URL('@/assets/img/mansion/tlk/svago.webp', import.meta.url).href,
+    hasVideo: true,
     content: `
     <div class="sakura-content-box">
       <div class="top-box">
@@ -118,7 +146,7 @@ const productList = [
         • 感應鍋徑最小12公分
         </div>
       </div>
-     <div class="sakura-btn"><div>櫻花廚具</div></div>
+    
     </div>
     `,
   },
@@ -126,6 +154,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/tlk/bosch.svg', import.meta.url).href,
     title: '全嵌式洗碗機',
     img: new URL('@/assets/img/mansion/tlk/bosch.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
     <ul class="ul-box">
       <li>熱能交換裝置：提升烘乾效果並保護餐具。</li>
@@ -140,6 +169,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
     title: '廚房不鏽鋼無鉛伸縮龍頭',
     img: new URL('@/assets/img/mansion/tlk/sakura2.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
     <ul class="ul-box">
       <li>符合CNS8088，飲水用水龍頭規範，健康無鉛。</li>
@@ -155,6 +185,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
     title: '不鏽鋼單槽手工方型水槽組',
     img: new URL('@/assets/img/mansion/tlk/sakura3.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
       • 底部處理：噴塗防汗漆+貼附消音墊。<br />
       • 防蟑防臭存水排水管組。
@@ -164,6 +195,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/tlk/blum.svg', import.meta.url).href,
     title: '抽屜系統',
     img: new URL('@/assets/img/mansion/tlk/blum.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
       • 承重50公斤/開關60,000次<br />
       • 全開式抽屜靜音緩衝<br />
@@ -174,6 +206,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
     title: '石英石檯面',
     img: new URL('@/assets/img/mansion/tlk/sakura4.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
     <ul class="ul-box">
       <li>高耐刮：莫氏硬度高達6.0~7.0，不易因刀具使用而留下刮痕，維持長久如新。</li>
@@ -187,6 +220,7 @@ const productList = [
     iconImg: '',
     title: '感應掛架櫃下燈',
     img: new URL('@/assets/img/mansion/tlk/light.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
     <ul class="ul-box">
       <li>內建觸控感應開關、台灣製造、可搭配掛架使用</li>
@@ -197,6 +231,7 @@ const productList = [
     iconImg: '',
     title: '置物架、紙巾架',
     img: new URL('@/assets/img/mansion/tlk/shelf.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
     <ul class="ul-box">
       <li>鐵板噴塗特殊漆+防水抗貝特板</li>
