@@ -77,7 +77,14 @@ const route = useRoute() // 有 .name, .params
 const is_Show = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
 
-const whiteMenuRoutes = ['aerialPhoto', 'mansionIndex', 'tlkIndex', 'lifegearIndex', 'duravitIndex']
+const whiteMenuRoutes = [
+  'aerialPhoto',
+  'mansionIndex',
+  'tlkIndex',
+  'lifegearIndex',
+  'duravitIndex',
+  'EhomeIndex',
+]
 const isWhiteMenu = computed(() => {
   const name = route.name as string
   const isSmallScreen = window.innerWidth < 1400

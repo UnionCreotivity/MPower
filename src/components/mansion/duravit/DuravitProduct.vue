@@ -56,7 +56,7 @@
 
 <script setup lang="ts">
 import '@/assets/scss/mansion/duravit/_duravit-product.scss'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import gsap from 'gsap'
 
@@ -153,42 +153,43 @@ const productList = [
   },
 ]
 
+let tl: gsap.core.Timeline
 onMounted(() => {
-  const tl = gsap.timeline({})
-
+  tl = gsap.timeline()
   tl.fromTo(
     '.duravit-product-box .left-box',
-    {
-      autoAlpha: 0,
-      clipPath: 'inset(0 100% 0 0)',
-    },
+    { autoAlpha: 0, clipPath: 'inset(0 100% 0 0)' },
     {
       clipPath: 'inset(0 0% 0 0)',
       duration: 1,
       autoAlpha: 1,
     },
   )
-    .fromTo(
-      '.duravit-product-box .left-box img',
+    .fromTo('.duravit-product-box .left-box img', { scale: 1.2 }, { scale: 1, duration: 1 }, '<')
+    .from(
+      '.duravit-product-box .dot',
       {
-        scale: 1.2,
-      },
-      {
-        scale: 1,
+        autoAlpha: 0,
         duration: 1,
       },
-      '<',
+      '<0.8',
     )
+
     .from(
-      '.duravit-product-box .right-box div',
+      '.duravit-product-box .right-box .product-box div',
       {
         autoAlpha: 0,
         y: 70,
         duration: 1,
-        stagger: 0.3,
+        stagger: 0.2,
       },
-      '<0.5',
+      '<-0.3',
     )
+})
+
+onUnmounted(() => {
+  // 避免動畫還在跑時切換報錯
+  if (tl) tl.kill()
 })
 </script>
 

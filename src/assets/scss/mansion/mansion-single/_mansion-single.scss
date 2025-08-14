@@ -124,3 +124,137 @@
     margin-left: 0vw;
   }
 }
+
+.ehome-content-box {
+  padding-left: 0.5vw;
+  padding-right: 1vw;
+  .left-box {
+    width: 54.5%;
+  }
+  .right-box {
+    width: 44%;
+    margin-left: 0vw;
+    .top-bottom-box {
+      display: flex;
+      flex-direction: column;
+      .top-box {
+        display: flex;
+        margin-bottom: 2vw;
+        padding-bottom: 1.5vw;
+        position: relative;
+
+        .left-img {
+          width: 32%;
+          display: flex;
+          flex-direction: column;
+          margin-top: 7%;
+        }
+
+        .right-content-box {
+          display: flex;
+          width: 61%;
+          margin-left: 2vw;
+          flex-direction: column;
+          .icon {
+            width: 40%;
+            img {
+              width: 100%;
+            }
+          }
+          .title {
+            font-family: 'Noto Serif TC';
+            color: #5f4c3f;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            font-size: 1.6vw;
+            position: relative;
+            padding-bottom: 0.7vw;
+            margin-bottom: 0.7vw;
+
+            &::after {
+              content: '';
+              position: absolute;
+              background-color: #5f4c3f;
+              height: 1px;
+              width: 75px;
+              bottom: 0px;
+              left: 0%;
+            }
+            span {
+              font-size: 0.8vw;
+            }
+          }
+          .ul-box {
+            @include pageContent();
+            letter-spacing: 0.05em;
+            list-style: disc;
+            list-style-position: outside;
+            padding-left: 1em;
+            ul,
+            li {
+              list-style-type: disc;
+            }
+          }
+        }
+      }
+      .bottom-box {
+        display: flex;
+        .left-img {
+          width: 32%;
+
+          display: flex;
+          justify-content: center;
+          img {
+            width: 54%;
+          }
+        }
+        .right-content-box {
+          display: flex;
+          width: 61%;
+          margin-left: 2vw;
+          flex-direction: column;
+          .icon {
+            width: 40%;
+            img {
+              width: 100%;
+            }
+          }
+          .title {
+            font-family: 'Noto Serif TC';
+            color: #5f4c3f;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            font-size: 1.6vw;
+            position: relative;
+            padding-bottom: 0.7vw;
+            margin-bottom: 0.7vw;
+
+            &::after {
+              content: '';
+              position: absolute;
+              background-color: #5f4c3f;
+              height: 1px;
+              width: 75px;
+              bottom: 0px;
+              left: 0%;
+            }
+            span {
+              font-size: 0.8vw;
+            }
+          }
+          .ul-box {
+            @include pageContent();
+            letter-spacing: 0.05em;
+            list-style: disc;
+            list-style-position: outside; /* 符號在內容外面 */
+            padding-left: 1em;
+            ul,
+            li {
+              list-style-type: disc;
+            }
+          }
+        }
+      }
+    }
+  }
+}

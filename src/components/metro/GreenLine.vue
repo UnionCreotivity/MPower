@@ -115,11 +115,18 @@ const imgAni = () => {
       },
       '<-0.35',
     )
-    .from(
+    // 顯示並啟動光效
+    .to(
       '.line-popup .main-box .light',
       {
-        duration: 1,
-        opacity: 0,
+        duration: 0.5,
+        autoAlpha: 1, // opacity:1 + visibility:visible
+        onStart: () => {
+          const light = document.querySelector('.line-popup .main-box .light')
+          if (light instanceof HTMLElement) {
+            light.style.animationPlayState = 'running'
+          }
+        },
       },
       '<0.7',
     )

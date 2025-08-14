@@ -173,10 +173,10 @@
                 background-color: transparent;
                 cursor: none;
                 transition: all 0.25s ease-in-out;
-                &:hover {
-                  background-color: #604c3f;
-                  color: #f7f8f8;
-                }
+                // &:hover {
+                //   background-color: #604c3f;
+                //   color: #f7f8f8;
+                // }
               }
             }
             .loan-click-cal {
@@ -187,11 +187,11 @@
                 cursor: none;
                 border: 1px solid transparent;
                 transition: all 0.25s ease-in-out;
-                &:hover {
-                  border: 1px solid #604c3f;
-                  background-color: transparent;
-                  color: #604c3f;
-                }
+                // &:hover {
+                //   border: 1px solid #604c3f;
+                //   background-color: transparent;
+                //   color: #604c3f;
+                // }
               }
             }
             button {

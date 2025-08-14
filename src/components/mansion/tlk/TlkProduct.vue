@@ -265,14 +265,23 @@ onMounted(() => {
       '<',
     )
     .from(
-      '.tlk-product-box .right-box div',
+      '.tlk-product-box .dot',
+      {
+        autoAlpha: 0,
+        duration: 1,
+      },
+      '<0.8',
+    )
+
+    .from(
+      '.tlk-product-box .right-box .product-box div',
       {
         autoAlpha: 0,
         y: 70,
         duration: 1,
-        stagger: 0.3,
+        stagger: 0.2,
       },
-      '<0.5',
+      '<-0.3',
     )
 })
 </script>

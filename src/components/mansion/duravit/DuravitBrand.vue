@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import '@/assets/scss/mansion/duravit/_duravit-brand.scss'
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import { useRouter } from 'vue-router'
@@ -34,26 +34,26 @@ gsap.registerPlugin(SplitText)
 const handleClose = () => {
   router.push('/mansionIndex')
 }
-
+let tl: gsap.core.Timeline
 onMounted(() => {
+  gsap.registerPlugin(SplitText)
   const enSplit = SplitText.create('.duravit-brand-box .main-box .en-title', {
     type: 'chars,words,lines',
     linesClass: 'clip-text',
   })
-
   const zhSplit = SplitText.create('.main-box .zh-title', {
     type: 'chars,words,lines',
     linesClass: 'clip-text',
   })
 
-  const tl = gsap.timeline({ delay: 0.1 })
-
-  tl.from('.duravit-brand-box .banner-box img', {
-    duration: 1.3,
-    filter: 'blur(10px)',
-    scale: 1.5,
-    autoAlpha: 0,
-  })
+  tl = gsap
+    .timeline({ delay: 0.1 })
+    .from('.duravit-brand-box .banner-box img', {
+      duration: 1.3,
+      filter: 'blur(10px)',
+      scale: 1.5,
+      autoAlpha: 0,
+    })
     .from(
       enSplit.chars,
       {
@@ -85,6 +85,10 @@ onMounted(() => {
       },
       '<0.55',
     )
+})
+
+onUnmounted(() => {
+  if (tl) tl.kill()
 })
 </script>
 

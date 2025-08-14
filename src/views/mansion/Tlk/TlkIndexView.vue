@@ -14,9 +14,8 @@
       </div>
     </div>
 
-    <transition name="fade" mode="out-in">
-      <component :is="tabs[activeTab].component" :key="activeTab" />
-    </transition>
+    <component :is="tabs[activeTab].component" :key="activeTab" />
+
     <FullScreen />
   </section>
 </template>

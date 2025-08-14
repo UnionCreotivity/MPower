@@ -109,11 +109,6 @@
   border: 1px solid #604c3f;
   transition: all 0.25s ease-in-out;
 }
-.loan-view-right .loan-view-right-container .loan-view-right-submit:hover {
-  border: 1px solid #604c3f;
-  background-color: transparent;
-  color: #604c3f;
-}
 @media all and (max-width: 1400px) {
   .loan-view-right .loan-view-right-container .loan-view-right-submit {
     font-size: 18px;

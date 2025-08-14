@@ -199,10 +199,6 @@
   cursor: none;
   transition: all 0.25s ease-in-out;
 }
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-clear button:hover {
-  background-color: #604c3f;
-  color: #f7f8f8;
-}
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-cal button {
   color: #f7f8f8;
   border: none;
@@ -210,11 +206,6 @@
   cursor: none;
   border: 1px solid transparent;
   transition: all 0.25s ease-in-out;
-}
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-cal button:hover {
-  border: 1px solid #604c3f;
-  background-color: transparent;
-  color: #604c3f;
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button {
   font-family: "Noto Serif TC", serif;

@@ -2,7 +2,17 @@
   <section class="mansion-menu-view">
     <img class="bg" src="../../../assets/img/mansion/mansion.webp" alt="mansion" />
     <div class="hint">情境示意圖</div>
-    <img class="title-img" src="../../../assets/img/mansion/title.svg" alt="title" srcset="" />
+    <div class="title-box">
+      <div class="en-title" ref="enTitle">MATERIALS</div>
+      <img
+        class="small-title-img"
+        src="../../../assets/img/mansion/title_img_small.svg"
+        alt="title_img_small"
+        srcset=""
+      />
+      <div class="zh-title" ref="zhTitle">貼心建材</div>
+    </div>
+
     <img class="shine1 shine" src="../../../assets/img/mansion/shineshine.png" alt="" srcset="" />
     <img class="shine2 shine" src="../../../assets/img/mansion/shineshine.png" alt="" srcset="" />
     <img class="shine3 shine" src="../../../assets/img/mansion/shineshine.png" alt="" srcset="" />
@@ -29,10 +39,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import '@/assets/scss/mansion/_mansion-index.scss'
+import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
-import '@/assets/scss/mansion/_mansion-index.scss'
+import SplitText from 'gsap/SplitText'
+gsap.registerPlugin(SplitText)
 
 const linkBoxList = [
   {
@@ -68,90 +80,93 @@ const linkBoxList = [
   {
     text: 'E-HOME',
     img: new URL('../../../assets/img/mansion/3.svg', import.meta.url).href,
-    routeName: '',
+    routeName: 'EhomeIndex',
   },
   {
-    text: '衛浴配件',
+    text: '五金',
     img: new URL('../../../assets/img/mansion/logo.png', import.meta.url).href,
     routeName: '',
   },
 ]
 
+const enTitle = ref<HTMLElement | null>(null)
+const zhTitle = ref<HTMLElement | null>(null)
+
 onMounted(() => {
+  const splitEnTitle = new SplitText(enTitle.value, { type: 'chars' })
+  const splitZhTitle = new SplitText(zhTitle.value, { type: 'chars' })
+
   const tl = gsap.timeline({})
-  tl
-    // .fromTo(
-    //   '.mansion-menu-view .bg',
-    //   {
-    //     autoAlpha: 0,
-    //     filter: 'brightness(2) blur(6px)',
-    //   },
-    //   {
-    //     filter: 'brightness(1) blur(0px)',
-    //     duration: 1,
-    //     autoAlpha: 1,
-    //     ease: 'power1.inOut',
-    //   },
-    // )
+  tl.fromTo(
+    '.mansion-menu-view .bg',
+    {
+      maskPosition: '200% 0',
+    },
+    {
+      maskPosition: '0% 0%',
+      duration: 1.5,
+      // ease: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
+      ease: 'power1.inOut',
+    },
+  )
+
     .fromTo(
-      '.mansion-menu-view .bg',
+      splitEnTitle.chars,
       {
-        maskPosition: '200% 0',
+        'will-change': 'transform',
+        transformOrigin: '50% 100%',
+        scaleX: 0,
+        y: 60,
+        autoAlpha: 0,
       },
-      {
-        maskPosition: '0% 0%',
-        duration: 1.5,
-        // ease: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
-        ease: 'power1.inOut',
-      },
+      { y: 0, duration: 0.7, autoAlpha: 1, scaleX: 1, stagger: 0.05 },
+      '<0.55',
     )
     .from(
-      '.mansion-menu-view .title-img',
+      '.mansion-menu-view .title-box .small-title-img',
       {
         autoAlpha: 0,
         duration: 1,
         y: 70,
       },
-      '<0.3',
+      '<0.25',
+    )
+    .fromTo(
+      splitZhTitle.chars,
+      {
+        y: '50',
+        autoAlpha: 0,
+      },
+      {
+        duration: 1.25,
+        autoAlpha: 1,
+        y: '0',
+        stagger: 0.05,
+      },
+      '<0.4',
     )
     .from(
       '.link-box',
       {
         autoAlpha: 0,
         duration: 1,
-        filter: 'blur(5px)',
+        filter: 'blur(10px)',
         // ease: 'back.out(0.5)', // 彈性效果
         stagger: {
           each: 0.08,
           from: 'center',
         },
       },
-      '<0.7',
+      '<0.2',
     )
-
-  // tl.from('.link-box', {
-  //   autoAlpha: 0,
-  //   rotationX: -90,
-  //   transformOrigin: 'center center',
-  //   duration: 1,
-
-  //   stagger: {
-  //     each: 0.08,
-  //     from: 'center',
-  //   },
-  // })
-
-  // tl.from('.link-box', {
-  //   autoAlpha: 0,
-  //   y: 40,
-  //   scale: 0.95,
-  //   duration: 1.2,
-  //   ease: 'power2.out',
-  //   stagger: {
-  //     each: 0.15,
-  //     from: 'center',
-  //   },
-  // })
+    .from(
+      '.shine',
+      {
+        autoAlpha: 0,
+        duration: 1,
+      },
+      '<',
+    )
 })
 </script>
 

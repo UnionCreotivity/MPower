@@ -148,7 +148,10 @@
       transform: translate(-50%, -50%);
       left: 53.4%;
       width: 5%;
+      opacity: 0;
+      visibility: hidden;
       animation: light 2.4s ease-in-out infinite;
+      animation-play-state: paused; /* 先暫停 */
     }
 
     /* 動畫 keyframes */
