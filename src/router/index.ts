@@ -21,6 +21,7 @@ import LifegearView from '@/views/mansion/lifegear/LifegearView.vue' //全熱交
 import DuravitIndexView from '@/views/mansion/duravit/DuravitIndexView.vue' //衛浴
 import EhomeView from '@/views/mansion/ehome/EhomeView.vue' //e-home
 import YkkView from '@/views/mansion/ykkap/YkkIndexView.vue' //ykk
+import BossView from '@/views/mansion/boss/BossIndexView.vue' //Boss
 
 // 建築工藝
 import MethodView from '@/views/method/MethodView.vue'
@@ -107,14 +108,19 @@ const router = createRouter({
           component: DuravitIndexView,
         },
         {
-          path: 'EhomeIndex',
+          path: 'ehomeIndex',
           name: 'EhomeIndex',
           component: EhomeView,
         },
         {
-          path: 'YkkIndex',
+          path: 'ykkIndex',
           name: 'YkkIndex',
           component: YkkView,
+        },
+        {
+          path: 'bossIndex',
+          name: 'BossIndex',
+          component: BossView,
         },
       ],
     },

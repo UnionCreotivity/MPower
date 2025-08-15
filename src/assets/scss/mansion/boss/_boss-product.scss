@@ -1,0 +1,340 @@
+@use '../../utils/mixin' as *;
+
+.boss-product-box {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 100svh;
+  justify-content: space-between;
+
+  .dot {
+    position: absolute;
+    z-index: 30;
+    width: 2vw;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .dot1 {
+    top: 47%;
+    right: 67.5%;
+  }
+
+  .dot2 {
+    top: 41.5%;
+    right: 41.5%;
+  }
+
+  .dot3 {
+    top: 16%;
+    right: 43%;
+  }
+
+  .dot4 {
+    left: 16.5%;
+    top: 31.8%;
+  }
+
+  .dot.active {
+    border-radius: 50%;
+    animation: glowPulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0% {
+      box-shadow:
+        0 0 10px 4px rgba(186, 150, 100, 0.6),
+        0 0 20px 8px rgba(186, 150, 100, 0.4);
+    }
+    50% {
+      box-shadow:
+        0 0 15px 6px #fbb03b,
+        0 0 25px 12px rgba(186, 150, 100, 0.6);
+    }
+    100% {
+      box-shadow:
+        0 0 10px 4px rgba(186, 150, 100, 0.6),
+        0 0 20px 8px rgba(186, 150, 100, 0.4);
+    }
+  }
+  .left-box {
+    width: 62%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5vw;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    .img-box {
+      width: 100%;
+      position: relative;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .hint {
+        @include hint();
+        & {
+          color: #3d3a39;
+        }
+      }
+    }
+  }
+  .right-box {
+    // flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+
+    .product-box {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-left: 3vw;
+      padding-right: 4vw;
+      @media all and (max-width: 1400px) {
+        padding-left: 2vw;
+        padding-right: 2vw;
+      }
+      .title-text {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 2vw;
+        padding-bottom: 1vw;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          background-color: #5f4c3f;
+          height: 1px;
+          width: 75px;
+          bottom: 0px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .icon {
+          width: 6vw;
+          align-self: center;
+          margin-bottom: 0.5vw;
+          img {
+            width: 100%;
+          }
+        }
+
+        .text {
+          font-family: 'Noto Serif TC';
+          color: #5f4c3f;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          font-size: 1.6vw;
+          align-self: center;
+        }
+      }
+      .title-img-box {
+        width: 100%;
+        height: 10vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2vw;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain !important;
+          display: block;
+        }
+      }
+      .content-box {
+        @include pageContent();
+        & {
+          display: flex;
+        }
+
+        .left {
+          margin-right: 1vw;
+        }
+        ul,
+        li {
+          list-style-type: disc;
+        }
+      }
+      .sakura-btn {
+        display: flex;
+        margin-top: 1.5vw;
+        z-index: 30;
+        width: 100%;
+        div {
+          background-color: #5f4c3f;
+          padding: 0.3vw 1.5vw;
+          padding-bottom: 0.4vw;
+          font-size: 0.9vw;
+          border-radius: 2vw;
+          color: white;
+          font-family: 'Noto Serif TC';
+          font-weight: 500;
+        }
+      }
+      .sakura-content-box {
+        display: flex;
+        flex-direction: column;
+        .top-box {
+          display: flex;
+        }
+      }
+    }
+
+    .top-bottom-box {
+      display: flex;
+      flex-direction: column;
+      .top-box {
+        display: flex;
+        margin-bottom: 5vw;
+        padding-bottom: 4.5vw;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          background-color: #736357;
+          height: 1px;
+          width: 95%;
+          bottom: 0px;
+          left: 0%;
+        }
+        .left-img {
+          width: 36%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 100%;
+          }
+        }
+        .right-content-box {
+          display: flex;
+          width: 58%;
+          margin-left: 2vw;
+          justify-content: center;
+
+          flex-direction: column;
+          .icon {
+            width: 40%;
+
+            img {
+              width: 100%;
+            }
+          }
+          .title {
+            font-family: 'Noto Serif TC';
+            color: #5f4c3f;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            font-size: 1.6vw;
+            position: relative;
+            padding-bottom: 0.7vw;
+            margin-bottom: 0.7vw;
+
+            &::after {
+              content: '';
+              position: absolute;
+              background-color: #5f4c3f;
+              height: 1px;
+              width: 75px;
+              bottom: 0px;
+              left: 0%;
+            }
+            span {
+              font-size: 0.8vw;
+            }
+          }
+          .ul-box {
+            @include pageContent();
+            letter-spacing: 0.05em;
+            list-style: disc;
+            list-style-position: outside;
+            padding-left: 1em;
+          }
+        }
+      }
+      .bottom-box {
+        display: flex;
+        .left-img {
+          width: 36%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 70%;
+          }
+        }
+        .right-content-box {
+          display: flex;
+          width: 58%;
+          margin-left: 2vw;
+          flex-direction: column;
+          justify-content: center;
+
+          .icon {
+            width: 40%;
+            img {
+              width: 100%;
+            }
+          }
+          .title {
+            font-family: 'Noto Serif TC';
+            color: #5f4c3f;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            font-size: 1.6vw;
+            position: relative;
+            padding-bottom: 0.7vw;
+            margin-bottom: 0.7vw;
+
+            &::after {
+              content: '';
+              position: absolute;
+              background-color: #5f4c3f;
+              height: 1px;
+              width: 75px;
+              bottom: 0px;
+              left: 0%;
+            }
+            span {
+              font-size: 0.8vw;
+            }
+          }
+          .ul-box {
+            @include pageContent();
+            letter-spacing: 0.05em;
+            list-style: disc;
+            list-style-position: outside; /* 符號在內容外面 */
+            padding-left: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+.sakura-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

@@ -41,17 +41,6 @@
 
     <div class="overlay-close" @click="handleClose"></div>
   </div>
-  <transition name="fade" mode="out-in">
-    <div class="sakura-video" @click="handleCloseVideo" v-if="showVideo">
-      <video
-        src="../../../assets/img/mansion/sakura_video.mp4"
-        autoplay
-        muted
-        playsinline
-        controls
-        loop
-      ></video></div
-  ></transition>
 </template>
 
 <script setup lang="ts">
@@ -67,12 +56,8 @@ const icon = new URL('@/assets/img/mansion/2.svg', import.meta.url).href
 const router = useRouter()
 const activeIndex = ref(0) // 預設第一個顯示
 
-const showVideo = ref(false)
 const isTopBottomBox = (content: string) => {
   return content.includes('top-bottom-box')
-}
-const handleCloseVideo = () => {
-  showVideo.value = false
 }
 
 const handleClose = () => {

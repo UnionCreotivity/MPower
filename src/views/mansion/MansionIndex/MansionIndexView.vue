@@ -85,7 +85,7 @@ const linkBoxList = [
   {
     text: '五金',
     img: new URL('../../../assets/img/mansion/logo.png', import.meta.url).href,
-    routeName: '',
+    routeName: 'BossIndex',
   },
 ]
 
