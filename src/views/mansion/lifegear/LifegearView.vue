@@ -9,6 +9,9 @@
       </div>
     </div>
     <div class="right-box">
+      <div class="title-text">
+        <div class="text">隱藏式全熱交換機</div>
+      </div>
       <div class="title-img-box">
         <img src="../../../assets/img/mansion/lifegear/lifegear.webp" />
       </div>
@@ -54,17 +57,18 @@ onMounted(() => {
       duration: 1,
       ease: 'power1.inOut',
     },
-  ).from(
-    '.mansion-single-box .right-box div',
-    {
-      filter: 'blur(8px)',
-      autoAlpha: 0,
-      ease: 'power1.inOut',
-      stagger: 0.2,
-      duration: 1,
-    },
-    '<0.3',
   )
+    .fromTo('.mansion-single-box .left-box img', { scale: 1.2 }, { scale: 1, duration: 1 }, '<')
+    .from(
+      '.mansion-single-box .right-box div',
+      {
+        autoAlpha: 0,
+        y: 70,
+        duration: 1,
+        stagger: 0.3,
+      },
+      '<0.3',
+    )
 })
 </script>
 

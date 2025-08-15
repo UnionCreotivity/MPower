@@ -1,7 +1,7 @@
 <template>
   <div class="mrt-group">
     <img
-      class="green-line-point"
+      class="green-line-point line-point"
       ref="greenPoint"
       src="../../assets/img/life/point.svg"
       alt="green point"
@@ -10,7 +10,7 @@
       @click="$emit('open-green-line')"
     />
     <img
-      class="red-line-point"
+      class="red-line-point line-point"
       ref="redPoint"
       src="../../assets/img/life/point.svg"
       alt="red point"
@@ -19,7 +19,7 @@
       @click="$emit('open-red-line')"
     />
     <img
-      class="orange-line-point"
+      class="orange-line-point line-point"
       @mouseenter="onOrangeMouseEnter"
       @mouseleave="onOrangeMouseLeave"
       ref="orangePoint"
@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref } from 'vue'
+import { ref, type Ref, onMounted } from 'vue'
 import gsap from 'gsap'
 
 const redPoint = ref<HTMLElement | null>(null)
@@ -98,4 +98,28 @@ const onRedMouseLeave = () => handleLineHover(false, redPoint, redLine, 'rgba(24
 
 const onOrangeMouseEnter = () => handleLineHover(true, orangePoint, orangeLine, '#ffc684')
 const onOrangeMouseLeave = () => handleLineHover(false, orangePoint, orangeLine, '#ffc684')
+
+const imgAni = () => {
+  const tl = gsap.timeline({})
+
+  tl.fromTo(
+    '.mrt-line',
+    {
+      opacity: 0,
+    },
+    { opacity: 1, duration: 1.2 },
+  ).from(
+    '.line-point',
+    {
+      y: '-30',
+      duration: 1,
+      opacity: 0,
+    },
+    '<0.5',
+  )
+}
+
+onMounted(() => {
+  imgAni()
+})
 </script>

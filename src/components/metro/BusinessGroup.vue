@@ -21,14 +21,14 @@ import { onMounted } from 'vue'
 import gsap from 'gsap'
 
 const imgAni = () => {
-  const tl = gsap.timeline({})
+  const tl = gsap.timeline({ delay: 0.3 })
 
   tl.fromTo(
     '.arial-view .img-box .tab3-img1,.arial-view .img-box .tab3-img2,.arial-view .img-box .tab3-img3',
     {
       maskPosition: '0 200%',
     },
-    { maskPosition: '0% 0%', duration: 1.5, ease: 'power1.inOut' },
+    { maskPosition: '0% 0%', duration: 1 },
   )
 }
 
