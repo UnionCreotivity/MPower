@@ -20,6 +20,7 @@ import LockView from '@/views/mansion/lock/LockView.vue' //電子鎖
 import LifegearView from '@/views/mansion/lifegear/LifegearView.vue' //全熱交換機
 import DuravitIndexView from '@/views/mansion/duravit/DuravitIndexView.vue' //衛浴
 import EhomeView from '@/views/mansion/ehome/EhomeView.vue' //e-home
+import YkkView from '@/views/mansion/ykkap/YkkIndexView.vue' //ykk
 
 // 建築工藝
 import MethodView from '@/views/method/MethodView.vue'
@@ -109,6 +110,11 @@ const router = createRouter({
           path: 'EhomeIndex',
           name: 'EhomeIndex',
           component: EhomeView,
+        },
+        {
+          path: 'YkkIndex',
+          name: 'YkkIndex',
+          component: YkkView,
         },
       ],
     },

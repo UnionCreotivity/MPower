@@ -65,7 +65,7 @@ const linkBoxList = [
   {
     text: '氣密窗',
     img: new URL('../../../assets/img/mansion/4.svg', import.meta.url).href,
-    routeName: '',
+    routeName: 'YkkIndex',
   },
   {
     text: '耐磨地板',
@@ -109,7 +109,28 @@ onMounted(() => {
       ease: 'power1.inOut',
     },
   )
-
+    .from(
+      '.link-box',
+      {
+        autoAlpha: 0,
+        duration: 1,
+        filter: 'blur(10px)',
+        // ease: 'back.out(0.5)', // 彈性效果
+        stagger: {
+          each: 0.08,
+          from: 'center',
+        },
+      },
+      '<0.7',
+    )
+    .from(
+      '.shine',
+      {
+        autoAlpha: 0,
+        duration: 1,
+      },
+      '<0.5',
+    )
     .fromTo(
       splitEnTitle.chars,
       {
@@ -120,7 +141,7 @@ onMounted(() => {
         autoAlpha: 0,
       },
       { y: 0, duration: 0.7, autoAlpha: 1, scaleX: 1, stagger: 0.05 },
-      '<0.55',
+      '<0.2',
     )
     .from(
       '.mansion-menu-view .title-box .small-title-img',
@@ -144,28 +165,6 @@ onMounted(() => {
         stagger: 0.05,
       },
       '<0.4',
-    )
-    .from(
-      '.link-box',
-      {
-        autoAlpha: 0,
-        duration: 1,
-        filter: 'blur(10px)',
-        // ease: 'back.out(0.5)', // 彈性效果
-        stagger: {
-          each: 0.08,
-          from: 'center',
-        },
-      },
-      '<0.2',
-    )
-    .from(
-      '.shine',
-      {
-        autoAlpha: 0,
-        duration: 1,
-      },
-      '<',
     )
 })
 </script>
