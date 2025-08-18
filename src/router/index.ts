@@ -78,12 +78,12 @@ const router = createRouter({
       ],
     },
     {
-      path: '/mansionIndex',
+      path: '/',
 
       component: MansionView,
       children: [
         {
-          path: '',
+          path: 'mansionIndex',
           name: 'mansionIndex',
           component: MansionIndexView,
         },

@@ -60,12 +60,22 @@ onMounted(() => {
   )
     .fromTo('.mansion-single-box .left-box img', { scale: 1.2 }, { scale: 1, duration: 1 }, '<')
     .from(
-      '.mansion-single-box .right-box div',
+      '.mansion-single-box .right-box .title-text,.mansion-single-box .right-box .title-img-box',
       {
         autoAlpha: 0,
         y: 70,
         duration: 1,
         stagger: 0.3,
+      },
+      '<0.3',
+    )
+    .from(
+      '.mansion-single-box .right-box .content-box ul li',
+      {
+        autoAlpha: 0,
+        y: 70,
+        duration: 1,
+        stagger: 0.1,
       },
       '<0.3',
     )

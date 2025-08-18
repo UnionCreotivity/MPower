@@ -1,16 +1,14 @@
 <template>
   <div class="floor-view-box">
     <div class="floor-view">
-      <transition name="fade" mode="out-in">
-        <img :key="mainImage" :src="mainImage" alt="floor image" />
-      </transition>
+      <img :key="mainImage" :src="mainImage" alt="floor image" />
     </div>
 
-    <div class="daytime">
+    <div class="daytime" @click="switchImage('day')">
       <img src="../../../assets/img/building/daytime.png" alt="daytime" />
     </div>
 
-    <div class="night">
+    <div class="night" @click="switchImage('night')">
       <img src="../../../assets/img/building/night.png" alt="night" />
     </div>
 
@@ -45,13 +43,15 @@ import SplitText from 'gsap/SplitText'
 gsap.registerPlugin(SplitText)
 
 const buildingImg = new URL('@/assets/img/building/building.webp', import.meta.url).href
-// const nightImg = new URL('@/assets/img/building/night.webp', import.meta.url).href
+const nightImg = new URL('@/assets/img/building/building_night.webp', import.meta.url).href
 const mainImage = ref(buildingImg)
 
 const title = ref<HTMLElement | null>(null)
 const smallTitle = ref<HTMLElement | null>(null)
 const content = ref<HTMLElement | null>(null)
-
+const switchImage = (mode: 'day' | 'night') => {
+  mainImage.value = mode === 'day' ? buildingImg : nightImg
+}
 onMounted(() => {
   const split = new SplitText(title.value, { type: 'chars' })
   const chars = split.chars

@@ -18,7 +18,7 @@
           YKK AP Taiwan 的 YRB-A 超高水密窗系列專為台灣嚴苛的氣候條件 設計，搭載 6mm+6mm
           膠合玻璃，提供卓越的水密性、氣密性、耐 風壓性和隔音性能，確保居家環境的舒適與安全。
         </div>
-        <ul class="ul-box">
+        <ul class="ul-box ul-box1">
           <li>高水密性: YKK AP獨創「新水密結構」，颱風天在家也安穩舒適的生活。</li>
           <li>高耐風壓: 等同蒲福氏風級表的16級風，守護居家安全。</li>
           <li>高隔音性: 即使室外噪音吵雜擾人，室內也能享有宜居舒適的環境。</li>
@@ -26,7 +26,7 @@
         <div class="content-img-box">
           <img src="../../../assets/img/mansion/ykkap/2.webp" alt="" srcset="" />
         </div>
-        <ul class="ul-box">
+        <ul class="ul-box ul-box2">
           <li>高耐候性: 日本技術陽極處理，常保亮麗美觀及耐侯性、耐蝕性。</li>
           <li>專業施工: 專業施工團隊，定期施工培訓確保施工品質。</li>
           <li>安心配備: 窗戶標準配有限開裝置，簡單操作確保居家安全。</li>
@@ -66,7 +66,17 @@ onMounted(() => {
   )
     .fromTo('.mansion-single-box .left-box img', { scale: 1.2 }, { scale: 1, duration: 1 }, '<')
     .from(
-      '.mansion-single-box .right-box div',
+      '.mansion-single-box .right-box .title-text',
+      {
+        autoAlpha: 0,
+        y: 70,
+        duration: 1,
+      },
+      '<0.3',
+    )
+
+    .from(
+      '.ykk-content-box .right-box .content-box .content,.ul-box1,.ykk-content-box .right-box .content-box .content-img-box',
       {
         autoAlpha: 0,
         y: 70,
@@ -74,6 +84,15 @@ onMounted(() => {
         stagger: 0.3,
       },
       '<0.3',
+    )
+    .from(
+      '.ul-box2',
+      {
+        autoAlpha: 0,
+        y: 70,
+        duration: 1,
+      },
+      '<0.7',
     )
 })
 </script>
