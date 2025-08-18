@@ -31,9 +31,9 @@
             <img :src="productList[activeIndex].img" alt="product-title" />
           </div>
           <div class="content-box" v-html="productList[activeIndex].content" />
-          <div v-if="productList[activeIndex]?.hasVideo" class="sakura-btn" @click="showVideoBox">
+          <!-- <div v-if="productList[activeIndex]?.hasVideo" class="sakura-btn" @click="showVideoBox">
             <div>櫻花廚具</div>
-          </div>
+          </div> -->
         </div>
       </transition>
     </div>
@@ -68,9 +68,9 @@ const handleCloseVideo = () => {
   showVideo.value = false
 }
 
-const showVideoBox = () => {
-  showVideo.value = true
-}
+// const showVideoBox = () => {
+//   showVideo.value = true
+// }
 
 const handleClose = () => {
   router.push('/mansionIndex')
@@ -112,38 +112,28 @@ const productList = [
     <div class="sakura-content-box">
       <ul class="ul-box">
         <li>AI智能風控科技，自動調節最適風量</li>
-        <li>熱感偵測技術，不限爐具隨心搭配</li>
-        <li>進煙口自動下降，排煙更即時</li>
-        <li>渦輪變頻科技，Turbo大吸力吸更淨</li>
-        <li>靜音除味功能，安靜舒適排除油煙餘味</li>
-        <li>256點偵測，大量蒐集溫度數據</li>
+        <li>智能IH連動，油煙機與IH同步啟閉</li>
+        <li>智能料理輔助，提供即時鍋內溫度</li>
+        <li>高科技熱感偵測，全爐具皆可偵測</li>
       </ul>
     
     </div>
     `,
   },
   {
-    iconImg: new URL('@/assets/img/mansion/tlk/svago.svg', import.meta.url).href,
-    title: '橫式雙口IH感應爐',
+    iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
+    title: '雙口IH感應爐',
     img: new URL('@/assets/img/mansion/tlk/svago.webp', import.meta.url).href,
     hasVideo: true,
     content: `
     <div class="sakura-content-box">
-      <div class="top-box">
-        <div class="left">
-        • 9段火力，滑動觸控<br />
-        • 小火持續加熱功能<br />
-        • 1分鐘-3小時定時設定<br />
-        • 2小時超時自動關機<br />
-        • Stop&Go暫停功能<br />
-        </div>
-        <div class="right">
-        • 操作方式：觸控+滑動式<br />
-        • 自動鍋具檢測<br />
-        • 餘溫警示與兒童安全鎖<br />
-        • 感應鍋徑最小12公分
-        </div>
-      </div>
+      <ul class="ul-box">
+        <li>油煙機連動功能，風量智能調整</li>
+        <li>一鍵鍋具效率偵測，快速判斷鍋具適不適合</li>
+        <li>一鍵智能煲湯，燉煮方便不用顧</li>
+        <li>一鍵暫停功能，暫時離開安全便利</li>
+        <li>小火輸出穩定，低噪音不斷續</li>
+      </ul>
     
     </div>
     `,
@@ -196,7 +186,7 @@ const productList = [
     hasVideo: false,
     content: `
       • 承重50公斤/開關60,000次<br />
-      • 全開式抽屜靜音緩衝<br />
+      • 全開式抽屜靜音緩衝<br / >
       • 開關無噪音、生活更優雅
     `,
   },

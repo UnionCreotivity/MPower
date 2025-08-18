@@ -65,7 +65,7 @@ const linkBoxList = [
   {
     text: '氣密窗',
     img: new URL('../../../assets/img/mansion/4.svg', import.meta.url).href,
-    routeName: 'YkkIndex',
+    routeName: 'ykkIndex',
   },
   {
     text: '耐磨地板',
@@ -80,12 +80,12 @@ const linkBoxList = [
   {
     text: 'E-HOME',
     img: new URL('../../../assets/img/mansion/3.svg', import.meta.url).href,
-    routeName: 'EhomeIndex',
+    routeName: 'ehomeIndex',
   },
   {
     text: '五金',
     img: new URL('../../../assets/img/mansion/logo.png', import.meta.url).href,
-    routeName: 'BossIndex',
+    routeName: 'bossIndex',
   },
 ]
 

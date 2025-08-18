@@ -110,13 +110,13 @@ export const menuData = [
     id: 'metier',
     zhName: '大熊建設',
     enName: 'METIER',
-    pathName: '',
+    pathName: 'metier',
     jumpToChild: true, // 要跳子頁第一個
     list: [
       {
-        id: '',
+        id: 'build-origin',
         name: '營建起家',
-        link: '',
+        link: 'build-origin',
 
       },
 

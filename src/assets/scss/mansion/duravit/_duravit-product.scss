@@ -191,6 +191,7 @@
     .top-bottom-box {
       display: flex;
       flex-direction: column;
+
       .top-box {
         display: flex;
         margin-bottom: 2vw;
@@ -207,6 +208,9 @@
         }
         .left-img {
           width: 36%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
         .right-content-box {
           display: flex;
@@ -255,6 +259,9 @@
         display: flex;
         .left-img {
           width: 36%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
         .right-content-box {
           display: flex;

@@ -30,6 +30,13 @@ import StructureView from '@/views/method/structure/StructureView.vue' // 結構
 import WaterproofView from '@/views/method/waterproof/WaterproofView.vue' // 防水工法
 import IntimateView from '@/views/method/intimate/IntimateView.vue' // 貼心工法
 
+//大熊建設
+import MetierView from '@/views/metier/MetierView.vue'
+import BuildOriginView from '@/views/metier/buildOrigin/BuildOriginView.vue'// 營建起家
+import BrandValueView from '@/views/metier/brandValue/BrandValueView.vue'// 三心二藝
+import PortfolioView from '@/views/metier/portfolio/PortfolioView.vue'// 歷年業績
+import AfterServiceView from '@/views/metier/afterService/AfterServiceView.vue'// 售後服務
+
 // 房貸試算
 import CalculatorView from '@/views/calculator/CalculatorView.vue'
 
@@ -109,17 +116,17 @@ const router = createRouter({
         },
         {
           path: 'ehomeIndex',
-          name: 'EhomeIndex',
+          name: 'ehomeIndex',
           component: EhomeView,
         },
         {
           path: 'ykkIndex',
-          name: 'YkkIndex',
+          name: 'ykkIndex',
           component: YkkView,
         },
         {
           path: 'bossIndex',
-          name: 'BossIndex',
+          name: 'bossIndex',
           component: BossView,
         },
       ],
@@ -151,7 +158,32 @@ const router = createRouter({
         },
       ],
     },
-
+    {
+      path: '/metier',
+      component: MetierView,
+      children: [
+        {
+          path: 'build-origin',
+          name: 'build-origin',
+          component: BuildOriginView,
+        },
+        {
+          path: 'build-value',
+          name: 'brand-value',
+          component: BrandValueView,
+        },
+        {
+          path: 'portfolio',
+          name: 'portfolio',
+          component: PortfolioView,
+        },
+        {
+          path: 'after-service',
+          name: 'after-service',
+          component: AfterServiceView,
+        },
+      ],
+    },
     // 404 fallback
     {
       path: '/:pathMatch(.*)*',

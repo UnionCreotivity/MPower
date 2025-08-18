@@ -83,7 +83,7 @@ const whiteMenuRoutes = [
   'tlkIndex',
   'lifegearIndex',
   'duravitIndex',
-  'EhomeIndex',
+  'ehomeIndex',
 ]
 const isWhiteMenu = computed(() => {
   const name = route.name as string

@@ -1,0 +1,43 @@
+@use '../utils/mixin' as *;
+#metier-view {
+  background-color: #f4f3ec;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  .tab-box {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    top: 1.5vw;
+    right: 6vw;
+    position: absolute;
+    z-index: 30;
+    div {
+      font-family: var(--font-family-title-zh);
+      color: var(--font-color-title);
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      font-size: var(--font-small-title-zh-size);
+      text-align: center;
+      transition: all 0.5s;
+      padding: 0rem 1.5rem;
+      position: relative;
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 53%;
+        transform: translateY(-50%);
+        height: 65%;
+        border-right: 1px solid #604c3f;
+      }
+
+      &:hover {
+        color: #c2a998;
+      }
+    }
+    .active {
+      color: #c2a998;
+    }
+  }
+}
