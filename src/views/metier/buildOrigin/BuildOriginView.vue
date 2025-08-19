@@ -30,7 +30,7 @@
     </div>
     <div class="bottom-box">
       <div class="img-box">
-        <img src="../../../assets/img/metier/build-origin/1.webp" alt="" srcset="" />
+        <img src="../../../assets/img/metier/build-origin/b_main.webp" alt="" srcset="" />
         <div class="hint">情境示意圖</div>
       </div>
     </div>
@@ -44,6 +44,10 @@ import FullScreen from '@/components/full-screen/FullScreen.vue'
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
+import CustomEase from 'gsap/CustomEase'
+gsap.registerPlugin(CustomEase)
+CustomEase.create('imageEase', '0.85,0,0.15,1')
+
 gsap.registerPlugin(SplitText)
 const title = ref<HTMLElement | null>(null)
 const enTitle = ref<HTMLElement | null>(null)
@@ -59,7 +63,6 @@ onMounted(() => {
   tl.from('.build-origin .top-box .left .icon', {
     duration: 1,
     opacity: 0,
-    y: 50,
   })
     .from(
       splitTitle.chars,
@@ -69,7 +72,7 @@ onMounted(() => {
         opacity: 0,
         stagger: 0.05,
       },
-      '0.3',
+      '<0.1',
     )
     .from(
       splitenTitle.chars,
@@ -77,11 +80,10 @@ onMounted(() => {
         duration: 1.2,
         opacity: 0,
         y: 80,
-        rotateX: -90,
         rotateY: 90,
         stagger: 0.02,
       },
-      '<0.4',
+      '<0.35',
     )
     .from(
       splitContent.lines,
@@ -91,7 +93,7 @@ onMounted(() => {
         y: 80,
         stagger: 0.15,
       },
-      '<0.6',
+      '<0.3',
     )
     .to(
       '.build-origin .top-box .left .line',
@@ -105,12 +107,13 @@ onMounted(() => {
     .to(
       '.build-origin .bottom-box .img-box img',
       {
-        clipPath: 'inset(0% 0% 0% 0)',
         scale: 1,
+        autoAlpha: 1,
         duration: 1.3,
-        // opacity: 1,
+        ease: 'power0.inOut',
+        filter: 'blur(0px)',
       },
-      '<0.5',
+      '<',
     )
 })
 </script>

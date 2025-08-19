@@ -70,8 +70,8 @@ import { menuData } from './menuData'
 import '@/assets/scss/menu/_menu.scss'
 import { useRouter, useRoute } from 'vue-router'
 
-const router = useRouter() // 有 .push()
-const route = useRoute() // 有 .name, .params
+const router = useRouter()
+const route = useRoute()
 
 // 控制開關
 const is_Show = ref(false)
