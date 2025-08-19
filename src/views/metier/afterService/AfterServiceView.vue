@@ -56,4 +56,68 @@
 <script setup lang="ts">
 import '@/assets/scss/metier/_after-service.scss'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
+import { onMounted } from 'vue'
+import gsap from 'gsap'
+import { SplitText } from 'gsap/SplitText'
+
+onMounted(() => {
+  const zhSplit = SplitText.create('.after-service .main-box .top-box .zh-title', {
+    type: 'lines',
+    linesClass: 'clip-title',
+  })
+
+  const enSplit = SplitText.create('.after-service .main-box .top-box .en-title', {
+    type: 'lines',
+    linesClass: 'clip-title',
+  })
+
+  const contentSplit = SplitText.create('.after-service .main-box .top-box .content', {
+    type: 'lines',
+    linesClass: 'clip-title',
+  })
+
+  const tl = gsap.timeline({ delay: 0.2 })
+
+  tl.to('.after-service .main-box', {
+    duration: 1,
+    clipPath: 'inset(0%)',
+    scale: 1,
+  })
+    .from(
+      zhSplit.lines,
+      {
+        duration: 1,
+        y: 70,
+      },
+      '<0.45',
+    )
+    .from(
+      enSplit.lines,
+      {
+        duration: 1,
+        y: 70,
+      },
+      '<0.3',
+    )
+    .from(
+      contentSplit.lines,
+      {
+        duration: 1,
+        y: 70,
+        opacity: 0,
+        stagger: 0.08,
+      },
+      '<0.3',
+    )
+    .from(
+      '.after-service .main-box .bottom-box .item-box .item div',
+      {
+        duration: 1,
+        x: -90,
+        opacity: 0,
+        stagger: 0.08,
+      },
+      '<0.3',
+    )
+})
 </script>

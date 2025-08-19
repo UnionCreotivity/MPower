@@ -40,7 +40,7 @@
     top: 16%;
     right: 3.5%;
     background-color: #fefeff9c;
-
+    clip-path: inset(100%);
     .top-box {
       display: flex;
       flex-direction: column;
@@ -62,6 +62,7 @@
         color: #604c3f;
         font-size: 1.75vw;
         margin-bottom: 1%;
+        overflow: hidden;
       }
       .en-title {
         font-family: 'Cormorant Infant';
@@ -69,6 +70,7 @@
         color: #604c3f;
         letter-spacing: 0.08em;
         margin-bottom: 1.5%;
+        overflow: hidden;
       }
 
       .content {
