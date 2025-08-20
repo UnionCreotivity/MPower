@@ -121,21 +121,21 @@ export const menuData = [
       },
 
       {
-        id: '',
+        id: 'build-origin',
         name: '三心二藝',
-        link: '',
+        link: 'build-origin',
 
       },
       {
-        id: '',
+        id: 'portfolio',
         name: '歷年業績',
-        link: '',
+        link: 'portfolio',
 
       },
       {
-        id: '',
+        id: 'after-service',
         name: '售後服務',
-        link: '',
+        link: 'after-service',
       },
       {
         id: '',

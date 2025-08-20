@@ -1,0 +1,172 @@
+@use '../utils/mixin' as *;
+
+.portfolio-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100svh;
+  justify-content: center;
+
+  position: relative;
+
+  .dot-line {
+    position: absolute;
+    width: 100%;
+    bottom: 33.5%;
+    left: 0;
+  }
+  @keyframes treeAni-2 {
+    0% {
+      transform: rotate(0deg) skew(0deg, 0deg) scale(1);
+    }
+
+    100% {
+      transform: rotate(-10deg) skew(5deg, 5deg) scale(1.05);
+    }
+  }
+  .tree {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 23%;
+    mix-blend-mode: multiply;
+    transform-origin: right top;
+    animation: treeAni-2 3s infinite alternate-reverse ease-in;
+  }
+
+  .top-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    .en-title {
+      font-family: var(--font-family-title-en);
+      font-size: 1.7vw;
+      font-weight: 100;
+      color: #a48b78;
+      text-align: center;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3%;
+    }
+    .zh-title {
+      position: relative;
+      text-align: center;
+      padding-bottom: 1%;
+      margin-bottom: 1.5%;
+      @include pageTitle();
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: #5f4c3f;
+        height: 1px;
+        width: 3%;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .content {
+      @include pageContent();
+      text-align: center;
+    }
+  }
+
+  .bottom-box {
+    display: flex;
+    margin: 0 auto;
+    width: 95%;
+    margin-top: 4%;
+    position: relative;
+
+    .item {
+      display: flex;
+      padding-right: 0.7%;
+      flex-direction: column;
+
+      .img-box {
+        display: flex;
+        overflow: hidden;
+
+        img {
+          object-fit: cover;
+        }
+      }
+
+      .year {
+        display: flex;
+
+        font-family: 'Jost';
+        font-size: 1.6vw;
+        font-weight: 600;
+        justify-content: center;
+        letter-spacing: 0.06em;
+        position: relative;
+        color: #5f4c3f;
+        margin-top: 9%;
+
+        &::after {
+          content: '';
+          position: absolute;
+          background-color: #5f4c3f;
+          width: 1px;
+          height: 100%;
+          right: -2%;
+        }
+        div {
+          background-color: #f4f3ec;
+        }
+      }
+
+      .name {
+        display: flex;
+        justify-content: center;
+        margin-top: 4%;
+        font-size: 1.2vw;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        color: #3d3a39;
+        font-family: var(--font-family-title-zh);
+      }
+
+      .local {
+        display: flex;
+        justify-content: center;
+        font-size: 0.9vw;
+        font-family: var(--font-content-zh);
+        color: var(--font-content-color);
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        margin-top: 1%;
+      }
+
+      .icon {
+        display: flex;
+        justify-content: center;
+        width: 15%;
+        align-self: center;
+        margin-top: 3%;
+      }
+
+      .text {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-size: 0.9vw;
+        font-family: var(--font-content-zh);
+        color: var(--font-content-color);
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        line-height: 1.8;
+      }
+
+      &:last-child {
+        padding-right: 0%;
+        .year {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

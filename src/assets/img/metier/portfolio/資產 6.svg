@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2563.5 3">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-dasharray: 0 0 0 0 1.01 11.06 1.01 11.06;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11 {
+        fill: none;
+        stroke: #5f4c3f;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 0 0 1.01 11.06;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 0 0 0 0 1.01 11.13 1.01 11.13;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 0 0 0 0 1.02 10.23 1.02 10.23;
+      }
+
+      .cls-5 {
+        stroke-dasharray: 0 0 1 11.03;
+      }
+
+      .cls-6 {
+        stroke-dasharray: 0 0 1.01 11.13;
+      }
+
+      .cls-7 {
+        stroke-dasharray: 0 0 0 0 1.01 10.13 1.01 10.13;
+      }
+
+      .cls-8 {
+        stroke-dasharray: 0 0 1.01 10.13;
+      }
+
+      .cls-9 {
+        stroke-dasharray: 0 0 1.02 10.23;
+      }
+
+      .cls-11 {
+        stroke-dasharray: 0 0 0 0 1 11.03 1 11.03;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_3" data-name="圖層 3">
+    <g>
+      <g>
+        <line class="cls-10" x1="472.5" y1="1.5" x2="472" y2="1.5"/>
+        <line class="cls-9" x1="461.77" y1="1.5" x2="455.64" y2="1.5"/>
+        <line class="cls-4" x1="450.52" y1="1.5" x2="5.61" y2="1.5"/>
+        <line class="cls-10" x1=".5" y1="1.5" y2="1.5"/>
+      </g>
+      <g>
+        <line class="cls-10" x1="876.5" y1="1.5" x2="876" y2="1.5"/>
+        <line class="cls-6" x1="864.87" y1="1.5" x2="858.29" y2="1.5"/>
+        <line class="cls-3" x1="852.72" y1="1.5" x2="493.9" y2="1.5"/>
+        <line class="cls-10" x1="488.34" y1="1.5" x2="487.84" y2="1.5"/>
+      </g>
+      <g>
+        <line class="cls-10" x1="1277" y1="1.5" x2="1276.5" y2="1.5"/>
+        <line class="cls-2" x1="1265.44" y1="1.5" x2="1258.91" y2="1.5"/>
+        <line class="cls-1" x1="1253.38" y1="1.5" x2="897.03" y2="1.5"/>
+        <line class="cls-10" x1="891.51" y1="1.5" x2="891.01" y2="1.5"/>
+      </g>
+      <g>
+        <line class="cls-10" x1="1680.88" y1="1.5" x2="1680.38" y2="1.5"/>
+        <line class="cls-6" x1="1669.24" y1="1.5" x2="1662.67" y2="1.5"/>
+        <line class="cls-3" x1="1657.1" y1="1.5" x2="1298.28" y2="1.5"/>
+        <line class="cls-10" x1="1292.71" y1="1.5" x2="1292.21" y2="1.5"/>
+      </g>
+      <g>
+        <line class="cls-10" x1="2080.5" y1="1.5" x2="2080" y2="1.5"/>
+        <line class="cls-5" x1="2068.97" y1="1.5" x2="2062.45" y2="1.5"/>
+        <line class="cls-11" x1="2056.94" y1="1.5" x2="1701.51" y2="1.5"/>
+        <line class="cls-10" x1="1696" y1="1.5" x2="1695.5" y2="1.5"/>
+      </g>
+      <g>
+        <line class="cls-10" x1="2563.5" y1="1.5" x2="2563" y2="1.5"/>
+        <line class="cls-8" x1="2552.87" y1="1.5" x2="2546.79" y2="1.5"/>
+        <line class="cls-7" x1="2541.73" y1="1.5" x2="2101.07" y2="1.5"/>
+        <line class="cls-10" x1="2096" y1="1.5" x2="2095.5" y2="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

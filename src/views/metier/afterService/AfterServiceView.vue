@@ -37,7 +37,7 @@
         <div class="item-567-box item-box">
           <div class="item">
             <div class="number">5</div>
-            <div class="text">客變&客戶<br />問答詳細明確</div>
+            <div class="text">客變&amp;客戶<br />問答詳細明確</div>
           </div>
           <div class="item">
             <div class="number">6</div>
