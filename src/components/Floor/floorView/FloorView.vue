@@ -194,7 +194,8 @@ const switchImage = async (newMode: 'day' | 'night') => {
   emit('switchMode', newMode) // ← 將模式傳出去
 }
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick() // 等待 DOM 渲染完成
   runAnimation()
 })
 </script>

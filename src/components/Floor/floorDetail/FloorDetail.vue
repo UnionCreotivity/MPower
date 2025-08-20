@@ -22,12 +22,26 @@
         </div>
         <div class="right-box">
           <ScaleDrag :init="initXY" :max-ratio="2">
-            <img
-              :src="currentFloor.img"
-              :alt="floor"
-              class="floor-plan-img"
-              :class="[currentFloor.className]"
-            />
+            <div class="img-box">
+              <img
+                :src="currentFloor.img"
+                :alt="floor"
+                class="floor-plan-img"
+                :class="[currentFloor.className]"
+              />
+              <div class="btn-3f-12f btn-3f-12f-a" v-if="props.floor === '3F-12F'">
+                <img src="../../../assets/img/building/a.png" alt="" srcset="" />
+              </div>
+              <div class="btn-3f-12f btn-3f-12f-b" v-if="props.floor === '3F-12F'">
+                <img src="../../../assets/img/building/b.png" alt="" srcset="" />
+              </div>
+              <div class="btn-3f-12f btn-3f-12f-c" v-if="props.floor === '3F-12F'">
+                <img src="../../../assets/img/building/c.png" alt="" srcset="" />
+              </div>
+              <div class="btn-3f-12f btn-3f-12f-d" v-if="props.floor === '3F-12F'">
+                <img src="../../../assets/img/building/d.png" alt="" srcset="" />
+              </div>
+            </div>
           </ScaleDrag>
         </div>
         <div class="detail-hint">實際家具配置及平面與建材依買賣契約書為準</div>
@@ -62,6 +76,11 @@ const floorDetailMap: Record<string, { img: string; textImg: string; className: 
     img: new URL('@/assets/img/building/3f12f.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/3f12f_text.min.svg', import.meta.url).href,
     className: 'floor-3F-12F',
+  },
+  '1MF': {
+    img: new URL('@/assets/img/building/1mf.webp', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/1mf_text.min.svg', import.meta.url).href,
+    className: 'floor-1mf',
   },
   '1': {
     img: '',
