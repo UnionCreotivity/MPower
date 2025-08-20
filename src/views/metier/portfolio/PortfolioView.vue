@@ -1,6 +1,7 @@
 <template>
   <section class="portfolio-view">
     <img src="../../../assets/img/metier/portfolio/dot_line.png" alt="dot_line" class="dot-line" />
+
     <img src="../../../assets/img/metier/portfolio/tree.webp" alt="" class="tree" />
     <div class="top-box">
       <div class="en-title">PORTFOLIO</div>
@@ -70,7 +71,6 @@
         <div class="name">熊PRO</div>
         <div class="local">台中南區/大樓</div>
       </div>
-
       <div class="item">
         <div class="img-box">
           <img src="../../../assets/img/metier/portfolio/6.webp" alt="" srcset="" />
@@ -89,4 +89,168 @@
 <script setup lang="ts">
 import '@/assets/scss/metier/_portfolio.scss'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
+import { onMounted } from 'vue'
+import gsap from 'gsap'
+import { SplitText } from 'gsap/SplitText'
+import CustomEase from 'gsap/CustomEase'
+
+onMounted(() => {
+  const enSplit = SplitText.create('.portfolio-view .top-box .en-title', {
+    type: 'chars,words,lines',
+    linesClass: 'clip-text',
+  })
+
+  const zhSplit = SplitText.create('.portfolio-view .top-box .zh-title', {
+    type: 'chars,words,lines',
+    linesClass: 'clip-text',
+  })
+  gsap.registerPlugin(CustomEase)
+  CustomEase.create('maskEase', '0.25, 1, 0.5, 1')
+
+  const tl = gsap.timeline({ delay: 0.15 })
+
+  tl.from(
+    enSplit.chars,
+    {
+      y: 70,
+      filter: 'blur(5px)',
+      autoAlpha: 0,
+      duration: 0.5,
+      stagger: { each: 0.05, from: 'center' },
+    },
+    '<0.5',
+  )
+    .from(
+      zhSplit.chars,
+      {
+        y: 70,
+        filter: 'blur(5px)',
+        autoAlpha: 0,
+        duration: 0.8,
+        stagger: { each: 0.05, from: 'center' },
+      },
+      '<0.3',
+    )
+    .from(
+      '.portfolio-view .top-box .zh-title',
+      {
+        y: 70,
+
+        autoAlpha: 0,
+        duration: 1,
+      },
+      '<0.15',
+    )
+    .from(
+      '.portfolio-view .top-box .content',
+      {
+        y: 70,
+        filter: 'blur(5px)',
+        autoAlpha: 0,
+        duration: 1,
+      },
+      '<0.3',
+    )
+    .fromTo(
+      '.portfolio-view .bottom-box .item .img-box',
+      {
+        maskPosition: '200% -100%',
+      },
+      {
+        duration: 1,
+        maskPosition: '0% 100%',
+        ease: 'maskEase',
+        stagger: 0.2,
+      },
+      '<0.3',
+    )
+
+    .fromTo(
+      '.portfolio-view .bottom-box .item .img-box img',
+      {
+        filter: 'brightness(1.5)',
+      },
+      {
+        duration: 1,
+        scale: 1,
+        filter: 'brightness(1)',
+
+        stagger: 0.2,
+      },
+      '<0.15',
+    )
+    .fromTo(
+      '.portfolio-view .dot-line',
+      {
+        x: '10%',
+        autoAlpha: 0,
+        // maskPosition: '200% 0',
+      },
+      {
+        // maskPosition: '0% 0%',
+        duration: 1.5,
+        x: '0%',
+        autoAlpha: 1,
+      },
+      '<0.15',
+    )
+    .from(
+      '.portfolio-view .bottom-box .item .year',
+      {
+        x: 70,
+
+        autoAlpha: 0,
+        stagger: 0.2,
+        duration: 1,
+      },
+      '<0.3',
+    )
+    .from(
+      '.portfolio-view .bottom-box .item .name',
+      {
+        x: 70,
+
+        autoAlpha: 0,
+        stagger: 0.2,
+        duration: 1,
+      },
+      '<0.3',
+    )
+
+    .from(
+      '.portfolio-view .bottom-box .item .local',
+      {
+        x: 70,
+
+        autoAlpha: 0,
+        stagger: 0.2,
+        duration: 1,
+      },
+      '<0.3',
+    )
+
+    .from(
+      '.portfolio-view .bottom-box .item .icon',
+      {
+        y: 70,
+
+        autoAlpha: 0,
+
+        duration: 1,
+      },
+      '<0.3',
+    )
+
+    .from(
+      '.portfolio-view .bottom-box .item .text',
+      {
+        y: 70,
+
+        autoAlpha: 0,
+
+        duration: 1,
+      },
+      '<0.45',
+    )
+})
 </script>

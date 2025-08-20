@@ -1,1 +1,63 @@
-<svg id="prefix___圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2563.5 3"><defs><style>.prefix__cls-10,.prefix__cls-3,.prefix__cls-6{fill:none;stroke:#5f4c3f;stroke-miterlimit:10;stroke-width:3px}.prefix__cls-3{stroke-dasharray:0 0 0 0 1.01 11.13 1.01 11.13}.prefix__cls-6{stroke-dasharray:0 0 1.01 11.13}</style></defs><g id="prefix___圖層_3" data-name="圖層 3"><path class="prefix__cls-10" d="M472.5 1.5h-.5"/><path stroke-dasharray="0 0 1.02 10.23" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3" d="M461.77 1.5h-6.13"/><path stroke-dasharray="0 0 0 0 1.02 10.23 1.02 10.23" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3" d="M450.52 1.5H5.61"/><path class="prefix__cls-10" d="M.5 1.5H0M876.5 1.5h-.5"/><path class="prefix__cls-6" d="M864.87 1.5h-6.58"/><path class="prefix__cls-3" d="M852.72 1.5H493.9"/><path class="prefix__cls-10" d="M488.34 1.5h-.5"/><g><path class="prefix__cls-10" d="M1277 1.5h-.5"/><path stroke-dasharray="0 0 1.01 11.06" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3" d="M1265.44 1.5h-6.53"/><path fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3" stroke-dasharray="0 0 0 0 1.01 11.06 1.01 11.06" d="M1253.38 1.5H897.03"/><path class="prefix__cls-10" d="M891.51 1.5h-.5"/></g><g><path class="prefix__cls-10" d="M1680.88 1.5h-.5"/><path class="prefix__cls-6" d="M1669.24 1.5h-6.57"/><path class="prefix__cls-3" d="M1657.1 1.5h-358.82"/><path class="prefix__cls-10" d="M1292.71 1.5h-.5"/></g><g><path class="prefix__cls-10" d="M2080.5 1.5h-.5"/><path stroke-dasharray="0 0 1 11.03" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3" d="M2068.97 1.5h-6.52"/><path stroke-dasharray="0 0 0 0 1 11.03 1 11.03" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3" d="M2056.94 1.5h-355.43"/><path class="prefix__cls-10" d="M1696 1.5h-.5"/></g><g><path class="prefix__cls-10" d="M2563.5 1.5h-.5"/><path stroke-dasharray="0 0 1.01 10.13" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3" d="M2552.87 1.5h-6.08"/><path stroke-dasharray="0 0 0 0 1.01 10.13 1.01 10.13" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3" d="M2541.73 1.5h-440.66"/><path class="prefix__cls-10" d="M2096 1.5h-.5"/></g></g></svg>
+<svg id="prefix___圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2563.5 3">
+    <defs>
+        <style>
+            .prefix__cls-10,
+            .prefix__cls-3,
+            .prefix__cls-6 {
+                fill: none;
+                stroke: #5f4c3f;
+                stroke-miterlimit: 10;
+                stroke-width: 3px
+            }
+
+            .prefix__cls-3 {
+                stroke-dasharray: 0 0 0 0 1.01 11.13 1.01 11.13
+            }
+
+            .prefix__cls-6 {
+                stroke-dasharray: 0 0 1.01 11.13
+            }
+        </style>
+    </defs>
+    <g id="prefix___圖層_3" data-name="圖層 3">
+        <path class="prefix__cls-10" d="M472.5 1.5h-.5" />
+        <path stroke-dasharray="0 0 1.02 10.23" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3"
+            d="M461.77 1.5h-6.13" />
+        <path stroke-dasharray="0 0 0 0 1.02 10.23 1.02 10.23" fill="none" stroke="#5f4c3f" stroke-miterlimit="10"
+            stroke-width="3" d="M450.52 1.5H5.61" />
+        <path class="prefix__cls-10" d="M.5 1.5H0M876.5 1.5h-.5" />
+        <path class="prefix__cls-6" d="M864.87 1.5h-6.58" />
+        <path class="prefix__cls-3" d="M852.72 1.5H493.9" />
+        <path class="prefix__cls-10" d="M488.34 1.5h-.5" />
+        <g>
+            <path class="prefix__cls-10" d="M1277 1.5h-.5" />
+            <path stroke-dasharray="0 0 1.01 11.06" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3"
+                d="M1265.44 1.5h-6.53" />
+            <path fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3"
+                stroke-dasharray="0 0 0 0 1.01 11.06 1.01 11.06" d="M1253.38 1.5H897.03" />
+            <path class="prefix__cls-10" d="M891.51 1.5h-.5" />
+        </g>
+        <g>
+            <path class="prefix__cls-10" d="M1680.88 1.5h-.5" />
+            <path class="prefix__cls-6" d="M1669.24 1.5h-6.57" />
+            <path class="prefix__cls-3" d="M1657.1 1.5h-358.82" />
+            <path class="prefix__cls-10" d="M1292.71 1.5h-.5" />
+        </g>
+        <g>
+            <path class="prefix__cls-10" d="M2080.5 1.5h-.5" />
+            <path stroke-dasharray="0 0 1 11.03" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3"
+                d="M2068.97 1.5h-6.52" />
+            <path stroke-dasharray="0 0 0 0 1 11.03 1 11.03" fill="none" stroke="#5f4c3f" stroke-miterlimit="10"
+                stroke-width="3" d="M2056.94 1.5h-355.43" />
+            <path class="prefix__cls-10" d="M1696 1.5h-.5" />
+        </g>
+        <g>
+            <path class="prefix__cls-10" d="M2563.5 1.5h-.5" />
+            <path stroke-dasharray="0 0 1.01 10.13" fill="none" stroke="#5f4c3f" stroke-miterlimit="10" stroke-width="3"
+                d="M2552.87 1.5h-6.08" />
+            <path stroke-dasharray="0 0 0 0 1.01 10.13 1.01 10.13" fill="none" stroke="#5f4c3f" stroke-miterlimit="10"
+                stroke-width="3" d="M2541.73 1.5h-440.66" />
+            <path class="prefix__cls-10" d="M2096 1.5h-.5" />
+        </g>
+    </g>
+</svg>
