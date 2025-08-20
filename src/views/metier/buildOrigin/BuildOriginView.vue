@@ -54,7 +54,7 @@ const enTitle = ref<HTMLElement | null>(null)
 const content = ref<HTMLElement | null>(null)
 
 onMounted(() => {
-  const tl = gsap.timeline({ delay: 0.5 })
+  const tl = gsap.timeline({})
 
   const splitTitle = new SplitText(title.value, { type: 'chars' })
   const splitenTitle = new SplitText(enTitle.value, { type: 'chars' })
@@ -72,7 +72,7 @@ onMounted(() => {
         opacity: 0,
         stagger: 0.05,
       },
-      '<0.1',
+      '<',
     )
     .from(
       splitenTitle.chars,

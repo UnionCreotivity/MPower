@@ -76,7 +76,7 @@ onMounted(() => {
     linesClass: 'clip-title',
   })
 
-  const tl = gsap.timeline({ delay: 0.2 })
+  const tl = gsap.timeline({})
 
   tl.to('.after-service .main-box', {
     duration: 1,

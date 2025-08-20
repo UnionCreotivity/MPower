@@ -107,7 +107,7 @@ onMounted(() => {
   gsap.registerPlugin(CustomEase)
   CustomEase.create('maskEase', '0.25, 1, 0.5, 1')
 
-  const tl = gsap.timeline({ delay: 0.15 })
+  const tl = gsap.timeline({})
 
   tl.from(
     enSplit.chars,

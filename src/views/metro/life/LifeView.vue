@@ -185,5 +185,8 @@ onMounted(() => {
   width: 100%;
   height: 100svh;
   overflow: hidden;
+  .zoom {
+    bottom: 23%;
+  }
 }
 </style>

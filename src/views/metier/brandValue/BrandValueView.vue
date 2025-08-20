@@ -97,7 +97,7 @@ onMounted(() => {
         duration: 0.5,
         stagger: { each: 0.05, from: 'center' },
       },
-      '<0.5',
+      '<0.3',
     )
     .from(
       zhSplit.chars,
