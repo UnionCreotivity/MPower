@@ -1,7 +1,12 @@
 <template>
   <section class="building-view">
-    <FloorView @selectFloor="handleSelectFloor" v-if="!selectedFloor" />
-    <FloorMenu @selectFloor="handleSelectFloor" />
+    <FloorView
+      @selectFloor="handleSelectFloor"
+      v-if="!selectedFloor"
+      @switchMode="mode = $event"
+      :mode="mode"
+    />
+    <FloorMenu @selectFloor="handleSelectFloor" :mode="mode" />
     <FloorDetail v-if="selectedFloor" :floor="selectedFloor" @close="selectedFloor = null" />
   </section>
 </template>
@@ -14,6 +19,7 @@ import FloorDetail from '../../../components/Floor/floorDetail/FloorDetail.vue'
 import '@/assets/scss/building/_building-view.scss'
 
 const selectedFloor = ref<string | null>(null)
+const mode = ref<'day' | 'night'>('day') // ← 這行一定要加
 
 function handleSelectFloor(floorId: string) {
   selectedFloor.value = floorId

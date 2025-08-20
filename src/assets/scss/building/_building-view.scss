@@ -111,6 +111,26 @@
     }
   }
 
+  .night-content-box {
+    .title {
+      @include pageTitle();
+      & {
+        color: #ffffff;
+      }
+    }
+    .small-title {
+      color: #ffffff;
+    }
+    .line {
+      background: #ffffff;
+    }
+    .content {
+      & {
+        color: #ffffff;
+      }
+    }
+  }
+
   .hint {
     @include hint();
 
