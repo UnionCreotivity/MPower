@@ -297,6 +297,9 @@
             width: 53%;
           }
         }
+        .text-3F-12F-D {
+          margin-bottom: 8%;
+        }
         .camera-box {
           z-index: 30;
           margin-left: 4vw;
@@ -363,7 +366,7 @@
         .btn-3f-12f {
           position: absolute;
           width: 9%;
-          z-index: 20;
+          z-index: 9999;
           img {
             transition: all 0.25s ease-in-out;
           }
@@ -478,6 +481,7 @@
         .imgBoxIn {
           display: flex;
           justify-content: center;
+          z-index: 30;
           .box {
             display: flex;
             justify-content: center;

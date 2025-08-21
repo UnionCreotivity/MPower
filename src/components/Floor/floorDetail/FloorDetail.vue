@@ -38,7 +38,11 @@
               <div class="btn-3f-12f btn-3f-12f-c" v-if="props.floor === '3F-12F'">
                 <img src="../../../assets/img/building/c.png" alt="" srcset="" />
               </div>
-              <div class="btn-3f-12f btn-3f-12f-d" v-if="props.floor === '3F-12F'">
+              <div
+                class="btn-3f-12f btn-3f-12f-d"
+                v-if="props.floor === '3F-12F'"
+                @click="openFurniture('3F-12F-D')"
+              >
                 <img src="../../../assets/img/building/d.png" alt="" srcset="" />
               </div>
             </div>
@@ -50,6 +54,11 @@
     <transition name="fade" mode="out-in">
       <FloorCompass v-if="showCompass" @close="showCompass = false" />
     </transition>
+
+    <!-- 家具配置圖 -->
+
+    <FloorFurniture v-if="showFurniture" :floor="furnitureFloor" @close="showFurniture = false" />
+
     <FullScreen :forceBrownIcon="true" />
   </div>
 </template>
@@ -60,16 +69,19 @@ import gsap from 'gsap'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 import FloorCompass from '@/components/Floor/floorCompass/FloorCompass.vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
+import FloorFurniture from '@/components/Floor/floorFurniture/FloorFurniture.vue'
 
 const props = defineProps<{ floor: string }>()
 const showCompass = ref(false)
+const showFurniture = ref(false)
+const furnitureFloor = ref('') // 用來傳給 FloorFurniture 的樓層
 const detailEl = ref<HTMLElement | null>(null)
 
 // 所有樓層對應資料
 const floorDetailMap: Record<string, { img: string; textImg: string; className: string }> = {
   '2F': {
     img: new URL('@/assets/img/building/2f.webp', import.meta.url).href,
-    textImg: new URL('@/assets/img/building/2f_text.svg', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/2f_text.min.svg', import.meta.url).href,
     className: 'floor-2F',
   },
   '3F-12F': {
@@ -113,6 +125,12 @@ const floorDetailMap: Record<string, { img: string; textImg: string; className: 
     className: 'floor-R1',
   },
 }
+
+function openFurniture(floor: string) {
+  furnitureFloor.value = floor
+  showFurniture.value = true
+}
+
 const initXY = computed(() => {
   const screenWidth = window.innerWidth
   return {
@@ -137,12 +155,12 @@ onMounted(() => {
     },
     { autoAlpha: 1, duration: 1, y: 0 },
   ).fromTo(
-    '.building-view .floor-detail .main-box .right-box .imgBoxIn .floor-plan-img',
+    '.building-view .floor-detail .main-box .right-box .imgBoxIn .img-box',
     {
-      autoAlpha: 0,
+      // autoAlpha: 0,
       y: 70,
     },
-    { autoAlpha: 1, duration: 1, y: 0 },
+    { duration: 1, y: 0 },
     '<0.3',
   )
 })

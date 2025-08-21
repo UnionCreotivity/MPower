@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 479.24 241.2">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: .02em;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        fill: gray;
+        font-family: MinionVariableConcept-Roman, 'Minion Variable Concept';
+        font-size: 31.54px;
+        font-variation-settings: 'wght' 400, 'opsz' 11;
+      }
+
+      .cls-5 {
+        letter-spacing: .01em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        font-family: CrimsonText-Regular, 'Crimson Text';
+        font-size: 116.2px;
+      }
+
+      .cls-8, .cls-9 {
+        fill: #604c3f;
+      }
+
+      .cls-10 {
+        letter-spacing: .06em;
+      }
+
+      .cls-11 {
+        letter-spacing: .02em;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+
+      .cls-13 {
+        fill: none;
+        stroke: #604c3f;
+        stroke-miterlimit: 10;
+        stroke-width: .74px;
+      }
+
+      .cls-9 {
+        font-family: NotoSerifTC-SemiBold, 'Noto Serif TC';
+        font-size: 45px;
+        font-variation-settings: 'wght' 600;
+        letter-spacing: .24em;
+      }
+
+      .cls-14 {
+        letter-spacing: 0em;
+      }
+
+      .cls-15 {
+        letter-spacing: .02em;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_3" data-name="圖層 3">
+    <g>
+      <text class="cls-9" transform="translate(50.87 184.67)"><tspan x="0" y="0">傢俱平面參考圖</tspan></text>
+      <text class="cls-8" transform="translate(199.95 95.32)"><tspan x="0" y="0">D</tspan></text>
+      <text class="cls-4" transform="translate(49.95 229.75)"><tspan class="cls-3" x="0" y="0">F</tspan><tspan class="cls-14" x="17.44" y="0">U</tspan><tspan class="cls-15" x="40.75" y="0">R</tspan><tspan class="cls-7" x="60.69" y="0">N</tspan><tspan class="cls-12" x="85" y="0">I</tspan><tspan class="cls-5" x="96.48" y="0">T</tspan><tspan class="cls-14" x="116.76" y="0">U</tspan><tspan class="cls-15" x="140.07" y="0">R</tspan><tspan class="cls-14" x="160.01" y="0">E </tspan><tspan class="cls-1" x="185.93" y="0">F</tspan><tspan class="cls-5" x="203.38" y="0">L</tspan><tspan class="cls-2" x="221.61" y="0">O</tspan><tspan class="cls-6" x="245.99" y="0">O</tspan><tspan x="269.96" y="0">R P</tspan><tspan class="cls-10" x="314.81" y="0">L</tspan><tspan class="cls-11" x="334.68" y="0">A</tspan><tspan x="354.36" y="0">N</tspan></text>
+      <line class="cls-13" x1=".37" y1="140.34" x2=".37" y2="236.34"/>
+      <line class="cls-13" x1="478.87" y1="141.34" x2="478.87" y2="237.34"/>
+    </g>
+  </g>
+</svg>

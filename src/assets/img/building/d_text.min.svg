@@ -1,0 +1,53 @@
+<svg id="prefix___圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 479.24 241.2">
+    <defs>
+        <style>
+            .prefix__cls-5 {
+                letter-spacing: .01em
+            }
+
+            .prefix__cls-13 {
+                fill: none;
+                stroke: #604c3f;
+                stroke-miterlimit: 10;
+                stroke-width: .74px
+            }
+
+            .prefix__cls-14 {
+                letter-spacing: 0
+            }
+
+            .prefix__cls-15 {
+                letter-spacing: .02em
+            }
+        </style>
+    </defs>
+    <g id="prefix___圖層_3" data-name="圖層 3"><text transform="translate(50.87 184.67)"
+            style="font-variation-settings:'wght' 600" font-family="NotoSerifTC-SemiBold,'Noto Serif TC'" font-size="45"
+            letter-spacing=".24em" fill="#604c3f" font-weight="600">
+            <tspan x="0" y="0">傢俱平面參考圖</tspan>
+        </text><text transform="translate(199.95 95.32)" fill="#604c3f" font-family="CrimsonText-Regular,'Crimson Text'"
+            font-size="116.2">
+            <tspan x="0" y="0">D</tspan>
+        </text><text transform="translate(49.95 229.75)" style="font-variation-settings:'wght' 400,'opsz' 11"
+            fill="gray" font-family="MinionVariableConcept-Roman,'Minion Variable Concept'" font-size="31.54">
+            <tspan x="0" y="0" letter-spacing="0">F</tspan>
+            <tspan class="prefix__cls-14" x="17.44" y="0">U</tspan>
+            <tspan class="prefix__cls-15" x="40.75" y="0">R</tspan>
+            <tspan x="60.69" y="0" letter-spacing="0">N</tspan>
+            <tspan x="85" y="0" letter-spacing="0">I</tspan>
+            <tspan class="prefix__cls-5" x="96.48" y="0">T</tspan>
+            <tspan class="prefix__cls-14" x="116.76" y="0">U</tspan>
+            <tspan class="prefix__cls-15" x="140.07" y="0">R</tspan>
+            <tspan class="prefix__cls-14" x="160.01" y="0">E </tspan>
+            <tspan x="185.93" y="0" letter-spacing="0">F</tspan>
+            <tspan class="prefix__cls-5" x="203.38" y="0">L</tspan>
+            <tspan x="221.61" y="0" letter-spacing=".02em">O</tspan>
+            <tspan x="245.99" y="0" letter-spacing="0">O</tspan>
+            <tspan x="269.96" y="0">R P</tspan>
+            <tspan x="314.81" y="0" letter-spacing=".06em">L</tspan>
+            <tspan x="334.68" y="0" letter-spacing=".02em">A</tspan>
+            <tspan x="354.36" y="0">N</tspan>
+        </text>
+        <path class="prefix__cls-13" d="M.37 140.34v96M478.87 141.34v96" />
+    </g>
+</svg>
