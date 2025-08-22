@@ -4,13 +4,19 @@
   flex-direction: column;
   width: 100%;
   height: 100svh;
-
+  @media all and (max-width: 1400px) {
+    justify-content: space-between;
+  }
   .top-box {
     display: flex;
     justify-content: center;
     padding-top: 1%;
     // margin-bottom: 8.5%;
     flex: 1;
+    @media all and (max-width: 1400px) {
+      flex: initial;
+      padding-top: 17%;
+    }
     .left {
       display: flex;
       position: relative;
@@ -91,12 +97,14 @@
     @media all and (max-width: 1920px) {
       flex: initial;
     }
-    @media all and (max-width: 1400px) {
-      width: 132%;
-      margin-left: -13%;
+    @media all and (max-width: 1440px) {
+      // width: 132%;
+      // margin-left: -13%;
       flex: 1;
     }
-
+    @media all and (max-width: 1400px) {
+      flex: initial;
+    }
     .img-box {
       display: flex;
       width: 100%;
