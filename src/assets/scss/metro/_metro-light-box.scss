@@ -115,8 +115,16 @@
         @media all and (max-width: 1400px) {
           width: 8.5vw;
         }
+
         img {
           width: 100%;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          img {
+            filter: brightness(1.2);
+          }
         }
       }
     }

@@ -40,7 +40,7 @@
 
     <div class="overlay-close" @click="handleClose"></div>
   </div>
-  <transition name="fade" mode="out-in">
+  <!-- <transition name="fade" mode="out-in">
     <div class="sakura-video" @click="handleCloseVideo" v-if="showVideo">
       <video
         src="../../../assets/img/mansion/sakura_video.mp4"
@@ -50,7 +50,7 @@
         controls
         loop
       ></video></div
-  ></transition>
+  ></transition> -->
 </template>
 
 <script setup lang="ts">
@@ -62,11 +62,11 @@ import gsap from 'gsap'
 const router = useRouter()
 const activeIndex = ref(0) // 預設第一個顯示
 
-const showVideo = ref(false)
+// const showVideo = ref(false)
 
-const handleCloseVideo = () => {
-  showVideo.value = false
-}
+// const handleCloseVideo = () => {
+//   showVideo.value = false
+// }
 
 // const showVideoBox = () => {
 //   showVideo.value = true
