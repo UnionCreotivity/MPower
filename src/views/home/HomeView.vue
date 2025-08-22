@@ -82,7 +82,7 @@ const menuItems = [
     id: 'metier',
     zhName: '大熊建設',
     enName: 'METIER',
-    link: '',
+    link: 'build-origin',
   },
 ]
 

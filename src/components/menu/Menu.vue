@@ -198,7 +198,13 @@ const setImgRef = (el: Element | ComponentPublicInstance | null, idx: number) =>
 const handleMainClick = (item: (typeof menuData)[number]) => {
   if (item.pathName) {
     if (item.jumpToChild && item.list.length > 0) {
-      router.push({ name: item.list[0].link })
+      const firstChild = item.list[0]
+      // 判斷是否是 aerialPhoto，需要加 tab=0
+      if (firstChild.link === 'aerialPhoto') {
+        router.push({ name: firstChild.link, query: { tab: 0 } })
+      } else {
+        router.push({ name: firstChild.link })
+      }
     } else {
       router.push(`/${item.pathName}`)
     }

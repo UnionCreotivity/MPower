@@ -6,42 +6,12 @@ export const menuData = [
     pathName: 'metro',
     jumpToChild: true, // 要跳子頁第一個
     list: [
-      {
-        id: 'aerialphoto',
-        name: '空拍鳥瞰',
-        link: 'aerialPhoto',
-        tab: 0,
-      },
-      {
-        id: 'aerialphoto',
-        name: '軌道經濟',
-        link: '',
-        tab: 1,
-      },
-      {
-        id: 'aerialphoto',
-        name: '金軸核心',
-        link: '',
-        tab: 2,
-      },
-      {
-        id: 'aerialphoto',
-        name: '繁華商圈',
-        link: '',
-        tab: 3,
-      },
-      {
-        id: 'aerialphoto',
-        name: '門牌價值',
-        link: '',
-        tab: 4,
-      },
-      {
-        id: 'life',
-        name: '生活機能',
-        link: 'life',
-
-      },
+      { id: 'aerialphoto', name: '空拍鳥瞰', link: 'aerialPhoto', tab: 0 },
+      { id: 'aerialphoto', name: '軌道經濟', link: 'aerialPhoto', tab: 1 },
+      { id: 'aerialphoto', name: '金軸核心', link: 'aerialPhoto', tab: 2 },
+      { id: 'aerialphoto', name: '繁華商圈', link: 'aerialPhoto', tab: 3 },
+      { id: 'aerialphoto', name: '門牌價值', link: 'aerialPhoto', tab: 4 },
+      { id: 'life', name: '生活機能', link: 'life' },
     ],
   },
   {
@@ -129,13 +99,13 @@ export const menuData = [
       {
         id: 'portfolio',
         name: '歷年業績',
-        link: 'portfolio',
+        link: '',
 
       },
       {
         id: 'after-service',
         name: '售後服務',
-        link: 'after-service',
+        link: '',
       },
       {
         id: '',
