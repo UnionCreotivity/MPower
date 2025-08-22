@@ -6,6 +6,10 @@
   height: auto;
   overflow: hidden;
   position: relative;
+  @media all and (max-width: 1920px) {
+    height: 100svh;
+  }
+
   @media all and (max-width: 1680px) {
     height: 100%;
   }
@@ -18,7 +22,7 @@
     mask-size: 200% 100%;
     -webkit-mask-position: 200% 0;
     mask-position: 200% 0;
-    @media all and (max-width: 1680px) {
+    @media all and (max-width: 1920px) {
       object-fit: cover;
     }
   }

@@ -13,7 +13,7 @@
     </div>
 
     <div class="bottom-box">
-      <div class="item">
+      <div class="item" @click="showPortfolioModal = true">
         <div class="img-box">
           <img src="../../../assets/img/metier/portfolio/1.webp" alt="" srcset="" />
         </div>
@@ -83,16 +83,21 @@
       </div>
     </div>
 
+    <PortfolioModal v-if="showPortfolioModal" @close="showPortfolioModal = false" />
+
     <FullScreen />
   </section>
 </template>
 <script setup lang="ts">
 import '@/assets/scss/metier/_portfolio.scss'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
-import { onMounted } from 'vue'
+import PortfolioModal from '@/components/portfolio/portfolioModal.vue'
+import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import CustomEase from 'gsap/CustomEase'
+
+const showPortfolioModal = ref(false)
 
 onMounted(() => {
   const enSplit = SplitText.create('.portfolio-view .top-box .en-title', {

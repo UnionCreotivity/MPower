@@ -30,7 +30,7 @@
     </div>
     <div class="bottom-box">
       <div class="img-box">
-        <img src="../../../assets/img/metier/build-origin/b_main.webp" alt="" srcset="" />
+        <img src="../../../assets/img/metier/build-origin/1.webp" alt="" srcset="" />
         <div class="hint">情境示意圖</div>
       </div>
     </div>

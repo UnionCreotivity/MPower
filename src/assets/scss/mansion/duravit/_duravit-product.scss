@@ -30,11 +30,23 @@
   .dot1 {
     top: 65%;
     right: 58%;
+    @media all and (max-width: 1920px) {
+      right: 62%;
+    }
+    @media all and (max-width: 1440px) {
+      right: 58%;
+    }
   }
 
   .dot2 {
     top: 3%;
     right: 60%;
+    @media all and (max-width: 1920px) {
+      top: 9%;
+    }
+    @media all and (max-width: 1440px) {
+      top: 7%;
+    }
   }
 
   .dot3 {
@@ -72,6 +84,12 @@
     overflow: hidden;
     position: relative;
     justify-content: center;
+    @media all and (max-width: 1920px) {
+      width: 55%;
+    }
+    @media all and (max-width: 1440px) {
+      width: 62%;
+    }
     .img-box {
       width: 100%;
       position: relative;

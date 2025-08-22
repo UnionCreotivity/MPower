@@ -20,21 +20,45 @@
   .dot1 {
     top: 47%;
     right: 67.5%;
+    @media all and (max-width: 1920px) {
+      right: 71.5%;
+    }
+    @media all and (max-width: 1440px) {
+      right: 67.5%;
+    }
   }
 
   .dot2 {
     top: 41.5%;
     right: 41.5%;
+    @media all and (max-width: 1920px) {
+      right: 48.5%;
+    }
+    @media all and (max-width: 1440px) {
+      right: 41.5%;
+    }
   }
 
   .dot3 {
     top: 16%;
     right: 43%;
+    @media all and (max-width: 1920px) {
+      right: 50%;
+    }
+    @media all and (max-width: 1440px) {
+      right: 43%;
+    }
   }
 
   .dot4 {
     left: 16.5%;
     top: 31.8%;
+    @media all and (max-width: 1920px) {
+      left: 13.5%;
+    }
+    @media all and (max-width: 1440px) {
+      left: 16.5%;
+    }
   }
 
   .dot.active {
@@ -67,6 +91,12 @@
     overflow: hidden;
     position: relative;
     justify-content: center;
+    @media all and (max-width: 1920px) {
+      width: 54%;
+    }
+    @media all and (max-width: 1440px) {
+      width: 62%;
+    }
     .img-box {
       width: 100%;
       position: relative;

@@ -195,22 +195,32 @@
       }
     }
     .title {
-      width: 23vw;
+      width: 24vw;
       position: absolute;
-      top: 5.5%;
+      top: 6%;
       left: 10%;
-
+      @media all and (max-width: 1400px) {
+        width: 32vw;
+        left: 10%;
+      }
       img {
         width: 100%;
       }
     }
     .taipei-img {
-      width: 80vw;
+      width: 69vw;
       position: absolute;
       top: 54%;
-      left: 50%;
+      left: 45%;
       transform: translate(-50%, -50%);
-
+      @media all and (max-width: 1920px) {
+        width: 65vw;
+      }
+      @media all and (max-width: 1440px) {
+        width: 80vw;
+        top: 49%;
+        left: 50%;
+      }
       img {
         width: 100%;
       }

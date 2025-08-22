@@ -88,6 +88,9 @@
     flex: 1;
 
     overflow: hidden;
+    @media all and (max-width: 1920px) {
+      flex: initial;
+    }
     @media all and (max-width: 1400px) {
       width: 132%;
       margin-left: -13%;
