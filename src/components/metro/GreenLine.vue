@@ -146,7 +146,6 @@ const closeWithAnimation = () => {
   })
 }
 
-// 初始化時先呼叫一次
 onMounted(async () => {
   imgAni()
 })

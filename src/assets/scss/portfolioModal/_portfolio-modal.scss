@@ -94,7 +94,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-
+      overflow: hidden;
       .hint {
         @include hint();
         color: white;
@@ -111,12 +111,12 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-
+      overflow: hidden;
       div {
         flex: 1;
         display: flex;
         flex-direction: column;
-
+        overflow: hidden;
         position: relative;
         .hint {
           @include hint();
@@ -141,6 +141,7 @@
     gap: 20px;
     .img-box {
       flex: 1;
+      overflow: hidden;
       img {
         width: 100%;
         height: 100%;
