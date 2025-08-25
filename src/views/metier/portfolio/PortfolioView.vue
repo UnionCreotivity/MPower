@@ -13,7 +13,7 @@
     </div>
 
     <div class="bottom-box">
-      <div class="item" @click="showPortfolioModal = true">
+      <div class="item" @click="showPortfolioModal2008 = true">
         <div class="img-box">
           <img src="../../../assets/img/metier/portfolio/1.webp" alt="" srcset="" />
         </div>
@@ -23,7 +23,7 @@
         <div class="name">大熊春天</div>
         <div class="local">台中西屯區/別墅透天</div>
       </div>
-      <div class="item">
+      <div class="item" @click="showportfolioModal2017a = true">
         <div class="img-box">
           <img src="../../../assets/img/metier/portfolio/2.webp" alt="" srcset="" />
         </div>
@@ -37,7 +37,7 @@
         </div>
         <div class="text">義大利【A’Design】<br />國際設計大獎<br />景觀規劃 銀獎</div>
       </div>
-      <div class="item">
+      <div class="item" @click="showportfolioModal2017b = true">
         <div class="img-box">
           <img src="../../../assets/img/metier/portfolio/3.webp" alt="" srcset="" />
         </div>
@@ -51,7 +51,7 @@
         </div>
         <div class="text">義大利【A’Design】<br />國際設計大獎<br />公設室內設計 銅獎</div>
       </div>
-      <div class="item">
+      <div class="item" @click="showportfolioModal2021 = true">
         <div class="img-box">
           <img src="../../../assets/img/metier/portfolio/4.webp" alt="" srcset="" />
         </div>
@@ -61,7 +61,7 @@
         <div class="name">熊立方</div>
         <div class="local">台中潭子區/大樓</div>
       </div>
-      <div class="item">
+      <div class="item" @click="showPortfolioModal2024 = true">
         <div class="img-box">
           <img src="../../../assets/img/metier/portfolio/5.webp" alt="" srcset="" />
         </div>
@@ -71,7 +71,7 @@
         <div class="name">熊PRO</div>
         <div class="local">台中南區/大樓</div>
       </div>
-      <div class="item">
+      <div class="item" @click="showPortfolioModal2026 = true">
         <div class="img-box">
           <img src="../../../assets/img/metier/portfolio/6.webp" alt="" srcset="" />
         </div>
@@ -83,7 +83,12 @@
       </div>
     </div>
 
-    <PortfolioModal v-if="showPortfolioModal" @close="showPortfolioModal = false" />
+    <PortfolioModal2008 v-if="showPortfolioModal2008" @close="showPortfolioModal2008 = false" />
+    <PortfolioModal2024 v-if="showPortfolioModal2024" @close="showPortfolioModal2024 = false" />
+    <portfolioModal2017a v-if="showportfolioModal2017a" @close="showportfolioModal2017a = false" />
+    <portfolioModal2017b v-if="showportfolioModal2017b" @close="showportfolioModal2017b = false" />
+    <portfolioModal2021 v-if="showportfolioModal2021" @close="showportfolioModal2021 = false" />
+    <portfolioModal2026 v-if="showPortfolioModal2026" @close="showPortfolioModal2026 = false" />
 
     <FullScreen />
   </section>
@@ -91,13 +96,24 @@
 <script setup lang="ts">
 import '@/assets/scss/metier/_portfolio.scss'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
-import PortfolioModal from '@/components/portfolio/portfolioModal.vue'
+import PortfolioModal2008 from '@/components/portfolio/portfolioModal2008.vue'
+import PortfolioModal2024 from '@/components/portfolio/portfolioModal2024.vue'
+import portfolioModal2017a from '@/components/portfolio/portfolioModal2017a.vue'
+import portfolioModal2017b from '@/components/portfolio/portfolioModal2017b.vue'
+import portfolioModal2021 from '@/components/portfolio/portfolioModal2021.vue'
+import portfolioModal2026 from '@/components/portfolio/portfolioModal2026.vue'
+
 import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import CustomEase from 'gsap/CustomEase'
 
-const showPortfolioModal = ref(false)
+const showPortfolioModal2008 = ref(false)
+const showPortfolioModal2024 = ref(false)
+const showportfolioModal2017a = ref(false)
+const showportfolioModal2017b = ref(false)
+const showportfolioModal2021 = ref(false)
+const showPortfolioModal2026 = ref(false)
 
 onMounted(() => {
   const enSplit = SplitText.create('.portfolio-view .top-box .en-title', {
