@@ -38,32 +38,32 @@ export const useLoanStore = defineStore('loan', () => {
   function loanCalc(val: CalFormVal) {
 
     const depositInWan = 10
+    const total = val.total
+
     // 簽約金 = 總額*8% - 訂金
-    state.value.sign = toMoneyStyle(Math.ceil(val.total * 0.08) - depositInWan)
+    const sign = Math.ceil(total * 0.08) - depositInWan
 
     // 開工款
-    state.value.kickOff = toMoneyStyle(Math.ceil(val.total * 0.02))
+    const kickOff = Math.ceil(total * 0.02)
 
     // 交屋款
-    state.value.delivery = toMoneyStyle(Math.ceil(val.total * 0.05))
+    const delivery = Math.ceil(total * 0.05)
 
     // 貸款
-    state.value.loanMoney = toMoneyStyle(Math.floor(val.total * 0.8))
-
+    const loanMoney = Math.floor(total * 0.8)
 
     // 自備款
-    state.value.ownMoney = toMoneyStyle(Math.ceil(val.total * 0.2))
+    const ownMoney = Math.ceil(total * 0.2)
 
     // 結構完成款
-    state.value.license = toMoneyStyle(
-      Number(state.value.ownMoney) -
-      Number(state.value.kickOff) -
-      Number(state.value.delivery) -
-      depositInWan -
-      Number(state.value.sign)
-    )
+    const license = ownMoney - kickOff - delivery - depositInWan - sign
 
-
+    state.value.sign = toMoneyStyle(sign)
+    state.value.kickOff = toMoneyStyle(kickOff)
+    state.value.delivery = toMoneyStyle(delivery)
+    state.value.loanMoney = toMoneyStyle(loanMoney)
+    state.value.ownMoney = toMoneyStyle(ownMoney)
+    state.value.license = toMoneyStyle(license)
   }
 
   function cleanAll() {

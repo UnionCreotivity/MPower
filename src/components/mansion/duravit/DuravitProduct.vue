@@ -35,12 +35,26 @@
           </template>
 
           <div class="content-box" v-html="productList[activeIndex].content" />
+          <div v-if="productList[activeIndex]?.hasVideo" class="sakura-btn" @click="showVideoBox">
+            <div>智能馬桶</div>
+          </div>
         </div>
       </transition>
     </div>
 
     <div class="overlay-close" @click="handleClose"></div>
   </div>
+  <transition name="fade" mode="out-in">
+    <div class="sakura-video" @click="handleCloseVideo" v-if="showVideo">
+      <video
+        src="../../../assets/img/mansion/duravit/toilet.mp4"
+        autoplay
+        muted
+        playsinline
+        controls
+        loop
+      ></video></div
+  ></transition>
 </template>
 
 <script setup lang="ts">
@@ -69,6 +83,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/2.svg', import.meta.url).href,
     title: '全自動智能馬桶',
     img: new URL('@/assets/img/mansion/duravit/dur_3.webp', import.meta.url).href,
+    hasVideo: true,
     content: `
     <ul class="ul-box">
       <li>溫水清洗臀部，清潔力強，舒適衛生。</li>
@@ -84,6 +99,7 @@ const productList = [
     iconImg: new URL('@/assets/img/mansion/6.svg', import.meta.url).href,
     title: '浴室暖風機',
     img: new URL('@/assets/img/mansion/duravit/lidrgear.webp', import.meta.url).href,
+    hasVideo: false,
     content: `
     <ul class="ul-box">
       <li>多段功能一機搞定：暖風、涼風、乾燥、換氣</li>
@@ -98,6 +114,7 @@ const productList = [
     iconImg: '',
     title: '',
     img: '',
+    hasVideo: false,
     content: `
     <div class="top-bottom-box">
         <div class="top-box">
@@ -137,7 +154,15 @@ const productList = [
     `,
   },
 ]
+const showVideo = ref(false)
 
+const handleCloseVideo = () => {
+  showVideo.value = false
+}
+
+const showVideoBox = () => {
+  showVideo.value = true
+}
 let tl: gsap.core.Timeline
 onMounted(() => {
   tl = gsap.timeline()

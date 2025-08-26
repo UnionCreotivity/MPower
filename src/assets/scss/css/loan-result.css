@@ -94,6 +94,7 @@
   text-align: center;
   font-size: var(--input-content-size);
   letter-spacing: 0.15em;
+  height: 2vw;
   letter-spacing: 0.03em;
   border-bottom: 1px solid #604c3f;
   width: 100%;

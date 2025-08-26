@@ -40,7 +40,7 @@ import AfterServiceView from '@/views/metier/afterService/AfterServiceView.vue'/
 // 房貸試算
 import CalculatorView from '@/views/calculator/CalculatorView.vue'
 
-
+import CalculatorIndexView from '@/views/calculator/CalculatorIndexView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -51,9 +51,17 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/calculator',
-      name: 'calculator',
-      component: CalculatorView,
+      path: '/calculatorIndex',
+
+      component: CalculatorIndexView,
+      children: [
+        {
+          path: 'calculator',
+          name: 'calculator',
+          component: CalculatorView,
+        },
+
+      ],
     },
     {
       path: '/metro',

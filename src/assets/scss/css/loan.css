@@ -250,41 +250,41 @@
 }
 
 .print-box {
-  position: fixed;
-  top: 0;
-  z-index: 999;
   display: none;
   align-items: center;
-  width: 100%;
   -webkit-print-color-adjust: exact;
-  width: 800px;
+  width: 100%;
   background-color: white;
 }
 @media print {
   .print-box {
     display: flex;
     flex-direction: column;
+    page-break-after: avoid; /* 避免列印分頁 */
+    page-break-before: avoid;
+    page-break-inside: avoid;
+    height: auto !important;
   }
 }
 .print-box .logo-box {
   display: flex;
   justify-content: center;
-  margin-bottom: 4%;
-  margin-top: 6%;
-  width: 25%;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  width: 20%;
 }
 .print-box .top-box {
   font-family: "Noto Serif TC";
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   flex-wrap: wrap;
 }
 .print-box .top-box .info-item {
   width: 45%;
-  margin-bottom: 7%;
+  margin-bottom: 3%;
 }
 .print-box .top-box .info-item .title {
   margin-bottom: 2%;
@@ -295,7 +295,7 @@
   padding-left: 3%;
   padding-right: 1%;
   padding-top: 1%;
-  height: 45px;
+  height: 40px;
   align-self: center;
   align-self: center;
   background: #f2f2f2;
@@ -311,18 +311,18 @@
 .print-box .bottom-box {
   font-family: "Noto Serif TC";
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   flex-wrap: wrap;
   border-top: 1px solid #dcdddd;
   padding-top: 4%;
-  margin-top: -2%;
+  margin-top: 1%;
 }
 .print-box .bottom-box .info-item {
   width: 45%;
-  margin-bottom: 7%;
+  margin-bottom: 4%;
   display: flex;
 }
 .print-box .bottom-box .info-item .title {
@@ -335,7 +335,7 @@
   padding-left: 3%;
   padding-right: 1%;
   padding-top: 1%;
-  height: 45px;
+  height: 40px;
   align-self: center;
   align-self: center;
   background: #f2f2f2;
@@ -352,9 +352,9 @@
   display: flex;
   font-family: "微軟正黑體";
   font-weight: 500;
-  width: 90%;
+  width: 100%;
   font-size: 16px;
-  line-height: 2;
+  line-height: 1.8;
   letter-spacing: 0.08em;
   padding-bottom: 4%;
 }
