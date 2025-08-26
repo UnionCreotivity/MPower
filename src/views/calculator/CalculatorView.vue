@@ -7,22 +7,45 @@
       <div class="loan-view-left">
         <div class="loan-view-bottom">
           <div class="loan-view-input-container">
+            <div class="loan-input-item floor-select">
+              <div>樓層戶別：</div>
+              <div class="loan-input">
+                <select name="household-type">
+                  <option value="a">A</option>
+                  <option value="b">B</option>
+                  <option value="c">C</option>
+                  <option value="d">D</option>
+                </select>
+                <span>戶</span>
+                <input
+                  type="number"
+                  id="floorl"
+                  min="0"
+                  max="1000000000"
+                  v-model="loanInputModel.total"
+                  @click.stop="checkClick('floor')"
+                />
+                <span>樓</span>
+              </div>
+            </div>
+
             <div class="loan-input-item">
-              <div>貸款年限</div>
+              <div>戶別價格：</div>
               <div class="loan-input">
                 <input
                   type="number"
-                  id="cal-year"
+                  id="cal-total"
                   min="0"
-                  max="99"
-                  v-model="loanInputModel.year"
-                  @click.stop="checkClick('cal-year')"
+                  max="1000000000"
+                  v-model="loanInputModel.total"
+                  @click.stop="checkClick('car-price')"
                 />
-                <p>年</p>
+                <p>萬元</p>
               </div>
             </div>
+
             <div class="loan-input-item">
-              <div>總金額</div>
+              <div>車　位　：</div>
               <div class="loan-input">
                 <input
                   type="number"
@@ -30,55 +53,50 @@
                   min="0"
                   max="100000"
                   v-model="loanInputModel.total"
-                  @click.stop="checkClick('cal-total')"
+                  @click.stop="checkClick('car-amount')"
+                />
+              </div>
+            </div>
+
+            <div class="loan-input-item">
+              <div>車位價格：</div>
+              <div class="loan-input">
+                <input
+                  type="number"
+                  id="cal-total"
+                  min="0"
+                  max="1000000000"
+                  v-model="loanInputModel.total"
+                  @click.stop="checkClick('car-price')"
                 />
                 <p>萬元</p>
               </div>
             </div>
 
             <div class="loan-input-item">
-              <div>年利率</div>
+              <div>總 金 額 ：</div>
               <div class="loan-input">
                 <input
-                  type="text"
-                  id="cal-ratio"
-                  v-model="loanInputModel.ratio"
-                  @click.stop="checkClick('cal-ratio')"
+                  type="number"
+                  id="cal-total"
+                  min="0"
+                  max="1000000000"
+                  v-model="loanInputModel.total"
+                  @click.stop="checkClick('cal-total')"
                 />
-                <p>%</p>
+                <p>萬元</p>
               </div>
             </div>
-            <div class="loan-select-item">
-              <div>寬限期</div>
-              <div class="loan-select-main">
-                <div class="loan-select-first">
-                  <input
-                    type="radio"
-                    id="none"
-                    value="none"
-                    name="period"
-                    v-model="loanInputModel.allowance"
-                  />
-                  <label for="none">無</label>
-                </div>
-                <div class="loan-select-second">
-                  <input
-                    type="radio"
-                    id="three"
-                    value="three"
-                    name="period"
-                    v-model="loanInputModel.allowance"
-                  />
-                  <label for="three">3年</label>
-                </div>
-              </div>
-            </div>
+
             <div class="loan-click-item">
               <div class="loan-click-clear">
                 <button type="button" @click.stop="cleanClick">清除</button>
               </div>
               <div class="loan-click-cal">
                 <button type="button" @click.stop="submitClick">試算</button>
+              </div>
+              <div class="loan-click-print">
+                <button type="button">列印</button>
               </div>
             </div>
           </div>

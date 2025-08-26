@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .loan-view {
   width: 100%;
   height: 100%;
@@ -21,10 +22,19 @@
   color: #604c3f;
   font-weight: 600;
   text-align: center;
-  left: 50%;
-  top: 13%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin-top: 5%;
+  padding-bottom: 1%;
+  margin-bottom: 4%;
+}
+.loan-view .title-box::after {
+  content: "";
   position: absolute;
+  width: 3%;
+  height: 1px;
+  background-color: #604d3f;
+  bottom: 0px;
+  left: 48.5%;
 }
 @media all and (max-width: 1400px) {
   .loan-view .title-box {
@@ -32,10 +42,15 @@
   }
 }
 .loan-view .loan-view-container {
-  width: 100%;
-  height: 100%;
+  width: 88%;
   display: flex;
-  justify-content: space-between;
+  margin: 0 auto;
+  margin-left: 9vw;
+}
+@media all and (max-width: 1400px) {
+  .loan-view .loan-view-container {
+    margin-left: 7vw;
+  }
 }
 .loan-view .loan-view-container .loan-view-left {
   position: relative;
@@ -44,12 +59,6 @@
   justify-content: center;
   flex-direction: column;
   width: 80%;
-}
-@media all and (max-width: 1400px) {
-  .loan-view .loan-view-container .loan-view-left {
-    width: 70%;
-    flex: 1;
-  }
 }
 .loan-view .loan-view-container .loan-view-left .title-box {
   font-size: var(--font-big-title-zh-size);
@@ -75,22 +84,26 @@
   width: 100%;
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container {
-  gap: 1.5vw;
-  padding-left: 4vw;
   display: flex;
   flex-direction: column;
+  margin-top: -0.3vw;
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-input-item {
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5vw;
+}
+@media all and (max-width: 1400px) {
+  .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-input-item {
+    margin-bottom: 3vw;
+  }
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-input-item div {
   font-family: "Noto Serif TC", serif;
-  font-size: var(--page-size);
+  font-size: var(--input-title-size);
   font-weight: 500;
   letter-spacing: 0.15em;
-  margin-bottom: 0.5vw;
   color: #3e3a39;
 }
 @media all and (max-width: 1400px) {
@@ -101,27 +114,33 @@
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-input-item .loan-input {
   display: flex;
   align-items: center;
+  margin-left: 0.5vw;
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-input-item .loan-input input {
-  width: 14.25vw;
-  font-size: var(--page-size);
+  width: 13.7vw;
+  font-size: var(--input-content-size);
   border: 0px;
+  text-align: center;
   background: none;
+  font-family: "Noto Serif TC", serif;
   border-radius: 2vw;
-  padding: 0.3vw 0.75vw;
+  padding: 0.1vw 0.75vw;
+  padding-bottom: 0.15vw;
+  letter-spacing: 0.03em;
   border: 1px solid #604c3f;
+  padding-right: 0.3vw;
 }
 @media all and (max-width: 1400px) {
   .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-input-item .loan-input input {
     font-size: 18px;
-    padding: 0.5vw 1vw;
+    padding: 0.25vw 1vw;
   }
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-input-item .loan-input p {
   font-family: "Noto Serif TC", serif;
-  font-size: var(--page-size);
+  font-size: var(--input-title-size);
   font-weight: 500;
-  margin-left: 1vw;
+  margin-left: 0.7vw;
   color: #3e3a39;
   letter-spacing: 0.15em;
 }
@@ -130,71 +149,76 @@
     font-size: 18px;
   }
 }
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item {
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .floor-select {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.5vw;
 }
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item div {
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .floor-select .loan-input input {
+  width: 5.5vw;
+}
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .floor-select .loan-input select {
+  appearance: none; /* 隱藏原生箭頭 (for Chrome, Safari) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../../img/select.png") no-repeat right 15px center;
+  background-size: 20px;
+  width: 5.5vw;
+  font-size: var(--input-content-size);
+  border-radius: 2vw;
+  padding: 0.3vw 0.75vw;
+  padding-bottom: 0.3vw;
+  padding-top: 0.1vw;
+  padding-left: 1vw;
   font-family: "Noto Serif TC", serif;
-  font-size: var(--page-size);
-  font-weight: 500;
-  color: #3e3a39;
-  letter-spacing: 0.15em;
+  border: 1px solid #604c3f;
 }
 @media all and (max-width: 1400px) {
-  .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item div {
-    font-size: 18px;
+  .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .floor-select .loan-input select {
+    background-size: 13px;
+    padding-top: 0.15vw;
+    padding-bottom: 0.35vw;
   }
 }
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item .loan-select-main {
-  display: flex;
-  align-items: center;
-  gap: 2.75vw;
-}
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item .loan-select-main .loan-select-first,
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item .loan-select-main .loan-select-second {
-  display: flex;
-  align-items: center;
-  font-family: "Noto Serif TC", serif;
-  font-size: var(--page-size);
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  color: #3e3a39;
-}
-@media all and (max-width: 1400px) {
-  .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item .loan-select-main .loan-select-first,
-  .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item .loan-select-main .loan-select-second {
-    font-size: 18px;
-  }
-}
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item .loan-select-main .loan-select-first input,
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item .loan-select-main .loan-select-second input {
-  margin-right: 0.5vw;
-}
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item .loan-select-main .loan-select-first input[type=radio],
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-select-item .loan-select-main .loan-select-second input[type=radio] {
-  width: 0.75vw;
-  height: 0.75vw;
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .floor-select .loan-input span {
+  margin-left: 0.7vw;
+  margin-right: 0.7vw;
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5vw;
   margin-top: 8%;
 }
 @media all and (max-width: 1400px) {
   .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item {
-    justify-content: space-between;
-    gap: 1vw;
+    justify-content: center;
+  }
+}
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1vw;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  border-radius: 2vw;
+  padding-inline: 2.1vw;
+  line-height: 2.1vw;
+  transition: all 0.1s ease-in-out;
+  cursor: none;
+  margin-right: 1vw;
+}
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button:active {
+  transform: scale(0.95);
+  transition: all 0.1s ease-in-out;
+}
+@media all and (max-width: 1400px) {
+  .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button {
+    font-size: 16px;
+    padding-inline: 2vw;
+    line-height: 2.5vw;
   }
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-clear button {
-  color: #604c3f;
-  border: 1px solid #604c3f;
+  color: #3e3a39;
+  border: 1px solid #3e3a39;
   background-color: transparent;
   cursor: none;
   transition: all 0.25s ease-in-out;
@@ -207,26 +231,15 @@
   border: 1px solid transparent;
   transition: all 0.25s ease-in-out;
 }
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button {
-  font-family: "Noto Serif TC", serif;
-  font-size: var(--page-size);
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  border-radius: 2vw;
-  padding-block: 0.4vw;
-  padding-inline: 3.25vw;
-  letter-spacing: 2px;
-  transition: all 0.1s ease-in-out;
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-print button {
+  color: #3e3a39;
+  border: 1px solid #3e3a39;
+  background-color: transparent;
   cursor: none;
-}
-.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button:active {
-  transform: scale(0.95);
-  transition: all 0.1s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 @media all and (max-width: 1400px) {
-  .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item button {
-    font-size: 18px;
-    padding-block: 0.5vw;
-    padding-inline: 3vw;
+  .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-print button {
+    margin-right: 0vw;
   }
 }

@@ -66,7 +66,6 @@ function handleClose() {
       opacity: 0,
       duration: 0.5,
       onComplete: () => {
-        // 動畫結束後才真正關閉
         emit('close')
       },
     })

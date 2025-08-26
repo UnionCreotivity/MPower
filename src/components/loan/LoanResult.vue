@@ -4,42 +4,36 @@
     <ul class="loan-result-col">
       <div class="left-box">
         <li class="loan-result-li">
-          <div>訂金：</div>
+          <div>訂　金　：</div>
           <div class="nember-box">
             <p class="loan-result-number">{{ state.deposit }}</p>
             <div class="loan-result-text">萬元</div>
           </div>
         </li>
         <li class="loan-result-li">
-          <div>簽約金:</div>
+          <div>簽 約 金 ：</div>
           <div class="nember-box">
             <p class="loan-result-number">{{ state.sign }}</p>
             <div class="loan-result-text">萬元</div>
           </div>
         </li>
         <li class="loan-result-li">
-          <div>開工款：</div>
+          <div>開 工 款 ：</div>
           <div class="nember-box">
             <p class="loan-result-number">{{ state.kickOff }}</p>
             <div class="loan-result-text">萬元</div>
           </div>
         </li>
         <li class="loan-result-li">
-          <div>工程款：</div>
+          <div>結構完成：</div>
           <div class="nember-box">
-            <p class="loan-result-number">{{ state.construction }}</p>
+            <p class="loan-result-number">{{ state.license }}</p>
             <div class="loan-result-text">萬元</div>
           </div>
         </li>
+
         <li class="loan-result-li">
-          <div>契稅申報：</div>
-          <div class="nember-box">
-            <p class="loan-result-number">{{ state.tax }}</p>
-            <div class="loan-result-text">萬元</div>
-          </div>
-        </li>
-        <li class="loan-result-li">
-          <div>交屋款：</div>
+          <div>交 屋 款 ：</div>
           <div class="nember-box">
             <p class="loan-result-number">{{ state.delivery }}</p>
             <div class="loan-result-text">萬元</div>
@@ -52,27 +46,11 @@
             <div class="loan-result-text">萬元</div>
           </div>
         </li>
-      </div>
-      <div class="right-box">
         <li class="loan-result-li">
-          <div>貸款金額:</div>
+          <div>貸款金額：</div>
           <div class="nember-box">
             <p class="loan-result-number">{{ state.loanMoney }}</p>
             <div class="loan-result-text">萬元</div>
-          </div>
-        </li>
-        <li class="loan-result-li" v-if="is_Allowance">
-          <div>前三年寬限期：</div>
-          <div class="nember-box">
-            <p class="loan-result-number">{{ state.allowancePeriodCost }}</p>
-            <div class="loan-result-text">月</div>
-          </div>
-        </li>
-        <li class="loan-result-li">
-          <div>本息均攤：</div>
-          <div class="nember-box">
-            <p class="loan-result-number">{{ all }}</p>
-            <div class="loan-result-text">月</div>
           </div>
         </li>
       </div>
@@ -81,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useLoanStore } from '@/stores/loanStore'
 import { storeToRefs } from 'pinia'
 import '@/assets/scss/live/loan-result.scss'
@@ -106,11 +84,11 @@ watch(
   },
 )
 
-const all = computed(() => {
-  return is_Allowance.value
-    ? state.value.afterAllowancePeriodCost
-    : Number(state.value.monthlyCost.replace(',', ''))
-})
+// const all = computed(() => {
+//   return is_Allowance.value
+//     ? state.value.afterAllowancePeriodCost
+//     : Number(state.value.monthlyCost.replace(',', ''))
+// })
 
 onMounted(() => {
   loanStore.cleanAll()

@@ -105,12 +105,12 @@ export const menuData = [
       {
         id: 'after-service',
         name: '售後服務',
-        link: '',
+        link: 'after-service',
       },
       {
-        id: '',
+        id: 'calculator',
         name: '房貸試算',
-        link: '',
+        link: 'calculator',
       },
     ],
   },

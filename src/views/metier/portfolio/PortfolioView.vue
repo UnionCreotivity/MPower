@@ -89,9 +89,8 @@
     <portfolioModal2017b v-if="showportfolioModal2017b" @close="showportfolioModal2017b = false" />
     <portfolioModal2021 v-if="showportfolioModal2021" @close="showportfolioModal2021 = false" />
     <portfolioModal2026 v-if="showPortfolioModal2026" @close="showPortfolioModal2026 = false" />
-
-    <FullScreen />
   </section>
+  <FullScreen />
 </template>
 <script setup lang="ts">
 import '@/assets/scss/metier/_portfolio.scss'
@@ -186,20 +185,6 @@ onMounted(() => {
       '<0.3',
     )
 
-    .fromTo(
-      '.portfolio-view .bottom-box .item .img-box img',
-      {
-        filter: 'brightness(1.5)',
-      },
-      {
-        duration: 1,
-        scale: 1,
-        filter: 'brightness(1)',
-
-        stagger: 0.2,
-      },
-      '<0.15',
-    )
     .fromTo(
       '.portfolio-view .dot-line',
       {

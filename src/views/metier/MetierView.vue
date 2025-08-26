@@ -24,8 +24,8 @@ const router = useRouter()
 const tabs = [
   { title: '營建起家', name: 'build-origin' },
   { title: '三心二藝', name: 'brand-value' },
-  { title: '歷年業績', name: '' },
-  { title: '售後服務', name: '' },
+  { title: '歷年業績', name: 'portfolio' },
+  { title: '售後服務', name: 'after-service' },
 ]
 
 const go = (name: string) => {

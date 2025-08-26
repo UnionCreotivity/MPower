@@ -3,43 +3,47 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-right: 3vw;
-  width: 55%;
+  width: 62%;
   position: relative;
+  @media all and (max-width: 1400px) {
+    width: 55%;
+  }
   &::after {
     content: '';
     background-color: #a48b78;
-    height: 94%;
+    height: 105%;
     width: 1px;
     position: absolute;
-    right: -4vw;
+    right: 4.5vw;
     @media all and (max-width: 1400px) {
-      height: 103%;
-      right: -3vw;
+      right: 1.5vw;
     }
   }
 
   &::before {
     content: '';
     background-color: #a48b78;
-    height: 94%;
+    height: 105%;
     width: 1px;
     position: absolute;
-    left: -4vw;
+    left: 4vw;
 
     @media all and (max-width: 1400px) {
-      height: 103%;
-      left: -3vw;
+      left: -1vw;
     }
   }
   .loan-result-col {
     display: flex;
     width: 100%;
+    justify-content: center;
+
     .left-box {
       display: flex;
-      width: 50%;
+      width: 54%;
       flex-direction: column;
-      margin-right: 3vw;
+      @media all and (max-width: 1400px) {
+        width: 80%;
+      }
     }
     .right-box {
       display: flex;
@@ -49,17 +53,21 @@
     .loan-result-li {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      // justify-content: space-between;
       color: #3e3a39;
       width: 100%;
       margin-bottom: 2.5vw;
-
+      align-self: center;
+      @media all and (max-width: 1400px) {
+        margin-bottom: 3vw;
+      }
       div {
         font-family: 'Noto Serif TC', serif;
-        font-size: var(--page-size);
+        font-size: var(--input-title-size);
+        align-self: center;
         font-weight: 500;
         letter-spacing: 0.15em;
-        width: 52%;
+        width: 32%;
         @include pad {
           font-size: 18px;
         }
@@ -67,19 +75,20 @@
 
       .nember-box {
         display: flex;
+        font-family: 'Noto Serif TC', serif;
         justify-content: space-between;
         width: 66%;
-
+        align-self: center;
         .loan-result-number {
           position: relative;
           text-align: center;
-          font-family: 'Noto Serif TC', serif;
-          font-size: var(--page-size);
-          font-weight: 500;
+          font-size: var(--input-content-size);
           letter-spacing: 0.15em;
-          height: 1.5vw;
+
+          letter-spacing: 0.03em;
           border-bottom: 1px solid #604c3f;
           width: 100%;
+
           @include pad {
             font-size: 18px;
             height: auto;
@@ -87,8 +96,9 @@
         }
         .loan-result-text {
           font-family: 'Noto Serif TC', serif;
-          font-size: var(--page-size);
+          font-size: var(--input-title-size);
           font-weight: 500;
+          align-self: center;
           letter-spacing: 0.15em;
           margin-left: 1vw;
           @include pad {

@@ -5,6 +5,9 @@
   width: 100%;
   height: 100svh;
   position: relative;
+  @media all and (max-width: 1440px) {
+    justify-content: center;
+  }
   .full-screen {
     right: 1%;
     bottom: 2%;
@@ -41,6 +44,11 @@
     right: 3.5%;
     background-color: #fefeff9c;
     clip-path: inset(100%);
+
+    @media all and (max-width: 1400px) {
+      top: 23%;
+    }
+
     .top-box {
       display: flex;
       flex-direction: column;
