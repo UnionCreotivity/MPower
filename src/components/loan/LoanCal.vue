@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import '@/assets/scss/live/loan-cal.scss'
+import '@/assets/scss/loan/loan-cal.scss'
 
 const emits = defineEmits(['keyboard-click', 'keyboard-back-click', 'submit-click'])
 

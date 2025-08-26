@@ -89,7 +89,7 @@
                 <button type="button" @click.stop="submitClick">試算</button>
               </div>
               <div class="loan-click-print">
-                <button type="button">列印</button>
+                <button type="button" @click.prevent="handlePrint">列印</button>
               </div>
             </div>
           </div>
@@ -104,18 +104,112 @@
       />
     </div>
   </section>
+
+  <div class="print-box">
+    <div class="logo-box">
+      <img src="../../assets/img/home/logo.svg" alt="" srcset="" />
+    </div>
+    <div class="top-box">
+      <div class="info-item">
+        <div class="title">樓層戶別</div>
+        <div class="info">A</div>
+      </div>
+      <div class="info-item">
+        <div class="title">戶別價格</div>
+        <div class="row">
+          <div class="info"></div>
+          <div class="text">萬元</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="title">車　　位</div>
+        <div class="info"></div>
+      </div>
+      <div class="info-item">
+        <div class="title">車位價格</div>
+        <div class="row">
+          <div class="info"></div>
+          <div class="text">萬元</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="title">總 金 額</div>
+        <div class="row">
+          <div class="info">100</div>
+          <div class="text">萬元</div>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+    <div class="bottom-box">
+      <div class="info-item">
+        <div class="title">訂　金　：</div>
+        <div class="info"></div>
+        <div class="text">萬元</div>
+      </div>
+      <div class="info-item">
+        <div class="title">交 屋 款 ：</div>
+        <div class="info"></div>
+        <div class="text">萬元</div>
+      </div>
+      <div class="info-item">
+        <div class="title">簽 約 金 ：</div>
+        <div class="info"></div>
+        <div class="text">萬元</div>
+      </div>
+      <div class="info-item">
+        <div class="title">自備金額：</div>
+        <div class="info"></div>
+        <div class="text">萬元</div>
+      </div>
+
+      <div class="info-item">
+        <div class="title">開 工 款 ：</div>
+        <div class="info"></div>
+        <div class="text">萬元</div>
+      </div>
+      <div class="info-item">
+        <div class="title">貸款金額：</div>
+        <div class="info"></div>
+        <div class="text">萬元</div>
+      </div>
+      <div class="info-item">
+        <div class="title">結構完成：</div>
+        <div class="info"></div>
+        <div class="text">萬元</div>
+      </div>
+    </div>
+
+    <div class="hint-box">
+      <div>
+        備註:<br />
+        1.本付款表之坪數、價格需以正式訂購單為主。<br />
+        2.買方應於簽約時繳納暫收款，暫收款內容包含：所有權移轉登記規費、印花稅、代書費、<br />
+        代辦手續費、貸款保險費、每戶新台幣貳拾萬元管理基金、預繳社區管理費六個月..等<br />
+        (多退少補)。<br />
+        3.本付款表銀行貸款之成數、利率，需視客戶當時信用狀況而定。
+      </div>
+    </div>
+
+    <div class="date-box">
+      <div class="title">日期：</div>
+      <div class="date"></div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
-import LoanCal from '@/components/loan/LoanCal.vue'
 import { useLoanStore } from '@/stores/loanStore'
+import LoanCal from '@/components/loan/LoanCal.vue'
 import LoanResult from '@/components/loan/LoanResult.vue'
 import Menu from '../../components/menu/Menu.vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
+
 import gsap from 'gsap'
 
-import '@/assets/scss/live/loan.scss'
+import '@/assets/scss/loan/loan.scss'
 
 const nowInputId = ref('')
 
@@ -202,6 +296,10 @@ onMounted(() => {
     },
   )
 })
+
+const handlePrint = () => {
+  window.print()
+}
 </script>
 
 <style scoped></style>
