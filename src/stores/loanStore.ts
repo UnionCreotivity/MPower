@@ -2,9 +2,11 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 interface CalFormVal {
-  year: number
-  total: number
-  ratio: string
+  floor: number
+  householdPrice: number
+  carAmount: number
+  carPrice: number
+  total: number,
   allowance: string
 }
 
@@ -17,7 +19,7 @@ const toMoneyStyle = (num: number) => {
 
 export const useLoanStore = defineStore('loan', () => {
   const state = ref({
-    deposit: '',
+    deposit: 10, // 固定十萬
     sign: '',
     construction: '',
     license: '',
@@ -35,44 +37,37 @@ export const useLoanStore = defineStore('loan', () => {
   })
   function loanCalc(val: CalFormVal) {
 
-    //---------------- 拆款 ----------------
+    const depositInWan = 10
+    // 簽約金 = 總額*8% - 訂金
+    state.value.sign = toMoneyStyle(Math.ceil(val.total * 0.08) - depositInWan)
 
-    //簽約金
-    state.value.sign = toMoneyStyle(Math.ceil(val.total * 0.08 - 10))
-
-    //開工款
+    // 開工款
     state.value.kickOff = toMoneyStyle(Math.ceil(val.total * 0.02))
 
-    //結構完成(工程款)
-    // state.value.construction = toMoneyStyle(Math.ceil(val.total * 0.05))
-
-    //交屋款
+    // 交屋款
     state.value.delivery = toMoneyStyle(Math.ceil(val.total * 0.05))
 
-
-
-    //自備款
-    state.value.ownMoney = toMoneyStyle(Math.ceil(val.total * 0.2))
-    //貸款
+    // 貸款
     state.value.loanMoney = toMoneyStyle(Math.floor(val.total * 0.8))
 
 
+    // 自備款
+    state.value.ownMoney = toMoneyStyle(Math.ceil(val.total * 0.2))
 
-
-    //算出來是結構完成款
+    // 結構完成款
     state.value.license = toMoneyStyle(
-      Number(state.value.ownMoney) - //自備款
-      Number(state.value.kickOff) -//開工款
-      Number(100000) - //訂金
-      // Number(state.value.construction) -//結構完成(工程款)
-      Number(state.value.delivery) - //交屋款
-      Number(state.value.sign)  //簽約金
-
+      Number(state.value.ownMoney) -
+      Number(state.value.kickOff) -
+      Number(state.value.delivery) -
+      depositInWan -
+      Number(state.value.sign)
     )
 
+
   }
+
   function cleanAll() {
-    state.value.deposit = ''
+
     state.value.sign = ''
     state.value.construction = ''
     state.value.license = ''

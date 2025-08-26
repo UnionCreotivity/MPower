@@ -6,7 +6,7 @@
         <li class="loan-result-li">
           <div>訂　金　：</div>
           <div class="nember-box">
-            <p class="loan-result-number">{{ state.deposit }}</p>
+            <p class="loan-result-number">{{ displayDeposit }}</p>
             <div class="loan-result-text">萬元</div>
           </div>
         </li>
@@ -59,17 +59,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch, onMounted, computed } from 'vue'
 import { useLoanStore } from '@/stores/loanStore'
 import { storeToRefs } from 'pinia'
 import '@/assets/scss/live/loan-result.scss'
 
 const loanStore = useLoanStore()
 const is_Allowance = ref(false)
-
-// const {
-//   deposit
-// }=storeToRefs(loanStore)
 
 const { state } = storeToRefs(loanStore)
 
@@ -83,7 +79,10 @@ watch(
     }
   },
 )
-
+const displayDeposit = computed(() => {
+  // total 為 0 或清空時顯示空，否則顯示 10 萬
+  return loanStore.state.ownMoney === '' ? '' : 10
+})
 // const all = computed(() => {
 //   return is_Allowance.value
 //     ? state.value.afterAllowancePeriodCost

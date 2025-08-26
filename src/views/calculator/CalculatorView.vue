@@ -19,10 +19,10 @@
                 <span>戶</span>
                 <input
                   type="number"
-                  id="floorl"
+                  id="floor"
                   min="0"
                   max="1000000000"
-                  v-model="loanInputModel.total"
+                  v-model="loanInputModel.floor"
                   @click.stop="checkClick('floor')"
                 />
                 <span>樓</span>
@@ -34,11 +34,11 @@
               <div class="loan-input">
                 <input
                   type="number"
-                  id="cal-total"
+                  id="householdPrice"
                   min="0"
                   max="1000000000"
-                  v-model="loanInputModel.total"
-                  @click.stop="checkClick('car-price')"
+                  v-model="loanInputModel.householdPrice"
+                  @click.stop="checkClick('householdPrice')"
                 />
                 <p>萬元</p>
               </div>
@@ -49,11 +49,11 @@
               <div class="loan-input">
                 <input
                   type="number"
-                  id="cal-total"
+                  id="carAmount"
                   min="0"
                   max="100000"
-                  v-model="loanInputModel.total"
-                  @click.stop="checkClick('car-amount')"
+                  v-model="loanInputModel.carAmount"
+                  @click.stop="checkClick('carAmount')"
                 />
               </div>
             </div>
@@ -63,11 +63,11 @@
               <div class="loan-input">
                 <input
                   type="number"
-                  id="cal-total"
+                  id="carPrice"
                   min="0"
                   max="1000000000"
-                  v-model="loanInputModel.total"
-                  @click.stop="checkClick('car-price')"
+                  v-model="loanInputModel.carPrice"
+                  @click.stop="checkClick('carPrice')"
                 />
                 <p>萬元</p>
               </div>
@@ -76,14 +76,7 @@
             <div class="loan-input-item">
               <div>總 金 額 ：</div>
               <div class="loan-input">
-                <input
-                  type="number"
-                  id="cal-total"
-                  min="0"
-                  max="1000000000"
-                  v-model="loanInputModel.total"
-                  @click.stop="checkClick('cal-total')"
-                />
+                <input type="number" id="total" v-model="loanInputModel.total" readonly />
                 <p>萬元</p>
               </div>
             </div>
@@ -114,7 +107,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import LoanCal from '@/components/loan/LoanCal.vue'
 import { useLoanStore } from '@/stores/loanStore'
 import LoanResult from '@/components/loan/LoanResult.vue'
@@ -127,18 +120,20 @@ import '@/assets/scss/live/loan.scss'
 const nowInputId = ref('')
 
 const loanInputModel = ref({
-  year: 0,
+  floor: 0,
+  householdPrice: 0,
+  carAmount: 0,
+  carPrice: 0,
   total: 0,
-  ratio: '',
   allowance: 'none',
 })
 
-const tempRatio = ref('.')
-
-const targetMap: Record<string, 'year' | 'total' | 'ratio'> = {
-  'cal-year': 'year',
-  'cal-total': 'total',
-  'cal-ratio': 'ratio',
+const targetMap: Record<string, 'floor' | 'householdPrice' | 'carAmount' | 'carPrice' | 'total'> = {
+  floor: 'floor',
+  householdPrice: 'householdPrice',
+  carAmount: 'carAmount',
+  carPrice: 'carPrice',
+  total: 'total',
 }
 
 const loanStore = useLoanStore()
@@ -151,13 +146,10 @@ const keyboardClick = (num: string) => {
   const key = targetMap[nowInputId.value]
   if (!key) return
   const inputNum = num
-  if (key === 'ratio') {
-    loanInputModel.value.ratio += inputNum
-  } else {
-    const modelTemp = loanInputModel.value[key].toString() + inputNum
-    const total = Math.floor(Number(modelTemp))
-    loanInputModel.value[key] = total
-  }
+
+  const modelTemp = loanInputModel.value[key].toString() + inputNum
+  const total = Math.floor(Number(modelTemp))
+  loanInputModel.value[key] = total
 }
 
 const keyboardBackClick = () => {
@@ -166,53 +158,35 @@ const keyboardBackClick = () => {
   const temp = loanInputModel.value[key].toString()
   if (temp.length === 0) return
 
-  if (key === 'ratio') {
-    loanInputModel.value[key] = temp.slice(0, length - 1)
-  } else {
-    loanInputModel.value[key] = Math.floor(Number(temp.slice(0, length - 1)))
-  }
+  loanInputModel.value[key] = Math.floor(Number(temp.slice(0, length - 1)))
 }
 
 const submitClick = () => {
   loanStore.loanCalc(loanInputModel.value)
+
+  console.log(loanInputModel.value)
 }
 
 const cleanClick = () => {
   loanInputModel.value = {
-    year: 0,
-    total: 0,
-    ratio: '',
+    floor: 0,
+    householdPrice: 0,
+    carAmount: 0,
+    carPrice: 0,
+    total: 0, // total 為 0，LoanResult 顯示 deposit 就會是 0
     allowance: 'none',
   }
-  loanStore.cleanAll()
+  loanStore.cleanAll() // store deposit 保持 100000
 }
 
-//年利率檢查
-const testRatio = () => {
-  const regex = /^\d*\.?\d{0,2}?$/
-  const ratio = regex.test(loanInputModel.value.ratio)
-  if (ratio) {
-    tempRatio.value = loanInputModel.value.ratio
-  } else {
-    loanInputModel.value.ratio = tempRatio.value
-  }
-}
-
+//總金額
 watch(
-  () => [loanInputModel.value.total, loanInputModel.value.ratio, loanInputModel.value.year],
-  () => {
-    if (Number(loanInputModel.value.year) > 99) {
-      loanInputModel.value.year = 99
-    }
-    if (Number(loanInputModel.value.total) > 100000) {
-      loanInputModel.value.total = 100000
-    }
-    if (Number(loanInputModel.value.ratio) > 10) {
-      loanInputModel.value.ratio = '10'
-    }
-    testRatio()
+  () => [loanInputModel.value.householdPrice, loanInputModel.value.carPrice],
+  ([newHousehold, newCar]) => {
+    loanInputModel.value.total = newHousehold + newCar
   },
 )
+
 onMounted(() => {
   const tl = gsap.timeline({ delay: 0.15 })
   tl.fromTo(
