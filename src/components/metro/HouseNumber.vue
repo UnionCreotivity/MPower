@@ -17,15 +17,6 @@
           <img src="../../assets/img/metro/number_title.png" alt="number_title" srcset="" />
         </div>
       </div>
-
-      <div class="content" ref="content">
-        文心首排所在，地段已無複製。<br />
-        門牌無聲，卻深藏識別。<br />
-        十餘金控匯聚，金融一條街。<br />
-        能瞬移全城，也能靜觀繁華。<br />
-        這片珍稀留白，為少數先見者預留。<br />
-        台中移動生活圈首選，步伐所至皆生活風景。
-      </div>
     </div>
 
     <div class="hint">情境示意圖</div>
@@ -33,20 +24,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, defineEmits } from 'vue'
+import { onMounted, defineEmits } from 'vue'
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 
 import '@/assets/scss/metro/_house-number.scss'
 
 gsap.registerPlugin(SplitText)
-const content = ref<HTMLElement | null>(null)
 
 const emit = defineEmits(['close'])
 
 const imgAni = () => {
   const tl = gsap.timeline({})
-  const splitContent = new SplitText(content.value, { type: 'lines' })
+
   tl.fromTo(
     '.number-box',
     {
@@ -61,10 +51,12 @@ const imgAni = () => {
     .from(
       '.number-box .img-box img',
       {
-        duration: 1,
+        duration: 1.2,
         opacity: 0,
+
         scale: 1.4,
-        ease: 'power0.in',
+
+        ease: 'power1.inOut',
       },
       '<0.2',
     )
@@ -76,16 +68,7 @@ const imgAni = () => {
         y: '80',
         stagger: 0.08,
       },
-      '<0.35',
-    )
-    .fromTo(
-      splitContent.lines,
-      {
-        autoAlpha: 0,
-        y: '80',
-      },
-      { y: '0', duration: 1, autoAlpha: 1, stagger: 0.1 },
-      '<0.3',
+      '<0.5',
     )
 }
 

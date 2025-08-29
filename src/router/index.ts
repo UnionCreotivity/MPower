@@ -177,7 +177,7 @@ const router = createRouter({
         },
         {
           path: 'build-value',
-          name: 'brand-value',
+          name: 'build-value',
           component: BrandValueView,
         },
         {

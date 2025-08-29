@@ -29,13 +29,25 @@
                 class="floor-plan-img"
                 :class="[currentFloor.className]"
               />
-              <div class="btn-3f-12f btn-3f-12f-a" v-if="props.floor === '3F-12F'">
+              <div
+                class="btn-3f-12f btn-3f-12f-a"
+                v-if="props.floor === '3F-12F'"
+                @click="openFurniture('3F-12F-A')"
+              >
                 <img src="../../../assets/img/building/a.png" alt="" srcset="" />
               </div>
-              <div class="btn-3f-12f btn-3f-12f-b" v-if="props.floor === '3F-12F'">
+              <div
+                class="btn-3f-12f btn-3f-12f-b"
+                v-if="props.floor === '3F-12F'"
+                @click="openFurniture('3F-12F-B')"
+              >
                 <img src="../../../assets/img/building/b.png" alt="" srcset="" />
               </div>
-              <div class="btn-3f-12f btn-3f-12f-c" v-if="props.floor === '3F-12F'">
+              <div
+                class="btn-3f-12f btn-3f-12f-c"
+                v-if="props.floor === '3F-12F'"
+                @click="openFurniture('3F-12F-C')"
+              >
                 <img src="../../../assets/img/building/c.png" alt="" srcset="" />
               </div>
               <div

@@ -91,9 +91,9 @@ export const menuData = [
       },
 
       {
-        id: 'build-origin',
+        id: 'build-value',
         name: '三心二藝',
-        link: 'build-origin',
+        link: 'build-value',
 
       },
       {

@@ -47,6 +47,24 @@ const furnitureMap: Record<
   string,
   { img: string; textImg: string; className: string; textImgClassName: string }
 > = {
+  '3F-12F-A': {
+    img: new URL('@/assets/img/building/d_floor.webp', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/a_text.png', import.meta.url).href,
+    className: '3F-12F-A',
+    textImgClassName: 'text-3F-12F-A',
+  },
+  '3F-12F-B': {
+    img: new URL('@/assets/img/building/d_floor.webp', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/b_text.png', import.meta.url).href,
+    className: '3F-12F-B',
+    textImgClassName: 'text-3F-12F-B',
+  },
+  '3F-12F-C': {
+    img: new URL('@/assets/img/building/d_floor.webp', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/c_text.png', import.meta.url).href,
+    className: '3F-12F-C',
+    textImgClassName: 'text-3F-12F-C',
+  },
   '3F-12F-D': {
     img: new URL('@/assets/img/building/d_floor.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/d_text.min.svg', import.meta.url).href,

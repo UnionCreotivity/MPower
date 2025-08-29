@@ -28,7 +28,7 @@
             </div>
           </div>
 
-          <div class="tab-item school-tab" :key="school" @click.stop="handleTag(school)">
+          <div class="tab-item school-tab" :key="school" @click="schoolImgAni()">
             <div class="life-list-squre"></div>
             <div class="text">優質學區<span>CULTURAL DISTRICT</span></div>
           </div>
@@ -68,6 +68,13 @@
     <FadeIn>
       <LifeFancybox v-if="fancyboxItem" :fancyItem="fancyboxItem" @show-fancybox="showFancybox" />
     </FadeIn>
+
+    <div class="school-box" v-if="showSchoolbox" @click="closeWithAnimation">
+      <div class="img-box">
+        <img src="../../../assets/img/life/sc.webp" alt="" srcset="" />
+        <div class="hint">實景示意圖</div>
+      </div>
+    </div>
     <FullScreen />
   </div>
 </template>
@@ -75,7 +82,7 @@
 <script setup lang="ts">
 import '@/assets/scss/metro/_life.scss'
 import gsap from 'gsap'
-import { onMounted, ref, computed } from 'vue'
+import { onMounted, ref, computed, nextTick } from 'vue'
 import { lifeData } from './LifeData'
 import CustomEase from 'gsap/CustomEase'
 // import { lifeFancyData } from './LifeFancyData'
@@ -89,6 +96,7 @@ import FullScreen from '@/components/full-screen/FullScreen.vue'
 const tag = ref('')
 const fancyboxItem = ref<{ key: string; image: string; txt: string }[] | null>(null)
 const school = 'cultural-district'
+const showSchoolbox = ref(false)
 
 gsap.registerPlugin(CustomEase)
 CustomEase.create('myEase', '0.24,0.43,0.15,0.97')
@@ -146,8 +154,40 @@ const initXY = computed(() => {
   return window.innerWidth > 1400 ? { x: 300, y: -200 } : { x: 100, y: -100 }
 })
 
+const schoolImgAni = () => {
+  // 先讓元素顯示出來
+  showSchoolbox.value = true
+
+  // 等 DOM 更新完成再跑動畫
+  nextTick(() => {
+    gsap.fromTo(
+      '#life-view .school-box',
+      {
+        maskPosition: '200% 0',
+      },
+      {
+        maskPosition: '0% 0%',
+        duration: 1.5,
+        ease: 'cubic-bezier(0.64, 0.03, 0.07, 0.97)',
+      },
+    )
+  })
+}
+const closeWithAnimation = () => {
+  const tl = gsap.timeline({
+    onComplete: () => {
+      showSchoolbox.value = false
+    },
+  })
+
+  tl.to('#life-view .school-box', {
+    maskPosition: '200% 0',
+    duration: 1.2,
+    ease: 'cubic-bezier(0.64, 0.03, 0.07, 0.97)',
+  })
+}
 onMounted(() => {
-  const tl = gsap.timeline({ delay: 0.4 })
+  const tl = gsap.timeline({ delay: 0.2 })
   tl.from('#life-view .life-box .left-box', {
     autoAlpha: 0,
     duration: 1,
