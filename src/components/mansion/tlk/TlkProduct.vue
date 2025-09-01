@@ -31,26 +31,26 @@
             <img :src="productList[activeIndex].img" alt="product-title" />
           </div>
           <div class="content-box" v-html="productList[activeIndex].content" />
-          <!-- <div v-if="productList[activeIndex]?.hasVideo" class="sakura-btn" @click="showVideoBox">
+          <div v-if="productList[activeIndex]?.hasVideo" class="sakura-btn" @click="showVideoBox">
             <div>櫻花廚具</div>
-          </div> -->
+          </div>
         </div>
       </transition>
     </div>
 
     <div class="overlay-close" @click="handleClose"></div>
   </div>
-  <!-- <transition name="fade" mode="out-in">
+  <transition name="fade" mode="out-in">
     <div class="sakura-video" @click="handleCloseVideo" v-if="showVideo">
       <video
-        src="../../../assets/img/mansion/sakura_video.mp4"
+        src="../../../assets/img/mansion/DR9396_main.mp4"
         autoplay
         muted
         playsinline
         controls
         loop
       ></video></div
-  ></transition> -->
+  ></transition>
 </template>
 
 <script setup lang="ts">
@@ -62,15 +62,15 @@ import gsap from 'gsap'
 const router = useRouter()
 const activeIndex = ref(0) // 預設第一個顯示
 
-// const showVideo = ref(false)
+const showVideo = ref(false)
 
-// const handleCloseVideo = () => {
-//   showVideo.value = false
-// }
+const handleCloseVideo = () => {
+  showVideo.value = false
+}
 
-// const showVideoBox = () => {
-//   showVideo.value = true
-// }
+const showVideoBox = () => {
+  showVideo.value = true
+}
 
 const handleClose = () => {
   router.push('/mansionIndex')
