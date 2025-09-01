@@ -57,6 +57,12 @@
               >
                 <img src="../../../assets/img/building/d.png" alt="" srcset="" />
               </div>
+
+              <div
+                class="btn-3f-12f btn-1mf"
+                v-if="props.floor === '1MF'"
+                @click="show1MF = true"
+              ></div>
             </div>
           </ScaleDrag>
         </div>
@@ -70,6 +76,15 @@
     <!-- 家具配置圖 -->
 
     <FloorFurniture v-if="showFurniture" :floor="furnitureFloor" @close="showFurniture = false" />
+
+    <transition name="fade" mode="out-in">
+      <div class="flooe-mf1-box" v-if="show1MF" @click="show1MF = false">
+        <div class="img-box">
+          <img src="../../../assets/img/building/LV_c05_002.webp" alt="LV_c05_002" srcset="" />
+          <div class="hint">3D示意圖</div>
+        </div>
+      </div>
+    </transition>
 
     <FullScreen :forceBrownIcon="true" />
   </div>
@@ -85,6 +100,7 @@ import FloorFurniture from '@/components/Floor/floorFurniture/FloorFurniture.vue
 
 const props = defineProps<{ floor: string }>()
 const showCompass = ref(false)
+const show1MF = ref(false)
 const showFurniture = ref(false)
 const furnitureFloor = ref('') // 用來傳給 FloorFurniture 的樓層
 const detailEl = ref<HTMLElement | null>(null)
