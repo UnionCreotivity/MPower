@@ -113,6 +113,24 @@ export const lifeData = [
     image: new URL('@/assets/img/life/shopping_district/tianjin_01.webp', import.meta.url).href,
     txt: '天津路商圈',
   },
+  {
+    tag: 'shopping-district',
+    id: 'beiPing', // 北平商圈.
+    className: 'shopping-point-6',
+    image: new URL('@/assets/img/life/shopping_district/bei_ping.webp', import.meta.url).href,
+    txt: '北平商圈',
+  },
+  {
+    tag: 'shopping-district',
+    id: 'zhongQing', // 中清商圈.
+    className: 'shopping-point-7',
+    image: [new URL('@/assets/img/life/shopping_district/zhong_qing_1.webp', import.meta.url).href,
+    new URL('@/assets/img/life/shopping_district/zhong_qing_2.webp', import.meta.url).href,
+    new URL('@/assets/img/life/shopping_district/zhong_qing_3.webp', import.meta.url).href,
+    new URL('@/assets/img/life/shopping_district/zhong_qing_4.webp', import.meta.url).href,
+    ],
+    txt: '中清商圈',
+  },
   // {
   //   tag: 'shopping-district',
   //   id: 'home-shopping', //中清路家樂福

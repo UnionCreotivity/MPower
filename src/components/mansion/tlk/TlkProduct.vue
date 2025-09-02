@@ -31,8 +31,26 @@
             <img :src="productList[activeIndex].img" alt="product-title" />
           </div>
           <div class="content-box" v-html="productList[activeIndex].content" />
-          <div v-if="productList[activeIndex]?.hasVideo" class="sakura-btn" @click="showVideoBox">
-            <div>櫻花廚具</div>
+          <div
+            v-if="
+              productList[activeIndex]?.hasVideo &&
+              productList[activeIndex].title === '渦輪變頻 AI風控近吸除油煙機'
+            "
+            class="sakura-btn"
+            @click="showVideoBox"
+          >
+            <div>AI風控近吸除油煙機</div>
+          </div>
+
+          <div
+            v-if="
+              productList[activeIndex]?.hasVideo &&
+              productList[activeIndex].title === '雙口IH感應爐'
+            "
+            class="sakura-btn"
+            @click="showIHVideoBox"
+          >
+            <div>雙口IH感應爐</div>
           </div>
         </div>
       </transition>
@@ -44,6 +62,18 @@
     <div class="sakura-video" @click="handleCloseVideo" v-if="showVideo">
       <video
         src="../../../assets/img/mansion/DR9396_main.mp4"
+        autoplay
+        muted
+        playsinline
+        controls
+        loop
+      ></video></div
+  ></transition>
+
+  <transition name="fade" mode="out-in">
+    <div class="sakura-video" @click="handleCloseIHVideo" v-if="showIHVideo">
+      <video
+        src="../../../assets/img/mansion/ih.mp4"
         autoplay
         muted
         playsinline
@@ -63,6 +93,7 @@ const router = useRouter()
 const activeIndex = ref(0) // 預設第一個顯示
 
 const showVideo = ref(false)
+const showIHVideo = ref(false)
 
 const handleCloseVideo = () => {
   showVideo.value = false
@@ -70,6 +101,14 @@ const handleCloseVideo = () => {
 
 const showVideoBox = () => {
   showVideo.value = true
+}
+
+const handleCloseIHVideo = () => {
+  showIHVideo.value = false
+}
+
+const showIHVideoBox = () => {
+  showIHVideo.value = true
 }
 
 const handleClose = () => {
@@ -105,7 +144,7 @@ const productList = [
   },
   {
     iconImg: new URL('@/assets/img/mansion/tlk/sakura.png', import.meta.url).href,
-    title: '櫻花AI升降靜音油機',
+    title: '渦輪變頻 AI風控近吸除油煙機',
     img: new URL('@/assets/img/mansion/tlk/sakura.webp', import.meta.url).href,
     hasVideo: true,
     content: `

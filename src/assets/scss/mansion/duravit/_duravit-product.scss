@@ -47,6 +47,9 @@
     @media all and (max-width: 1440px) {
       top: 7%;
     }
+    @media all and (max-width: 1366px) {
+      top: 15%;
+    }
   }
 
   .dot3 {
@@ -192,6 +195,7 @@
           padding: 0.3vw 1.5vw;
           padding-bottom: 0.4vw;
           font-size: 0.9vw;
+          letter-spacing: 0.1em;
           border-radius: 2vw;
           color: white;
           font-family: 'Noto Serif TC';
