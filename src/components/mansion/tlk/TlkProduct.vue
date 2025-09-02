@@ -90,7 +90,7 @@ import { useRouter } from 'vue-router'
 import gsap from 'gsap'
 
 const router = useRouter()
-const activeIndex = ref(0) // 預設第一個顯示
+const activeIndex = ref(2) // 預設第一個顯示
 
 const showVideo = ref(false)
 const showIHVideo = ref(false)

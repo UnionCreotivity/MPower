@@ -58,11 +58,9 @@
                 <img src="../../../assets/img/building/d.png" alt="" srcset="" />
               </div>
 
-              <div
-                class="btn-3f-12f btn-1mf"
-                v-if="props.floor === '1MF'"
-                @click="show1MF = true"
-              ></div>
+              <div class="btn-3f-12f btn-1mf" v-if="props.floor === '1MF'" @click="show1MF = true">
+                <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
+              </div>
             </div>
           </ScaleDrag>
         </div>

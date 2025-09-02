@@ -405,8 +405,15 @@
           }
         }
         .btn-1mf {
+          display: flex;
+          justify-content: center;
           height: 18%;
+
           top: 40%;
+
+          img {
+            width: 35%;
+          }
         }
         .btn-3f-12f-a {
           top: 27%;
