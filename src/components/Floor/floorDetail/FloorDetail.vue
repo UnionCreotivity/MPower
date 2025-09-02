@@ -61,6 +61,14 @@
               <div class="btn-3f-12f btn-1mf" v-if="props.floor === '1MF'" @click="show1MF = true">
                 <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
               </div>
+
+              <div
+                class="btn-3f-12f btn-1mf-2"
+                v-if="props.floor === '1MF'"
+                @click="show1MF2 = true"
+              >
+                <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
+              </div>
             </div>
           </ScaleDrag>
         </div>
@@ -84,6 +92,15 @@
       </div>
     </transition>
 
+    <transition name="fade" mode="out-in">
+      <div class="flooe-mf1-box flooe-mf1-box2" v-if="show1MF2" @click="show1MF2 = false">
+        <div class="img-box">
+          <img src="../../../assets/img/building/RF_C01_004.webp" alt="RF_C01_004" srcset="" />
+          <div class="hint">3D示意圖</div>
+        </div>
+      </div>
+    </transition>
+
     <FullScreen :forceBrownIcon="true" />
   </div>
 </template>
@@ -99,6 +116,7 @@ import FloorFurniture from '@/components/Floor/floorFurniture/FloorFurniture.vue
 const props = defineProps<{ floor: string }>()
 const showCompass = ref(false)
 const show1MF = ref(false)
+const show1MF2 = ref(false)
 const showFurniture = ref(false)
 const furnitureFloor = ref('') // 用來傳給 FloorFurniture 的樓層
 const detailEl = ref<HTMLElement | null>(null)
