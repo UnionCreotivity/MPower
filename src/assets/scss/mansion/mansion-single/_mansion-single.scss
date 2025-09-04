@@ -173,6 +173,7 @@
   padding-right: 1vw;
   .left-box {
     width: 54.5%;
+    mask-image: none;
     @media all and (max-width: 1920px) {
       width: 47%;
     }
@@ -367,5 +368,28 @@
         margin-bottom: 1.5%;
       }
     }
+  }
+}
+
+.mansion-single-swiper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  .swiper-wrapper {
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #5f4c3f !important;
+    width: 4vw !important;
+    height: 3vw !important;
+    &::after {
+      font-size: 2.5vw;
+    }
+  }
+  .swiper-button-next {
+    right: var(--swiper-navigation-sides-offset, -5px);
+  }
+  .swiper-button-prev {
+    left: var(--swiper-navigation-sides-offset, -5px);
   }
 }

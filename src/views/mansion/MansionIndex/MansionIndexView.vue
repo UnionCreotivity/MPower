@@ -58,7 +58,7 @@ const linkBoxList = [
     routeName: 'duravitIndex',
   },
   {
-    text: '電子鎖',
+    text: 'E-HOME',
     img: new URL('../../../assets/img/mansion/3.svg', import.meta.url).href,
     routeName: 'lockIndex',
   },
@@ -78,8 +78,8 @@ const linkBoxList = [
     routeName: 'lifegearIndex',
   },
   {
-    text: 'E-HOME',
-    img: new URL('../../../assets/img/mansion/3.svg', import.meta.url).href,
+    text: '機械車位',
+    img: '',
     routeName: 'ehomeIndex',
   },
   {
