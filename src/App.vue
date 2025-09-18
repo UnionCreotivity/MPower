@@ -109,7 +109,7 @@ waitForPreloadedAssets()
 
 onMounted(() => {
   if (!import.meta.env.DEV) {
-    const HOST='';
+    const HOST='board.ucy.com.tw';
     axios
       .post(
          `https://${HOST}/sys/login_axios.php`,
