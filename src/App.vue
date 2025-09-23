@@ -109,15 +109,16 @@ waitForPreloadedAssets()
 
 onMounted(() => {
   if (!import.meta.env.DEV) {
+    const HOST='board.ucy.com.tw';
     axios
       .post(
-        'https://web-board.tw/sys/login_axios.php',
+         `https://${HOST}/sys/login_axios.php`,
         {
           type: 'admin',
         },
         {
           headers: {
-            Authorization: `Bearer ${localStorage['token']}`,
+            XToken: `Bearer ${localStorage['token']}`,
             'Refresh-Token': localStorage['refresh_token'],
           },
           onUploadProgress: function () {
@@ -134,7 +135,7 @@ onMounted(() => {
           }
         } else {
           alert(response.data.msg)
-          window.location.href = 'https://web-board.tw'
+          window.location.href =  `https://${HOST}`
         }
       })
       .catch(function (error) {
