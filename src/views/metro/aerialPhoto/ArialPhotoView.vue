@@ -38,6 +38,7 @@
         {{ tab.title }}
       </div>
       <div class="house-number-tab" @click="switchHouseNumber">門牌價值</div>
+      <div class="house-number-tab" @click="switchLifePage">生活機能</div>
     </div>
 
     <div v-for="(content, i) in filteredContentData" :key="currentIndex" class="content-box active">
@@ -159,6 +160,11 @@ const switchContent = (index: number) => {
 const switchHouseNumber = () => {
   showHouseNumber.value = true
   router.replace({ name: 'aerialPhoto', query: { tab: 4 } })
+}
+
+// 切換到生機頁
+const switchLifePage = () => {
+  router.push('/metro/life')
 }
 
 // GSAP 動畫
