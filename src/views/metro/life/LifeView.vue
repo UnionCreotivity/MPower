@@ -112,11 +112,11 @@ const lifeList = [
     zhName: '繁華商圈',
     enName: 'SHOPPING DISTRICT',
   },
-  {
-    key: 'green-park',
-    zhName: '公園綠意',
-    enName: 'GREEN PARK',
-  },
+  // {
+  //   key: 'green-park',
+  //   zhName: '公園綠意',
+  //   enName: 'GREEN PARK',
+  // },
   {
     key: 'major-construction',
     zhName: '地標新篇',
