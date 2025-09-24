@@ -3,7 +3,7 @@
   <div
     class="menu-icon-container"
     ref="containerRef"
-    @click.stop="showClick(true)"
+    @click.stop="showMenu(true)"
     @mousemove="handleMouseMove"
     @mouseleave="handleMouseLeave"
   >
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <div class="menu-icon-close" @click.stop="showClick(false)">
+    <div class="menu-icon-close" @click.stop="showMenu(false)">
       <img src="../../assets/img/menu/close.svg" alt="close" />
     </div>
   </div>
@@ -210,6 +210,8 @@ const handleMainClick = (item: (typeof menuData)[number]) => {
     }
   }
 }
+
+//tab是為了空拍圖切換多個tab
 const handleSubLinkClick = (link: string, tab?: number) => {
   if (link) {
     // 有路由名稱，要跳轉頁面
@@ -220,7 +222,7 @@ const handleSubLinkClick = (link: string, tab?: number) => {
       // 沒有 tab，純跳頁
       router.push({ name: link })
     }
-    showClick(false)
+    showMenu(false)
   }
 
   // else {
@@ -230,13 +232,13 @@ const handleSubLinkClick = (link: string, tab?: number) => {
   //       // 同頁改 tab query，不刷新頁面
   //       router.replace({ name: 'aerialPhoto', query: { tab } })
   //     }
-  //     showClick(false)
+  //     showMenu(false)
   //   } else {
   //     // 其他頁面想切 tab，就跳 aerialPhoto 並帶 tab
   //     if (tab !== undefined) {
   //       router.push({ name: 'aerialPhoto', query: { tab } })
   //     }
-  //     showClick(false)
+  //     showMenu(false)
   //   }
   // }
 }
@@ -271,7 +273,7 @@ const showImg = (idx: number) => {
 }
 
 const showed = new Set<number>() // 記錄「已經展開過」的 index
-const showClick = (val: boolean) => {
+const showMenu = (val: boolean) => {
   if (val) {
     is_Show.value = true
     nextTick(() => {

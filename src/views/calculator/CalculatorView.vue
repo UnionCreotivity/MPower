@@ -258,8 +258,6 @@ const keyboardBackClick = () => {
 
 const submitClick = () => {
   loanStore.loanCalc(loanInputModel.value)
-
-  console.log(loanInputModel.value)
 }
 
 const cleanClick = () => {
