@@ -7,6 +7,7 @@
       :loop="true"
       class="mansion-single-swiper-container"
       :effect="'fade'"
+      @slideChange="handleSlideChange"
     >
       <SwiperSlide>
         <div class="overlay-close" @click="closeWithAnimation"></div>
@@ -173,6 +174,23 @@ const closeWithAnimation = () => {
   })
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const handleSlideChange = (swiper: any) => {
+  // 檢查當前是第二個 slide (index 從 0 開始)
+  if (swiper.realIndex === 1) {
+    // 對 bank-img 做放大縮小動畫
+    gsap.fromTo(
+      '.bank-img-box img',
+      { scale: 1.4 },
+      {
+        scale: 1,
+        duration: 1,
+
+        ease: 'power1.inOut',
+      },
+    )
+  }
+}
 // 初始化時先呼叫一次
 onMounted(async () => {
   openAni()
