@@ -12,7 +12,7 @@
     }
   }
 
-  .flooe-mf1-box {
+  .floor-mf1-box {
     width: 100%;
     position: absolute;
     overflow: hidden;
@@ -36,12 +36,20 @@
     }
   }
 
-  .flooe-mf1-box2 {
+  .floor-mf1-box2 {
     align-items: center;
     .img-box {
       width: 100%;
     }
   }
+
+  .floor-r1 {
+    align-items: center;
+    .img-box {
+      width: 55%;
+    }
+  }
+
   .bg-text {
     position: absolute;
     letter-spacing: 0.03em;
@@ -464,6 +472,11 @@
           @media all and (max-width: 1400px) {
             right: 38%;
           }
+        }
+
+        .btn-r1 {
+          width: 6%;
+          top: 46%;
         }
 
         .img-zoom-in {

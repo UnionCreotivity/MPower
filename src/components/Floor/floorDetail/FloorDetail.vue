@@ -69,6 +69,10 @@
               >
                 <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
               </div>
+
+              <div class="btn-3f-12f btn-r1" v-if="props.floor === 'R1'" @click="showR1 = true">
+                <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
+              </div>
             </div>
           </ScaleDrag>
         </div>
@@ -84,7 +88,7 @@
     <FloorFurniture v-if="showFurniture" :floor="furnitureFloor" @close="showFurniture = false" />
 
     <transition name="fade" mode="out-in">
-      <div class="flooe-mf1-box" v-if="show1MF" @click="show1MF = false">
+      <div class="floor-mf1-box" v-if="show1MF" @click="show1MF = false">
         <div class="img-box">
           <img src="../../../assets/img/building/LV_c05_002.webp" alt="LV_c05_002" srcset="" />
           <div class="hint">3D示意圖</div>
@@ -93,9 +97,18 @@
     </transition>
 
     <transition name="fade" mode="out-in">
-      <div class="flooe-mf1-box flooe-mf1-box2" v-if="show1MF2" @click="show1MF2 = false">
+      <div class="floor-mf1-box floor-mf1-box2" v-if="show1MF2" @click="show1MF2 = false">
         <div class="img-box">
           <img src="../../../assets/img/building/LV_c06_004.webp" alt="LV_c06_004" srcset="" />
+          <div class="hint">3D示意圖</div>
+        </div>
+      </div>
+    </transition>
+
+    <transition name="fade" mode="out-in">
+      <div class="floor-mf1-box floor-r1" v-if="showR1" @click="showR1 = false">
+        <div class="img-box">
+          <img src="../../../assets/img/building/RF_C01_004.webp" alt="RF_C01_004" srcset="" />
           <div class="hint">3D示意圖</div>
         </div>
       </div>
@@ -117,6 +130,7 @@ const props = defineProps<{ floor: string }>()
 const showCompass = ref(false)
 const show1MF = ref(false)
 const show1MF2 = ref(false)
+const showR1 = ref(false)
 const showFurniture = ref(false)
 const furnitureFloor = ref('') // 用來傳給 FloorFurniture 的樓層
 const detailEl = ref<HTMLElement | null>(null)
