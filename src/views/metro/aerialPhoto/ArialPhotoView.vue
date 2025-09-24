@@ -24,6 +24,9 @@
           @open-green-line="showGreenLine = true"
           @open-red-line="showRedLine = true"
           @open-orange-line="showOrangeLine = true"
+          @open-zhong-qing="showZhongQing = true"
+          @open-bei-ping="showBeiPing = true"
+          @open-chong-de="showChongDe = true"
         />
       </TransitionGroup>
     </div>
@@ -52,6 +55,10 @@
     <GreenLine v-if="showGreenLine" @close="showGreenLine = false" />
     <RedLine v-if="showRedLine" @close="showRedLine = false" />
     <OrangeLine v-if="showOrangeLine" @close="showOrangeLine = false" />
+
+    <ZhongQing v-if="showZhongQing" @close="showZhongQing = false" />
+    <BeiPing v-if="showBeiPing" @close="showBeiPing = false" />
+    <ChongDe v-if="showChongDe" @close="showChongDe = false" />
   </section>
 
   <FullScreen :forceWhiteIcon="true" />
@@ -71,6 +78,11 @@ import CoreGroup from '@/components/metro/CoreGroup.vue'
 import GreenLine from '@/components/metro/GreenLine.vue'
 import RedLine from '@/components/metro/RedLine.vue'
 import OrangeLine from '@/components/metro/OrangeLine.vue'
+
+import ZhongQing from '@/components/metro/ZhongQing.vue'
+import BeiPing from '@/components/metro/BeiPing.vue'
+import ChongDe from '@/components/metro/ChongDe.vue'
+
 import FullScreen from '@/components/full-screen/FullScreen.vue'
 import '@/assets/scss/metro/_arial-photo.scss'
 
@@ -83,6 +95,10 @@ const showGreenLine = ref(false)
 const showRedLine = ref(false)
 const showOrangeLine = ref(false)
 const showHouseNumber = ref(false)
+const showZhongQing = ref(false)
+const showBeiPing = ref(false)
+const showChongDe = ref(false)
+
 const isAnimating = ref(false)
 const currentIndex = ref(0)
 

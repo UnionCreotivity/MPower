@@ -140,15 +140,24 @@
         left: -8.7%;
       }
     }
-
+    @keyframes pointAni {
+      0% {
+        transform: translateY(0%);
+      }
+      50% {
+        transform: translateY(-20%);
+      }
+    }
     .green-line-point {
       position: absolute;
       z-index: 40;
       left: 37.5%;
-      width: 1vw;
+      width: 1.2vw;
       bottom: 33%;
-      transition: none; /* 用 GSAP 控制 */
+      // transition: none; /* 用 GSAP 控制 */
       transform-origin: center center;
+      animation: pointAni 1.5s ease-in-out infinite forwards;
+
       @media all and (max-width: 1400px) {
         left: 32.5%;
         width: 2.5vw;
@@ -160,10 +169,12 @@
       position: absolute;
       z-index: 40;
       right: 18.7%;
-      width: 1vw;
+      width: 1.2vw;
       bottom: 25%;
-      transition: none;
+      // transition: none;
       transform-origin: center center;
+      animation: pointAni 1.5s ease-in-out infinite forwards;
+
       @media all and (max-width: 1400px) {
         right: 14.7%;
         width: 2.5vw;
@@ -175,8 +186,10 @@
       position: absolute;
       z-index: 40;
       left: 27%;
-      width: 1vw;
+      width: 1.2vw;
       bottom: 25%;
+      animation: pointAni 1.5s ease-in-out infinite forwards;
+
       @media all and (max-width: 1400px) {
         left: 21%;
         width: 2.5vw;
@@ -203,6 +216,15 @@
       }
     }
 
+    .zhong-qing-point {
+      position: absolute;
+      z-index: 40;
+      left: 43.5%;
+      width: 1.2vw;
+      bottom: 38%;
+      animation: pointAni 1.5s ease-in-out infinite forwards;
+    }
+
     .tab3-img2 {
       width: 18%;
       z-index: 30;
@@ -222,6 +244,15 @@
       }
     }
 
+    .bei-ping-point {
+      position: absolute;
+      z-index: 40;
+      left: 45.75%;
+      width: 1.2vw;
+      bottom: 10%;
+      animation: pointAni 1.5s ease-in-out infinite forwards;
+    }
+
     .tab3-img3 {
       width: 20%;
       z-index: 30;
@@ -239,6 +270,14 @@
         bottom: 6%;
         left: 66.7%;
       }
+    }
+    .chong-de-point {
+      position: absolute;
+      z-index: 40;
+      right: 23.7%;
+      width: 1.2vw;
+      bottom: 18.5%;
+      animation: pointAni 1.5s ease-in-out infinite forwards;
     }
 
     .tab3-line-bg {

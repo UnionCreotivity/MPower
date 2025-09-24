@@ -58,12 +58,13 @@ const orangePoint = ref<HTMLElement | null>(null)
 const orangeLine = ref<HTMLElement | null>(null)
 
 /**
- * 共用 hover 動畫函式
+ *
  * @param hover 是否滑鼠在點上
  * @param pointRef 點的 ref
  * @param lineRef 線的 ref
  * @param glowColor 發光顏色
  */
+
 const handleLineHover = (
   hover: boolean,
   pointRef: Ref<HTMLElement | null>,
@@ -71,12 +72,6 @@ const handleLineHover = (
   glowColor: string,
 ) => {
   if (!pointRef.value || !lineRef.value) return
-
-  gsap.to(pointRef.value, {
-    scale: hover ? 1.3 : 1,
-    ease: 'back.inOut(2)',
-    duration: 0.5,
-  })
 
   const lineImg = lineRef.value.querySelector('img')
   if (lineImg) {
@@ -108,14 +103,6 @@ const imgAni = () => {
       opacity: 0,
     },
     { opacity: 1, duration: 1.2 },
-  ).from(
-    '.line-point',
-    {
-      y: '-30',
-      duration: 1,
-      opacity: 0,
-    },
-    '<0.5',
   )
 }
 

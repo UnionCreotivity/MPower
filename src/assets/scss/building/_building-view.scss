@@ -39,10 +39,7 @@
   .flooe-mf1-box2 {
     align-items: center;
     .img-box {
-      width: 54%;
-      @media all and (max-width: 1440px) {
-        width: 58%;
-      }
+      width: 100%;
     }
   }
   .bg-text {

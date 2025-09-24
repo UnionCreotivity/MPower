@@ -1,5 +1,27 @@
 <template>
   <div class="business-group">
+    <img
+      class="zhong-qing-point line-point"
+      ref="zhongQingPoint"
+      src="../../assets/img/life/point.svg"
+      alt="zhongQingPoint"
+      @click="$emit('open-zhong-qing')"
+    />
+    <img
+      class="bei-ping-point line-point"
+      ref="beiPingPoint"
+      src="../../assets/img/life/point.svg"
+      alt="beiPingPoint"
+      @click="$emit('open-bei-ping')"
+    />
+    <img
+      class="chong-de-point line-point"
+      ref="chongDePoint"
+      src="../../assets/img/life/point.svg"
+      alt="chongDePoint"
+      @click="$emit('open-chong-de')"
+    />
+
     <div class="tab3-img1 business-line">
       <img src="@/assets/img/metro/tab3_1.png" alt="tab3_1" />
     </div>
