@@ -30,6 +30,7 @@
 
         <img src="../../assets/img/metro/main_text.png" alt="main_text" class="text" />
         <img src="../../assets/img/metro/light.png" alt="light" class="light" />
+        <img src="../../assets/img/metro/light.png" alt="light" class="light-bg" />
 
         <div class="hint">情境示意圖</div>
       </SwiperSlide>
@@ -139,7 +140,7 @@ const openAni = () => {
       '<0.2',
     )
     .from(
-      '#metro-view .number-box .light',
+      '#metro-view .number-box .light,.light-bg',
       {
         duration: 1,
         opacity: 0,
