@@ -1,5 +1,29 @@
 <template>
   <div class="core-group">
+    <img
+      class="seven-qi-point line-point"
+      ref="corePoint"
+      src="../../assets/img/life/point.svg"
+      alt="point"
+      @click="$emit('open-seven-qi')"
+    />
+
+    <img
+      class="shui-nan-point line-point"
+      ref="corePoint"
+      src="../../assets/img/life/point.svg"
+      alt="point"
+      @click="$emit('open-shui-nan')"
+    />
+
+    <img
+      class="four-teen-point line-point"
+      ref="corePoint"
+      src="../../assets/img/life/point.svg"
+      alt="point"
+      @click="$emit('open-four-teen')"
+    />
+
     <div class="tab4-img1 core-line">
       <img src="/src/assets/img/metro/tab4_1.svg" alt="tab4_1" />
     </div>

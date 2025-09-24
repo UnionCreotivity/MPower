@@ -27,6 +27,9 @@
           @open-zhong-qing="showZhongQing = true"
           @open-bei-ping="showBeiPing = true"
           @open-chong-de="showChongDe = true"
+          @open-seven-qi="showSevenQi = true"
+          @open-shui-nan="showShuiNan = true"
+          @open-four-teen="showFourTeen = true"
         />
       </TransitionGroup>
     </div>
@@ -56,9 +59,15 @@
     <RedLine v-if="showRedLine" @close="showRedLine = false" />
     <OrangeLine v-if="showOrangeLine" @close="showOrangeLine = false" />
 
+    <!-- 繁華商圈 -->
     <ZhongQing v-if="showZhongQing" @close="showZhongQing = false" />
     <BeiPing v-if="showBeiPing" @close="showBeiPing = false" />
     <ChongDe v-if="showChongDe" @close="showChongDe = false" />
+
+    <!-- 金軸核心 -->
+    <SevenQi v-if="showSevenQi" @close="showSevenQi = false" />
+    <ShuiNan v-if="showShuiNan" @close="showShuiNan = false" />
+    <FourTeen v-if="showFourTeen" @close="showFourTeen = false" />
   </section>
 
   <FullScreen :forceWhiteIcon="true" />
@@ -82,6 +91,9 @@ import OrangeLine from '@/components/metro/OrangeLine.vue'
 import ZhongQing from '@/components/metro/ZhongQing.vue'
 import BeiPing from '@/components/metro/BeiPing.vue'
 import ChongDe from '@/components/metro/ChongDe.vue'
+import SevenQi from '@/components/metro/SevenQi.vue'
+import ShuiNan from '@/components/metro/ShuiNan.vue'
+import FourTeen from '@/components/metro/FourTeen.vue'
 
 import FullScreen from '@/components/full-screen/FullScreen.vue'
 import '@/assets/scss/metro/_arial-photo.scss'
@@ -98,6 +110,9 @@ const showHouseNumber = ref(false)
 const showZhongQing = ref(false)
 const showBeiPing = ref(false)
 const showChongDe = ref(false)
+const showSevenQi = ref(false)
+const showShuiNan = ref(false)
+const showFourTeen = ref(false)
 
 const isAnimating = ref(false)
 const currentIndex = ref(0)

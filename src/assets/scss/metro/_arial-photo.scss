@@ -294,6 +294,33 @@
       }
     }
 
+    .seven-qi-point {
+      position: absolute;
+      z-index: 40;
+      left: 13.3%;
+      width: 1.2vw;
+      bottom: 46%;
+      animation: pointAni 1.5s ease-in-out infinite forwards;
+    }
+
+    .shui-nan-point {
+      position: absolute;
+      z-index: 40;
+      left: 35.9%;
+      width: 1.2vw;
+      bottom: 44%;
+      animation: pointAni 1.5s ease-in-out infinite forwards;
+    }
+
+    .four-teen-point {
+      position: absolute;
+      z-index: 40;
+      left: 60.4%;
+      width: 1.2vw;
+      bottom: 39%;
+      animation: pointAni 1.5s ease-in-out infinite forwards;
+    }
+
     .tab4-img1 {
       position: absolute;
       width: 1%;
