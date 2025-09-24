@@ -34,7 +34,12 @@
       <div class="line-img">
         <img src="../../assets/img/metro/green_line_item.webp" alt="" srcset="" />
       </div>
-      <img class="light" src="../../assets/img/metro/light.png" alt="light" srcset="" />
+      <img
+        class="light"
+        src="../../assets/img/metro/green_line_light.png"
+        alt="green_line_light"
+        srcset=""
+      />
     </div>
   </div>
 

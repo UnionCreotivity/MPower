@@ -19,7 +19,7 @@
       <div class="main-content-box">
         <div class="list">
           <div class="small-title orange-small-title">路段│</div>
-          <div class="content">機場段-市區段-屯區段</div>
+          <div class="content">沙鹿-大雅-西屯-北屯-北區-東區-南區-大里-霧峰</div>
         </div>
         <div class="list">
           <div class="small-title orange-small-title">路線長度│</div>
@@ -27,7 +27,13 @@
         </div>
         <div class="list">
           <div class="small-title orange-small-title">計畫進度│</div>
-          <div class="content">2024年交通部已原則同意，待最終審議後核定</div>
+          <div class="content">
+            2025年送交行政院審查，等待核定<br />
+            2026-2027年進入綜合規劃、環評及細部設計<br />
+            2028-2029年工程招標、土地徵收<br />
+            2030-2035年分段動工建設<br />
+            2036-2037年左右全線完工通車
+          </div>
         </div>
 
         <div class="btn" @click="showTaipeiLine = true">
@@ -38,6 +44,13 @@
       <div class="line-img orange-line-img">
         <img src="../../assets/img/metro/orange_line_item.webp" alt="" srcset="" />
       </div>
+
+      <img
+        class="orange-light"
+        src="../../assets/img/metro/orange_light.png"
+        alt="green_line_light"
+        srcset=""
+      />
     </div>
   </div>
 
@@ -116,6 +129,21 @@ const imgAni = () => {
         x: '-90',
       },
       '<-0.35',
+    )
+    // 顯示並啟動光效
+    .to(
+      '.orange-light',
+      {
+        duration: 0.5,
+        autoAlpha: 1, // opacity:1 + visibility:visible
+        onStart: () => {
+          const light = document.querySelector('.orange-light')
+          if (light instanceof HTMLElement) {
+            light.style.animationPlayState = 'running'
+          }
+        },
+      },
+      '<0.7',
     )
 }
 

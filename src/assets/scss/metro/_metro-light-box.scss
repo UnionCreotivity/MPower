@@ -152,10 +152,36 @@
     .light {
       position: absolute;
       mix-blend-mode: plus-lighter;
-      top: 47.3%;
+      top: 48.9%;
       transform: translate(-50%, -50%);
       left: 53.4%;
-      width: 5%;
+      width: 17%;
+      opacity: 0;
+      visibility: hidden;
+      animation: light 2.4s ease-in-out infinite;
+      animation-play-state: paused; /* 先暫停 */
+    }
+
+    .orange-light {
+      position: absolute;
+      mix-blend-mode: plus-lighter;
+      top: 49.6%;
+      transform: translate(-50%, -50%);
+      left: 52.7%;
+      width: 17%;
+      opacity: 0;
+      visibility: hidden;
+      animation: light 2.4s ease-in-out infinite;
+      animation-play-state: paused; /* 先暫停 */
+    }
+
+    .red-light {
+      position: absolute;
+      mix-blend-mode: plus-lighter;
+      top: 49.6%;
+      transform: translate(-50%, -50%);
+      left: 50.25%;
+      width: 17%;
       opacity: 0;
       visibility: hidden;
       animation: light 2.4s ease-in-out infinite;
@@ -240,6 +266,28 @@
         line-height: 1.7;
         color: white;
       }
+    }
+  }
+}
+
+.orange-line-box {
+  .main-box {
+    .title-box {
+      top: 15%;
+    }
+    .main-content-box {
+      top: 33%;
+    }
+  }
+}
+
+.red-line-box {
+  .main-box {
+    .title-box {
+      top: 17%;
+    }
+    .main-content-box {
+      top: 35%;
     }
   }
 }

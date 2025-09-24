@@ -26,7 +26,13 @@
         </div>
         <div class="list">
           <div class="small-title red-small-title">計畫進度│</div>
-          <div class="content">2024年交通部已核定可行性研究</div>
+          <div class="content">
+            2025年完成計畫書並提出期中報告<br />
+            2026年 預計送中央審議<br />
+            2027年 進入細部設計與發包<br />
+            2030年 前後進場動工建設<br />
+            2036年 預估全線完工通車<br />
+          </div>
         </div>
 
         <div class="btn" @click="showTaipeiLine = true">
@@ -37,6 +43,13 @@
       <div class="line-img red-line-img">
         <img src="../../assets/img/metro/red_line_item.webp" alt="" srcset="" />
       </div>
+
+      <img
+        class="red-light"
+        src="../../assets/img/metro/red_light.png"
+        alt="green_line_light"
+        srcset=""
+      />
     </div>
   </div>
 
@@ -116,6 +129,21 @@ const imgAni = () => {
         x: '-90',
       },
       '<-0.35',
+    )
+    // 顯示並啟動光效
+    .to(
+      '.red-light',
+      {
+        duration: 0.5,
+        autoAlpha: 1, // opacity:1 + visibility:visible
+        onStart: () => {
+          const light = document.querySelector('.red-light')
+          if (light instanceof HTMLElement) {
+            light.style.animationPlayState = 'running'
+          }
+        },
+      },
+      '<0.7',
     )
 }
 
