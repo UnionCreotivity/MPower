@@ -77,6 +77,7 @@ export const lifeData = [
     ],
     txt: '中國醫藥大學',
   },
+
   //繁華商圈
   {
     tag: 'shopping-district',
@@ -170,7 +171,6 @@ export const lifeData = [
     image: new URL('@/assets/img/life/traffic/shuinan_01.webp', import.meta.url).href,
     txt: '水湳轉運中心',
   },
-
   {
     tag: 'rapid-transit',
     id: 'g07', // 中清文心站
@@ -180,6 +180,13 @@ export const lifeData = [
     new URL('@/assets/img/life/traffic/g07_3.webp', import.meta.url).href,
     ],
     txt: '中清文心站',
+  },
+  {
+    tag: 'rapid-transit',
+    id: 'bus', // 公車圖
+    className: 'transit-point-6',
+    image: new URL('@/assets/img/life/traffic/bus.webp', import.meta.url).href,
+    txt: '',
   },
 
   //地標新篇
