@@ -19,7 +19,6 @@
           <img :src="item.image" :alt="item.txt" />
           <div class="life-swiper-text" v-if="item.txt != ''">
             <p>{{ item.txt }}</p>
-            <div class="life-swiper-line"></div>
           </div>
         </swiper-slide>
       </Swiper>
