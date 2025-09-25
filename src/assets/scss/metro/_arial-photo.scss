@@ -148,6 +148,14 @@
         transform: translateY(-20%);
       }
     }
+
+    .line-point {
+      transition: all 0.5s ease-in;
+      &:hover {
+        filter: brightness(2);
+      }
+    }
+
     .green-line-point {
       position: absolute;
       z-index: 40;

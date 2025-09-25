@@ -1,17 +1,13 @@
 <template>
+  <TaipeiMRT v-if="showTaipeiMrt" @close="showTaipeiMrt = false" />
+
   <div class="taipei-line-box">
+    <div class="mrt-btn" @click="showTaipeiMrt = true"></div>
     <div class="overlay-close" @click="closeWithAnimation"></div>
     <div class="main-box">
-      <div class="img-box">
-        <img src="../../assets/img/metro/taipei_bg.webp" alt="taipei_bg" srcset="" />
-      </div>
-
-      <div class="title">
-        <img src="../../assets/img/metro/taipei_title.png" alt="taipei_title" srcset="" />
-      </div>
-
       <div class="taipei-img">
         <img src="../../assets/img/metro/taipei_img.webp" alt="taipei_img" srcset="" />
+
         <div class="hint">
           資料來源:賣價登錄資料,臺北大眾捷連股份有限公司;永慶房產集團研究發展中心氣整整。<br />
           住宅價格篩選條件:1.交易標的為房地(土地+建物)、房地(土地+建物)+車位、建物。2.建物型態:住宅大樓、華廈及公寓。3.排除屋齢兩年內、一樓及親友交易之成交資料。<br />
@@ -23,10 +19,11 @@
 </template>
 
 <script setup lang="ts">
+import '@/assets/scss/metro/_metro-light-box.scss'
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
-
-import '@/assets/scss/metro/_metro-light-box.scss'
+import TaipeiMRT from '@/components/metro/TaipeiMRT.vue'
+const showTaipeiMrt = ref(false)
 
 const emit = defineEmits(['close'])
 

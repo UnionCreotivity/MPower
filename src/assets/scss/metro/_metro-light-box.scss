@@ -17,6 +17,7 @@
     height: 100%;
     width: 100%;
     display: flex;
+    position: relative;
 
     .img-box {
       position: relative;
@@ -216,9 +217,30 @@
   mask-size: 200% 100%;
   -webkit-mask-position: 200% 0;
   mask-position: 200% 0;
+
+  background-image: url(../../img/metro/taipei_bg.webp);
+  background-size: cover;
+
+  @media all and (max-width: 1920px) {
+    height: 100%;
+  }
+
+  .mrt-btn {
+    position: absolute;
+    z-index: 99999;
+    width: 12vw;
+    height: 12vw;
+    background-color: white;
+    top: 27vw;
+    left: 36vw;
+    @media all and (max-width: 1440px) {
+      top: 54%;
+    }
+  }
   .main-box {
     height: 100%;
     width: 100%;
+
     .img-box {
       width: 100%;
       height: 100%;
@@ -242,29 +264,32 @@
       }
     }
     .taipei-img {
-      width: 69vw;
+      width: 80vw;
       position: absolute;
-      top: 54%;
-      left: 45%;
+      top: 50%;
+      left: 49%;
       transform: translate(-50%, -50%);
       @media all and (max-width: 1920px) {
-        width: 65vw;
+        width: 70vw;
       }
-      @media all and (max-width: 1440px) {
-        width: 80vw;
-        top: 49%;
-        left: 50%;
+
+      @media all and (max-width: 1370px) {
+        width: 87vw;
       }
       img {
         width: 100%;
       }
       .hint {
         font-family: '微軟正黑體';
-        font-size: 0.9vw;
+        font-size: 0.7vw;
         letter-spacing: 0.15em;
         margin-top: 1.3vw;
         line-height: 1.7;
         color: white;
+        padding-left: 1vw;
+        @media all and (max-width: 1440px) {
+          font-size: 0.8vw;
+        }
       }
     }
   }
@@ -288,6 +313,14 @@
     }
     .main-content-box {
       top: 35%;
+    }
+  }
+}
+
+.green-line-box {
+  .main-box {
+    .main-content-box {
+      top: 36%;
     }
   }
 }

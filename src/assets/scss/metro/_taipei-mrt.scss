@@ -1,0 +1,132 @@
+@use '../utils/mixin' as *;
+
+.taipei-mrt-box {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/metro/bg.webp);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  z-index: 9999;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  .left-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .title-box {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2vw;
+      .en {
+        width: 27vw;
+      }
+      .zh {
+        font-size: var(--font-big-title-zh-size);
+        font-family: var(--font-family-title-zh);
+        color: var(--font-color-title);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+      }
+    }
+    .taipei-mrt-content-box {
+      font-size: 1.1vw;
+      font-family: var(--font-content-zh);
+      color: var(--font-content-color);
+      line-height: 2;
+      font-weight: 400;
+      text-align: justify;
+      letter-spacing: 0.1em;
+      div {
+        color: #ff4b00;
+        font-family: '微軟正黑體';
+        font-weight: 600;
+        font-size: 1.3vw;
+        margin-top: 1vw;
+      }
+    }
+  }
+
+  .right-box {
+    width: 50%;
+    position: relative;
+    // margin-top: 3vw;
+
+    .zh-title {
+      position: absolute;
+      width: 13vw;
+      right: 8%;
+      top: 8%;
+    }
+
+    .wen-1 {
+      position: absolute;
+      width: 22vw;
+      right: 0px;
+      top: 28%;
+    }
+
+    .dan-2 {
+      position: absolute;
+      width: 37vw;
+      right: 18.2%;
+      top: 7.4%;
+      @media all and (max-width: 1400px) {
+        top: 12.4%;
+      }
+    }
+
+    .ban-3 {
+      position: absolute;
+      width: 40vw;
+      right: 3.2%;
+      top: 48%;
+      @media all and (max-width: 1400px) {
+        top: 43%;
+      }
+    }
+
+    .zhong-4 {
+      position: absolute;
+      width: 20vw;
+      right: 55.2%;
+      top: 20%;
+      @media all and (max-width: 1400px) {
+        top: 23%;
+      }
+    }
+
+    .song-5 {
+      position: absolute;
+      width: 24vw;
+      right: 20.2%;
+      top: 43%;
+      @media all and (max-width: 1400px) {
+        top: 39.1%;
+      }
+    }
+
+    .hai-6 {
+      position: absolute;
+      width: 17vw;
+      right: 52.2%;
+      top: 37%;
+      @media all and (max-width: 1400px) {
+        top: 33.7%;
+      }
+    }
+
+    .gi-7 {
+      position: absolute;
+      width: 13vw;
+      right: 68.2%;
+      top: 32%;
+      @media all and (max-width: 1400px) {
+        top: 30.5%;
+      }
+    }
+  }
+}
