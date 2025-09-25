@@ -5,10 +5,11 @@
     :speed="800"
     class="mrt-swiper"
     id="mrt-swiper-container"
+    @slide-change="handleSlideChange"
   >
     <SwiperSlide>
       <div class="taipei-mrt-box">
-        <div class="overlay-close"></div>
+        <div class="overlay-close" @click="closeWithAnimation"></div>
 
         <div class="left-box">
           <div class="title-box">
@@ -46,9 +47,10 @@
         </div>
       </div>
     </SwiperSlide>
+
     <SwiperSlide>
       <div class="taichung-mrt-box">
-        <div class="overlay-close"></div>
+        <div class="overlay-close" @click="closeWithAnimation"></div>
 
         <div class="left-box">
           <div class="title-box">
@@ -58,7 +60,7 @@
             <div class="zh">台中捷運崛起 台北模式再現</div>
           </div>
 
-          <div class="taipei-mrt-content-box">
+          <div class="taipei-mrt-content-box taichung-mrt-content-box">
             台北捷運，串聯生活、商圈與核心，房價與區域價值持續攀升，<br />
             成為最鮮明的城市成長軌跡。<br /><br />
             如今，台中正走在同樣的道路上。隨著捷運逐步落實，帶動沿線<br />
@@ -75,7 +77,7 @@
 
     <SwiperSlide>
       <div class="taichung-mrt-box taichung-mrt-box2">
-        <div class="overlay-close"></div>
+        <div class="overlay-close" @click="closeWithAnimation"></div>
 
         <div class="left-box">
           <div class="title-box">
@@ -104,47 +106,158 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
 import '@/assets/scss/metro/_taipei-mrt.scss'
+import gsap from 'gsap'
 
-// const emit = defineEmits(['close'])
+// Slide 0 動畫
+const animateSlide0 = () => {
+  const tl = gsap.timeline({ delay: 0.4 })
 
-// const imgAni = () => {
-//   const tl = gsap.timeline({})
+  // reset 狀態
+  gsap.set('.taipei-mrt-box .left-box', { x: -100, opacity: 0 })
+  gsap.set('.taipei-mrt-box .right-box', { x: 100, opacity: 0 })
 
-//   tl.fromTo(
-//     '.taipei-mrt-box',
-//     {
-//       maskPosition: '200% 0',
-//     },
-//     {
-//       maskPosition: '0% 0%',
-//       duration: 1.5,
-//       ease: 'cubic-bezier(0.64, 0.03, 0.07, 0.97)',
-//     },
-//   )
-// }
+  tl.to('.taipei-mrt-box .left-box', {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    ease: 'power1.out',
+  }).to(
+    '.taipei-mrt-box .right-box',
+    {
+      x: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power1.out',
+    },
+    '<0.3',
+  )
+}
 
-// const closeWithAnimation = () => {
-//   const tl = gsap.timeline({
-//     onComplete: () => {
-//       emit('close') // 動畫結束後再真正關閉
-//     },
-//   })
+// Slide 1 動畫
+const animateSlide1 = () => {
+  gsap.set('.taichung-mrt-box .left-box .title-box div', { y: 100, opacity: 0 })
+  gsap.set('.taichung-mrt-box .left-box .taichung-mrt-content-box', { y: 100, opacity: 0 })
+  gsap.set('.taichung-mrt-box .left-box .taichung-mrt-content-box', { y: 100, opacity: 0 })
 
-//   tl.to('.taipei-mrt-box', {
-//     maskPosition: '200% 0',
-//     duration: 1.2,
-//   })
-// }
-// // 初始化時先呼叫一次
-// onMounted(async () => {
-//   imgAni()
-// })
+  const tl = gsap.timeline({ delay: 0.4 })
+  tl.to('.taichung-mrt-box .left-box .title-box div', {
+    y: 0,
+    opacity: 1,
+
+    duration: 1,
+    stagger: 0.1,
+  }).to(
+    '.taichung-mrt-box .left-box .taichung-mrt-content-box',
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+    },
+    '<0.3',
+  )
+}
+// Slide 2 動畫
+const animateSlide2 = () => {
+  // reset 狀態
+  gsap.set('.taichung-mrt-box2 .left-box .title-box div', { y: 100, opacity: 0 })
+  gsap.set('.taichung-mrt-box2 .left-box .taipei-mrt-content-box', { y: 100, opacity: 0 })
+
+  const tl = gsap.timeline({ delay: 0.4 })
+  tl.to('.taichung-mrt-box2 .left-box .title-box div', {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    stagger: 0.1,
+  }).to(
+    '.taichung-mrt-box2 .left-box .taipei-mrt-content-box',
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+    },
+    '<0.3',
+  )
+}
+
+// 監聽 slide 切換
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const handleSlideChange = (swiper: any) => {
+  const index = swiper.activeIndex
+  if (index === 0) animateSlide0()
+  if (index === 1) animateSlide1()
+  if (index === 2) animateSlide2()
+}
+
+const emit = defineEmits(['close'])
+
+const imgAni = () => {
+  const tl = gsap.timeline({})
+
+  tl.fromTo(
+    '.mrt-swiper',
+    {
+      maskPosition: '200% 0',
+    },
+    {
+      maskPosition: '0% 0%',
+      duration: 1.5,
+      ease: 'cubic-bezier(0.64, 0.03, 0.07, 0.97)',
+    },
+  )
+    .from(
+      '.taipei-mrt-box .left-box .title-box div',
+      {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        stagger: 0.15,
+      },
+      '<0.3',
+    )
+    .from(
+      '.taipei-mrt-content-box',
+      {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+      },
+      '<0.3',
+    )
+    .from(
+      '.wen-1,.dan-2,.ban-3,.zhong-4,.song-5,.hai-6,.gi-7',
+      {
+        duration: 1.5,
+        y: '100',
+        opacity: 0,
+        stagger: 0.2,
+      },
+      '<0.5',
+    )
+}
+
+const closeWithAnimation = () => {
+  const tl = gsap.timeline({
+    onComplete: () => {
+      emit('close') // 動畫結束後再真正關閉
+    },
+  })
+
+  tl.to('.mrt-swiper', {
+    maskPosition: '200% 0',
+    duration: 1.2,
+  })
+}
+// 初始化時先呼叫一次
+onMounted(async () => {
+  imgAni()
+})
 </script>
 
 <style scoped></style>
