@@ -1,18 +1,28 @@
 @use '../utils/mixin' as *;
-
+.mrt-swiper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: 9999;
+}
+#mrt-swiper-container {
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #bbaa9f !important;
+  }
+}
 .taipei-mrt-box {
   width: 100%;
   height: 100%;
   background-image: url(../../img/metro/bg.webp);
   background-size: cover;
-  position: absolute;
-  top: 0px;
-  z-index: 9999;
   background-color: white;
   display: flex;
   justify-content: space-between;
   padding-left: 5vw;
   padding-right: 5vw;
+
   .left-box {
     display: flex;
     justify-content: center;
@@ -53,11 +63,10 @@
   .right-box {
     width: 50%;
     position: relative;
-    // margin-top: 3vw;
 
     .zh-title {
       position: absolute;
-      width: 13vw;
+      width: 12vw;
       right: 8%;
       top: 8%;
     }
@@ -126,6 +135,82 @@
       top: 32%;
       @media all and (max-width: 1400px) {
         top: 30.5%;
+      }
+    }
+  }
+}
+
+.taichung-mrt-box {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/metro/taichung_mrt_bg.webp);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  z-index: 9999;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  .left-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .title-box {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2vw;
+      .en {
+        width: 27vw;
+      }
+      .zh {
+        font-size: var(--font-big-title-zh-size);
+        font-family: var(--font-family-title-zh);
+        color: var(--font-color-title);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+      }
+    }
+    .taipei-mrt-content-box {
+      font-size: 1.1vw;
+      font-family: var(--font-content-zh);
+      color: var(--font-content-color);
+      line-height: 2;
+      font-weight: 400;
+      text-align: justify;
+      letter-spacing: 0.1em;
+      div {
+        color: #ff4b00;
+        font-family: '微軟正黑體';
+        font-weight: 600;
+        font-size: 1.3vw;
+        margin-top: 1vw;
+      }
+    }
+  }
+}
+
+.taichung-mrt-box2 {
+  background-image: url(../../img/metro/taichung_mrt_bg2.webp);
+  .left-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .title-box {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.3vw;
+      .en {
+        width: 10vw;
+        margin-bottom: 1vw;
+      }
+      .zh {
+        font-size: var(--font-big-title-zh-size);
+        font-family: var(--font-family-title-zh);
+        color: var(--font-color-title);
+        font-weight: 600;
+        letter-spacing: 0.1em;
       }
     }
   }

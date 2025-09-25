@@ -1,48 +1,114 @@
 <template>
-  <div class="taipei-mrt-box">
-    <div class="overlay-close"></div>
+  <Swiper
+    :modules="[Navigation]"
+    navigation
+    :speed="800"
+    class="mrt-swiper"
+    id="mrt-swiper-container"
+  >
+    <SwiperSlide>
+      <div class="taipei-mrt-box">
+        <div class="overlay-close"></div>
 
-    <div class="left-box">
-      <div class="title-box">
-        <div class="en">
-          <img src="../../assets/img/metro/mrt_entitle.png" alt="" srcset="" />
+        <div class="left-box">
+          <div class="title-box">
+            <div class="en">
+              <img src="../../assets/img/metro/mrt_entitle.png" alt="" srcset="" />
+            </div>
+            <div class="zh">台中捷運崛起 台北模式再現</div>
+          </div>
+
+          <div class="taipei-mrt-content-box">
+            台北捷運，串聯生活、商圈與核心，房價與區域價值持續攀升，<br />
+            成為最鮮明的城市成長軌跡。<br /><br />
+            如今，台中正走在同樣的道路上。隨著捷運逐步落實，帶動沿線<br />
+            環境全面升級。<br />
+            未來，捷運所經之處，將是資產保值與增值的黃金軸帶。<br />
+
+            <div>台北已經驗證，台中正在發生。</div>
+
+            掌握捷運軌道經濟，掌握未來城市價值！
+          </div>
         </div>
-        <div class="zh">台中捷運崛起 台北模式再現</div>
+        <div class="right-box">
+          <div class="zh-title">
+            <img src="../../assets/img/metro/mrt_zhtitle.png" alt="mrt_zhtitle" srcset="" />
+          </div>
+          <div class="mrt-img-box">
+            <img class="wen-1" src="../../assets/img/metro/wen.png" alt="wen" srcset="" />
+            <img class="dan-2" src="../../assets/img/metro/dan.png" alt="dan" srcset="" />
+            <img class="ban-3" src="../../assets/img/metro/ban.png" alt="ban" srcset="" />
+            <img class="zhong-4" src="../../assets/img/metro/zhong.png" alt="zhong" srcset="" />
+            <img class="song-5" src="../../assets/img/metro/song.png" alt="song" srcset="" />
+            <img class="hai-6" src="../../assets/img/metro/hai.png" alt="hai" srcset="" />
+            <img class="gi-7" src="../../assets/img/metro/gi.png" alt="gi" srcset="" />
+          </div>
+        </div>
       </div>
+    </SwiperSlide>
+    <SwiperSlide>
+      <div class="taichung-mrt-box">
+        <div class="overlay-close"></div>
 
-      <div class="taipei-mrt-content-box">
-        台北捷運，串聯生活、商圈與核心，房價與區域價值持續攀升，<br />
-        成為最鮮明的城市成長軌跡。<br /><br />
-        如今，台中正走在同樣的道路上。隨著捷運逐步落實，帶動沿線<br />
-        環境全面升級。<br />
-        未來，捷運所經之處，將是資產保值與增值的黃金軸帶。<br />
+        <div class="left-box">
+          <div class="title-box">
+            <div class="en">
+              <img src="../../assets/img/metro/mrt_entitle.png" alt="" srcset="" />
+            </div>
+            <div class="zh">台中捷運崛起 台北模式再現</div>
+          </div>
 
-        <div>台北已經驗證，台中正在發生。</div>
+          <div class="taipei-mrt-content-box">
+            台北捷運，串聯生活、商圈與核心，房價與區域價值持續攀升，<br />
+            成為最鮮明的城市成長軌跡。<br /><br />
+            如今，台中正走在同樣的道路上。隨著捷運逐步落實，帶動沿線<br />
+            環境全面升級。<br />
+            未來，捷運所經之處，將是資產保值與增值的黃金軸帶。<br />
 
-        掌握捷運軌道經濟，掌握未來城市價值！
+            <div>台北已經驗證，台中正在發生。</div>
+
+            掌握捷運軌道經濟，掌握未來城市價值！
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="right-box">
-      <div class="zh-title">
-        <img src="../../assets/img/metro/mrt_zhtitle.png" alt="mrt_zhtitle" srcset="" />
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div class="taichung-mrt-box taichung-mrt-box2">
+        <div class="overlay-close"></div>
+
+        <div class="left-box">
+          <div class="title-box">
+            <div class="en">
+              <img src="../../assets/img/metro/taichung_entitle.png" alt="" srcset="" />
+            </div>
+            <div class="zh">台北捷運，<br />帶動商圈漲勢無限</div>
+          </div>
+
+          <div class="taipei-mrt-content-box">
+            依據內政部與實價登錄統計資料，近10年捷運通車<br />
+            區域房價平均漲幅50%～150%，交匯站與百貨商圈<br />
+            沿線更有機會突破70%。<br /><br />
+
+            以「南京復興站」為例，自2014年松山線通車以<br />
+            來，房價一路上揚。<br /><br />
+
+            通車前多落在每坪70~75萬，2015年已提升至80~90<br />
+            萬。2018年區間更來到95~105萬。近一年實價觀<br />
+            察，均價已達116~122萬，漲幅近64%。
+          </div>
+        </div>
       </div>
-      <div class="mrt-img-box">
-        <img class="wen-1" src="../../assets/img/metro/wen.png" alt="wen" srcset="" />
-        <img class="dan-2" src="../../assets/img/metro/dan.png" alt="dan" srcset="" />
-        <img class="ban-3" src="../../assets/img/metro/ban.png" alt="ban" srcset="" />
-        <img class="zhong-4" src="../../assets/img/metro/zhong.png" alt="zhong" srcset="" />
-        <img class="song-5" src="../../assets/img/metro/song.png" alt="song" srcset="" />
-        <img class="hai-6" src="../../assets/img/metro/hai.png" alt="hai" srcset="" />
-        <img class="gi-7" src="../../assets/img/metro/gi.png" alt="gi" srcset="" />
-      </div>
-    </div>
-  </div>
+    </SwiperSlide>
+  </Swiper>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import gsap from 'gsap'
-
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/effect-fade'
 import '@/assets/scss/metro/_taipei-mrt.scss'
 
 // const emit = defineEmits(['close'])
