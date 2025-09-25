@@ -231,15 +231,60 @@ const imgAni = () => {
       '<0.3',
     )
     .from(
-      '.wen-1,.dan-2,.ban-3,.zhong-4,.song-5,.hai-6,.gi-7',
+      '.wen-1',
       {
-        duration: 1.5,
-        y: '100',
+        duration: 1,
         opacity: 0,
-        stagger: 0.2,
+        ease: 'power1.in',
       },
-      '<0.5',
+      '<0.3',
     )
+    .from(
+      '.dan-2',
+      {
+        duration: 1,
+        opacity: 0,
+        ease: 'power1.in',
+      },
+      '<0.3',
+    )
+    .from(
+      '.ban-3',
+      {
+        duration: 1,
+        ease: 'power1.in',
+        opacity: 0,
+      },
+      '<0.3',
+    )
+    .from(
+      '.zhong-4',
+      {
+        duration: 1,
+        ease: 'power1.in',
+        opacity: 0,
+      },
+      '<0.3',
+    )
+    .from(
+      '.song-5',
+      {
+        duration: 1,
+        ease: 'power1.in',
+        opacity: 0,
+      },
+      '<0.3',
+    )
+    .from(
+      '.hai-6',
+      {
+        duration: 1,
+        ease: 'power1.in',
+        opacity: 0,
+      },
+      '<0.3',
+    )
+    .from('.gi-7', { duration: 1, ease: 'power1.in', opacity: 0 }, '<0.3')
 }
 
 const closeWithAnimation = () => {
