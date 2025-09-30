@@ -54,6 +54,10 @@
     align-items: center;
     .img-box {
       width: 73%;
+
+      @media all and (max-width: 1440px) {
+        width: 80%;
+      }
     }
   }
   .floor-1f-3 {
@@ -89,6 +93,9 @@
         width: 55%;
         margin: 0 auto;
         align-items: center;
+        @media all and (max-width: 1440px) {
+          width: 60%;
+        }
       }
     }
   }
@@ -610,6 +617,9 @@
 
         .floor-1f {
           width: 58% !important;
+          @media all and (max-width: 1440px) {
+            width: 52% !important;
+          }
         }
 
         .zoom {
