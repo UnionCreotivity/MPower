@@ -135,7 +135,7 @@ const openAni = () => {
       {
         y: 0,
         maskPosition: '0% 0%',
-        duration: 1.8,
+        duration: 2.5,
         // ease: 'cubic-bezier(0.24,0.43,0.15,0.97)',
       },
       '<0.2',

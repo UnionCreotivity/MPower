@@ -240,7 +240,7 @@ const floorDetailMap: Record<string, { img: string; textImg: string; className: 
   R1: {
     img: new URL('@/assets/img/building/r1.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/rf_text.min.svg', import.meta.url).href,
-    className: 'floor-R1',
+    className: 'floor-r1',
   },
 }
 

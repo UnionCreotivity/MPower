@@ -49,7 +49,7 @@
     </SwiperSlide>
 
     <SwiperSlide>
-      <div class="taichung-mrt-box">
+      <div class="taichung-mrt-box taichung-mrt-box1">
         <div class="overlay-close" @click="closeWithAnimation"></div>
 
         <div class="left-box">
@@ -71,6 +71,9 @@
 
             掌握捷運軌道經濟，掌握未來城市價值！
           </div>
+        </div>
+        <div class="right-box">
+          <img src="../../assets/img/metro/taichung_mrt_bg.png" alt="taichung_mrt_bg" srcset="" />
         </div>
       </div>
     </SwiperSlide>
@@ -100,6 +103,10 @@
             察，均價已達116~122萬，漲幅近64%。
           </div>
         </div>
+
+        <div class="right-box">
+          <img src="../../assets/img/metro/taichung_mrt_bg2.png" alt="taichung_mrt_bg2" srcset="" />
+        </div>
       </div>
     </SwiperSlide>
   </Swiper>
@@ -120,54 +127,77 @@ const animateSlide0 = () => {
   const tl = gsap.timeline({ delay: 0.4 })
 
   // reset 狀態
-  gsap.set('.taipei-mrt-box .left-box', { x: -100, opacity: 0 })
-  gsap.set('.taipei-mrt-box .right-box', { x: 100, opacity: 0 })
+  gsap.set('.taipei-mrt-box .left-box .title-box div', { y: 100, opacity: 0 })
+  gsap.set('.taipei-mrt-box .left-box .taipei-mrt-content-box', { y: 100, opacity: 0 })
+  gsap.set('.taipei-mrt-box .right-box', { y: 100, opacity: 0 })
 
-  tl.to('.taipei-mrt-box .left-box', {
-    x: 0,
-    opacity: 1,
-    duration: 1,
-    ease: 'power1.out',
-  }).to(
-    '.taipei-mrt-box .right-box',
-    {
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: 'power1.out',
-    },
-    '<0.3',
-  )
-}
-
-// Slide 1 動畫
-const animateSlide1 = () => {
-  gsap.set('.taichung-mrt-box .left-box .title-box div', { y: 100, opacity: 0 })
-  gsap.set('.taichung-mrt-box .left-box .taichung-mrt-content-box', { y: 100, opacity: 0 })
-  gsap.set('.taichung-mrt-box .left-box .taichung-mrt-content-box', { y: 100, opacity: 0 })
-
-  const tl = gsap.timeline({ delay: 0.4 })
-  tl.to('.taichung-mrt-box .left-box .title-box div', {
+  tl.to('.taipei-mrt-box .left-box .title-box div', {
     y: 0,
     opacity: 1,
 
     duration: 1,
     stagger: 0.1,
-  }).to(
-    '.taichung-mrt-box .left-box .taichung-mrt-content-box',
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-    },
-    '<0.3',
-  )
+  })
+    .to(
+      '.taipei-mrt-box .left-box .taipei-mrt-content-box',
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+      },
+      '<0.3',
+    )
+    .to(
+      '.taipei-mrt-box .right-box',
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+      },
+      '<0.3',
+    )
 }
+
+// Slide 1 動畫
+const animateSlide1 = () => {
+  gsap.set('.taichung-mrt-box1 .left-box .title-box div', { y: 100, opacity: 0 })
+  gsap.set('.taichung-mrt-box1 .left-box .taichung-mrt-content-box', { y: 100, opacity: 0 })
+  gsap.set('.taichung-mrt-box1 .right-box', { y: 100, opacity: 0 })
+
+  const tl = gsap.timeline({ delay: 0.4 })
+  tl.to('.taichung-mrt-box1 .left-box .title-box div', {
+    y: 0,
+    opacity: 1,
+
+    duration: 1,
+    stagger: 0.1,
+  })
+    .to(
+      '.taichung-mrt-box1 .left-box .taichung-mrt-content-box',
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+      },
+      '<0.3',
+    )
+    .to(
+      '.taichung-mrt-box1 .right-box',
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+      },
+      '<0.3',
+    )
+}
+
 // Slide 2 動畫
 const animateSlide2 = () => {
   // reset 狀態
   gsap.set('.taichung-mrt-box2 .left-box .title-box div', { y: 100, opacity: 0 })
   gsap.set('.taichung-mrt-box2 .left-box .taipei-mrt-content-box', { y: 100, opacity: 0 })
+  gsap.set('.taichung-mrt-box2 .right-box img', { y: 100, opacity: 0 })
 
   const tl = gsap.timeline({ delay: 0.4 })
   tl.to('.taichung-mrt-box2 .left-box .title-box div', {
@@ -175,15 +205,25 @@ const animateSlide2 = () => {
     opacity: 1,
     duration: 1,
     stagger: 0.1,
-  }).to(
-    '.taichung-mrt-box2 .left-box .taipei-mrt-content-box',
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-    },
-    '<0.3',
-  )
+  })
+    .to(
+      '.taichung-mrt-box2 .left-box .taipei-mrt-content-box',
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+      },
+      '<0.3',
+    )
+    .to(
+      '.taichung-mrt-box2 .right-box img',
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+      },
+      '<0.3',
+    )
 }
 
 // 監聽 slide 切換

@@ -187,6 +187,10 @@
       visibility: hidden;
       animation: light 2.4s ease-in-out infinite;
       animation-play-state: paused; /* 先暫停 */
+
+      @media all and (max-width: 1400px) {
+        top: 46%;
+      }
     }
 
     /* 動畫 keyframes */
