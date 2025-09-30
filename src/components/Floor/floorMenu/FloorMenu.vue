@@ -6,7 +6,7 @@
         v-for="floor in floorList"
         :key="floor"
         class="floor"
-        @click="floor !== '1F' && $emit('selectFloor', floor)"
+        @click="$emit('selectFloor', floor)"
       >
         {{ floor }}
       </div>

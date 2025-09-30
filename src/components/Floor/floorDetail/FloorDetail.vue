@@ -21,6 +21,8 @@
           </div>
         </div>
         <div class="right-box">
+          <div class="text-f1-1" v-if="props.floor === '1F'">40米文心路四段</div>
+          <div class="text-f1-2" v-if="props.floor === '1F'">10米文昌東二街</div>
           <ScaleDrag :init="initXY" :max-ratio="2">
             <div class="img-box">
               <img
@@ -70,6 +72,18 @@
                 <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
               </div>
 
+              <div class="btn-3f-12f btn-1f-1" v-if="props.floor === '1F'" @click="show1F1 = true">
+                <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
+              </div>
+
+              <div class="btn-3f-12f btn-1f-2" v-if="props.floor === '1F'" @click="show1F2 = true">
+                <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
+              </div>
+
+              <div class="btn-3f-12f btn-1f-3" v-if="props.floor === '1F'" @click="show1F3 = true">
+                <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
+              </div>
+
               <div class="btn-3f-12f btn-r1" v-if="props.floor === 'R1'" @click="showR1 = true">
                 <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
               </div>
@@ -84,7 +98,6 @@
     </transition>
 
     <!-- 家具配置圖 -->
-
     <FloorFurniture v-if="showFurniture" :floor="furnitureFloor" @close="showFurniture = false" />
 
     <transition name="fade" mode="out-in">
@@ -114,12 +127,56 @@
       </div>
     </transition>
 
+    <transition name="fade" mode="out-in">
+      <div class="floor-mf1-box floor-1f-1" v-if="show1F1" @click="show1F1 = false">
+        <div class="img-box">
+          <img src="../../../assets/img/building/1f-img4.webp" alt="1f-img4" srcset="" />
+          <div class="hint">3D示意圖</div>
+        </div>
+      </div>
+    </transition>
+
+    <transition name="fade" mode="out-in">
+      <div class="floor-mf1-box floor-1f-2" v-if="show1F2" @click="show1F2 = false">
+        <div class="img-box">
+          <img src="../../../assets/img/building/1f-img1.webp" alt="1f-img1" srcset="" />
+          <div class="hint">3D示意圖</div>
+        </div>
+      </div>
+    </transition>
+
+    <transition name="fade" mode="out-in">
+      <div class="floor-mf1-box floor-1f-3" v-if="show1F3">
+        <Swiper :modules="[Navigation, EffectFade]" navigation :speed="800" :effect="'fade'">
+          <div class="overlay-close" @click="show1F3 = false"></div>
+          <SwiperSlide>
+            <div class="img-box">
+              <img src="../../../assets/img/building/1f-img3.webp" alt="1f-img3" srcset="" />
+              <div class="hint">3D示意圖</div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div class="img-box">
+              <img src="../../../assets/img/building/1f-img2.webp" alt="1f-img2" srcset="" />
+              <div class="hint">3D示意圖</div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </transition>
+
     <FullScreen :forceBrownIcon="true" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Navigation, EffectFade } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/effect-fade'
 import gsap from 'gsap'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 import FloorCompass from '@/components/Floor/floorCompass/FloorCompass.vue'
@@ -131,6 +188,9 @@ const showCompass = ref(false)
 const show1MF = ref(false)
 const show1MF2 = ref(false)
 const showR1 = ref(false)
+const show1F1 = ref(false)
+const show1F2 = ref(false)
+const show1F3 = ref(false)
 const showFurniture = ref(false)
 const furnitureFloor = ref('') // 用來傳給 FloorFurniture 的樓層
 const detailEl = ref<HTMLElement | null>(null)
@@ -152,10 +212,10 @@ const floorDetailMap: Record<string, { img: string; textImg: string; className: 
     textImg: new URL('@/assets/img/building/1mf_text.min.svg', import.meta.url).href,
     className: 'floor-1mf',
   },
-  '1': {
-    img: '',
-    textImg: '',
-    className: '',
+  '1F': {
+    img: new URL('@/assets/img/building/1f.webp', import.meta.url).href,
+    textImg: new URL('@/assets/img/building/1f_text.min.png', import.meta.url).href,
+    className: 'floor-1f',
   },
   B1: {
     img: new URL('@/assets/img/building/b1.webp', import.meta.url).href,

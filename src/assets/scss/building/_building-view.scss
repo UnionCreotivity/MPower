@@ -50,6 +50,49 @@
     }
   }
 
+  .floor-1f-2 {
+    align-items: center;
+    .img-box {
+      width: 73%;
+    }
+  }
+  .floor-1f-3 {
+    align-items: center;
+    display: flex;
+    .overlay-close {
+      position: absolute;
+      top: 0;
+      left: 4%;
+      width: 90%;
+      height: 100%;
+      z-index: 1;
+      background: transparent;
+    }
+    .swiper {
+      width: 100%;
+      .swiper-button-prev,
+      .swiper-button-next {
+        color: #5f4c3f !important;
+        width: 4vw !important;
+        height: 3vw !important;
+        &::after {
+          font-size: 2vw;
+        }
+      }
+      .swiper-button-next {
+        right: var(--swiper-navigation-sides-offset, -5px);
+      }
+      .swiper-button-prev {
+        left: var(--swiper-navigation-sides-offset, -5px);
+      }
+      .img-box {
+        width: 55%;
+        margin: 0 auto;
+        align-items: center;
+      }
+    }
+  }
+
   .bg-text {
     position: absolute;
     letter-spacing: 0.03em;
@@ -289,15 +332,12 @@
 
     .compass {
       position: absolute;
-      top: 0.8vw;
-      padding: 1vw;
-      right: 1vw;
-      width: 7vw;
+      top: 1.8vw;
+      right: 2vw;
+
+      width: 1vw;
       z-index: 50;
 
-      @media all and (max-width: 1400px) {
-        width: 8vw;
-      }
       img {
         width: 100%;
       }
@@ -387,6 +427,26 @@
         align-items: center;
         position: relative;
         margin-right: 2vw;
+        .text-f1-1 {
+          position: absolute;
+          top: 3%;
+          color: #534741;
+          font-size: 21pt;
+          font-weight: 500;
+          font-size: 0.85vw;
+          letter-spacing: 0.05em;
+          font-family: 'Noto Serif TC';
+        }
+        .text-f1-2 {
+          position: absolute;
+          bottom: 4%;
+          color: #534741;
+          font-size: 21pt;
+          font-weight: 500;
+          font-size: 0.85vw;
+          letter-spacing: 0.05em;
+          font-family: 'Noto Serif TC';
+        }
         .img-box {
           position: relative;
           display: flex;
@@ -419,6 +479,7 @@
             }
           }
         }
+
         .btn-1mf {
           display: flex;
           justify-content: left;
@@ -474,6 +535,24 @@
           }
         }
 
+        .btn-1f-1 {
+          top: 53%;
+          width: 5%;
+          right: 43.5%;
+        }
+
+        .btn-1f-2 {
+          top: 22%;
+          width: 5%;
+          right: 55%;
+        }
+
+        .btn-1f-3 {
+          top: 29%;
+          width: 5%;
+          right: 50.5%;
+        }
+
         .btn-r1 {
           width: 6%;
           top: 46%;
@@ -527,6 +606,10 @@
           @media all and (max-width: 1400px) {
             width: 77% !important;
           }
+        }
+
+        .floor-1f {
+          width: 58% !important;
         }
 
         .zoom {
