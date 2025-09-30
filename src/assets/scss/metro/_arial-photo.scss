@@ -164,7 +164,7 @@
       bottom: 33%;
       // transition: none; /* 用 GSAP 控制 */
       transform-origin: center center;
-      animation: pointAni 1.5s ease-in-out infinite forwards;
+      animation: pointAni 2s ease-in-out infinite forwards;
 
       @media all and (max-width: 1400px) {
         left: 32.5%;
@@ -181,7 +181,7 @@
       bottom: 25%;
       // transition: none;
       transform-origin: center center;
-      animation: pointAni 1.5s ease-in-out infinite forwards;
+      animation: pointAni 2s ease-in-out infinite forwards;
 
       @media all and (max-width: 1400px) {
         right: 14.7%;
@@ -196,7 +196,7 @@
       left: 27%;
       width: 1.2vw;
       bottom: 25%;
-      animation: pointAni 1.5s ease-in-out infinite forwards;
+      animation: pointAni 2s ease-in-out infinite forwards;
 
       @media all and (max-width: 1400px) {
         left: 21%;
@@ -230,7 +230,12 @@
       left: 43.5%;
       width: 1.2vw;
       bottom: 38%;
-      animation: pointAni 1.5s ease-in-out infinite forwards;
+      animation: pointAni 2s ease-in-out infinite forwards;
+      @media all and (max-width: 1400px) {
+        width: 2.5vw;
+        bottom: 32%;
+        left: 41%;
+      }
     }
 
     .tab3-img2 {
@@ -258,7 +263,12 @@
       left: 45.75%;
       width: 1.2vw;
       bottom: 10%;
-      animation: pointAni 1.5s ease-in-out infinite forwards;
+      animation: pointAni 2s ease-in-out infinite forwards;
+      @media all and (max-width: 1400px) {
+        width: 2.5vw;
+        bottom: 6%;
+        left: 44.8%;
+      }
     }
 
     .tab3-img3 {
@@ -285,7 +295,12 @@
       right: 23.7%;
       width: 1.2vw;
       bottom: 18.5%;
-      animation: pointAni 1.5s ease-in-out infinite forwards;
+      animation: pointAni 2s ease-in-out infinite forwards;
+      @media all and (max-width: 1400px) {
+        width: 2.5vw;
+        bottom: 21%;
+        right: 19.45%;
+      }
     }
 
     .tab3-line-bg {
@@ -308,7 +323,12 @@
       left: 13.3%;
       width: 1.2vw;
       bottom: 46%;
-      animation: pointAni 1.5s ease-in-out infinite forwards;
+      animation: pointAni 2s ease-in-out infinite forwards;
+      @media all and (max-width: 1400px) {
+        width: 2.5vw;
+        bottom: 39%;
+        left: 8%;
+      }
     }
 
     .shui-nan-point {
@@ -317,7 +337,12 @@
       left: 35.9%;
       width: 1.2vw;
       bottom: 44%;
-      animation: pointAni 1.5s ease-in-out infinite forwards;
+      animation: pointAni 2s ease-in-out infinite forwards;
+      @media all and (max-width: 1400px) {
+        width: 2.5vw;
+        bottom: 39%;
+        left: 33.5%;
+      }
     }
 
     .four-teen-point {
@@ -326,7 +351,13 @@
       left: 60.4%;
       width: 1.2vw;
       bottom: 39%;
-      animation: pointAni 1.5s ease-in-out infinite forwards;
+      animation: pointAni 2s ease-in-out infinite forwards;
+
+      @media all and (max-width: 1400px) {
+        width: 2.5vw;
+        bottom: 32%;
+        left: 61.5%;
+      }
     }
 
     .tab4-img1 {
