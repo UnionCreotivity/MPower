@@ -5,9 +5,13 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #a48b78;
+  background-color: #f3f2eb;
   overflow: hidden;
   z-index: 30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   .prev,
   .next {
     position: absolute;
@@ -25,7 +29,7 @@
   .life-swiper {
     width: 100%;
     position: relative;
-    height: 100%;
+    // height: 100%;
   }
   .life-swiper-main {
     width: 100%;
