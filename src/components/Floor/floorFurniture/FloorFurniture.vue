@@ -1,8 +1,8 @@
 <template>
   <div class="floor-detail-wrapper">
-    <div class="floor-detail" ref="detailEl">
+    <div class="floor-detail interior-design-img" ref="detailEl">
       <div class="overlay-close" @click="handleClose"></div>
-      <img src="../../../assets/img/building/compass.png" alt="" class="compass" />
+      <img :src="currentFurniture.icon" alt="" class="compass" />
       <div class="main-box">
         <div class="decorate">FLOOR PLAN</div>
         <div class="left-box">
@@ -18,7 +18,7 @@
               <img
                 :src="currentFurniture.img"
                 :alt="floor"
-                class="floor-plan-img"
+                class="floor-plan-img "
                 :class="[currentFurniture.className]"
               />
             </div>
@@ -45,29 +45,33 @@ const detailEl = ref<HTMLElement | null>(null)
 // 所有樓層對應資料
 const furnitureMap: Record<
   string,
-  { img: string; textImg: string; className: string; textImgClassName: string }
+  { img: string; textImg: string; icon: string; className: string; textImgClassName: string }
 > = {
   '3F-12F-A': {
-    img: new URL('@/assets/img/building/d_floor.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/A@2x.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/a_text.png', import.meta.url).href,
+    icon: new URL('@/assets/img/building/A_icon.svg', import.meta.url).href,
     className: '3F-12F-A',
     textImgClassName: 'text-3F-12F-A',
   },
   '3F-12F-B': {
-    img: new URL('@/assets/img/building/d_floor.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/B@2x.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b_text.png', import.meta.url).href,
+    icon: new URL('@/assets/img/building/B_icon.svg', import.meta.url).href,
     className: '3F-12F-B',
     textImgClassName: 'text-3F-12F-B',
   },
   '3F-12F-C': {
-    img: new URL('@/assets/img/building/d_floor.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/C@2x.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/c_text.png', import.meta.url).href,
+    icon: new URL('@/assets/img/building/C_icon.svg', import.meta.url).href,
     className: '3F-12F-C',
     textImgClassName: 'text-3F-12F-C',
   },
   '3F-12F-D': {
-    img: new URL('@/assets/img/building/d_floor.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/D@2x.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/d_text.min.svg', import.meta.url).href,
+    icon: new URL('@/assets/img/building/D_icon.svg', import.meta.url).href,
     className: '3F-12F-D',
     textImgClassName: 'text-3F-12F-D',
   },

@@ -479,7 +479,7 @@
           justify-content: center;
 
           img {
-            width: 53%;
+            width: 51%;
             position: relative;
             @media all and (max-width: 1400px) {
               width: 65%;
@@ -693,6 +693,30 @@
         left: 1vw;
       }
     }
+
+    //-- 家配圖 --
+    &.interior-design-img{
+      .main-box{
+        .right-box{
+          margin-right: 5.5vw;
+          .floor-plan-img{
+            width: 81%;
+              @media all and (max-width: 1400px) {
+              width: 96%;
+            }
+          }
+          .zoom{
+            right: -8%;
+          }
+        }
+      }
+
+      //-- 家配圖右上小圖 --
+      .compass{
+        width: 3vw;
+      }
+      
+    }
   }
 
   .floor-compass-modal {
@@ -773,6 +797,8 @@
           filter: brightness(1.3);
         }
       }
+
+      
     }
 
     .floor-select-box {
