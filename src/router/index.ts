@@ -11,6 +11,8 @@ import LifeView from '@/views/metro/life/LifeView.vue'
 // 建築規劃
 import MaterView from '@/views/master/MaterView.vue'
 import BuildingView from '@/views/master/building/BuildingView.vue'
+import TeamIndexView from '@/views/team/TeamIndex/TeamIndexView.vue'//團隊首頁
+
 
 // 貼心建材MansionIndexView
 import MansionView from '@/views/mansion/MansionView.vue'
@@ -36,6 +38,8 @@ import BuildOriginView from '@/views/metier/buildOrigin/BuildOriginView.vue'// �
 import BrandValueView from '@/views/metier/brandValue/BrandValueView.vue'// 三心二藝
 import PortfolioView from '@/views/metier/portfolio/PortfolioView.vue'// 歷年業績
 import AfterServiceView from '@/views/metier/afterService/AfterServiceView.vue'// 售後服務
+
+
 
 // 房貸試算
 import CalculatorView from '@/views/calculator/CalculatorView.vue'
@@ -89,7 +93,11 @@ const router = createRouter({
           name: 'buildling',
           component: BuildingView,
         },
-
+        {
+          path: 'teamIndex',
+          name: 'teamIndex',
+          component: TeamIndexView,
+        },
       ],
     },
     {
@@ -192,6 +200,19 @@ const router = createRouter({
         },
       ],
     },
+    // {
+    //   path: '/team',
+    //   component: TeamView,
+    //   children: [
+    //     {
+    //       path: '',
+    //       name: 'teamIndex',
+    //       component: TeamIndexView,
+    //     },
+
+    //   ],
+    // },
+
     // 404 fallback
     {
       path: '/:pathMatch(.*)*',

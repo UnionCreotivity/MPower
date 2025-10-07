@@ -22,9 +22,9 @@ export const menuData = [
     jumpToChild: true, // 要跳子頁第一個
     list: [
       {
-        id: '',
+        id: 'teamIndex',
         name: '建築團隊',
-        link: '',
+        link: 'teamIndex',
 
       },
       {

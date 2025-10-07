@@ -1,0 +1,87 @@
+@use '../utils/mixin' as *;
+
+.team-menu-view {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  .title-box {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 6.5vw;
+    padding-left: 6.5vw;
+    padding-right: 2vw;
+    .zh {
+      writing-mode: vertical-lr;
+      color: #604c3f;
+      font-size: var(--font-title-zh-size);
+      font-family: var(--font-family-title-zh);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+    .en {
+      writing-mode: vertical-lr;
+      font-size: 3.3vw;
+      font-family: var(--font-family-title-en);
+      color: #604c3f;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+  }
+
+  .menu-box {
+    width: 100%;
+    display: flex;
+
+    padding-top: 0.7vw;
+    padding-right: 0.7vw;
+    justify-content: space-between;
+    .item {
+      display: flex;
+      width: 27.5vw;
+      flex-direction: column;
+      position: relative;
+
+      //   justify-content: space-between;
+      .bg {
+        width: 100%;
+      }
+      .name-box {
+        display: flex;
+        flex-direction: column;
+        padding-top: 3vw;
+        position: absolute;
+        right: 0px;
+        align-items: end;
+        padding-right: 2.5vw;
+
+        .text {
+          writing-mode: vertical-lr;
+          color: #604c3f;
+          font-size: var(--font-small-title-zh-size);
+          font-weight: 500;
+          font-family: var(--font-family-title-zh);
+          letter-spacing: 0.2em;
+          margin-right: 2vw;
+        }
+        .name {
+          margin-top: -0.5vw;
+          width: 3vw;
+        }
+      }
+      .person-box {
+        width: 25vw;
+        position: absolute;
+        bottom: 0px;
+        left: 2vw;
+      }
+      .person-box2 {
+        width: 25.8vw;
+        left: 1vw;
+      }
+      .person-box3 {
+        width: 21.5vw;
+        left: 4vw;
+      }
+    }
+  }
+}

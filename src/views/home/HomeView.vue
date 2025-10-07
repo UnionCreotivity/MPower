@@ -64,7 +64,7 @@ const menuItems = [
     id: 'master',
     zhName: '建築規劃',
     enName: 'MASTER',
-    link: 'buildling',
+    link: 'teamIndex',
   },
   {
     id: 'mansion',
