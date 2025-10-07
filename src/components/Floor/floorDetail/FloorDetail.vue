@@ -263,22 +263,22 @@ const floorDetailMap: Record<string, { img: string; textImg: string; className: 
     className: 'floor-1f',
   },
   B1: {
-    img: new URL('@/assets/img/building/b1.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/b1.png', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b1_text.min.svg', import.meta.url).href,
     className: 'floor-B1',
   },
   B2: {
-    img: new URL('@/assets/img/building/b2.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/b2.png', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b2_text.min.svg', import.meta.url).href,
     className: 'floor-B2',
   },
   B3: {
-    img: new URL('@/assets/img/building/b3.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/b3.png', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b3_text.min.svg', import.meta.url).href,
     className: 'floor-B3',
   },
   B4: {
-    img: new URL('@/assets/img/building/b4.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/b4.png', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b4_text.min.svg', import.meta.url).href,
     className: 'floor-B4',
   },

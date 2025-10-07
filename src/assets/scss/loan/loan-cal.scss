@@ -148,17 +148,19 @@
       background-color: #604c3f;
       border: 1px solid #604c3f;
       transition: all 0.25s ease-in-out;
-      // &:hover {
-      //   border: 1px solid #604c3f;
-      //   background-color: transparent;
-      //   color: #604c3f;
-      // }
+
       @include pad {
         font-size: 16px;
       }
       @media all and (max-width: 1400px) {
         padding-block: 0.6vw;
       }
+    }
+    .loan-view-right-submit:hover {
+      background-color: #ffffff;
+      color: #7c6454;
+      font-weight: bold;
+      border: 1px solid #ffffff;
     }
   }
 }

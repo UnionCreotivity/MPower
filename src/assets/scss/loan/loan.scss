@@ -213,6 +213,14 @@
                 transition: all 0.25s ease-in-out;
               }
             }
+            .loan-click-clear:hover {
+              button {
+                background-color: #ffffff;
+                color: #7c6454;
+                font-weight: bold;
+                border: 1px solid #ffffff;
+              }
+            }
             .loan-click-cal {
               button {
                 color: #f7f8f8;
@@ -221,6 +229,14 @@
                 cursor: none;
                 border: 1px solid transparent;
                 transition: all 0.25s ease-in-out;
+              }
+            }
+
+            .loan-click-cal:hover {
+              button {
+                background-color: #ffffff;
+                color: #7c6454;
+                font-weight: bold;
               }
             }
             .loan-click-print {
@@ -233,6 +249,14 @@
                 @media all and (max-width: 1400px) {
                   margin-right: 0vw;
                 }
+              }
+            }
+            .loan-click-print:hover {
+              button {
+                background-color: #ffffff;
+                color: #7c6454;
+                font-weight: bold;
+                border: 1px solid #ffffff;
               }
             }
           }

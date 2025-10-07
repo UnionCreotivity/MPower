@@ -228,6 +228,12 @@
   cursor: none;
   transition: all 0.25s ease-in-out;
 }
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-clear:hover button {
+  background-color: #ffffff;
+  color: #7c6454;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+}
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-cal button {
   color: #f7f8f8;
   border: none;
@@ -235,6 +241,11 @@
   cursor: none;
   border: 1px solid transparent;
   transition: all 0.25s ease-in-out;
+}
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-cal:hover button {
+  background-color: #ffffff;
+  color: #7c6454;
+  font-weight: bold;
 }
 .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-print button {
   color: #3e3a39;
@@ -247,6 +258,12 @@
   .loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-print button {
     margin-right: 0vw;
   }
+}
+.loan-view .loan-view-container .loan-view-left .loan-view-bottom .loan-view-input-container .loan-click-item .loan-click-print:hover button {
+  background-color: #ffffff;
+  color: #7c6454;
+  font-weight: bold;
+  border: 1px solid #ffffff;
 }
 
 .print-box {

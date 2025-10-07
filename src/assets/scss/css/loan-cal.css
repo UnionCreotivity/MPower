@@ -124,3 +124,9 @@
     padding-block: 0.6vw;
   }
 }
+.loan-view-right .loan-view-right-container .loan-view-right-submit:hover {
+  background-color: #ffffff;
+  color: #7c6454;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+}

@@ -249,9 +249,17 @@
           letter-spacing: 0.1em;
           font-size: 0.9vw;
           border-radius: 2vw;
+          transition: all 0.25s ease-in-out;
           color: white;
           font-family: 'Noto Serif TC';
           font-weight: 500;
+        }
+      }
+      .sakura-btn:hover {
+        div {
+          background-color: #ffffff;
+          color: #7c6454;
+          font-weight: bold;
         }
       }
       .sakura-content-box {

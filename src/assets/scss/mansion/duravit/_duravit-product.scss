@@ -200,6 +200,14 @@
           color: white;
           font-family: 'Noto Serif TC';
           font-weight: 500;
+          transition: all 0.25s ease-in-out;
+        }
+      }
+      .sakura-btn:hover {
+        div {
+          background-color: #ffffff;
+          color: #7c6454;
+          font-weight: bold;
         }
       }
       .sakura-content-box {
