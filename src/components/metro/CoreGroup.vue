@@ -3,6 +3,7 @@
     <img
       class="seven-qi-point line-point"
       ref="corePoint"
+      v-show="!hidePoints"
       src="../../assets/img/life/point.svg"
       alt="point"
       @click="$emit('open-seven-qi')"
@@ -11,6 +12,7 @@
     <img
       class="shui-nan-point line-point"
       ref="corePoint"
+      v-show="!hidePoints"
       src="../../assets/img/life/point.svg"
       alt="point"
       @click="$emit('open-shui-nan')"
@@ -19,6 +21,7 @@
     <img
       class="four-teen-point line-point"
       ref="corePoint"
+      v-show="!hidePoints"
       src="../../assets/img/life/point.svg"
       alt="point"
       @click="$emit('open-four-teen')"
@@ -37,8 +40,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, defineProps } from 'vue'
 import gsap from 'gsap'
+
+const { hidePoints } = defineProps({
+  hidePoints: { type: Boolean, default: false },
+})
 
 const imgAni = () => {
   const tl = gsap.timeline({ delay: 0.3 })

@@ -3,6 +3,7 @@
     <img
       class="zhong-qing-point line-point"
       ref="zhongQingPoint"
+      v-show="!hidePoints"
       src="../../assets/img/life/point.svg"
       alt="zhongQingPoint"
       @click="$emit('open-zhong-qing')"
@@ -10,6 +11,7 @@
     <img
       class="bei-ping-point line-point"
       ref="beiPingPoint"
+      v-show="!hidePoints"
       src="../../assets/img/life/point.svg"
       alt="beiPingPoint"
       @click="$emit('open-bei-ping')"
@@ -17,6 +19,7 @@
     <img
       class="chong-de-point line-point"
       ref="chongDePoint"
+      v-show="!hidePoints"
       src="../../assets/img/life/point.svg"
       alt="chongDePoint"
       @click="$emit('open-chong-de')"
@@ -39,8 +42,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, defineProps } from 'vue'
 import gsap from 'gsap'
+
+const { hidePoints } = defineProps({
+  hidePoints: { type: Boolean, default: false },
+})
 
 const imgAni = () => {
   const tl = gsap.timeline({ delay: 0.3 })

@@ -5,6 +5,7 @@
       ref="greenPoint"
       src="../../assets/img/life/point.svg"
       alt="green point"
+      v-show="!hidePoints"
       @mouseenter="onGreenMouseEnter"
       @mouseleave="onGreenMouseLeave"
       @click="$emit('open-green-line')"
@@ -14,6 +15,7 @@
       ref="redPoint"
       src="../../assets/img/life/point.svg"
       alt="red point"
+      v-show="!hidePoints"
       @mouseenter="onRedMouseEnter"
       @mouseleave="onRedMouseLeave"
       @click="$emit('open-red-line')"
@@ -23,6 +25,7 @@
       @mouseenter="onOrangeMouseEnter"
       @mouseleave="onOrangeMouseLeave"
       ref="orangePoint"
+      v-show="!hidePoints"
       src="../../assets/img/life/point.svg"
       alt="orange point"
       @click="$emit('open-orange-line')"
@@ -45,8 +48,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref, onMounted } from 'vue'
+import { ref, defineProps, type Ref, onMounted } from 'vue'
 import gsap from 'gsap'
+
+const { hidePoints } = defineProps({
+  hidePoints: { type: Boolean, default: false },
+})
 
 const redPoint = ref<HTMLElement | null>(null)
 const redLine = ref<HTMLElement | null>(null)

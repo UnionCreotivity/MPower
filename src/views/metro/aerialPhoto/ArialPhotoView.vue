@@ -21,6 +21,7 @@
           v-for="(comp, i) in currentLayerComponents"
           :is="comp"
           :key="i"
+          :hide-points="currentIndex === 0"
           @open-green-line="showGreenLine = true"
           @open-red-line="showRedLine = true"
           @open-orange-line="showOrangeLine = true"

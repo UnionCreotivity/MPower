@@ -93,13 +93,13 @@ export const lifeData = [
     image: new URL('@/assets/img/life/shopping_district/chongde_market.webp', import.meta.url).href,
     txt: '崇德路商圈',
   },
-  {
-    tag: 'shopping-district',
-    id: 'kfc-wenxin', //肯德基文心店
-    className: 'shopping-point-3',
-    image: new URL('@/assets/img/life/shopping_district/kfc_wenxin_01.webp', import.meta.url).href,
-    txt: '肯德基文心店',
-  },
+  // {
+  //   tag: 'shopping-district',
+  //   id: 'kfc-wenxin', //肯德基文心店
+  //   className: 'shopping-point-3',
+  //   image: new URL('@/assets/img/life/shopping_district/kfc_wenxin_01.webp', import.meta.url).href,
+  //   txt: '肯德基文心店',
+  // },
   {
     tag: 'shopping-district',
     id: 'shangjing', // 上景興市場

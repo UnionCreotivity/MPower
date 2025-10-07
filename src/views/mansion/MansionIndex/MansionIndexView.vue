@@ -80,7 +80,7 @@ const linkBoxList = [
   {
     text: '機械車位',
     img: '',
-    routeName: 'ehomeIndex',
+    routeName: '',
   },
   {
     text: '五金',

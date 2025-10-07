@@ -47,10 +47,8 @@
                 <div>車　位　：</div>
                 <div class="loan-input">
                   <input
-                    type="number"
+                    type="text"
                     id="carAmount"
-                    min="0"
-                    max="100000"
                     v-model="loanInputModel.carAmount"
                     @click.stop="checkClick('carAmount')"
                   />
