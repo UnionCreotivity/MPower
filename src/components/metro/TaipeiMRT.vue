@@ -8,6 +8,38 @@
     @slide-change="handleSlideChange"
   >
     <SwiperSlide>
+      <div class="taichung-mrt-box taichung-mrt-box2">
+        <div class="overlay-close" @click="closeWithAnimation"></div>
+
+        <div class="left-box">
+          <div class="title-box">
+            <div class="en">
+              <img src="../../assets/img/metro/taichung_entitle.png" alt="" srcset="" />
+            </div>
+            <div class="zh">台北捷運，<br />帶動商圈漲勢無限</div>
+          </div>
+
+          <div class="taipei-mrt-content-box">
+            依據內政部與實價登錄統計資料，近10年捷運通車<br />
+            區域房價平均漲幅50%～150%，交匯站與百貨商圈<br />
+            沿線更有機會突破70%。<br /><br />
+
+            以「南京復興站」為例，自2014年松山線通車以<br />
+            來，房價一路上揚。<br /><br />
+
+            通車前多落在每坪70~75萬，2015年已提升至80~90<br />
+            萬。2018年區間更來到95~105萬。近一年實價觀<br />
+            察，均價已達116~122萬，漲幅近64%。
+          </div>
+        </div>
+
+        <div class="right-box">
+          <img src="../../assets/img/metro/taichung_mrt_bg2.png" alt="taichung_mrt_bg2" srcset="" />
+        </div>
+      </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
       <div class="taipei-mrt-box">
         <div class="overlay-close" @click="closeWithAnimation"></div>
 
@@ -77,38 +109,6 @@
         </div>
       </div>
     </SwiperSlide>
-
-    <SwiperSlide>
-      <div class="taichung-mrt-box taichung-mrt-box2">
-        <div class="overlay-close" @click="closeWithAnimation"></div>
-
-        <div class="left-box">
-          <div class="title-box">
-            <div class="en">
-              <img src="../../assets/img/metro/taichung_entitle.png" alt="" srcset="" />
-            </div>
-            <div class="zh">台北捷運，<br />帶動商圈漲勢無限</div>
-          </div>
-
-          <div class="taipei-mrt-content-box">
-            依據內政部與實價登錄統計資料，近10年捷運通車<br />
-            區域房價平均漲幅50%～150%，交匯站與百貨商圈<br />
-            沿線更有機會突破70%。<br /><br />
-
-            以「南京復興站」為例，自2014年松山線通車以<br />
-            來，房價一路上揚。<br /><br />
-
-            通車前多落在每坪70~75萬，2015年已提升至80~90<br />
-            萬。2018年區間更來到95~105萬。近一年實價觀<br />
-            察，均價已達116~122萬，漲幅近64%。
-          </div>
-        </div>
-
-        <div class="right-box">
-          <img src="../../assets/img/metro/taichung_mrt_bg2.png" alt="taichung_mrt_bg2" srcset="" />
-        </div>
-      </div>
-    </SwiperSlide>
   </Swiper>
 </template>
 
@@ -123,43 +123,26 @@ import '@/assets/scss/metro/_taipei-mrt.scss'
 import gsap from 'gsap'
 
 // Slide 0 動畫
-const animateSlide0 = () => {
-  const tl = gsap.timeline({ delay: 0.4 })
-
-  // reset 狀態
-  gsap.set('.taipei-mrt-box .left-box .title-box div', { y: 100, opacity: 0 })
-  gsap.set('.taipei-mrt-box .left-box .taipei-mrt-content-box', { y: 100, opacity: 0 })
-  gsap.set('.taipei-mrt-box .right-box', { y: 100, opacity: 0 })
+const animateSlide1 = () => {
+  const tl = gsap.timeline({ delay: 0.25 })
 
   tl.to('.taipei-mrt-box .left-box .title-box div', {
     y: 0,
     opacity: 1,
-
     duration: 1,
-    stagger: 0.1,
+    stagger: 0.15,
   })
+    .to('.taipei-mrt-box .taipei-mrt-content-box', { y: 0, opacity: 1, duration: 1 }, '<0.3')
     .to(
-      '.taipei-mrt-box .left-box .taipei-mrt-content-box',
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-      },
+      '.wen-1, .dan-2, .ban-3, .zhong-4, .song-5, .hai-6, .gi-7',
+      { opacity: 1, duration: 1, ease: 'power1.in', stagger: 0.1 },
       '<0.3',
     )
-    .to(
-      '.taipei-mrt-box .right-box',
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-      },
-      '<0.3',
-    )
+    .to('.taipei-mrt-box .right-box .zh-title', { y: 0, opacity: 1, duration: 1 }, '<0.3')
 }
 
 // Slide 1 動畫
-const animateSlide1 = () => {
+const animateSlide2 = () => {
   gsap.set('.taichung-mrt-box1 .left-box .title-box div', { y: 100, opacity: 0 })
   gsap.set('.taichung-mrt-box1 .left-box .taichung-mrt-content-box', { y: 100, opacity: 0 })
   gsap.set('.taichung-mrt-box1 .right-box', { y: 100, opacity: 0 })
@@ -193,43 +176,39 @@ const animateSlide1 = () => {
 }
 
 // Slide 2 動畫
-const animateSlide2 = () => {
-  // reset 狀態
-  gsap.set('.taichung-mrt-box2 .left-box .title-box div', { y: 100, opacity: 0 })
-  gsap.set('.taichung-mrt-box2 .left-box .taipei-mrt-content-box', { y: 100, opacity: 0 })
-  gsap.set('.taichung-mrt-box2 .right-box img', { y: 100, opacity: 0 })
-
-  const tl = gsap.timeline({ delay: 0.4 })
+const animateSlide0 = () => {
+  const tl = gsap.timeline({ delay: 0.2 })
+  // 左側文字和內容
   tl.to('.taichung-mrt-box2 .left-box .title-box div', {
     y: 0,
     opacity: 1,
     duration: 1,
-    stagger: 0.1,
-  })
-    .to(
-      '.taichung-mrt-box2 .left-box .taipei-mrt-content-box',
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-      },
-      '<0.3',
-    )
-    .to(
-      '.taichung-mrt-box2 .right-box img',
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-      },
-      '<0.3',
-    )
+    stagger: 0.2,
+  }).to(
+    '.taichung-mrt-box2 .left-box .taipei-mrt-content-box',
+    { y: 0, opacity: 1, duration: 1 },
+    '<0.3',
+  )
+
+  // 右側 mask 動畫
+  tl.to(
+    '.taichung-mrt-box2 .right-box',
+    { maskPosition: '0% 0%', duration: 1.5, ease: 'cubic-bezier(0.64, 0.03, 0.07, 0.97)' },
+    '<0.3',
+  )
 }
 
 // 監聽 slide 切換
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleSlideChange = (swiper: any) => {
   const index = swiper.activeIndex
+
+  // 先 reset 所有 Slide
+  resetSlide0()
+  resetSlide1()
+  resetSlide2()
+
+  // 再播放對應動畫
   if (index === 0) animateSlide0()
   if (index === 1) animateSlide1()
   if (index === 2) animateSlide2()
@@ -237,94 +216,45 @@ const handleSlideChange = (swiper: any) => {
 
 const emit = defineEmits(['close'])
 
-const imgAni = () => {
-  const tl = gsap.timeline({})
+const resetSlide0 = () => {
+  gsap.set('.taichung-mrt-box2 .left-box .title-box div', { y: 70, opacity: 0 })
+  gsap.set('.taichung-mrt-box2 .left-box .taipei-mrt-content-box', { y: 70, opacity: 0 })
+  gsap.set('.taichung-mrt-box2 .right-box', { maskPosition: '200% 0', opacity: 1 })
+}
 
-  tl.fromTo(
-    '.mrt-swiper',
-    {
-      maskPosition: '200% 0',
-    },
-    {
-      maskPosition: '0% 0%',
-      duration: 1.5,
-      ease: 'cubic-bezier(0.64, 0.03, 0.07, 0.97)',
-    },
+const resetSlide1 = () => {
+  gsap.set('.taipei-mrt-box .left-box .title-box div', { y: 100, opacity: 0 })
+  gsap.set('.taipei-mrt-box .taipei-mrt-content-box', { y: 100, opacity: 0 })
+  gsap.set('.wen-1, .dan-2, .ban-3, .zhong-4, .song-5, .hai-6, .gi-7', { opacity: 0 })
+  gsap.set('.taipei-mrt-box .right-box .zh-title', { y: 70, opacity: 0 })
+}
+
+const resetSlide2 = () => {
+  gsap.set('.taichung-mrt-box1 .left-box .title-box div', { y: 100, opacity: 0 })
+  gsap.set('.taichung-mrt-box1 .left-box .taichung-mrt-content-box', { y: 100, opacity: 0 })
+  gsap.set('.taichung-mrt-box1 .right-box', { y: 100, opacity: 0 })
+}
+
+const imgAni = () => {
+  const tl = gsap.timeline({ delay: 0.2 })
+
+  tl.to('.taichung-mrt-box2 .left-box .title-box div', {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    stagger: 0.2,
+  }).to(
+    '.taichung-mrt-box2 .left-box .taipei-mrt-content-box',
+    { y: 0, opacity: 1, duration: 1 },
+    '<0.3',
   )
-    .from(
-      '.taipei-mrt-box .left-box .title-box div',
-      {
-        duration: 1,
-        y: 100,
-        opacity: 0,
-        stagger: 0.15,
-      },
-      '<0.3',
-    )
-    .from(
-      '.taipei-mrt-content-box',
-      {
-        duration: 1,
-        y: 100,
-        opacity: 0,
-      },
-      '<0.3',
-    )
-    .from(
-      '.wen-1',
-      {
-        duration: 1,
-        opacity: 0,
-        ease: 'power1.in',
-      },
-      '<0.3',
-    )
-    .from(
-      '.dan-2',
-      {
-        duration: 1,
-        opacity: 0,
-        ease: 'power1.in',
-      },
-      '<0.3',
-    )
-    .from(
-      '.ban-3',
-      {
-        duration: 1,
-        ease: 'power1.in',
-        opacity: 0,
-      },
-      '<0.3',
-    )
-    .from(
-      '.zhong-4',
-      {
-        duration: 1,
-        ease: 'power1.in',
-        opacity: 0,
-      },
-      '<0.3',
-    )
-    .from(
-      '.song-5',
-      {
-        duration: 1,
-        ease: 'power1.in',
-        opacity: 0,
-      },
-      '<0.3',
-    )
-    .from(
-      '.hai-6',
-      {
-        duration: 1,
-        ease: 'power1.in',
-        opacity: 0,
-      },
-      '<0.3',
-    )
-    .from('.gi-7', { duration: 1, ease: 'power1.in', opacity: 0 }, '<0.3')
+
+  // 右側 mask 動畫
+  tl.to(
+    '.taichung-mrt-box2 .right-box',
+    { maskPosition: '0% 0%', duration: 1.5, ease: 'cubic-bezier(0.64, 0.03, 0.07, 0.97)' },
+    '<0.3',
+  )
 }
 
 const closeWithAnimation = () => {
@@ -340,8 +270,11 @@ const closeWithAnimation = () => {
   })
 }
 // 初始化時先呼叫一次
-onMounted(async () => {
-  imgAni()
+onMounted(() => {
+  resetSlide0()
+  resetSlide1()
+  resetSlide2()
+  imgAni() // 或 animateSlide0()，看你想從哪個 Slide 開始
 })
 </script>
 

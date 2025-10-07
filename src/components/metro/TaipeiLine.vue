@@ -7,7 +7,7 @@
     <div class="main-box">
       <div class="taipei-img">
         <img src="../../assets/img/metro/taipei_img.webp" alt="taipei_img" srcset="" />
-
+        <img src="../../assets/img/metro/orange_light.png" alt="light2" class="btn-light light2" />
         <div class="hint">
           資料來源:賣價登錄資料,臺北大眾捷連股份有限公司;永慶房產集團研究發展中心氣整整。<br />
           住宅價格篩選條件:1.交易標的為房地(土地+建物)、房地(土地+建物)+車位、建物。2.建物型態:住宅大樓、華廈及公寓。3.排除屋齢兩年內、一樓及親友交易之成交資料。<br />

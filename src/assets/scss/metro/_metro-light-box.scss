@@ -243,7 +243,7 @@
   .main-box {
     height: 100%;
     width: 100%;
-
+    position: relative;
     .img-box {
       width: 100%;
       height: 100%;
@@ -252,6 +252,32 @@
         width: 100%;
         height: 100%;
       }
+    }
+    .btn-light,
+    .btn-light2 {
+      position: absolute;
+      width: 8vw !important;
+      mix-blend-mode: luminosity;
+      animation: light-glow 2.5s infinite ease-in-out;
+    }
+
+    @keyframes light-glow {
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.85;
+        transform: scale(1.2);
+      }
+    }
+
+    .light2 {
+      top: 56%;
+      left: 42%;
+      animation-delay: 0s;
+      animation-duration: 2.5s;
     }
     .title {
       width: 24vw;
