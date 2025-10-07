@@ -70,7 +70,7 @@
 <script setup lang="ts">
 import '@/assets/scss/team/_team-content.scss'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { gsap } from 'gsap'
 import { SplitText } from 'gsap/SplitText'
@@ -117,6 +117,36 @@ const closeImgBox = () => {
     },
   })
 }
+
+onMounted(() => {
+  const tl = gsap.timeline({})
+
+  tl.from('.team-person-view .left-box .img-box', {
+    duration: 1,
+    x: '-100',
+    opacity: 0,
+  })
+    .from(
+      '.team-person-view .right-box .en-title,.team-person-view .right-box .name-box',
+      {
+        duration: 0.8,
+        y: '100',
+        opacity: 0,
+        stagger: 0.15,
+      },
+      '<0.3',
+    )
+    .from(
+      '.content-box',
+      {
+        duration: 1,
+        y: '100',
+        opacity: 0,
+        stagger: 0.15,
+      },
+      '<0.3',
+    )
+})
 </script>
 
 <style scoped></style>
