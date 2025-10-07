@@ -1,1 +1,140 @@
 @use '../utils/mixin' as *;
+.team-person-view {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  .left-box {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    .img-box {
+      width: 28vw;
+      align-items: center;
+      align-self: center;
+    }
+  }
+
+  .right-box {
+    display: flex;
+    width: 57%;
+    flex-direction: column;
+    justify-content: center;
+    .en-title {
+      font-size: 3.2vw;
+      font-family: var(--font-family-title-en);
+      color: #a38a77;
+      opacity: 0.8;
+      display: flex;
+      letter-spacing: 0.06em;
+    }
+    .name-box {
+      display: flex;
+      .text {
+        display: flex;
+        font-family: var(--font-family-title-zh);
+        color: #604c3f;
+        font-weight: 500;
+        font-size: var(--page-size);
+        align-items: center;
+        position: relative;
+        &::after {
+          position: absolute;
+          content: '';
+          right: -5vw;
+          width: 4vw;
+          height: 1px;
+          background-color: #a38a77;
+        }
+        .name {
+          font-size: var(--font-big-title-zh-size);
+          font-weight: 500;
+          margin-left: 0.4vw;
+          margin-right: 0.7vw;
+        }
+      }
+    }
+
+    .content-box {
+      @include pageContent();
+      z-index: 50;
+      & {
+        width: 84%;
+        margin-top: 1vw;
+        color: #323333;
+      }
+      .title {
+        color: #604c3f;
+        font-weight: 600;
+        font-family: var(--font-family-title-zh);
+      }
+
+      .item-img {
+        display: flex;
+        margin-top: 0.8vw;
+        z-index: 9999;
+        .item {
+          display: flex;
+          flex-direction: column;
+          margin-right: 1.5vw;
+          text-align: center;
+          .img-box {
+            width: 14vw;
+            overflow: hidden;
+            margin-bottom: 0.4vw;
+            img {
+              object-fit: cover;
+              transition: all 0.5s ease-in-out;
+            }
+          }
+          .name {
+            text-align: center;
+          }
+
+          &:hover {
+            .img-box {
+              img {
+                scale: 1.2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.team-two-view {
+  .right-box {
+    .content-box {
+      & {
+        width: 90%;
+      }
+    }
+  }
+}
+
+.team-three-view {
+  .left-box {
+    .img-box {
+      width: 20vw;
+    }
+  }
+
+  .right-box {
+    .name-box {
+      .text {
+        &::after {
+          right: -4.2vw;
+        }
+      }
+    }
+    .content-box {
+      & {
+        width: 79%;
+      }
+    }
+  }
+}
