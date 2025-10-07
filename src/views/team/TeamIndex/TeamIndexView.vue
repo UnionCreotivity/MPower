@@ -146,7 +146,7 @@ const initGsap = () => {
         duration: 1,
         ease: 'power1.inOut',
       },
-      '<0.3',
+      '<0.2',
     )
     .to(
       '.person-box2',
@@ -176,7 +176,7 @@ const initGsap = () => {
         duration: 1,
         ease: 'power1.inOut',
       },
-      '<0.3',
+      '<0.2',
     )
     .to(
       '.person-box3',

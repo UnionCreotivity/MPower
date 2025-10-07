@@ -138,3 +138,24 @@
     }
   }
 }
+
+.img-box-overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  height: 100svh;
+  left: 0;
+  background-color: #f3f2eb;
+  z-index: 60;
+  .img-box-content {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
