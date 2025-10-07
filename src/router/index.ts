@@ -12,7 +12,9 @@ import LifeView from '@/views/metro/life/LifeView.vue'
 import MaterView from '@/views/master/MaterView.vue'
 import BuildingView from '@/views/master/building/BuildingView.vue'
 import TeamIndexView from '@/views/team/TeamIndex/TeamIndexView.vue'//團隊首頁
-
+import teamOneView from '@/views/team/teamOne.vue'//團隊1
+import teamTwoView from '@/views/team/teamTwo.vue'//團隊2
+import teamThreeView from '@/views/team/teamThree.vue'//團隊3
 
 // 貼心建材MansionIndexView
 import MansionView from '@/views/mansion/MansionView.vue'
@@ -97,6 +99,21 @@ const router = createRouter({
           path: 'teamIndex',
           name: 'teamIndex',
           component: TeamIndexView,
+        },
+        {
+          path: 'teamOne',
+          name: 'teamOne',
+          component: teamOneView,
+        },
+        {
+          path: 'teamTwo',
+          name: 'teamTwo',
+          component: teamTwoView,
+        },
+        {
+          path: 'teamThree',
+          name: 'teamThree',
+          component: teamThreeView,
         },
       ],
     },

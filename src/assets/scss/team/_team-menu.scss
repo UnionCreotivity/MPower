@@ -24,6 +24,7 @@
       font-family: var(--font-family-title-en);
       color: #604c3f;
       font-weight: 500;
+      display: flex;
       letter-spacing: 0.08em;
     }
   }
@@ -31,7 +32,6 @@
   .menu-box {
     width: 100%;
     display: flex;
-
     padding-top: 0.7vw;
     padding-right: 0.7vw;
     justify-content: space-between;
@@ -40,10 +40,24 @@
       width: 27.5vw;
       flex-direction: column;
       position: relative;
+      overflow: hidden;
+      &:hover {
+        // .bg {
+        //   filter: brightness(0.7);
+        //   scale: 2;
+        // }
+        .person-box {
+          img {
+            scale: 1.05;
+          }
+        }
+      }
 
-      //   justify-content: space-between;
       .bg {
         width: 100%;
+        transform-origin: top center;
+        // transition: all 0.5s ease-in-out;
+        clip-path: inset(0% 0% 100% 0%);
       }
       .name-box {
         display: flex;
@@ -73,14 +87,25 @@
         position: absolute;
         bottom: 0px;
         left: 2vw;
+        scale: 1.4;
+        clip-path: inset(100% 0% 0% 0%);
+        img {
+          transition: all 0.5s ease-in-out;
+
+          transform-origin: top center;
+        }
       }
       .person-box2 {
         width: 25.8vw;
         left: 1vw;
+        scale: 1.4;
+        clip-path: inset(100% 0% 0% 0%);
       }
       .person-box3 {
         width: 21.5vw;
         left: 4vw;
+        scale: 1.4;
+        clip-path: inset(100% 0% 0% 0%);
       }
     }
   }
