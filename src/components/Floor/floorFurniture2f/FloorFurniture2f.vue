@@ -48,30 +48,30 @@ const furnitureMap: Record<
   { img: string; textImg: string; icon: string; className: string; textImgClassName: string }
 > = {
   '2F-A': {
-    img: new URL('@/assets/img/building/A@2x.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/a_color.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/a_text.png', import.meta.url).href,
-    icon: new URL('@/assets/img/building/A_icon.svg', import.meta.url).href,
+    icon: new URL('@/assets/img/building/a_icon.svg', import.meta.url).href,
     className: '2F-A',
     textImgClassName: 'text-2F-A',
   },
   '2F-B': {
-    img: new URL('@/assets/img/building/B@2x.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/b_color.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/b_text.png', import.meta.url).href,
-    icon: new URL('@/assets/img/building/B_icon.svg', import.meta.url).href,
+    icon: new URL('@/assets/img/building/b_icon.svg', import.meta.url).href,
     className: '2F-B',
     textImgClassName: 'text-2F-B',
   },
   '2F-C': {
-    img: new URL('@/assets/img/building/C@2x.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/c_color.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/c_text.png', import.meta.url).href,
-    icon: new URL('@/assets/img/building/C_icon.svg', import.meta.url).href,
+    icon: new URL('@/assets/img/building/c_icon.svg', import.meta.url).href,
     className: '2F-C',
     textImgClassName: 'text-2F-C',
   },
   '2F-D': {
-    img: new URL('@/assets/img/building/D@2x.webp', import.meta.url).href,
+    img: new URL('@/assets/img/building/d_color.webp', import.meta.url).href,
     textImg: new URL('@/assets/img/building/d_text.min.svg', import.meta.url).href,
-    icon: new URL('@/assets/img/building/D_icon.svg', import.meta.url).href,
+    icon: new URL('@/assets/img/building/d_icon.svg', import.meta.url).href,
     className: '2F-D',
     textImgClassName: 'text-2F-D',
   },
