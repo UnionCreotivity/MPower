@@ -38,6 +38,15 @@
               >
                 <img src="../../../assets/img/building/a.png" alt="" srcset="" />
               </div>
+
+              <div
+                class="btn-2f btn-2f-a"
+                v-if="props.floor === '2F'"
+                @click="openFurniture2f('2F-A')"
+              >
+                <img src="../../../assets/img/building/a.png" alt="" srcset="" />
+              </div>
+
               <div
                 class="btn-3f-12f btn-3f-12f-b"
                 v-if="props.floor === '3F-12F'"
@@ -45,6 +54,15 @@
               >
                 <img src="../../../assets/img/building/b.png" alt="" srcset="" />
               </div>
+
+              <div
+                class="btn-2f btn-2f-b"
+                v-if="props.floor === '2F'"
+                @click="openFurniture2f('2F-B')"
+              >
+                <img src="../../../assets/img/building/b.png" alt="" srcset="" />
+              </div>
+
               <div
                 class="btn-3f-12f btn-3f-12f-c"
                 v-if="props.floor === '3F-12F'"
@@ -52,10 +70,27 @@
               >
                 <img src="../../../assets/img/building/c.png" alt="" srcset="" />
               </div>
+
+              <div
+                class="btn-2f btn-2f-c"
+                v-if="props.floor === '2F'"
+                @click="openFurniture2f('2F-C')"
+              >
+                <img src="../../../assets/img/building/c.png" alt="" srcset="" />
+              </div>
+
               <div
                 class="btn-3f-12f btn-3f-12f-d"
                 v-if="props.floor === '3F-12F'"
                 @click="openFurniture('3F-12F-D')"
+              >
+                <img src="../../../assets/img/building/d.png" alt="" srcset="" />
+              </div>
+
+              <div
+                class="btn-2f btn-2f-d"
+                v-if="props.floor === '2F'"
+                @click="openFurniture2f('2F-D')"
               >
                 <img src="../../../assets/img/building/d.png" alt="" srcset="" />
               </div>
@@ -97,8 +132,15 @@
       <FloorCompass v-if="showCompass" @close="showCompass = false" />
     </transition>
 
-    <!-- 家具配置圖 -->
+    <!-- 家具配置圖 3f-12f -->
     <FloorFurniture v-if="showFurniture" :floor="furnitureFloor" @close="showFurniture = false" />
+
+    <!-- 家具配置圖 2f -->
+    <FloorFurniture2f
+      v-if="showFurniture2f"
+      :floor="furnitureFloor2f"
+      @close="showFurniture2f = false"
+    />
 
     <transition name="fade" mode="out-in">
       <div class="floor-mf1-box" v-if="show1MF" @click="show1MF = false">
@@ -182,6 +224,7 @@ import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 import FloorCompass from '@/components/Floor/floorCompass/FloorCompass.vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
 import FloorFurniture from '@/components/Floor/floorFurniture/FloorFurniture.vue'
+import FloorFurniture2f from '@/components/Floor/floorFurniture2f/FloorFurniture2f.vue'
 
 const props = defineProps<{ floor: string }>()
 const showCompass = ref(false)
@@ -192,7 +235,9 @@ const show1F1 = ref(false)
 const show1F2 = ref(false)
 const show1F3 = ref(false)
 const showFurniture = ref(false)
+const showFurniture2f = ref(false)
 const furnitureFloor = ref('') // 用來傳給 FloorFurniture 的樓層
+const furnitureFloor2f = ref('') // 用來傳給 FloorFurniture2f 的樓層
 const detailEl = ref<HTMLElement | null>(null)
 
 // 所有樓層對應資料
@@ -247,6 +292,11 @@ const floorDetailMap: Record<string, { img: string; textImg: string; className: 
 function openFurniture(floor: string) {
   furnitureFloor.value = floor
   showFurniture.value = true
+}
+
+function openFurniture2f(floor: string) {
+  furnitureFloor2f.value = floor
+  showFurniture2f.value = true
 }
 
 const initXY = computed(() => {

@@ -506,6 +506,21 @@
           }
         }
 
+        .btn-2f {
+          position: absolute;
+          width: 10%;
+          z-index: 9999;
+          img {
+            transition: all 0.25s ease-in-out;
+          }
+
+          &:hover {
+            img {
+              scale: 1.15;
+            }
+          }
+        }
+
         .btn-1mf {
           display: flex;
           justify-content: left;
@@ -544,6 +559,7 @@
             top: 26%;
           }
         }
+
         .btn-3f-12f-b {
           top: 27%;
           right: 36.5%;
@@ -564,6 +580,38 @@
           right: 36.5%;
           @media all and (max-width: 1400px) {
             right: 35%;
+          }
+        }
+
+        .btn-2f-a {
+          top: 26%;
+          left: 41%;
+          @media all and (max-width: 1400px) {
+            left: 38.4%;
+          }
+        }
+
+        .btn-2f-b {
+          top: 26%;
+          right: 36.2%;
+          @media all and (max-width: 1400px) {
+            right: 35.1%;
+          }
+        }
+
+        .btn-2f-c {
+          top: 69.3%;
+          left: 40.5%;
+          @media all and (max-width: 1400px) {
+            left: 38.4%;
+          }
+        }
+
+        .btn-2f-d {
+          top: 69.3%;
+          right: 36.5%;
+          @media all and (max-width: 1400px) {
+            right: 35.6%;
           }
         }
 
@@ -695,27 +743,26 @@
     }
 
     //-- 家配圖 --
-    &.interior-design-img{
-      .main-box{
-        .right-box{
+    &.interior-design-img {
+      .main-box {
+        .right-box {
           margin-right: 5.5vw;
-          .floor-plan-img{
+          .floor-plan-img {
             width: 81%;
-              @media all and (max-width: 1400px) {
+            @media all and (max-width: 1400px) {
               width: 96%;
             }
           }
-          .zoom{
+          .zoom {
             right: -8%;
           }
         }
       }
 
       //-- 家配圖右上小圖 --
-      .compass{
+      .compass {
         width: 3vw;
       }
-      
     }
   }
 
@@ -797,8 +844,6 @@
           filter: brightness(1.3);
         }
       }
-
-      
     }
 
     .floor-select-box {
