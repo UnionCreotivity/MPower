@@ -121,8 +121,8 @@ const currentIndex = ref(0)
 const tabs = [
   { title: '空拍鳥瞰' },
   { title: '軌道經濟' },
-  { title: '金軸核心' },
   { title: '繁華商圈' },
+  { title: '金軸核心' },
 ]
 
 const contentData = ref([

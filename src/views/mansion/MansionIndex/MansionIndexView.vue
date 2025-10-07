@@ -68,8 +68,8 @@ const linkBoxList = [
     routeName: 'ykkIndex',
   },
   {
-    text: '耐磨地板',
-    img: new URL('../../../assets/img/mansion/5.svg', import.meta.url).href,
+    text: 'SPC',
+    img: '',
     routeName: '',
   },
   {

@@ -27,7 +27,7 @@
         <div class="list">
           <div class="small-title red-small-title">計畫進度│</div>
           <div class="content">
-            2025年完成計畫書並提出期中報告<br />
+            2025年 完成計畫書並提出期中報告<br />
             2026年 預計送中央審議<br />
             2027年 進入細部設計與發包<br />
             2030年 前後進場動工建設<br />

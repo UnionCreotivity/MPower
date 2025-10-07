@@ -15,7 +15,7 @@
 
       <div class="content-box">
         <div class="content">
-          YKK AP Taiwan 的 YRB-A 超高水密窗系列專為台灣嚴苛的氣候條件 設計，搭載 6mm+6mm
+          YKK AP Taiwan 的 YRB-A 超高水密窗系列專為台灣嚴苛的氣候條件 設計，搭載 5mm+5mm
           膠合玻璃，提供卓越的水密性、氣密性、耐 風壓性和隔音性能，確保居家環境的舒適與安全。
         </div>
         <ul class="ul-box ul-box1">

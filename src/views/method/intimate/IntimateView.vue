@@ -45,7 +45,7 @@ const tabs = [
   { title: '緊急供電', component: IntimateEmergencyPower },
   { title: '客廳雙迴路', component: IntimateRoom },
   { title: '給水試壓', component: IntimateWaterPressureTest },
-  { title: '預留充電管路', component: IntimateCharging },
+  { title: '預留充電線架', component: IntimateCharging },
   { title: '廚房垃圾設備', component: IntimateKitchen },
 ]
 

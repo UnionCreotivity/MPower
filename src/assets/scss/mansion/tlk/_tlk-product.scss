@@ -109,7 +109,8 @@
     left: 31%;
   }
 
-  .dot.active {
+  .dot.active,
+  .dot:hover {
     border-radius: 50%;
     animation: glowPulse 1.5s ease-in-out infinite;
   }

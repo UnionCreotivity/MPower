@@ -8,10 +8,10 @@
     </div>
 
     <div class="right-box">
-      <div class="title-box">預留充電管路</div>
+      <div class="title-box">預留充電線架</div>
       <div class="content-box">
         <div class="content">
-          由於每家電動車的管線、充電柱規格不一，本案已預留好從住家到停車位的充電管路，經由車商配線及安裝充電柱，不採用公共電費最為單純。
+          由於每家電動車的管線、充電柱規格不一，本案已預留好從配電室到停車位的充電管路，經由車商配線及安裝充電柱，不採用公共電費最為單純。
         </div>
       </div>
     </div>
