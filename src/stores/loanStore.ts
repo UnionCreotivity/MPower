@@ -46,24 +46,29 @@ export const useLoanStore = defineStore('loan', () => {
     // 開工款
     const kickOff = Math.ceil(total * 0.02)
 
+    // 工程期款 (251008)
+    const interestRepayment = Math.ceil(total * 0.1)
+
     // 交屋款
     const delivery = Math.ceil(total * 0.05)
 
     // 貸款
-    const loanMoney = Math.floor(total * 0.8)
+    const loanMoney = Math.floor(total * 0.4)
 
     // 自備款
-    const ownMoney = Math.ceil(total * 0.2)
+    const ownMoney = Math.ceil(total * 0.6)
 
-    // 結構完成款
-    const license = ownMoney - kickOff - delivery - depositInWan - sign
+
+    // 契稅申報 (251008)
+    const tax = ownMoney - kickOff - interestRepayment - delivery - depositInWan - sign
 
     state.value.sign = toMoneyStyle(sign)
     state.value.kickOff = toMoneyStyle(kickOff)
+    state.value.interestRepayment = toMoneyStyle(interestRepayment)
     state.value.delivery = toMoneyStyle(delivery)
     state.value.loanMoney = toMoneyStyle(loanMoney)
     state.value.ownMoney = toMoneyStyle(ownMoney)
-    state.value.license = toMoneyStyle(license)
+    state.value.tax = toMoneyStyle(tax)
   }
 
   function cleanAll() {
