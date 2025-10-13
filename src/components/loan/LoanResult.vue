@@ -25,9 +25,16 @@
           </div>
         </li>
         <li class="loan-result-li">
-          <div>結構完成：</div>
+          <div>工程期款：</div>
           <div class="nember-box">
-            <p class="loan-result-number">{{ state.license }}</p>
+            <p class="loan-result-number">{{ state.interestRepayment }}</p>
+            <div class="loan-result-text">萬元</div>
+          </div>
+        </li>
+        <li class="loan-result-li">
+          <div>契稅申報：</div>
+          <div class="nember-box">
+            <p class="loan-result-number">{{ state.tax }}</p>
             <div class="loan-result-text">萬元</div>
           </div>
         </li>

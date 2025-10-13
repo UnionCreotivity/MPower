@@ -7,7 +7,7 @@
       :mode="mode"
     />
     <FloorMenu @selectFloor="handleSelectFloor" :mode="mode" />
-    <FloorDetail v-if="selectedFloor" :floor="selectedFloor" @close="selectedFloor = null" />
+    <FloorDetail v-if="selectedFloor" :floor="selectedFloor" @close="closeDetail" />
   </section>
 </template>
 
@@ -20,6 +20,11 @@ import '@/assets/scss/building/_building-view.scss'
 
 const selectedFloor = ref<string | null>(null)
 const mode = ref<'day' | 'night'>('day') // ← 這行一定要加
+
+function closeDetail() {
+  selectedFloor.value = null;
+  mode.value='day'; // 返回主視圖時重設為日間模式
+}
 
 function handleSelectFloor(floorId: string) {
   selectedFloor.value = floorId

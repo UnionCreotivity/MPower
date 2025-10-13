@@ -67,17 +67,17 @@ const currentImg = ref('')
 // 作品資料
 const projects = [
   {
-    name: '琢白･雍景',
+    name: '台中商業銀行總部',
     thumb: new URL('@/assets/img/team/three_p_1.webp', import.meta.url).href,
     fullImg: new URL('@/assets/img/team/three_p_b_1.webp', import.meta.url).href,
   },
   {
-    name: '雍睦',
+    name: '龍巖安泰/富岡',
     thumb: new URL('@/assets/img/team/three_p_2.webp', import.meta.url).href,
     fullImg: new URL('@/assets/img/team/three_p_b_2.webp', import.meta.url).href,
   },
   {
-    name: '睿格',
+    name: '巧克力夢工廠',
     thumb: new URL('@/assets/img/team/three_p_3.webp', import.meta.url).href,
     fullImg: new URL('@/assets/img/team/three_p_b_3.webp', import.meta.url).href,
   },
