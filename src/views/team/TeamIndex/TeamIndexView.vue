@@ -87,14 +87,13 @@ const initGsap = () => {
       rotationY: -90,
     },
     {
-      duration: 2.5,
+      duration: 2,
       ease: 'expo',
       opacity: 1,
       scale: 1,
       rotationY: 0,
       stagger: { each: 0.06, from: 'start' },
     },
-    '<0.5',
   )
     .from(
       zhSplit.chars,
