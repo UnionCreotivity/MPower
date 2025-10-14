@@ -139,12 +139,6 @@ const contentData = ref([
     content: `綠線｜目前完工計畫延伸彰化、<br />橘線｜直通台中國際機場定案，<br />紅線｜貫穿崇德路發展性預議，<br />台中之最，三捷融匯，核心地段。<br />城市路網串聯開創經濟發展新格局！`,
   },
   {
-    title: '政經中心，百貨在即',
-    subtitle: '3核心，繁盛四方齊騁',
-    content: `七期新市政｜新光三越、大遠百水湳經貿園區｜綠美圖、國際會展中心，<br />
-    十四期重劃｜洲際漢神、超巨蛋滿足您對都市生活的期許及嚮往，只要<br />10分鐘，掌握核心大台中！`,
-  },
-  {
     title: '生活合圍，繁華共見',
     subtitle: '3商圈，繁華一脈相連',
     content: `北平、崇德、中清三大生活圈合圍，<br />
@@ -152,6 +146,12 @@ const contentData = ref([
     北平商圈，店家雲集，巷弄飄香；<br />
     崇德樞紐，商機蓬勃，人潮不歇；<br />
     中清主幹，生活購物，機能齊備。<br />無需奔波，即可滿足日常所需的食尚美好。`,
+  },
+  {
+    title: '政經中心，百貨在即',
+    subtitle: '3核心，繁盛四方齊騁',
+    content: `七期新市政｜新光三越、大遠百水湳經貿園區｜綠美圖、國際會展中心，<br />
+    十四期重劃｜洲際漢神、超巨蛋滿足您對都市生活的期許及嚮往，只要<br />10分鐘，掌握核心大台中！`,
   },
 ])
 
@@ -161,9 +161,9 @@ const currentLayerComponents = computed(() => {
     case 1:
       return [MrtGroup]
     case 2:
-      return [CoreGroup]
-    case 3:
       return [BusinessGroup]
+    case 3:
+      return [CoreGroup]
     default:
       return []
   }

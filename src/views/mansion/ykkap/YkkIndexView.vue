@@ -10,13 +10,13 @@
     </div>
     <div class="right-box">
       <div class="title-text">
-        <div class="text">YKK AP頂級氣密窗</div>
+        <div class="text">YKK AP隔音玻璃</div>
       </div>
 
       <div class="content-box">
         <div class="content">
-          YKK AP Taiwan 的 YRB-A 超高水密窗系列專為台灣嚴苛的氣候條件 設計，搭載 5mm+5mm
-          膠合玻璃，提供卓越的水密性、氣密性、耐 風壓性和隔音性能，確保居家環境的舒適與安全。
+          YKK AP Taiwan 的 YRB-A 超高水密窗系列專為台灣嚴苛的氣候條件
+          設計，提供卓越的水密性、氣密性、耐 風壓性和隔音性能，確保居家環境的舒適與安全。
         </div>
         <ul class="ul-box ul-box1">
           <li>高水密性: YKK AP獨創「新水密結構」，颱風天在家也安穩舒適的生活。</li>

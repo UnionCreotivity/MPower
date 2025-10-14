@@ -63,12 +63,12 @@ const linkBoxList = [
     routeName: 'lockIndex',
   },
   {
-    text: '氣密窗',
+    text: '隔音玻璃',
     img: new URL('../../../assets/img/mansion/4.svg', import.meta.url).href,
     routeName: 'ykkIndex',
   },
   {
-    text: 'SPC',
+    text: '超耐磨地板',
     img: '',
     routeName: '',
   },
