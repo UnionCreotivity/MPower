@@ -4,7 +4,7 @@
 
     <div class="left-box">
       <div class="img-box">
-        <img src="../../assets/img/team/two_img2.webp" alt="" srcset="" />
+        <img src="../../assets/img/team/two_img.webp" alt="" srcset="" />
       </div>
     </div>
     <div class="right-box">
@@ -73,7 +73,6 @@ import FullScreen from '@/components/full-screen/FullScreen.vue'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { gsap } from 'gsap'
-import { SplitText } from 'gsap/SplitText'
 
 const router = useRouter()
 const goBack = () => router.push('/master/teamIndex')

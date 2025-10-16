@@ -4,7 +4,7 @@
 
     <div class="left-box">
       <div class="img-box">
-        <img src="../../assets/img/team/three_img2.webp" alt="" srcset="" />
+        <img src="../../assets/img/team/three_img.webp" alt="" srcset="" />
       </div>
     </div>
     <div class="right-box">
@@ -12,7 +12,7 @@
       <div class="name-box">
         <div class="text">
           景觀大師 /
-          <div class="name">日禧設計</div>
+          <div class="name">LAURA HUANG</div>
         </div>
       </div>
       <div class="content-box">
@@ -55,7 +55,6 @@ import FullScreen from '@/components/full-screen/FullScreen.vue'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { gsap } from 'gsap'
-import { SplitText } from 'gsap/SplitText'
 
 const router = useRouter()
 const goBack = () => router.push('/master/teamIndex')

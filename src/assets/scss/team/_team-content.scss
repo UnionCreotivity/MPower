@@ -11,7 +11,7 @@
     justify-content: end;
 
     .img-box {
-      width: 28vw;
+      width: 33.5vw;
       align-items: center;
       align-self: center;
     }
@@ -119,7 +119,7 @@
 .team-three-view {
   .left-box {
     .img-box {
-      width: 20vw;
+      width: 31vw;
     }
   }
 
@@ -129,6 +129,9 @@
         &::after {
           right: -4.2vw;
         }
+      }
+      .name {
+        letter-spacing: 0.1em;
       }
     }
     .content-box {
