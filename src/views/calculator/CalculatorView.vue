@@ -1,7 +1,7 @@
 <template>
   <div class="calculator-view-root">
     <section class="loan-view">
-      <div class="title-box">房貸試算</div>
+      <div class="title-box">拆款試算</div>
       <div class="loan-view-container">
         <div class="loan-view-left">
           <div class="loan-view-bottom">

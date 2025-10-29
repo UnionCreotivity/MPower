@@ -109,7 +109,7 @@ export const menuData = [
       },
       {
         id: 'calculator',
-        name: '房貸試算',
+        name: '拆款試算',
         link: 'calculator',
       },
     ],
