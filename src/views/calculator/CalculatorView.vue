@@ -147,19 +147,10 @@
           <div class="info">{{ loanStore.state.deposit }}</div>
           <div class="text">萬元</div>
         </div>
-        <div class="info-item">
-          <div class="title">交 屋 款 ：</div>
-          <div class="info">{{ loanStore.state.delivery }}</div>
-          <div class="text">萬元</div>
-        </div>
+
         <div class="info-item">
           <div class="title">簽 約 金 ：</div>
           <div class="info">{{ loanStore.state.sign }}</div>
-          <div class="text">萬元</div>
-        </div>
-        <div class="info-item">
-          <div class="title">自備金額：</div>
-          <div class="info">{{ loanStore.state.ownMoney }}</div>
           <div class="text">萬元</div>
         </div>
 
@@ -168,14 +159,34 @@
           <div class="info">{{ loanStore.state.kickOff }}</div>
           <div class="text">萬元</div>
         </div>
+
+        <div class="info-item">
+          <div class="title">工程期款：</div>
+          <div class="info">{{ loanStore.state.interestRepayment }}</div>
+          <div class="text">萬元</div>
+        </div>
+
+        <div class="info-item">
+          <div class="title">契稅申報：</div>
+          <div class="info">{{ loanStore.state.tax }}</div>
+          <div class="text">萬元</div>
+        </div>
+
+        <div class="info-item">
+          <div class="title">交 屋 款 ：</div>
+          <div class="info">{{ loanStore.state.delivery }}</div>
+          <div class="text">萬元</div>
+        </div>
+
+        <div class="info-item">
+          <div class="title">自備金額：</div>
+          <div class="info">{{ loanStore.state.ownMoney }}</div>
+          <div class="text">萬元</div>
+        </div>
+
         <div class="info-item">
           <div class="title">貸款金額：</div>
           <div class="info">{{ loanStore.state.loanMoney }}</div>
-          <div class="text">萬元</div>
-        </div>
-        <div class="info-item">
-          <div class="title">結構完成：</div>
-          <div class="info">{{ loanStore.state.license }}</div>
           <div class="text">萬元</div>
         </div>
       </div>
@@ -185,7 +196,7 @@
           備註:<br />
           1.本付款表之坪數、價格需以正式訂購單為主。<br />
           2.暫收款內容包含：每戶新台幣貳拾伍萬元(多退少補)。
-          包含所有權移轉登記規費、印花稅、代書費、 代辦續費、貸款保險費..等<br />
+          包含所有權移轉登記規費、印花稅、代書費、 代辦續費、貸款保險費...等<br />
           3.本付款表銀行貸款之成數、利率，需視客戶當時信用狀況而定。
         </div>
       </div>
