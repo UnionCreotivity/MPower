@@ -485,7 +485,7 @@
         margin-right: 2vw;
         .text-f1-1 {
           position: absolute;
-          top: 3%;
+          top: 5%;
           color: #534741;
           font-size: 21pt;
           font-weight: 500;
@@ -498,7 +498,7 @@
         }
         .text-f1-2 {
           position: absolute;
-          bottom: 4%;
+          bottom: 5%;
           color: #534741;
           font-size: 21pt;
           font-weight: 500;
@@ -725,12 +725,12 @@
         }
 
         .floor-1f {
-          width: 58% !important;
+          width: 48.5% !important;
           @media all and (max-width: 1440px) {
-            width: 52% !important;
+            width: 48.5% !important;
           }
           @media all and (max-width: 1400px) {
-            width: 60% !important;
+            width: 50% !important;
           }
         }
 
