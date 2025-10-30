@@ -81,10 +81,10 @@
   }
 
   .dot8 {
-    top: 78%;
-    left: 21%;
+    top: 73%;
+    left: 53%;
     @media all and (max-width: 1366px) {
-      top: 71%;
+      top: 67%;
     }
   }
 
@@ -242,6 +242,7 @@
         margin-top: 1.5vw;
         z-index: 30;
         width: 100%;
+        // opacity: 0;
         div {
           background-color: #5f4c3f;
           padding: 0.3vw 1.5vw;
@@ -260,6 +261,32 @@
           background-color: #ffffff;
           color: #7c6454;
           font-weight: bold;
+        }
+      }
+      .video-btn {
+        display: flex;
+        margin-top: 1.5vw;
+        z-index: 30;
+        width: 100%;
+        div {
+          background-color: #5f4c3f;
+          padding: 0.3vw 1.5vw;
+          padding-bottom: 0.4vw;
+          letter-spacing: 0.1em;
+          font-size: 0.9vw;
+          border-radius: 2vw;
+
+          color: white;
+          font-family: 'Noto Serif TC';
+          font-weight: 500;
+        }
+
+        &:hover {
+          div {
+            background-color: #ffffff;
+            color: #7c6454;
+            font-weight: bold;
+          }
         }
       }
       .sakura-content-box {

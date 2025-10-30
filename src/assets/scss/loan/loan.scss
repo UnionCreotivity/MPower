@@ -400,8 +400,16 @@
     .title {
     }
     .date {
-      width: 200px;
+      width: 150px;
       border-bottom: 1px solid #231815;
     }
+  }
+}
+@media print {
+  /* 隱藏不需要印出的區域 */
+  .no-print,
+  .btn,
+  .footer {
+    display: none !important;
   }
 }

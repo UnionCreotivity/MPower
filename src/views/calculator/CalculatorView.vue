@@ -184,15 +184,15 @@
         <div>
           備註:<br />
           1.本付款表之坪數、價格需以正式訂購單為主。<br />
-          2.暫收款內容包含：所有權移轉登記規費、印花稅、代書費、<br />
-          代辦手續費、貸款保險費、每戶新台幣貳拾伍萬元管理基金..等(多退少補)。<br />
+          2.暫收款內容包含：每戶新台幣貳拾伍萬元(多退少補)。
+          包含所有權移轉登記規費、印花稅、代書費、 代辦續費、貸款保險費..等<br />
           3.本付款表銀行貸款之成數、利率，需視客戶當時信用狀況而定。
         </div>
       </div>
 
       <div class="date-box">
         <div class="title">日期：</div>
-        <div class="date"></div>
+        <div class="date">{{ currentDate }}</div>
       </div>
     </div>
   </div>
@@ -269,6 +269,12 @@ const cleanClick = () => {
   }
   loanStore.cleanAll() // store deposit 保持 100000
 }
+
+// 取得當下日期（YYYY/MM/DD）
+const today = new Date()
+const currentDate = ref(
+  `${today.getFullYear()}/${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}`,
+)
 
 //總金額
 watch(

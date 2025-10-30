@@ -36,21 +36,10 @@
               productList[activeIndex]?.hasVideo &&
               productList[activeIndex].title === '渦輪變頻 AI風控近吸除油煙機'
             "
-            class="sakura-btn"
+            class="video-btn"
             @click="showVideoBox"
           >
             <div>AI風控近吸除油煙機</div>
-          </div>
-
-          <div
-            v-if="
-              productList[activeIndex]?.hasVideo &&
-              productList[activeIndex].title === '雙口IH感應爐'
-            "
-            class="sakura-btn"
-            @click="showIHVideoBox"
-          >
-            <div>雙口IH感應爐</div>
           </div>
         </div>
       </transition>
@@ -62,18 +51,6 @@
     <div class="sakura-video" @click="handleCloseVideo" v-if="showVideo">
       <video
         src="../../../assets/img/mansion/DR9396_main.mp4"
-        autoplay
-        muted
-        playsinline
-        controls
-        loop
-      ></video></div
-  ></transition>
-
-  <transition name="fade" mode="out-in">
-    <div class="sakura-video" @click="handleCloseIHVideo" v-if="showIHVideo">
-      <video
-        src="../../../assets/img/mansion/ih.mp4"
         autoplay
         muted
         playsinline
@@ -101,14 +78,6 @@ const handleCloseVideo = () => {
 
 const showVideoBox = () => {
   showVideo.value = true
-}
-
-const handleCloseIHVideo = () => {
-  showIHVideo.value = false
-}
-
-const showIHVideoBox = () => {
-  showIHVideo.value = true
 }
 
 const handleClose = () => {
