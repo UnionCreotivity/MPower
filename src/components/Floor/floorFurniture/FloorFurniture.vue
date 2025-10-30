@@ -11,6 +11,15 @@
             class="floor-text-img"
             :class="[currentFurniture.textImgClassName]"
           />
+          <div class="link-720-box">
+            <a
+              href="https://vr.justeasy.cn/view/197m583z51kc0291-1760605172.html"
+              target="_blank"
+              class="text"
+              rel="noopener noreferrer"
+              >720環景</a
+            >
+          </div>
         </div>
         <div class="right-box">
           <ScaleDrag :init="initXY" :max-ratio="2">
@@ -18,7 +27,7 @@
               <img
                 :src="currentFurniture.img"
                 :alt="floor"
-                class="floor-plan-img "
+                class="floor-plan-img"
                 :class="[currentFurniture.className]"
               />
             </div>

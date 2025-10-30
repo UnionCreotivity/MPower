@@ -396,6 +396,42 @@
             width: 53%;
           }
         }
+        .link-720-box {
+          z-index: 30;
+          margin-left: 4vw;
+          padding: 0.2vw 1.1vw;
+          border-radius: 2vw;
+          border: 1px solid #604c3f;
+          display: flex;
+          align-items: center;
+          padding-right: 0.95vw;
+          transition: all 0.25s ease-in-out;
+          margin-top: -0.5vw;
+          @media all and (max-width: 1400px) {
+            font-size: 1.6vw;
+            padding: 0.3vw 1.7vw;
+            padding-right: 1.5vw;
+          }
+
+          &:hover {
+            transform: scale(1.05);
+            .text {
+              color: #a5836d;
+            }
+          }
+
+          .text {
+            font-family: 'Noto Serif TC';
+            color: #604c3f;
+            font-size: 1.15vw;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            transition: all 0.25s ease-in-out;
+            @media all and (max-width: 1400px) {
+              font-size: 1.5vw;
+            }
+          }
+        }
         .text-3F-12F-A,
         .text-3F-12F-B,
         .text-3F-12F-C,
@@ -753,7 +789,7 @@
               width: 96%;
             }
 
-            &.floor2f{
+            &.floor2f {
               width: 54%;
             }
           }
