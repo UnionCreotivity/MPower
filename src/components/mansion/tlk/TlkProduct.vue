@@ -70,7 +70,7 @@ const router = useRouter()
 const activeIndex = ref(2) // 預設第一個顯示
 
 const showVideo = ref(false)
-const showIHVideo = ref(false)
+// const showIHVideo = ref(false)
 
 const handleCloseVideo = () => {
   showVideo.value = false
@@ -124,7 +124,6 @@ const productList = [
         <li>智能料理輔助，提供即時鍋內溫度</li>
         <li>高科技熱感偵測，全爐具皆可偵測</li>
       </ul>
-    
     </div>
     `,
   },
@@ -142,7 +141,6 @@ const productList = [
         <li>一鍵暫停功能，暫時離開安全便利</li>
         <li>小火輸出穩定，低噪音不斷續</li>
       </ul>
-    
     </div>
     `,
   },

@@ -93,7 +93,7 @@ onMounted(() => {
   }
 })
 
-// ✨ 新增：關閉時的動畫
+// 新增：關閉時的動畫
 function handleClose() {
   if (detailEl.value) {
     gsap.to(detailEl.value, {
