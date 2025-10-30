@@ -272,6 +272,7 @@
   -webkit-print-color-adjust: exact;
   width: 100%;
   background-color: white;
+  position: relative;
 }
 @media print {
   .print-box {
@@ -336,6 +337,7 @@
   border-top: 1px solid #dcdddd;
   padding-top: 4%;
   margin-top: 1%;
+  position: relative;
 }
 .print-box .bottom-box .info-item {
   width: 45%;
@@ -370,25 +372,22 @@
   font-family: "微軟正黑體";
   font-weight: 500;
   width: 100%;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.8;
   letter-spacing: 0.08em;
-  padding-bottom: 4%;
+  padding-bottom: 12%;
+  text-align: justify;
 }
 .print-box .date-box {
   display: flex;
   font-family: "微軟正黑體";
   font-weight: 500;
-  width: 88%;
+  width: 100%;
   justify-content: right;
-  padding-bottom: 4.5%;
+  padding-bottom: 0%;
+  padding-right: 1%;
   font-size: 16px;
 }
-.print-box .date-box .date {
-  width: 150px;
-  border-bottom: 1px solid #231815;
-}
-
 @media print {
   /* 隱藏不需要印出的區域 */
   .no-print,

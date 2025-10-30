@@ -276,6 +276,7 @@
   width: 100%;
   // width: 800px;
   background-color: white;
+  position: relative;
 
   @media print {
     display: flex;
@@ -345,6 +346,7 @@
     border-top: 1px solid #dcdddd;
     padding-top: 4%;
     margin-top: 1%;
+    position: relative;
     .info-item {
       width: 45%;
 
@@ -383,25 +385,28 @@
     font-family: '微軟正黑體';
     font-weight: 500;
     width: 100%;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
     letter-spacing: 0.08em;
-    padding-bottom: 4%;
+    padding-bottom: 12%;
+    text-align: justify;
   }
 
   .date-box {
     display: flex;
     font-family: '微軟正黑體';
     font-weight: 500;
-    width: 88%;
+    width: 100%;
     justify-content: right;
-    padding-bottom: 4.5%;
+    padding-bottom: 0%;
+    padding-right: 1%;
     font-size: 16px;
+
     .title {
     }
     .date {
-      width: 150px;
-      border-bottom: 1px solid #231815;
+      // width: 150px;
+      // border-bottom: 1px solid #231815;
     }
   }
 }
