@@ -278,10 +278,12 @@
           }
           .ul-box {
             @include pageContent();
-            letter-spacing: 0.05em;
-            list-style: disc;
-            list-style-position: outside;
-            padding-left: 1em;
+            & {
+              letter-spacing: 0.05em;
+              list-style: disc;
+              list-style-position: outside;
+              padding-left: 1em;
+            }
           }
         }
       }
@@ -329,10 +331,12 @@
           }
           .ul-box {
             @include pageContent();
-            letter-spacing: 0.05em;
-            list-style: disc;
-            list-style-position: outside; /* 符號在內容外面 */
-            padding-left: 1em;
+            & {
+              letter-spacing: 0.05em;
+              list-style: disc;
+              list-style-position: outside; /* 符號在內容外面 */
+              padding-left: 1em;
+            }
           }
         }
       }

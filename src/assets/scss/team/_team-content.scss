@@ -40,6 +40,9 @@
         font-size: var(--page-size);
         align-items: center;
         position: relative;
+        @media all and (max-width: 1024px) {
+          font-size: 1.7vw;
+        }
         &::after {
           position: absolute;
           content: '';
@@ -59,11 +62,12 @@
 
     .content-box {
       @include pageContent();
-      z-index: 50;
+
       & {
         width: 84%;
         margin-top: 1vw;
         color: #323333;
+        z-index: 50;
       }
       .title {
         color: #604c3f;

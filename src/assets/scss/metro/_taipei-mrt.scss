@@ -10,8 +10,14 @@
   .swiper-button-prev,
   .swiper-button-next {
     color: #bbaa9f !important;
+    &::after {
+      @media all and (max-width: 1440px) {
+        font-size: 3.5vw;
+      }
+    }
   }
 }
+
 .taipei-mrt-box {
   width: 100%;
   height: 100%;
@@ -154,6 +160,7 @@
   justify-content: space-between;
   padding-left: 5vw;
   padding-right: 5vw;
+
   .left-box {
     display: flex;
     justify-content: center;

@@ -57,6 +57,9 @@
   .dot4 {
     left: 48.5%;
     top: 60%;
+    @media all and (max-width: 1024px) {
+      top: 57%;
+    }
   }
 
   .dot5 {
@@ -279,10 +282,12 @@
           letter-spacing: 0.1em;
           font-size: 0.9vw;
           border-radius: 2vw;
-
           color: white;
           font-family: 'Noto Serif TC';
           font-weight: 500;
+          @media all and (max-width: 1024px) {
+            font-size: 14px;
+          }
         }
 
         &:hover {

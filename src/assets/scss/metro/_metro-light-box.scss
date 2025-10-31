@@ -35,7 +35,9 @@
 
     .hint {
       @include hint();
-      color: white;
+      & {
+        color: white;
+      }
     }
 
     .orange-hint {

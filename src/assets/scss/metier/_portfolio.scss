@@ -85,7 +85,9 @@
 
     .content {
       @include pageContent();
-      text-align: center;
+      & {
+        text-align: center;
+      }
     }
   }
 

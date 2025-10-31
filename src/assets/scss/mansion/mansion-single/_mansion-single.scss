@@ -236,10 +236,13 @@
           }
           .ul-box {
             @include pageContent();
-            letter-spacing: 0.05em;
-            list-style: disc;
-            list-style-position: outside;
-            padding-left: 1em;
+            & {
+              letter-spacing: 0.05em;
+              list-style: disc;
+              list-style-position: outside;
+              padding-left: 1em;
+            }
+
             ul,
             li {
               list-style-type: disc;
@@ -294,10 +297,13 @@
           }
           .ul-box {
             @include pageContent();
-            letter-spacing: 0.05em;
-            list-style: disc;
-            list-style-position: outside; /* 符號在內容外面 */
-            padding-left: 1em;
+            & {
+              letter-spacing: 0.05em;
+              list-style: disc;
+              list-style-position: outside; /* 符號在內容外面 */
+              padding-left: 1em;
+            }
+
             ul,
             li {
               list-style-type: disc;
@@ -384,6 +390,9 @@
     height: 3vw !important;
     &::after {
       font-size: 2.5vw;
+      @media all and (max-width: 1440px) {
+        font-size: 3vw;
+      }
     }
   }
   .swiper-button-next {

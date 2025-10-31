@@ -30,7 +30,9 @@
 
       .hint {
         @include hint();
-        color: white;
+        & {
+          color: white;
+        }
       }
     }
   }
@@ -74,7 +76,9 @@
       }
       .hint {
         @include hint();
-        color: white;
+        & {
+          color: white;
+        }
       }
     }
   }
@@ -94,7 +98,9 @@
       overflow: hidden;
       .hint {
         @include hint();
-        color: white;
+        & {
+          color: white;
+        }
       }
 
       img {

@@ -10,6 +10,9 @@
 
     &::after {
       font-size: 2vw;
+      @media all and (max-width: 1440px) {
+        font-size: 3.5vw;
+      }
     }
   }
   .swiper-button-prev {
@@ -83,9 +86,10 @@
       }
       .content {
         @include pageContent();
-        margin-top: 1.5vw;
+
         & {
           color: white;
+          margin-top: 1.5vw;
         }
         @media all and (max-width: 1400px) {
           font-size: 16px;

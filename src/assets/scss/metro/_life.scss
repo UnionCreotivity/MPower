@@ -31,7 +31,9 @@
       position: relative;
       .hint {
         @include hint();
-        color: white;
+        & {
+          color: white;
+        }
       }
     }
   }
