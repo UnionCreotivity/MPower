@@ -520,6 +520,15 @@
             @media all and (max-width: 1400px) {
               width: 65%;
             }
+            @media all and (max-width: 1366px) {
+              width: 54%;
+            }
+          }
+
+          .floor-3F-12F {
+            @media all and (max-width: 1366px) {
+              width: 50%;
+            }
           }
         }
 
@@ -594,6 +603,9 @@
             left: 40%;
             top: 26%;
           }
+          @media all and (max-width: 1366px) {
+            left: 42%;
+          }
         }
 
         .btn-3f-12f-b {
@@ -603,6 +615,9 @@
             right: 35%;
             top: 26%;
           }
+          @media all and (max-width: 1366px) {
+            right: 37%;
+          }
         }
         .btn-3f-12f-c {
           top: 70%;
@@ -610,12 +625,18 @@
           @media all and (max-width: 1400px) {
             left: 40%;
           }
+          @media all and (max-width: 1366px) {
+            left: 42%;
+          }
         }
         .btn-3f-12f-d {
           top: 70%;
           right: 36.5%;
           @media all and (max-width: 1400px) {
             right: 35%;
+          }
+          @media all and (max-width: 1366px) {
+            right: 37%;
           }
         }
 
@@ -625,6 +646,9 @@
           @media all and (max-width: 1400px) {
             left: 38.4%;
           }
+          @media all and (max-width: 1366px) {
+            left: 41%;
+          }
         }
 
         .btn-2f-b {
@@ -632,6 +656,9 @@
           right: 36.2%;
           @media all and (max-width: 1400px) {
             right: 35.1%;
+          }
+          @media all and (max-width: 1366px) {
+            right: 37%;
           }
         }
 
@@ -641,6 +668,9 @@
           @media all and (max-width: 1400px) {
             left: 38.4%;
           }
+          @media all and (max-width: 1366px) {
+            left: 41%;
+          }
         }
 
         .btn-2f-d {
@@ -648,6 +678,9 @@
           right: 36.5%;
           @media all and (max-width: 1400px) {
             right: 35.6%;
+          }
+          @media all and (max-width: 1366px) {
+            right: 37%;
           }
         }
 
@@ -694,12 +727,20 @@
           @media all and (max-width: 1400px) {
             width: 62%;
           }
+
+          @media all and (max-width: 1366px) {
+            width: 48% !important;
+          }
         }
 
         .floor-B1 {
           width: 60% !important;
           @media all and (max-width: 1400px) {
             width: 78% !important;
+          }
+
+          @media all and (max-width: 1366px) {
+            width: 63% !important;
           }
         }
 
@@ -708,6 +749,9 @@
           @media all and (max-width: 1400px) {
             width: 82% !important;
           }
+          @media all and (max-width: 1366px) {
+            width: 66% !important;
+          }
         }
 
         .floor-B3 {
@@ -715,12 +759,18 @@
           @media all and (max-width: 1400px) {
             width: 76% !important;
           }
+          @media all and (max-width: 1366px) {
+            width: 61% !important;
+          }
         }
 
         .floor-B4 {
           width: 60% !important;
           @media all and (max-width: 1400px) {
             width: 77% !important;
+          }
+          @media all and (max-width: 1366px) {
+            width: 62% !important;
           }
         }
 
@@ -735,14 +785,44 @@
           @media all and (max-width: 1400px) {
             width: 42% !important;
           }
-          @media all and (max-width: 1366px) {
-            width: 56% !important;
-          }
+
           @media all and (max-width: 1280px) {
             width: 47% !important;
           }
         }
 
+        .F3-12F-A {
+          @media all and (max-width: 1440px) {
+            width: 96% !important;
+          }
+          @media all and (max-width: 1366px) {
+            width: 90% !important;
+          }
+        }
+
+        .F3-12F-B {
+          @media all and (max-width: 1440px) {
+            width: 96% !important;
+          }
+          @media all and (max-width: 1366px) {
+            width: 86% !important;
+          }
+        }
+
+        .F3-12F-C {
+          @media all and (max-width: 1440px) {
+            width: 100% !important;
+          }
+        }
+
+        .F3-12F-D {
+          @media all and (max-width: 1440px) {
+            width: 96% !important;
+          }
+          @media all and (max-width: 1366px) {
+            width: 90% !important;
+          }
+        }
         .zoom {
           right: -5%;
         }
