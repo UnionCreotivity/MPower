@@ -2,12 +2,7 @@
   <div class="floor-detail-wrapper">
     <div class="floor-detail" ref="detailEl">
       <div class="overlay-close" @click="$emit('close')"></div>
-      <img
-        src="../../../assets/img/building/compass.png"
-        alt=""
-        class="compass"
-        v-if="props.floor !== 'B4' && props.floor !== 'R1'"
-      />
+      <img src="../../../assets/img/building/compass.png" alt="" class="compass" />
       <div class="main-box">
         <div class="decorate">FLOOR PLAN</div>
         <div class="left-box">
@@ -122,6 +117,14 @@
               <div class="btn-3f-12f btn-r1" v-if="props.floor === 'R1'" @click="showR1 = true">
                 <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
               </div>
+
+              <div
+                class="btn-3f-12f btn-r1-2"
+                v-if="props.floor === 'R1'"
+                @click="showR1Two = true"
+              >
+                <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
+              </div>
             </div>
           </ScaleDrag>
         </div>
@@ -142,6 +145,7 @@
       @close="showFurniture2f = false"
     />
 
+    <!-- 1MF公設彈窗 -->
     <transition name="fade" mode="out-in">
       <div class="floor-mf1-box" v-if="show1MF" @click="show1MF = false">
         <div class="img-box">
@@ -151,6 +155,7 @@
       </div>
     </transition>
 
+    <!-- 1MF公設彈窗 -->
     <transition name="fade" mode="out-in">
       <div class="floor-mf1-box floor-mf1-box2" v-if="show1MF2" @click="show1MF2 = false">
         <div class="img-box">
@@ -160,15 +165,7 @@
       </div>
     </transition>
 
-    <transition name="fade" mode="out-in">
-      <div class="floor-mf1-box floor-r1" v-if="showR1" @click="showR1 = false">
-        <div class="img-box">
-          <img src="../../../assets/img/building/RF_C01_004.webp" alt="RF_C01_004" srcset="" />
-          <div class="hint">3D示意圖</div>
-        </div>
-      </div>
-    </transition>
-
+    <!-- 1F公設彈窗 -->
     <transition name="fade" mode="out-in">
       <div class="floor-mf1-box floor-1f-1" v-if="show1F1" @click="show1F1 = false">
         <div class="img-box">
@@ -178,6 +175,7 @@
       </div>
     </transition>
 
+    <!-- 1F公設彈窗 -->
     <transition name="fade" mode="out-in">
       <div class="floor-mf1-box floor-1f-2" v-if="show1F2" @click="show1F2 = false">
         <div class="img-box">
@@ -187,6 +185,7 @@
       </div>
     </transition>
 
+    <!-- 1F公設彈窗 -->
     <transition name="fade" mode="out-in">
       <div class="floor-mf1-box floor-1f-3" v-if="show1F3">
         <Swiper :modules="[Navigation, EffectFade]" navigation :speed="800" :effect="'fade'">
@@ -201,6 +200,38 @@
           <SwiperSlide>
             <div class="img-box">
               <img src="../../../assets/img/building/1f-img2.webp" alt="1f-img2" srcset="" />
+              <div class="hint">3D示意圖</div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </transition>
+
+    <!-- R1公設彈窗 -->
+    <transition name="fade" mode="out-in">
+      <div class="floor-mf1-box floor-r1" v-if="showR1" @click="showR1 = false">
+        <div class="img-box">
+          <img src="../../../assets/img/building/RF_C01_004.webp" alt="RF_C01_004" srcset="" />
+          <div class="hint">3D示意圖</div>
+        </div>
+      </div>
+    </transition>
+
+    <!-- R1-2公設彈窗 -->
+    <transition name="fade" mode="out-in">
+      <div class="floor-mf1-box floor-r1-2" v-if="showR1Two">
+        <Swiper :modules="[Navigation, EffectFade]" navigation :speed="800" :effect="'fade'">
+          <div class="overlay-close" @click="showR1Two = false"></div>
+          <SwiperSlide>
+            <div class="img-box">
+              <img src="../../../assets/img/building/floor01.webp" alt="floor01" srcset="" />
+              <div class="hint">3D示意圖</div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div class="img-box">
+              <img src="../../../assets/img/building/floor02.webp" alt="floor01" srcset="" />
               <div class="hint">3D示意圖</div>
             </div>
           </SwiperSlide>
@@ -231,6 +262,7 @@ const showCompass = ref(false)
 const show1MF = ref(false)
 const show1MF2 = ref(false)
 const showR1 = ref(false)
+const showR1Two = ref(false)
 const show1F1 = ref(false)
 const show1F2 = ref(false)
 const show1F3 = ref(false)

@@ -159,7 +159,6 @@
     }
   }
   .right-box {
-    // flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -244,6 +243,7 @@
           list-style-type: disc;
         }
       }
+
       .sakura-btn {
         display: flex;
         margin-top: 1.5vw;
@@ -263,6 +263,7 @@
           font-weight: 500;
         }
       }
+
       .sakura-btn:hover {
         div {
           background-color: #ffffff;
@@ -270,6 +271,7 @@
           font-weight: bold;
         }
       }
+
       .video-btn {
         display: flex;
         margin-top: 1.5vw;
