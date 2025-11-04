@@ -114,6 +114,10 @@
                 <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
               </div>
 
+              <div class="btn-3f-12f btn-1f-4" v-if="props.floor === '1F'" @click="show1F4 = true">
+                <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
+              </div>
+
               <div class="btn-3f-12f btn-r1" v-if="props.floor === 'R1'" @click="showR1 = true">
                 <img class="point-img" src="../../../assets/img/life/point.svg" alt="" />
               </div>
@@ -131,6 +135,7 @@
         <div class="detail-hint">實際家具配置及平面與建材依買賣契約書為準</div>
       </div>
     </div>
+
     <transition name="fade" mode="out-in">
       <FloorCompass v-if="showCompass" @close="showCompass = false" />
     </transition>
@@ -207,6 +212,28 @@
       </div>
     </transition>
 
+    <!-- 1F公設彈窗 -->
+    <transition name="fade" mode="out-in">
+      <div class="floor-mf1-box floor-1f-4" v-if="show1F4">
+        <Swiper :modules="[Navigation, EffectFade]" navigation :speed="800" :effect="'fade'">
+          <div class="overlay-close" @click="show1F4 = false"></div>
+          <SwiperSlide>
+            <div class="img-box">
+              <img src="../../../assets/img/building/street01.webp" alt="street01" srcset="" />
+              <div class="hint">3D示意圖</div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div class="img-box">
+              <img src="../../../assets/img/building/street02.webp" alt="street02" srcset="" />
+              <div class="hint">3D示意圖</div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </transition>
+
     <!-- R1公設彈窗 -->
     <transition name="fade" mode="out-in">
       <div class="floor-mf1-box floor-r1" v-if="showR1" @click="showR1 = false">
@@ -266,6 +293,7 @@ const showR1Two = ref(false)
 const show1F1 = ref(false)
 const show1F2 = ref(false)
 const show1F3 = ref(false)
+const show1F4 = ref(false)
 const showFurniture = ref(false)
 const showFurniture2f = ref(false)
 const furnitureFloor = ref('') // 用來傳給 FloorFurniture 的樓層
