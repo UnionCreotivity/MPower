@@ -29,7 +29,7 @@
         低戶數、高隱私；齊質44戶，內斂布局。<br />
         當空間開始理解人，生活從容生根。
       </div>
-      <img class="icon" src="../../../assets/img/building/icon.svg" alt="icon" srcset="" />
+      <!-- <img class="icon" src="../../../assets/img/building/icon.svg" alt="icon" srcset="" /> -->
     </div>
 
     <div v-else class="content-box night-content-box">
@@ -46,12 +46,12 @@
         低戶數、高隱私；齊質44戶，內斂布局。<br />
         當空間開始理解人，生活從容生根。
       </div>
-      <img
+      <!-- <img
         class="icon"
         src="../../../assets/img/building/white_icon.svg"
         alt="white_icon"
         srcset=""
-      />
+      /> -->
     </div>
 
     <FullScreen :forceWhiteIcon="true" />
@@ -157,16 +157,6 @@ const runAnimation = () => {
       { filter: 'blur(6px)', autoAlpha: 0, x: '-70' },
       { x: 0, duration: 1, filter: 'blur(0px)', autoAlpha: 1 },
       '<0.1',
-    )
-    .from(
-      '.building-view .content-box .icon',
-      {
-        scale: 1.1,
-        y: 70,
-        autoAlpha: 0,
-        duration: 0.7,
-      },
-      '<0.55',
     )
 
   // 先清掉舊動畫
