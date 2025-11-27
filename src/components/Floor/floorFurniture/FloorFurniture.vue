@@ -20,6 +20,10 @@
               >720環景</a
             >
           </div>
+
+          <!-- 客變按鈕 -->
+          <div class="customized-btn customized-btn-a" @click="showFloor('C-A')">客變建議A</div>
+          <div class="customized-btn customized-btn-b" @click="showFloor('C-B')">客變建議B</div>
         </div>
         <div class="right-box">
           <ScaleDrag :init="initXY" :max-ratio="2">
@@ -38,6 +42,14 @@
     </div>
 
     <FullScreen :forceBrownIcon="true" />
+
+    <!-- FloorCustomized 彈窗 -->
+
+    <FloorCustomized
+      v-if="showFloorCustomized"
+      :floor="FloorCustomizedFloor"
+      @close="showFloorCustomized = false"
+    />
   </div>
 </template>
 
@@ -46,7 +58,7 @@ import { onMounted, computed, ref } from 'vue'
 import gsap from 'gsap'
 import ScaleDrag from '@/components/scale-drag/ScaleDrag.vue'
 import FullScreen from '@/components/full-screen/FullScreen.vue'
-
+import FloorCustomized from '@/components/Floor/floorCustomized/FloorCustomized.vue'
 const props = defineProps<{ floor: string }>()
 const emit = defineEmits(['close'])
 const detailEl = ref<HTMLElement | null>(null)
@@ -85,6 +97,7 @@ const furnitureMap: Record<
     textImgClassName: 'text-3F-12F-D',
   },
 }
+
 const initXY = computed(() => {
   const screenWidth = window.innerWidth
   return {
@@ -92,6 +105,17 @@ const initXY = computed(() => {
     y: 0,
   }
 })
+
+// -------------------
+// 客變功能
+// -------------------
+const showFloorCustomized = ref(false)
+const FloorCustomizedFloor = ref<'C-A' | 'C-B'>('C-A') // 用來傳給 FloorCustomized 的樓層
+
+function showFloor(key: 'C-A' | 'C-B') {
+  FloorCustomizedFloor.value = key
+  showFloorCustomized.value = true
+}
 
 // 根據傳入樓層取資料
 const currentFurniture = computed(() => furnitureMap[props.floor])
@@ -117,3 +141,17 @@ function handleClose() {
   }
 }
 </script>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+</style>
