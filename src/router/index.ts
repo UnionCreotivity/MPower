@@ -45,8 +45,11 @@ import AfterServiceView from '@/views/metier/afterService/AfterServiceView.vue'/
 
 // 房貸試算
 import CalculatorView from '@/views/calculator/CalculatorView.vue'
-
 import CalculatorIndexView from '@/views/calculator/CalculatorIndexView.vue'
+
+// 競案分析
+import MapView from '@/views/map/MapView.vue'
+import MapIndexView from '@/views/map/MapIndexView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -70,6 +73,18 @@ const router = createRouter({
       ],
     },
     {
+      path: '/analysisIndex',
+      component: MapIndexView,
+      children: [
+        {
+          path: 'analysis',
+          name: 'analysis',
+          component: MapView,
+        },
+      ],
+    },
+
+    {
       path: '/metro',
       component: MetroView,
       children: [
@@ -83,6 +98,7 @@ const router = createRouter({
           name: 'life',
           component: LifeView,
         },
+        
       ],
     },
     {
@@ -215,6 +231,7 @@ const router = createRouter({
           name: 'after-service',
           component: AfterServiceView,
         },
+        
       ],
     },
     // {

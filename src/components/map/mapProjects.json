@@ -1,0 +1,100 @@
+{
+  "datasets": [
+    {
+      "id": "taichung",
+      "name": "台中地區",
+      "center": { "lat": 24.1643863, "lng": 120.6729866 },
+      "zoom": 13,
+      "projects": [
+        {
+          "id": "project_003",
+          "name": "北屯14期-磐興寬悅",
+          "location": { "lat": 24.1977423568174, "lng": 120.66704651892168 },
+          "address": "台中市北屯區",
+          "image": "../../assets/img/map/project_003.jpg",
+          "description": "2房/28-38坪"
+        },
+        {
+          "id": "project_004",
+          "name": "北屯14期-惠宇和慕",
+          "location": { "lat": 24.194532987267525, "lng": 120.67375329765667 },
+          "address": "台中市北屯區",
+          "image": "../../assets/img/map/project_004.jpg",
+          "description": "3房/38-43坪、4房/48-53坪"
+        },
+        {
+          "id": "project_005",
+          "name": "北屯機捷-漢宇雲衍",
+          "location": { "lat": 24.1897396591346, "lng": 120.70565836425614 },
+          "address": "台中市北屯區",
+          "image": "../../assets/img/map/project_005.jpg",
+          "description": "3房/38-40坪、4房/48-49坪"
+        },
+        {
+          "id": "project_006",
+          "name": "北屯市區-文心O'LIVE",
+          "location": { "lat": 24.172546938137405, "lng": 120.6836824764468 },
+          "address": "台中市北屯區",
+          "image": "../../assets/img/map/project_006.jpg",
+          "description": "3房/36-49坪、4房/42-54坪"
+        },
+        {
+          "id": "project_007",
+          "name": "北屯太原-富宇原上琚",
+          "location": { "lat": 24.164846504686956, "lng": 120.71045828591838 },
+          "address": "台中市北屯區",
+          "image": "../../assets/img/map/project_007.jpg",
+          "description": "2房/25-27坪、3房/35-37坪"
+        },
+        {
+          "id": "project_008",
+          "name": "北區市區-亞昕丰山",
+          "location": { "lat": 24.162640132648587, "lng": 120.66663392612604 },
+          "address": "台中市北屯區",
+          "image": "../../assets/img/map/project_008.jpg",
+          "description": "2房/25-28坪、3房/33-40坪"
+        },
+        {
+          "id": "project_009",
+          "name": "太平-由鉅建設・敘真",
+          "location": { "lat": 24.1593942009337, "lng": 120.71333436251014 },
+          "address": "台中市太平區",
+          "image": "../../assets/img/map/project_009.jpg",
+          "description": "2房/24-30坪、3房/34-38坪"
+        },
+        {
+          "id": "project_010",
+          "name": "太平-城鈺森川",
+          "location": { "lat": 24.153433058845184, "lng": 120.70345291659856 },
+          "address": "台中市太平區",
+          "image": "../../assets/img/map/project_0010.jpg",
+          "description": "3房/36-40坪"
+        },
+        {
+          "id": "project_011",
+          "name": "東區-允將沐溡",
+          "location": { "lat": 24.143343742705618, "lng": 120.69839446236281 },
+          "address": "台中市東區",
+          "image": "../../assets/img/map/project_0011.jpg",
+          "description": "3房/37-39坪、4房/46-50坪"
+        },
+        {
+          "id": "project_012",
+          "name": "東區-浩瀚湖濱城",
+          "location": { "lat": 24.135481846406496, "lng": 120.69294979899699 },
+          "address": "台中市東區",
+          "image": "../../assets/img/map/project_0012.jpg",
+          "description": "2房/27-29坪、3房/36-43坪、4房/46-48坪、辦公室/19-21坪"
+        },
+        {
+          "id": "project_013",
+          "name": "烏日-櫻花大綻",
+          "location": { "lat": 24.10608702093565, "lng": 120.6008863863828 },
+          "address": "台中市烏日區",
+          "image": "../../assets/img/map/project_0013.jpg",
+          "description": "1房/19-20坪、2房/25-29坪、3房/36-39坪、4房/47坪"
+        }
+      ]
+    }
+  ]
+}

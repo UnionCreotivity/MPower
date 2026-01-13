@@ -25,13 +25,11 @@ export const menuData = [
         id: 'teamIndex',
         name: '建築團隊',
         link: 'teamIndex',
-
       },
       {
         id: 'buildling',
         name: '樓層規劃',
         link: 'buildling',
-
       },
     ],
   },
@@ -60,19 +58,16 @@ export const menuData = [
         id: 'structure',
         name: '結構工法',
         link: 'structure',
-
       },
       {
         id: 'waterproof',
         name: '防水工法',
         link: 'waterproof',
-
       },
       {
         id: 'intimate',
         name: '貼心工法',
         link: 'intimate',
-
       },
     ],
   },
@@ -87,25 +82,27 @@ export const menuData = [
         id: 'build-origin',
         name: '營建起家',
         link: 'build-origin',
-
       },
 
       {
         id: 'build-value',
         name: '三心二藝',
         link: 'build-value',
-
       },
       {
         id: 'portfolio',
         name: '歷年業績',
         link: 'portfolio',
-
       },
       {
         id: 'after-service',
         name: '售後服務',
         link: 'after-service',
+      },
+      { 
+        id: 'analysis', 
+        name: '競案分析', 
+        link: 'analysis' 
       },
       {
         id: 'calculator',
